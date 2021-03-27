@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "baseUrl": ".",
+        "paths": {
+            "@Public/*": ["./public/*"],
+            "@Pages/*": ["./src/pages/*"],
+            "@Redux/*": ["./src/redux/*"],
+            "@Interfaces/*": ["./src/interfaces/*"],
+            "@Services/*": ["./src/services/*"],
+            "@Config/*": ["./src/config/*"],
+            "@Components/*": ["./src/components/*"],
+            "@I18n/*": ["./i18n/*"],
+            "@Common/*": ["./src/common/*"],
+            "@Locales/*": ["./public/locales/*"],
+            "@Styles/*": ["./public/styles/*"],
+        }
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/saga/saga.js"],
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,56 @@
+button {
+    outline: none;
+    transition: box-shadow 0.2s ease, color 0.2s, border 0.2s, background 0.2s;
+}
+
+.app-btn {
+    display: inline-block;
+    vertical-align: bottom;
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    background-color: var(--color-primary);
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 3px;
+    user-select: none;
+    line-height: 2.5em;
+    min-height: 40px;
+    width: 100%;
+    padding: 0 0.8em;
+    text-decoration: none;
+    border: 0;
+    color: var(--color-text-main);
+    position: relative;
+    transform: translateZ(0);
+    margin: 0.8rem;
+
+    &:hover, &:focus {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    &.primary {
+        border: solid 1px var(--color-primary);
+        color: white;
+    }
+
+    &.shadow {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    &.outline {
+        background: transparent;
+        &.primary{
+            color: var(--color-primary);
+            &:hover {
+                background: var(--color-primary);
+                color: white;
+            }
+        }
+    }
+    &.round {
+        border-radius: 30px;
+    }
+}

@@ -1,0 +1,55 @@
+//Common style in system
+// @import 'photography';
+@import './components/_button';
+@import './components/_collapspe';
+@import './components/_menu-home';
+@import './components/_header';
+@import './components/_image-lazy';
+@import './components/_banner';
+@import './components/icon-them';
+@import './typography';
+@import './variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-image {
+    background: $color-primary;
+    height: 500px;
+}
+
+:root {
+    --color-primary: #4961ea;
+    --color-background-main: #ffffff;
+    --color-text-main: #323338;
+}
+
+body[theme-data="_sainbolt-dark"]{
+    --color-background-main: black;
+    --color-text-main: green;
+    // --color-primary: gray;
+}
+
+html body {
+    #__next {
+        background: var(--color-background-main);
+    }
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    color: var(--color-text-main);
+    main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+    footer {
+        background-color: rgba(255, 255, 255, 0.5);
+        // width: 100vw;
+        padding: 3rem 0;
+    }
+}

@@ -1,0 +1,5 @@
+# OUTPUT_LANG_INDEX start from 0
+generator-localization-sainbolt-app:
+	node localization/LocalizationGenerator.js SPREADSHEET_ID=15mJ3eHzyPNn2aX0UIuG6C9ZwKRWZsL9cGQhNiX9kKLU GID_ID=common
+	node localization/LocalizationGenerator.js SPREADSHEET_ID=15mJ3eHzyPNn2aX0UIuG6C9ZwKRWZsL9cGQhNiX9kKLU GID_ID=second-page
+	node localization/LocalizationGenerator.js SPREADSHEET_ID=15mJ3eHzyPNn2aX0UIuG6C9ZwKRWZsL9cGQhNiX9kKLU GID_ID=footer

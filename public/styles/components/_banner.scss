@@ -1,0 +1,81 @@
+@import '../variables';
+
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &__fake {
+        width: 11%;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 44%;
+    }
+    &__title {
+        margin: 0 0 40px;
+        padding: 0;
+        font-size: 65px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+    }
+    &__text {
+        margin: 0;
+        font-size: 28px;
+        font-weight: $font-weight-light;
+        color: #373f49;
+        margin-bottom: 20px;
+    }
+    &__btn {
+        display: flex;
+        align-items: center;
+    }
+    &__join {
+        background-color: var(--color-primary);
+        width: 300px;
+        height: 70px;
+        padding: 0 60px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+        font-weight: $font-weight-bold;
+        box-shadow: #373f499a 2px 4px 5px 1px;
+        transition: background-color 0.2s linear;
+        &:hover {
+            background-color: #4354b3;
+        }
+    }
+
+    &__course {
+        margin-left: 60px;
+        font-size: 20px;
+        font-weight: $font-weight-bold;
+        position: relative;
+        padding-bottom: 3px;
+        &:after {
+            content: '';
+            background-color: $color-primary;
+            width: 80%;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s linear;
+        }
+        &:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &__img {
+        width: 40%;
+    }
+}
