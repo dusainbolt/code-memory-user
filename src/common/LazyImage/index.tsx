@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 interface _LazyImage {
     largeSrc: string,
@@ -18,22 +19,27 @@ const LazyImage: React.FC<_LazyImage> = ({ largeSrc, smallSrc }) => {
 
     // Define handle
     const handleSmallImageLoad = () => loadSmallImage(false);
-    const handleLargeImageLoad = () => loadLargeImage(true);
+    const handleLargeImageLoad = () => {
+        console.log("OKOKOKOKOKO");
+        loadLargeImage(true)
+    };
 
     return (
         <div className="image-lazy__wrapper">
             {!isLargeImageLoaded && (
-                <img
+                <Image
                     src={smallSrc}
                     className={smallImageClass}
-                    alt=""
+                    alt="12312321"
+                    width={1440} height={870}
                     onLoad={handleSmallImageLoad}
                 />
             )}
-            <img
+            <Image
                 src={largeSrc}
                 className={largeImageClass}
-                alt=""
+                alt="asdasdasdsad"
+                width={1440} height={870}
                 onLoad={handleLargeImageLoad}
             />
         </div>
