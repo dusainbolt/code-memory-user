@@ -3,7 +3,7 @@ export default {
   signin: 'Connexion',
   directory: 'Liens utiles',
   hero: 'La naissance du Web',
-  description: `Le chercheur britannique Tim Berners-Lee a inventé le World Wide Web en 1989, lorsqu’il travaillait au CERN'`,
+  description: `Le chercheur britannique {{hello}} Tim Berners-Lee a inventé le World Wide Web en 1989, lorsqu’il travaillait au CERN'`,
   cookies: `Ce site internet utilise des cookies afin de vous assurer la meilleure expérience possible`,
   button: `J'ai compris !`,
   about: 'Le Cern',

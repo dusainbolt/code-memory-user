@@ -3,7 +3,7 @@ export default {
   signin: 'Sign In',
   directory: 'Directory',
   hero: 'The birth of the Web',
-  description: `The World Wide Web was invented by British scientist Tim Berners-Lee in 1989 while working at CERN`,
+  description: `The World Wide {{hello}} Web was invented by British scientist Tim Berners-Lee in 1989 while working at CERN`,
   cookies: `This website uses cookies to ensure you get the best experience on our website`,
   button: `Got it!`,
   about: 'About',

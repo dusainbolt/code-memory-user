@@ -15,6 +15,7 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {
+            "@Utils/*": ["./src/utils/*"],
             "@Public/*": ["./public/*"],
             "@Pages/*": ["./src/pages/*"],
             "@Redux/*": ["./src/redux/*"],
