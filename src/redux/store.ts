@@ -1,14 +1,14 @@
 import createSagaMiddleware from 'redux-saga';
 import { rootReducer } from './reducer/_rootReducer';
 import rootSaga from './saga/_rootSaga';
-import getConfig from 'next/config';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
-const {
-    publicRuntimeConfig: { ENV_HOST_NAME, ENV_PORT }, // Available both client and server side
-    serverRuntimeConfig: { ENV_HOST }, // Only available server side
-} = getConfig();
+// import getConfig from 'next/config';
+// const {
+//     publicRuntimeConfig: { staticFolder }, // Available both client and server side
+//     serverRuntimeConfig: { ENV_HOST_NAME, ENV_PORT, mySecret }, // Only available server side
+// } = getConfig();
 
 //1: create the middleware
 const sagaMiddleware = createSagaMiddleware();

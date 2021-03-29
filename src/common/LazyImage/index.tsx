@@ -20,7 +20,6 @@ const LazyImage: React.FC<_LazyImage> = ({ largeSrc, smallSrc }) => {
     // Define handle
     const handleSmallImageLoad = () => loadSmallImage(false);
     const handleLargeImageLoad = () => {
-        console.log("OKOKOKOKOKO");
         loadLargeImage(true)
     };
 
