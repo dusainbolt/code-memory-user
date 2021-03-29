@@ -6,7 +6,7 @@ export const SAGA_ACTION = 'SAGA_ACTION';
 export const SAGA_ACTION_SUCCESS = `${SAGA_ACTION}_SUCCESS`;
 
 function* IndexSagaAction(action) {
-    yield console.log(action);
+    yield delay(10000);
     yield put(increment(1));
 }
 
