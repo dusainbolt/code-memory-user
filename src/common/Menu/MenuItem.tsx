@@ -1,5 +1,5 @@
-import { Link } from '@I18n/index';
 import { STATUS } from '@Config/contains';
+import Link from 'next/link';
 import { memo } from 'react';
 
 interface _MenuItem {

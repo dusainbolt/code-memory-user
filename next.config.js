@@ -5,7 +5,8 @@ module.exports = {
      // Pass through env variables
     ENV_HOST_NAME: process.env.ENV_HOST_NAME,
     ENV_PORT: process.env.ENV_PORT,
-    DOMAIN_IMAGE_AMAZON: process.env.DOMAIN_IMAGE_AMAZON
+    DOMAIN_IMAGE_AMAZON: process.env.DOMAIN_IMAGE_AMAZON,
+    DOMAIN_SAINBOLT_APP: process.env.DOMAIN_SAINBOLT_APP,
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
@@ -16,6 +17,6 @@ module.exports = {
     defaultLocale: 'en',
   },
   images: {
-    domains: [process.env.DOMAIN_IMAGE_AMAZON],
+    domains: [process.env.DOMAIN_IMAGE_AMAZON, process.env.DOMAIN_SAINBOLT_APP],
   },
 };

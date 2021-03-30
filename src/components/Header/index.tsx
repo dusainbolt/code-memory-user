@@ -1,5 +1,8 @@
 // import { Link } from '@I18n/index';
 // import HomeMenu from '@Common/Menu/HomeMenu';
+import HomeMenu from '@Common/Menu/HomeMenu';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 // import BGBanner from '@Public/svg/bgBanner.svg';
 
@@ -22,13 +25,20 @@ const Header: React.FC<_Header> = () => {
     }, []);
 
     return (
-        <header className={`${!scrollTop ? '' : 'scrolling'}`}>
-            <div className="container">
-                asdasd
-                {/* <Link href="/">
-                    <img src="https://sainboltapp.web.app/static/media/LogoSidebar.53b25a64.png" alt="" className="header__logo" />
+        <header className={`header-wrapper ${!scrollTop ? '' : 'scrolling'}`}>
+            <div className="app-container">
+                <Link href="/">
+                    <a className="hello">
+                        <Image
+                            alt="logo"
+                            width={140}
+                            height={55}
+                            src="https://sainboltapp.web.app/static/media/LogoSidebar.53b25a64.png"
+                            className="header__logo"
+                        />
+                    </a>
                 </Link>
-                <HomeMenu /> */}
+                <HomeMenu />
             </div>
         </header>
     );

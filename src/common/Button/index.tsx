@@ -1,5 +1,5 @@
-import { Link } from '@I18n/index';
 import clsx from 'clsx';
+import Link from 'next/link';
 interface _Button {
     label: string;
     type?: string;
