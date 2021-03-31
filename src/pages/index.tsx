@@ -1,7 +1,6 @@
 // import Nav from '../components/nav';
 import { Fragment } from 'react';
 import { _tValue } from '@Utils/index';
-
 import Meta from '@Components/Meta';
 import HomePageComponent from "@Components/Pages/Home";
 import Header from '@Components/Header';
@@ -18,8 +17,8 @@ export default function IndexPage(props) {
     );
 }
 
-export const getServerSideProps = async () => {
-    return {
-        props: {}, // will be passed to the page component as props
-    }
-};
+// export const getServerSideProps = async () => {
+//     return {
+//         props: {}, // will be passed to the page component as props
+//     }
+// };

@@ -7,6 +7,7 @@ import { actions } from '@Redux/actions/index';
 import Meta from '@Components/Meta';
 import Link from 'next/link';
 import { _homePageProps } from '@Config/models';
+import Banner from '@Common/Banner';
 
 
 const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
@@ -27,8 +28,10 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
 
     return (
         <main>
-            {/* <ViewSource /> */}
-        CONTENT          
+            <Banner />
+            <div className="test">
+
+            </div>
         </main>
     );
 }

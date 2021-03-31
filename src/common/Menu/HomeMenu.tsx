@@ -1,15 +1,16 @@
 import MenuItem from './MenuItem';
-import { memo, useRef, useState } from 'react';
-// import { faBars } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fragment, memo, useRef, useState } from 'react';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { LIST_MENU } from '@Config/contains';
 import Button from '@Common/Button';
+import { useRouter } from 'next/router';
 
 interface _HomeMenu {}
 
 const HomeMenu: React.FC<_HomeMenu> = () => {
-    const targetUrlPath = process.browser ? window.location.pathname : "";
+    const router = useRouter();
     const menuRef = useRef(null);
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -22,7 +23,7 @@ const HomeMenu: React.FC<_HomeMenu> = () => {
     return (
         <>
             <button onClick={toggleOpen} className="menu__collapse">
-                {/* <FontAwesomeIcon icon={faBars} /> */}
+                <FontAwesomeIcon icon={faBars} />
             </button>
             <div ref={menuRef} className={menuResponsiveClass}>
                 <ul className="menu__list">
@@ -31,19 +32,10 @@ const HomeMenu: React.FC<_HomeMenu> = () => {
                             key={item.name}
                             content={item.name}
                             href={item.href}
-                            active={targetUrlPath.indexOf(item.href) !== -1}
+                            active={router.pathname.indexOf(item.href) !== -1}
                         />
                     ))}
                 </ul>
-                <div className="menu__btn">
-                    <Button href="#" label="Sign in" link outline />
-                    <Button
-                        href="/second-page"
-                        label="Join academy"
-                        link
-                        outline
-                    />
-                </div>
             </div>
         </>
     );

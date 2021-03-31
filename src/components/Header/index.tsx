@@ -28,15 +28,9 @@ const Header: React.FC<_Header> = () => {
         <header className={`header-wrapper ${!scrollTop ? '' : 'scrolling'}`}>
             <div className="app-container">
                 <Link href="/">
-                    <a className="hello">
-                        <Image
-                            alt="logo"
-                            width={140}
-                            height={55}
-                            src="https://sainboltapp.web.app/static/media/LogoSidebar.53b25a64.png"
-                            className="header__logo"
-                        />
-                    </a>
+                    <div className="header__logo">
+                        <Image alt="logo" width={49} height={35} src="/images/logo.png" />
+                    </div>
                 </Link>
                 <HomeMenu />
             </div>

@@ -4,7 +4,8 @@ export const STATUS = {
 }
 
 export const LIST_MENU = [
-    { name: 'Second Page', href: '/second-page' },
+    { name: 'Trang chủ', href: '/' },
+    { name: 'Second page', href: '/second-page' },
     { name: 'Courses', href: '/courses' },
     { name: 'Testimonials', href: '/testimonials' },
     { name: 'Blog', href: '/blog' },

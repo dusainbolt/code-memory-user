@@ -1,13 +1,12 @@
-$color-primary: #fe6347;
+:root {
+    --color-primary: #fe6347;
+    --color-background-main: #ffffff;
+    --color-text-main: #233d62;
+    --color-text-inactive: #a6b0c1;
+}
 
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
-$font-weight-heavy: 900;
-
-$border-radius-light: 3px;
-$border-radius-medium: 5px;
-$border-radius-large: 10px;
-$border-radius-large-30: 30px;
-$border-radius-round: 50%;
+body[theme-data='_sainbolt-dark'] {
+    --color-background-main: black;
+    --color-text-main: green;
+    // --color-primary: gray;
+}

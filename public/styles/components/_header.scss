@@ -4,53 +4,16 @@
   position: sticky;
   top: 0px;
   z-index: 10000;
-  transition: box-shadow .3s;
+  transition: all .3s;
+  padding-top: 50px;
   &.scrolling {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px -2px;
-    background: var(--color-background-main);
+    padding-top: 20px !important;
   }
   .app-container {
     @include _flex_box(center, space-between)
   }
   .header__logo{
-
+    min-width: 140px;
   }
 }
 
-// @include _desktop() {
-//   .menu__wrap {
-//       position: fixed;
-//       top: 50px;
-//       bottom: 0;
-//       right: 0;
-//       z-index: 10;
-//       background-color: var(--color-background-main);
-//       width: 100%;
-//       transition: transform 0.25s linear;
-//       flex-direction: column;
-//       align-items: center;
-//       will-change: transform;
-//       transform: translateX(100%);
-//   }
-//   .menu__open {
-//       transform: translateX(0);
-//   }
-//   .menu__collapse {
-//       display: block;
-//   }
-//   .menu__list {
-//       flex-direction: column;
-//       align-items: center;
-//       margin-bottom: 40px;
-//       padding: 0;
-//       margin-right: 0;
-//   }
-//   .menu__btn {
-//       width: 1005px;
-//       flex-direction: column;
-
-//       .sign-in__link {
-//           margin-bottom: 20px;
-//       }
-//   }
-// }
