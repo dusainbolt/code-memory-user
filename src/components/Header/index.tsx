@@ -6,9 +6,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 // import BGBanner from '@Public/svg/bgBanner.svg';
 
-interface _Header {}
+interface _Header {
+    t: any
+}
 
-const Header: React.FC<_Header> = () => {
+const Header: React.FC<_Header> = ({ t }) => {
     const [scrollTop, setScrollTop] = useState(0);
 
     const onScroll = e => {
@@ -32,7 +34,7 @@ const Header: React.FC<_Header> = () => {
                         <Image alt="logo" width={49} height={35} src="/images/logo.png" />
                     </div>
                 </Link>
-                <HomeMenu />
+                <HomeMenu t={t}/>
             </div>
         </header>
     );

@@ -1,10 +1,10 @@
+import vn from '@Locales/vn';
 import en from '@Locales/en';
-import fr from '@Locales/fr';
 
 const actions = {
-    'en': en,
-    'fr': fr,
-    'default': en
+    'vn': vn,
+    'eng': en,
+    'default': vn
 }
 
 export const getLocale = (locale) => {

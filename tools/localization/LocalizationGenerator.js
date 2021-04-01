@@ -1,112 +1,44 @@
-const fs = require("fs");
-const readline = require("readline");
-const async = require("async");
-const path = require("path");
-const { google } = require("googleapis");
-const log4js = require("log4js");
-const { language } = require("googleapis/build/src/apis/language");
+const fs = require('fs');
+const readline = require('readline');
+const async = require('async');
+const path = require('path');
+const { google } = require('googleapis');
+const log4js = require('log4js');
 const logger = new log4js.getLogger();
-logger.level = "debug";
+logger.level = 'debug';
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = path.resolve(__dirname, "token.json");
-const CREDENTIALS_PATH = path.resolve(__dirname, "credentials.json");
-
+// make generator-localization-gc
+// window:  mingw32-make generator-localization-ekyc
+const TOKEN_PATH = path.resolve(__dirname, 'token.json');
+const CREDENTIALS_PATH = path.resolve(__dirname, 'credentials.json');
+let OUTPUT_LANG_INDEX;
 let SPREADSHEET_ID;
 let GID_ID;
-const OUTPUT_FOLDER = '../public/static/locales';
-const LIST_LANGUAGE = ['vn','en'];
-let LIST_DATA = [];
-const COL_KEY = 0;
-
-
-/**
- * Prints the names and majors of students in a sample spreadsheet:
- * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
- */
-function listMajors(auth) {
-  if (!SPREADSHEET_ID) {
-    logger.error("=======================================================");
-    logger.error("Input parameter is not enough!");
-    logger.error("=======================================================");
-
-    return;
-  }
-
-  let rangeSheet = "A2:H";
-  if (GID_ID) {
-    rangeSheet = `${GID_ID}!A2:H`;
-  }
-
-  const sheets = google.sheets({ version: "v4", auth });
-
-  async.waterfall(
-    [
-      next => {
-        sheets.spreadsheets.values.get(
-          {
-            spreadsheetId: SPREADSHEET_ID,
-            range: rangeSheet,
-          },
-          (err, res) => {
-            if (err) return logger.error(`The API returned an error: ${err}`);
-            const rows = res.data.values;
-
-            if (rows.length) {
-              rows.map((row, index) => {
-                row.forEach((colValue, colIndex) => {
-                  if(colIndex !== COL_KEY){
-                    LIST_DATA[colIndex-1] = {...LIST_DATA[colIndex-1], [row[COL_KEY]]: colValue};
-                  }
-                });
-              });
-              return next(null, LIST_DATA);
-            } else {
-              logger.info("No data found.");
-            }
-          }
-        );
-      },
-      (res, next) => {
-        res.forEach((languageItem, index) => {
-          fs.writeFile(`${OUTPUT_FOLDER}/${LIST_LANGUAGE[index]}/${GID_ID}.json`, JSON.stringify(languageItem, null, 2), ()=>{});
-        })
-        next(null, LIST_DATA);
-      },
-    ],
-    (err, res) => {
-      if (err) {
-        logger.error(err);
-      }
-      res.forEach((languageItem, index) => {
-        logger.info(`${OUTPUT_FOLDER}/${LIST_LANGUAGE[index]}/${GID_ID}.json` + "=> Generate file successful.");
-      })
-    }
-  );
-}
-
-
+let OUTPUT_FOLDER;
+let PLATFORM;
 process.argv.forEach((val, index, array) => {
-  const value = val.split("=");
-  // if (value[0] === "OUTPUT_LANG_INDEX") {
-  //   OUTPUT_LANG_INDEX = value[1];
-  // }
-  if (value[0] === "SPREADSHEET_ID") {
+  const value = val.split('=');
+  if (value[0] === 'OUTPUT_LANG_INDEX') {
+    OUTPUT_LANG_INDEX = value[1];
+  }
+  if (value[0] === 'SPREADSHEET_ID') {
     SPREADSHEET_ID = value[1];
   }
-  if (value[0] === "GID_ID") {
+  if (value[0] === 'GID_ID') {
     GID_ID = value[1];
   }
-  // if (value[0] === "OUTPUT_FOLDER") {
-  //   OUTPUT_FOLDER = value[1];
-  // }
+  if (value[0] === 'OUTPUT_FOLDER') {
+    OUTPUT_FOLDER = value[1];
+  }
+  if (value[0] === 'PLATFORM') {
+    PLATFORM = value[1];
+  }
 });
-
 // Load client secrets from a local file.
 fs.readFile(CREDENTIALS_PATH, (err, content) => {
   if (err) return logger.error(`Error loading client secret file: ${err}`);
@@ -140,7 +72,7 @@ function authorize(credentials, callback) {
  */
 function getNewToken(oAuth2Client, callback) {
   const authUrl = oAuth2Client.generateAuthUrl({
-    access_type: "offline",
+    access_type: 'offline',
     scope: SCOPES,
   });
   logger.info(`Authorize this app by visiting this url: ${authUrl}`);
@@ -148,17 +80,92 @@ function getNewToken(oAuth2Client, callback) {
     input: process.stdin,
     output: process.stdout,
   });
-  rl.question("Enter the code from that page here: ", code => {
+  rl.question('Enter the code from that page here: ', (code) => {
     rl.close();
     oAuth2Client.getToken(code, (err, token) => {
       if (err) return logger.error(`Error while trying to retrieve access token: ${err}`);
       oAuth2Client.setCredentials(token);
       // Store the token to disk for later program executions
-      fs.writeFile(TOKEN_PATH, JSON.stringify(token), err => {
+      fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
         if (err) return logger.error(err);
         logger.info(`Token stored to: ${TOKEN_PATH}`);
       });
       callback(oAuth2Client);
     });
   });
+}
+
+/**
+ * Prints the names and majors of students in a sample spreadsheet:
+ * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
+ */
+function listMajors(auth) {
+  if (!OUTPUT_LANG_INDEX || !SPREADSHEET_ID || !OUTPUT_FOLDER) {
+    logger.error('=======================================================');
+    logger.error('Input parameter is not enough!');
+    logger.error('=======================================================');
+
+    return;
+  }
+
+  let rangeSheet = 'A2:H';
+  if (GID_ID) {
+    rangeSheet = `${GID_ID}!A2:H`;
+  }
+
+  const sheets = google.sheets({ version: 'v4', auth });
+
+  async.waterfall(
+    [
+      (next) => {
+        sheets.spreadsheets.values.get(
+          {
+            spreadsheetId: SPREADSHEET_ID,
+            range: rangeSheet,
+          },
+          (err, res) => {
+            if (err) return logger.error(`The API returned an error: ${err}`);
+            const rows = res.data.values;
+            if (rows.length) {
+              let obj = {};
+              let keyScreen = rows[0][0];
+              let props = rows[0][1];
+              let groups = {};
+              rows.map((row, index) => {
+                if (row[0]) {
+                  keyScreen = row[0];
+                }
+                if (row[1]) {
+                  props = row[1];
+                }
+                groups = obj[keyScreen];
+
+                groups = {
+                  ...groups,
+                  [props]: `${row[OUTPUT_LANG_INDEX]}`,
+                };
+
+                obj[keyScreen] = groups;
+              });
+              
+              const fileData = 'export default ' + JSON.stringify(obj, null, 2).replace(/"([^"]+)":/g, '$1:');
+              return next(null, fileData);
+            } else {
+              logger.info('No data found.');
+            }
+          }
+        );
+      },
+      (res, next) => {
+        fs.writeFile(OUTPUT_FOLDER, res, next);
+      },
+    ],
+    (err, res) => {
+      if (err) {
+        logger.error(err);
+      }
+      logger.info('Generate localization file successful.');
+    }
+  );
 }

@@ -13,8 +13,8 @@ module.exports = {
     staticFolder: '/static',
   },
   i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
+    locales: ['vn', 'eng'],
+    defaultLocale: 'vn',
   },
   images: {
     domains: [process.env.DOMAIN_IMAGE_AMAZON, process.env.DOMAIN_SAINBOLT_APP],

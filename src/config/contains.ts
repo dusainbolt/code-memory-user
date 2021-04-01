@@ -4,12 +4,11 @@ export const STATUS = {
 }
 
 export const LIST_MENU = [
-    { name: 'Trang chủ', href: '/' },
-    { name: 'Second page', href: '/second-page' },
-    { name: 'Courses', href: '/courses' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Community', href: '/community' },
+    { name: 'txt_home', href: '/' },
+    { name: 'txt_blog', href: '/blog' },
+    { name: 'txt_about', href: '/about' },
+    { name: 'txt_services', href: '/service' },
+    { name: 'txt_contact', href: '/contact' },
 ];
 
 export const DARK_THEME = "_sainbolt-dark";

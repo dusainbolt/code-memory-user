@@ -9,8 +9,8 @@ import Footer from '@Components/Footer';
 export default function IndexPage(props) {
     return (
         <Fragment>
-            <Meta title={props.t.subtitle}/>
-            <Header />
+            <Meta title={props.t.home.title_page}/>
+            <Header t={props.t}/>
             <HomePageComponent {...props} />
             <Footer />
         </Fragment>
