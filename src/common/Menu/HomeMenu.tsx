@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { LIST_MENU } from '@Config/contains';
 import { useRouter } from 'next/router';
+import Button from '@Common/Button';
 
 interface _HomeMenu {
     t: any
@@ -37,6 +38,7 @@ const HomeMenu: React.FC<_HomeMenu> = ({ t }) => {
                         />
                     ))}
                 </ul>
+                <Button label={"Contact"} width={150} round />
             </div>
         </>
     );

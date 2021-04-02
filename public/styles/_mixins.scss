@@ -19,6 +19,21 @@
     transform: translate(-50%, -50%);
 }
 
+@mixin _position_side_draw() {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background-color: var(--color-background-main);
+    max-width: 300px;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    will-change: transform;
+    transform: translateX(100%);
+}
+
 @mixin _position($pos, $top, $right, $bottom, $left) {
     position: $pos;
     top: $top;

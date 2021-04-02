@@ -8,6 +8,7 @@ interface _Button {
     round?: boolean;
     link?: boolean;
     href?: string,
+    width?: number,
     onClick?: VoidFunction;
 }
 
@@ -19,6 +20,7 @@ const Button: React.FC<_Button> = ({
     round = false,
     link = false,
     href = "",
+    width = "",
     ...props
 }) => {
     const style = clsx(
@@ -29,12 +31,12 @@ const Button: React.FC<_Button> = ({
         round && 'round'
     );
     return !link ? (
-        <button type="button" className={style} {...props}>
+        <button style={{minWidth: `${width}px`}} type="button" className={style} {...props}>
             {label}
         </button>
     ) : (
         <Link href={href}>
-            <a className={style} {...props}>
+            <a style={{minWidth: `${width}px`}} className={style} {...props}>
                 {label}
             </a>
         </Link>

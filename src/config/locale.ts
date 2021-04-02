@@ -3,7 +3,7 @@ import en from '@Locales/en';
 
 const actions = {
     'vn': vn,
-    'eng': en,
+    'eng': vn,
     'default': vn
 }
 

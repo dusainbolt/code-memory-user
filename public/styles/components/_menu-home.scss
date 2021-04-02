@@ -2,20 +2,22 @@
 
 .menu {
     &__wrap {
-        display: flex;
+        @include _flex_box(center, flex-start);
+        width: max-content;
     }
     &__list {
         width: 100%;
-        display: flex;
+        @include _flex_box(center, flex-start);
         font-size: 17px;
         list-style: none;
         margin: 0px 22.5px 0px 0px;
         transform: translateY(10%);
     }
     &__item {
-        margin: 0 12.5px;
+        margin: 0 21.5px;
         position: relative;
         padding-bottom: 10px;
+        white-space: nowrap;
         // &::after {
         //     content: '';
         //     @include _position_center();
@@ -32,7 +34,8 @@
         //     // visibility: visible;
         //     opacity: 0.7;
         // }
-        &.active, &:hover {
+        &.active,
+        &:hover {
             .menu__link {
                 color: var(--color-text-main);
             }
@@ -44,7 +47,7 @@
         color: var(--color-text-inactive);
         font-weight: 700;
         font-size: 16px;
-        transition: all .3s;
+        transition: all 0.3s;
     }
     &__collapse {
         border: 0;
@@ -103,3 +106,31 @@
 //     margin: 0;
 //     padding: 0;
 // }
+
+@include _desktop() {
+    .menu__wrap {
+        @include _position_side_draw();
+    }
+    .menu__open {
+        transition: transform 0.25s linear;
+        transform: translateX(0);
+    }
+    .menu__collapse {
+        display: block;
+    }
+    .menu__list {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 0;
+        margin-right: 0;
+    }
+    .menu__btn {
+        width: 1005px;
+        flex-direction: column;
+
+        .sign-in__link {
+            margin-bottom: 20px;
+        }
+    }
+}
