@@ -16,9 +16,3 @@ export default function IndexPage(props) {
         </Fragment>
     );
 }
-
-// export const getServerSideProps = async () => {
-//     return {
-//         props: {}, // will be passed to the page component as props
-//     }
-// };

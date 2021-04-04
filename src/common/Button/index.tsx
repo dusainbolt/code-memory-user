@@ -7,8 +7,11 @@ interface _Button {
     outline?: boolean;
     round?: boolean;
     link?: boolean;
-    href?: string,
-    width?: number,
+    href?: string;
+    width?: number;
+    mTopBottom?: number;
+    mLeftRight?: number;
+    className?: string;
     onClick?: VoidFunction;
 }
 
@@ -19,24 +22,22 @@ const Button: React.FC<_Button> = ({
     outline = false,
     round = false,
     link = false,
-    href = "",
-    width = "",
+    href = '',
+    width = '',
+    className = '',
+    mTopBottom = 0,
+    mLeftRight = 0,
     ...props
 }) => {
-    const style = clsx(
-        'app-btn',
-        type,
-        shadow && 'shadow',
-        outline && 'outline',
-        round && 'round'
-    );
+    const style = clsx('app-btn', type, shadow && 'shadow', outline && 'outline', round && 'round', className);
+    const styleJsx = { width: `${width}px`, minWidth: `${width}px`, margin: `${mTopBottom}px ${mLeftRight}px` };
     return !link ? (
-        <button style={{minWidth: `${width}px`}} type="button" className={style} {...props}>
+        <button style={styleJsx} type="button" className={style} {...props}>
             {label}
         </button>
     ) : (
         <Link href={href}>
-            <a style={{minWidth: `${width}px`}} className={style} {...props}>
+            <a style={styleJsx} className={style} {...props}>
                 {label}
             </a>
         </Link>

@@ -1,23 +1,39 @@
-//Common function scss in system
+@import './variables';
 
-@mixin _desktop() {
-    @media (max-width: 940px) {
-        @content;
+@mixin _responsive($breakpoint) {
+    @if $breakpoint == _xs {
+        @media (max-width: $screen-xs) {
+            @content;
+        }
+    }
+    @if $breakpoint == _sm {
+        @media (max-width: $screen-sm) {
+            @content;
+        }
+    }
+    @if $breakpoint == _md {
+        @media (max-width: $screen-md) {
+            @content;
+        }
+    }
+    @if $breakpoint == _lg {
+        @media (max-width: $screen-lg) {
+            @content;
+        }
+    }
+    @if $breakpoint == _xl {
+        @media (max-width: $screen-xl) {
+            @content;
+        }
     }
 }
 
-@mixin _flex_box($align: center, $justify-content: center) {
-    display: flex;
-    align-items: $align;
-    justify-content: $justify-content;
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-@mixin _position_center() {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 @mixin _position_side_draw() {
     position: fixed;
@@ -34,6 +50,20 @@
     transform: translateX(100%);
 }
 
+
+@mixin _position-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin _flex_box($align: center, $justify-content: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify-content;
+}
+
 @mixin _position($pos, $top, $right, $bottom, $left) {
     position: $pos;
     top: $top;
@@ -45,45 +75,3 @@
 @mixin theme($property, $variable) {
     #{$property}: var($variable);
 }
-
-// @mixin _transform($property) {
-//     @include prefix((transform: $property));
-// }
-
-// @mixin _transition($property) {
-//     @include prefix((transition: $property));
-// }
-
-// @mixin _animation_name($name) {
-//     -webkit-animation-name: $name;
-//     -o-animation-name: $name;
-//     -ms-animation-name: $name;
-//     -moz-animation-name: $name;
-//     animation-name: $name;
-// }
-
-// @mixin _background_radient($value) {
-//     /* Safari 5.1, Chrome 10+ */
-//     background: -webkit-linear-gradient($value);
-//     /* Firefox 3.6+ */
-//     background: -moz-linear-gradient($value);
-//     /* IE 10+ */
-//     background: -ms-linear-gradient($value);
-//     /* Opera 11.10+ */
-//     background: -o-linear-gradient($value);
-// }
-
-// /// Mixin to prefix several properties at once
-// /// @author Hugo Giraudel
-// /// @param {Map} $declarations - Declarations to prefix
-// /// @param {List} $prefixes (()) - List of prefixes to print
-// @mixin prefix($declarations, $prefixes: (webkit moz ms o)) {
-//     @each $property, $value in $declarations {
-//         @each $prefix in $prefixes {
-//             #{'-' + $prefix + '-' + $property}: $value;
-//         }
-
-//         // Output standard non-prefixed declaration
-//         #{$property}: $value;
-//     }
-// }
