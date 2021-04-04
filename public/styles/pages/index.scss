@@ -1,36 +1,36 @@
-@import '../variables';
-@import '../mixins';
-@import '../extends';
+// @import '../variables';
+// @import '../mixins';
+// @import '../extends';
 
-.btnCenter {
-    color: red;
-}
+// .btnCenter {
+//     color: red;
+// }
 
-#__app_index {
-}
+// #__app_index {
+// }
 
-.container {
-    max-width: 1380px;
-    padding: 0 20px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 80px;
-}
-.next {
-    color: $color-primary;
-    background: wheat;
-}
+// .container {
+//     max-width: 1380px;
+//     padding: 0 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     height: 80px;
+// }
+// .next {
+//     color: $color-primary;
+//     background: wheat;
+// }
 
-.active {
-    background: white;
-}
+// .active {
+//     background: white;
+// }
 
-.message {
-    @extend %message;
-    &.error {
-        color: red;
-    }
-    &.success {
-        color: green;
-    }
-}
+// .message {
+//     @extend %message;
+//     &.error {
+//         color: red;
+//     }
+//     &.success {
+//         color: green;
+//     }
+// }

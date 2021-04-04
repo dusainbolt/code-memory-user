@@ -1,14 +1,15 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useAppSelector, useAppDispatch, RootState } from '@Redux/store';
 import { decrement } from '@Redux/reducer/indexReducer';
 import { _tValue } from '@Utils/index';
 import { actions } from '@Redux/actions/index';
-import Meta from '@Components/Meta';
-import Link from 'next/link';
-import { _homePageProps } from '@Config/models';
 import Banner from '@Common/Banner';
 
+interface _homePageProps {
+    t: object;
+    locale: string;
+    listBlogs: [];
+}
 
 const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
     const router = useRouter();
@@ -29,10 +30,13 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
     return (
         <main>
             <Banner />
-            <div className="test">
-
+            <div className="test row">
+                <div className="col-lg-3">HELLO</div>
+                <div className="col-lg-3">HELLO</div>
+                <div className="col-lg-3">HELLO</div>
+                <div className="col-lg-3">HELLO</div>
             </div>
         </main>
     );
-}
+};
 export default HomePageComponent;

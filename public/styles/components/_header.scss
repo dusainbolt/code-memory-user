@@ -1,19 +1,20 @@
-@import "../mixins";
+@import '../mixins';
 
-.header-wrapper {
-  position: sticky;
-  top: 0px;
-  z-index: 10000;
-  transition: all .3s;
-  padding-top: 50px;
-  &.scrolling {
-    padding-top: 20px !important;
-  }
-  .app-container {
-    @include _flex_box(center, space-between)
-  }
-  .header__logo{
-    min-width: 140px;
-  }
+.header {
+    &__wrapper {
+        position: sticky;
+        top: 0px;
+        z-index: 10000;
+        transition: all 0.3s;
+        padding-top: 50px;
+        &.scrolling {
+            padding-top: 20px !important;
+        }
+    }
+    &__container {
+        @include _flex_box(center, space-between);
+    }
+    &__logo {
+        min-width: 140px;
+    }
 }
-

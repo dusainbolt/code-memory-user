@@ -27,8 +27,8 @@ const Header: React.FC<_Header> = ({ t }) => {
     }, []);
 
     return (
-        <header className={`header-wrapper ${!scrollTop ? '' : 'scrolling'}`}>
-            <div className="app-container">
+        <header className={`header__wrapper ${!scrollTop ? '' : 'scrolling'}`}>
+            <div className="container header__container">
                 <Link href="/">
                     <div className="header__logo">
                         <Image alt="logo" width={49} height={35} src="/images/logo.png" />

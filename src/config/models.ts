@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export type _indexState = {
     count: number;
@@ -13,10 +13,3 @@ export type _ctxApp = {
     res: NextApiResponse; // HTTP response object (server only)
     err: any; // Error object if any error is encountered during the rendering
 };
-
-
-export type _homePageProps = {
-    t: object,
-    locale: string,
-    listBlogs: []
-}
