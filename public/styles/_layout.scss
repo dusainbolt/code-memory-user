@@ -20,7 +20,7 @@
 }
 
 .container {
-    // width: 1380px;
+    width: 100%;
     max-width: 1380px;
     padding: 0 20px;
     margin: auto;
@@ -52,6 +52,22 @@ $container_extraLarge: 1140px;
     }
 }
 
+@include _responsive(_xl) {
+    @each $col, $width in $gridConfig {
+        .col_xl-#{$col} {
+            width: #{$width};
+        }
+    }
+    @for $i from 1 through 10 {
+        .order_xl-#{$i} {
+            order: $i;
+        }
+    }
+    .container {
+        max-width: $container_extraLarge;
+    }
+}
+
 @include _responsive(_lg) {
     @each $col, $width in $gridConfig {
         .col_lg-#{$col} {
@@ -62,6 +78,9 @@ $container_extraLarge: 1140px;
         .order_lg-#{$i} {
             order: $i;
         }
+    }
+    .container {
+        max-width: $container_large;
     }
 }
 
@@ -76,6 +95,9 @@ $container_extraLarge: 1140px;
             order: $i;
         }
     }
+    .container {
+        max-width: $container_medium;
+    }
 }
 
 @include _responsive(_sm) {
@@ -88,6 +110,9 @@ $container_extraLarge: 1140px;
         .order_sm-#{$i} {
             order: $i;
         }
+    }
+    .container {
+        max-width: 100%;
     }
 }
 

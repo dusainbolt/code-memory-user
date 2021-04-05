@@ -30,7 +30,7 @@ const Button: React.FC<_Button> = ({
     ...props
 }) => {
     const style = clsx('app-btn', type, shadow && 'shadow', outline && 'outline', round && 'round', className);
-    const styleJsx = { width: `${width}px`, minWidth: `${width}px`, margin: `${mTopBottom}px ${mLeftRight}px` };
+    const styleJsx = { width: `${width}px`, minWidth: `${width}px`, margin: `${mTopBottom ? mTopBottom : ''}px ${mLeftRight ? mLeftRight : ''}px` };
     return !link ? (
         <button style={styleJsx} type="button" className={style} {...props}>
             {label}

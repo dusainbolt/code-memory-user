@@ -5,6 +5,9 @@
         @include _flex_box(center, flex-start);
         width: max-content;
     }
+    &__xs-wrap {
+        display: none;
+    }
     &__drawer-mask {
         cursor: pointer;
         width: 100vw;
@@ -14,8 +17,8 @@
         position: fixed;
         background: blanchedalmond;
         display: none;
-        animation: fadeIn .3s;
-        background: rgba(0,0,0,.45);
+        animation: fadeIn 0.3s;
+        background: rgba(0, 0, 0, 0.45);
     }
     &__list {
         width: 100%;
@@ -61,7 +64,12 @@
             display: none;
         }
         &__xs-wrap {
+            display: block;
             @include _position_side_draw();
+            button {
+                display: block;
+                margin: auto;
+            }
         }
         &__drawer-mask.mask__open {
             display: block;
