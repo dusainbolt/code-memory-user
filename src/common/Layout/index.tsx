@@ -29,22 +29,26 @@ interface _Col {
     mdOrder?: number;
     lgOrder?: number;
     xlOrder?: number;
+    className?: string;
 }
 
-export const Col: React.FC<_Col> = ({ children, xs, sm, md, lg, xl, xxl, xsOrder, smOrder, mdOrder, xlOrder, lgOrder }) => {
-    const colStyle = clsx({
-        [`col_xs-${xs}`]: xs,
-        [`col_sm-${sm}`]: sm,
-        [`col_md-${md}`]: md,
-        [`col_lg-${lg}`]: lg,
-        [`col_xl-${xl}`]: xl,
-        [`col-${xxl}`]: xxl,
-        [`order_xs-${xsOrder}`]: xs,
-        [`order_sm-${smOrder}`]: sm,
-        [`order_md-${mdOrder}`]: md,
-        [`order_lg-${lgOrder}`]: lg,
-        [`order_xl-${xlOrder}`]: xl,
-    });
+export const Col: React.FC<_Col> = ({ children, xs, sm, md, lg, xl, xxl, xsOrder, smOrder, mdOrder, xlOrder, lgOrder, className }) => {
+    const colStyle = clsx(
+        {
+            [`col_xs-${xs}`]: xs,
+            [`col_sm-${sm}`]: sm,
+            [`col_md-${md}`]: md,
+            [`col_lg-${lg}`]: lg,
+            [`col_xl-${xl}`]: xl,
+            [`col-${xxl}`]: xxl,
+            [`order_xs-${xsOrder}`]: xsOrder,
+            [`order_sm-${smOrder}`]: smOrder,
+            [`order_md-${mdOrder}`]: mdOrder,
+            [`order_lg-${lgOrder}`]: lgOrder,
+            [`order_xl-${xlOrder}`]: xlOrder,
+        },
+        className
+    );
     return <div className={colStyle}>{children}</div>;
 };
 

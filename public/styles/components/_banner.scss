@@ -21,10 +21,12 @@
     &__title {
         font-size: $base-fontSize + 45;
         padding-top: 80px;
+        line-height: 86px;
     }
     &__description {
         font-size: $base-fontSize + 2;
         color: var(--color-text-main-o4);
+        line-height: 27px;
     }
 }
 

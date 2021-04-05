@@ -9,7 +9,7 @@ interface _SecondWrap {
 const SecondWrap: React.FC<_SecondWrap> = ({}) => {
     return (
         <Box className="second-wrap__container" container>
-            <Typography weight={700} type="h2" center size={45} width={605}>
+            <Typography className="second-wrap__title" weight={700} type="h2" center size={45} width={605}>
                 Provide Awesome Service With Our Tools
             </Typography>
             <Typography className="second-wrap__description" weight={500} type="p" center size={20} width={603}>
