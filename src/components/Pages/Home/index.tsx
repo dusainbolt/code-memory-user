@@ -7,6 +7,7 @@ import Banner from '@Components/Pages/Home/banner';
 import SecondWrap from './second-wrap';
 import { Divider } from '@Common/Layout';
 import ThirdWrap from './third-wrap';
+import FourthWrap from './fourth-wrap';
 
 interface _homePageProps {
     t: object;
@@ -36,6 +37,8 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
             <Divider gutter={90} />
             <SecondWrap />
             <ThirdWrap />
+            <Divider gutter={60} />
+            <FourthWrap />
         </main>
     );
 };

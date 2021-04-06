@@ -7,11 +7,17 @@ interface _Typography {
     weight?: number;
     width?: number;
     size?: number;
+    lineHeight?: number;
 }
 
-const Typography: React.FC<_Typography> = ({ type, center, weight, children, width, className, size }) => {
+const Typography: React.FC<_Typography> = ({ type, center, weight, children, width, className, size, lineHeight }) => {
     const styles = clsx(className, { 'text-center': center });
-    const stylesJSX = { fontWeight: weight, maxWidth: width && `${width}px`, fontSize: size && `${size}px` };
+    const stylesJSX = {
+        fontWeight: weight,
+        maxWidth: width && `${width}px`,
+        fontSize: size && `${size}px`,
+        lineHeight: lineHeight && `${lineHeight}px`,
+    };
 
     const getTypography = {
         h1: (

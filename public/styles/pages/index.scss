@@ -27,13 +27,23 @@
     }
     &__card-title-service {
         font-size: $base-fontSize + 9;
-        line-height: 37.5px;
+        // line-height: 37.5px;
         margin-top: 29px;
     }
     &__card-description-service {
         font-size: $base-fontSize + 4;
-        line-height: 30px;
+        // line-height: 30px;
         margin-top: 14px;
         color: var(--color-text-main-05);
+    }
+}
+
+.fourth-wrap {
+    &__title-small{ 
+        color: var(--color-primary);
+        font-size: $base-fontSize + 4;
+    }
+    &__title-large {
+        font-size: $base-fontSize + 27;
     }
 }
