@@ -10,8 +10,8 @@ interface _Typography {
     lineHeight?: number;
 }
 
-const Typography: React.FC<_Typography> = ({ type, center, weight, children, width, className, size, lineHeight }) => {
-    const styles = clsx(className, { 'text-center': center });
+const Typography: React.FC<_Typography> = ({ type, center, weight, children, width, className = '', size, lineHeight }) => {
+    const styles = clsx('app-typography', className, { 'text-center': center });
     const stylesJSX = {
         fontWeight: weight,
         maxWidth: width && `${width}px`,
@@ -49,6 +49,11 @@ const Typography: React.FC<_Typography> = ({ type, center, weight, children, wid
             <h1 style={stylesJSX} className={styles}>
                 {children}
             </h1>
+        ),
+        span: (
+            <span style={stylesJSX} className={styles}>
+                {children}
+            </span>
         ),
         default: (
             <p style={stylesJSX} className={styles}>

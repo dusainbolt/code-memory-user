@@ -10,6 +10,7 @@ interface _Button {
     href?: string;
     width?: number;
     mTopBottom?: number;
+    height?:number,
     mLeftRight?: number;
     className?: string;
     onClick?: VoidFunction;
@@ -27,10 +28,11 @@ const Button: React.FC<_Button> = ({
     className = '',
     mTopBottom = 0,
     mLeftRight = 0,
+    height = 42,
     ...props
 }) => {
     const style = clsx('app-btn', type, shadow && 'shadow', outline && 'outline', round && 'round', className);
-    const styleJsx = { width: `${width}px`, minWidth: `${width}px`, margin: `${mTopBottom ? mTopBottom : ''}px ${mLeftRight ? mLeftRight : ''}px` };
+    const styleJsx = { width: `${width}px`, minWidth: `${width}px`, margin: `${mTopBottom}px ${mLeftRight}px`, height: `${height}px` };
     return !link ? (
         <button style={styleJsx} type="button" className={style} {...props}>
             {label}

@@ -46,4 +46,7 @@
     &__title-large {
         font-size: $base-fontSize + 27;
     }
+    &__button-wrap{
+        @include _flex_box();
+    }
 }

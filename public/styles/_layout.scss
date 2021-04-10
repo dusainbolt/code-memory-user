@@ -1,5 +1,3 @@
-@import './mixins';
-
 .row {
     display: flex;
     display: -webkit-flex; /* Safari */
@@ -45,6 +43,21 @@ $container_small: 540px;
 $container_medium: 720px;
 $container_large: 960px;
 $container_extraLarge: 1140px;
+
+@for $i from 0 through 100 {
+    .mt-#{$i} {
+      margin-top: #{$i}px !important;
+    }
+    .mr-#{$i} {
+      margin-right: #{$i}px !important;
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i}px !important;
+    }
+    .ml-#{$i} {
+      margin-left: #{$i}px !important;
+    }
+  }
 
 @each $col, $width in $gridConfig {
     .col-#{$col} {

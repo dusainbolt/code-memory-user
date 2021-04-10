@@ -1,5 +1,3 @@
-@import '../mixins';
-
 .menu {
     &__wrap {
         @include _flex_box(center, flex-start);
@@ -7,6 +5,7 @@
     }
     &__xs-wrap {
         display: none;
+        transition: transform 0.25s linear;
     }
     &__drawer-mask {
         cursor: pointer;
