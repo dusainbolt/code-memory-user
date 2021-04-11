@@ -34,10 +34,10 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
     return (
         <main>
             <Banner />
-            <Divider gutter={90} />
+            <Divider mCol={90} />
             <SecondWrap />
             <ThirdWrap />
-            <Divider gutter={60} />
+            <Divider mCol={60} />
             <FourthWrap />
         </main>
     );

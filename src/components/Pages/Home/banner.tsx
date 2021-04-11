@@ -16,13 +16,13 @@ const Banner: React.FC<_Banner> = ({}) => {
             <Row container className="banner__container">
                 <Col md={12} mdOrder={2} xxl={5}>
                     <Box className="banner__info-wrap">
-                        <Typography weight={700} className="banner__title" type="h1">
+                        <Typography fontWeight={700} className="banner__title" type="h1">
                             Xin chào mình là Du
                         </Typography>
-                        <Typography weight={500} className="banner__description">
+                        <Typography fontWeight={500} className="banner__description">
                             Increase productivity with simple to-do app. app to manage your personal budgets.
                         </Typography>
-                        <Button mTopBottom={38} label={'Hire Us Today'} width={206} round />
+                        <Button mCol={38} label={'Hire Us Today'} width={206} round />
                     </Box>
                 </Col>
                 <Col md={12} mdOrder={1} xxl={7}>

@@ -1,3 +1,4 @@
+import { Box } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
@@ -6,21 +7,24 @@ interface _ButtonIcon {
     label?: string;
     icon: any;
     className?: any;
-    size?: number;
+    sizeIcon?: number;
+    spaceLabel?: number;
+    fontSize?: number;
+    hoverIcon?: boolean;
     onClick?: VoidFunction;
 }
 
-const ButtonIcon: React.FC<_ButtonIcon> = ({ label = '', icon = '', className = '', size = 24, ...props }) => {
-    const style = clsx(className, 'app-icon-wrap');
-    const styleJsx = { fontSize: `${size}px` };
+const ButtonIcon: React.FC<_ButtonIcon> = ({ label = '', icon = '', fontSize, hoverIcon, spaceLabel, className = '', sizeIcon = 24, ...props }) => {
+    const style = clsx(className, 'app-icon-wrap', hoverIcon && 'hv');
+    const styleJsx = { fontSize: `${sizeIcon}px` };
 
     return label ? (
-        <div className={style}>
+        <Box className={style} {...props}>
             <FontAwesomeIcon style={styleJsx} className={className} icon={icon} />
-            <Typography weight={400} lineHeight={30} type="span">
+            <Typography ml={spaceLabel} fontWeight={400} fontSize={fontSize} lineHeight={30} type="span">
                 {label}
             </Typography>
-        </div>
+        </Box>
     ) : (
         <FontAwesomeIcon style={styleJsx} className={className} icon={icon} />
     );

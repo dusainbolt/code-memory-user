@@ -13,3 +13,28 @@ export type _ctxApp = {
     res: NextApiResponse; // HTTP response object (server only)
     err: any; // Error object if any error is encountered during the rendering
 };
+
+export type _styleLayout = {
+    width?: number;
+    minWidth?: number;
+    maxWidth?: number;
+    mCol?: number;
+    height?: number;
+    mRow?: number;
+    pTopBottom?: number;
+    pLeftRight?: number;
+    padding?: number;
+    margin?: number;
+    fontSize?: number;
+    fontWeight?: number;
+    lineHeight?: number;
+    className?: string;
+    opacity?: number;
+    flexBox?: boolean;
+    justify?: string;
+    mt?:number,
+    mr?:number,
+    mb?:number,
+    ml?:number,
+    hover?:boolean,
+};
