@@ -12,7 +12,7 @@ const Error = ({ statusCode }) => {
     return (
         <Fragment>
             <Meta title={t.subtitle} />
-            <Header />
+            {/* <Header /> */}
             <p>{statusCode ? statusCode : t.p2}</p>
             <Footer />
         </Fragment>

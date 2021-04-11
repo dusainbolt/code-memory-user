@@ -1,55 +1,65 @@
+import { _styleLayout } from '@Config/models';
+import { _getStyleLayout } from '@Utils/index';
 import clsx from 'clsx';
-
-interface _Row {
+interface _Row extends _styleLayout {
     children: any;
     container?: boolean;
-    className?: string;
 }
 
-export const Row: React.FC<_Row> = ({ children, container, className }) => {
-    const rowStyle = clsx(
-        'row',
-        {
-            container: container,
-        },
-        className
-    );
+export const Row: React.FC<_Row> = ({ children, container, ...props }) => {
+    const rowStyle = clsx({ row: true, container: container, ..._getStyleLayout(props) });
     return <div className={rowStyle}>{children}</div>;
 };
 
-interface _Col {
+interface _Col extends _styleLayout {
     children: any;
     xs?: number;
     sm?: number;
     md?: number;
     lg?: number;
-    xl: number;
+    xl?: number;
+    xxl?: number;
     xsOrder?: number;
     smOrder?: number;
     mdOrder?: number;
     lgOrder?: number;
+    xlOrder?: number;
 }
 
-export const Col: React.FC<_Col> = ({ children, xs, sm, md, lg, xl, xsOrder, smOrder, mdOrder, lgOrder }) => {
+export const Col: React.FC<_Col> = ({ children, xs, sm, md, lg, xl, xxl, xsOrder, smOrder, mdOrder, xlOrder, lgOrder, ...props }) => {
     const colStyle = clsx({
         [`col_xs-${xs}`]: xs,
         [`col_sm-${sm}`]: sm,
         [`col_md-${md}`]: md,
         [`col_lg-${lg}`]: lg,
-        [`col-${xl}`]: xl,
-        [`order_xs-${xsOrder}`]: xs,
-        [`order_sm-${smOrder}`]: sm,
-        [`order_md-${mdOrder}`]: md,
-        [`order_lg-${lgOrder}`]: lg,
+        [`col_xl-${xl}`]: xl,
+        [`col-${xxl}`]: xxl,
+        [`order_xs-${xsOrder}`]: xsOrder,
+        [`order_sm-${smOrder}`]: smOrder,
+        [`order_md-${mdOrder}`]: mdOrder,
+        [`order_lg-${lgOrder}`]: lgOrder,
+        [`order_xl-${xlOrder}`]: xlOrder,
+        ..._getStyleLayout(props),
     });
     return <div className={colStyle}>{children}</div>;
 };
 
-interface _Box {
-    children: any;
-    className: string;
+interface _Box extends _styleLayout {
+    children?: any;
+    className?: string;
+    container?: boolean;
 }
 
-export const Box: React.FC<_Box> = ({ className, children }) => {
-    return <div className={className}>{children}</div>;
+export const Box: React.FC<_Box> = ({ children, container, ...props }) => {
+    const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
+    return <div className={boxStyle}>{children}</div>;
+};
+
+interface _Divider extends _styleLayout {
+    line?: boolean;
+}
+
+export const Divider: React.FC<_Divider> = ({ line, ...props }) => {
+    const boxStyle = clsx({ 'app-divider': true, show: line, ..._getStyleLayout(props) });
+    return <hr className={boxStyle} />;
 };

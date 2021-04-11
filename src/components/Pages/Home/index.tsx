@@ -3,7 +3,11 @@ import { useAppSelector, useAppDispatch, RootState } from '@Redux/store';
 import { decrement } from '@Redux/reducer/indexReducer';
 import { _tValue } from '@Utils/index';
 import { actions } from '@Redux/actions/index';
-import Banner from '@Common/Banner';
+import Banner from '@Components/Pages/Home/banner';
+import SecondWrap from './second-wrap';
+import { Divider } from '@Common/Layout';
+import ThirdWrap from './third-wrap';
+import FourthWrap from './fourth-wrap';
 
 interface _homePageProps {
     t: object;
@@ -30,12 +34,11 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
     return (
         <main>
             <Banner />
-            <div className="test row">
-                <div className="col-lg-3">HELLO</div>
-                <div className="col-lg-3">HELLO</div>
-                <div className="col-lg-3">HELLO</div>
-                <div className="col-lg-3">HELLO</div>
-            </div>
+            <Divider mCol={90} />
+            <SecondWrap />
+            <ThirdWrap />
+            <Divider mCol={60} />
+            <FourthWrap />
         </main>
     );
 };

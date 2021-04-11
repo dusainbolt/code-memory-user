@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-interface _Button {
+import { _getStyleLayout } from '@Utils/index';
+import { _styleLayout } from '@Config/models';
+interface _Button extends _styleLayout {
     label: string;
     type?: string;
     shadow?: boolean;
@@ -8,10 +10,6 @@ interface _Button {
     round?: boolean;
     link?: boolean;
     href?: string;
-    width?: number;
-    mTopBottom?: number;
-    mLeftRight?: number;
-    className?: string;
     onClick?: VoidFunction;
 }
 
@@ -23,21 +21,25 @@ const Button: React.FC<_Button> = ({
     round = false,
     link = false,
     href = '',
-    width = '',
-    className = '',
-    mTopBottom = 0,
-    mLeftRight = 0,
+    onClick,
     ...props
 }) => {
-    const style = clsx('app-btn', type, shadow && 'shadow', outline && 'outline', round && 'round', className);
-    const styleJsx = { width: `${width}px`, minWidth: `${width}px`, margin: `${mTopBottom}px ${mLeftRight}px` };
+    const style = clsx({
+        'app-btn': true,
+        shadow: shadow,
+        outline: outline,
+        round: round,
+        [type]: type,
+        ..._getStyleLayout(props),
+    });
+
     return !link ? (
-        <button style={styleJsx} type="button" className={style} {...props}>
+        <button type="button" className={style} onClick={onClick}>
             {label}
         </button>
     ) : (
         <Link href={href}>
-            <a style={styleJsx} className={style} {...props}>
+            <a className={style} onClick={onClick}>
                 {label}
             </a>
         </Link>

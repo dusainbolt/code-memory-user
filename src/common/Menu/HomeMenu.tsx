@@ -1,5 +1,5 @@
 import MenuItem from './MenuItem';
-import { Fragment, memo, useRef, useState } from 'react';
+import { memo, useState } from 'react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
@@ -45,9 +45,8 @@ const HomeMenu: React.FC<_HomeMenu> = ({ t }) => {
                 <FontAwesomeIcon icon={faBars} />
             </button>
             <div className="menu__wrap">{renderMenu()}</div>
-            <div onClick={toggleOpen} className={menuDrawerMashClass}>
-                <div className={menuResponsiveClass}>{renderMenu()}</div>
-            </div>
+            <div onClick={toggleOpen} className={menuDrawerMashClass}></div>
+            <div className={menuResponsiveClass}>{renderMenu()}</div>
         </>
     );
 };

@@ -1,36 +1,49 @@
-// @import '../variables';
-// @import '../mixins';
-// @import '../extends';
+.second-wrap {
+    &__description {
+        margin-top: 14px;
+        margin-bottom: 51px;
+        color: var(--color-text-main-o4);
+        line-height: 30px;
+    }
+    &__title {
+        line-height: 54px;
+    }
+}
 
-// .btnCenter {
-//     color: red;
-// }
+.third-wrap {
+    &__card-wrap {
+        width: 88%;
+        margin: auto;
+    }
+    &__card-item {
+        width: 100%;
+        background: var(--color-background-main);
+        padding: 27px;
+        min-height: 100px;
+        border-radius: 30px;
+        &.active {
+            box-shadow: 0px 4px 60px rgba(254, 99, 71, 0.07);
+        }
+    }
+    &__card-title-service {
+        font-size: $base-fontSize + 9;
+        // line-height: 37.5px;
+        margin-top: 29px;
+    }
+    &__card-description-service {
+        font-size: $base-fontSize + 4;
+        // line-height: 30px;
+        margin-top: 14px;
+        color: var(--color-text-main-05);
+    }
+}
 
-// #__app_index {
-// }
-
-// .container {
-//     max-width: 1380px;
-//     padding: 0 20px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     height: 80px;
-// }
-// .next {
-//     color: $color-primary;
-//     background: wheat;
-// }
-
-// .active {
-//     background: white;
-// }
-
-// .message {
-//     @extend %message;
-//     &.error {
-//         color: red;
-//     }
-//     &.success {
-//         color: green;
-//     }
-// }
+.fourth-wrap {
+    &__title-small{ 
+        color: var(--color-primary);
+        font-size: $base-fontSize + 4;
+    }
+    &__title-large {
+        font-size: $base-fontSize + 27;
+    }
+}
