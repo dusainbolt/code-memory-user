@@ -15,10 +15,10 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
                 <Col md={12} xxl={4}>
                     <Box className="third-wrap__card-item">
                         <ImageWrapper {...sizeImageService} center alt="img-content-banner-1" src="/images/service_1.png" />
-                        <Typography center fontWeight={700} type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
+                        <Typography center fontWeight="bold" type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
                             Product Design
                         </Typography>
-                        <Typography center fontWeight={400} type="p" lineHeight={30} className="third-wrap__card-description-service">
+                        <Typography center fontWeight="regular" type="p" lineHeight={30} className="third-wrap__card-description-service">
                             We all love to share our wins. It;s a lot harder to share our failures. Behind every success there are often a lot{' '}
                         </Typography>
                     </Box>
@@ -26,10 +26,10 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
                 <Col md={12} xxl={4}>
                     <Box className="third-wrap__card-item active">
                         <ImageWrapper {...sizeImageService} center alt="img-content-banner-2" src="/images/service_2.png" />
-                        <Typography center fontWeight={700} type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
+                        <Typography center fontWeight="bold" type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
                             Product Design
                         </Typography>
-                        <Typography center fontWeight={400} type="p" lineHeight={30} className="third-wrap__card-description-service">
+                        <Typography center fontWeight="regular" type="p" lineHeight={30} className="third-wrap__card-description-service">
                             It's through mistakes that you actually can grow you get rid of everything that is not essential to makihave to get bad.
                         </Typography>
                     </Box>
@@ -37,10 +37,10 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
                 <Col md={12} xxl={4}>
                     <Box className="third-wrap__card-item">
                         <ImageWrapper {...sizeImageService} center alt="img-content-banner-3" src="/images/service_3.png" />
-                        <Typography center fontWeight={700} type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
+                        <Typography center fontWeight="bold"type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
                             Product Design
                         </Typography>
-                        <Typography center fontWeight={400} type="p" lineHeight={30} className="third-wrap__card-description-service">
+                        <Typography center fontWeight="regular" type="p" lineHeight={30} className="third-wrap__card-description-service">
                             We all love to share our wins. It;s a lot harder to share our failures. Behind every success there are often a lot
                         </Typography>
                     </Box>

@@ -29,8 +29,21 @@ $fontWeight: (
     light: 300,
     regular: 400,
     medium: 500,
+    medium-xl: 600,
     bold: 700,
     black: 900,
+);
+
+$borderRadius: (
+    4: 4,
+    6: 6,
+    8: 8,
+    10: 10,
+    15: 15,
+    20: 20,
+    30: 30,
+    50: 50,
+    60: 60,
 );
 
 $gridConfig: (
@@ -62,62 +75,89 @@ $container_extraLarge: 1140px;
     }
 }
 
-@for $i from 0 through 10 { 
-    .op-#{$i}{
+@each $name, $size in $borderRadius {
+    .br-#{$name} {
+        border-radius: #{$size}px;
+    }
+}
+
+@for $i from 0 through 10 {
+    .op-#{$i} {
         opacity: 0.1 * $i;
     }
 }
 
 @for $i from 0 through 1000 {
-    .mt-#{$i} {
-        margin-top: #{$i}px !important;
+    @if ($i % 2) == 0 {
+        .mt-#{$i} {
+            margin-top: #{$i}px !important;
+        }
+        .mr-#{$i} {
+            margin-right: #{$i}px !important;
+        }
+        .mb-#{$i} {
+            margin-bottom: #{$i}px !important;
+        }
+        .ml-#{$i} {
+            margin-left: #{$i}px !important;
+        }
+        .pt-#{$i} {
+            padding-top: #{$i}px !important;
+        }
+        .pr-#{$i} {
+            padding-right: #{$i}px !important;
+        }
+        .pb-#{$i} {
+            padding-bottom: #{$i}px !important;
+        }
+        .pl-#{$i} {
+            padding-left: #{$i}px !important;
+        }
+        .w-#{$i} {
+            width: #{$i}px;
+        }
+        .h-#{$i} {
+            height: #{$i}px;
+        }
+        .mi-w-#{$i} {
+            min-width: #{$i}px;
+        }
+        .ma-w-#{$i} {
+            max-width: #{$i}px;
+        }
+        .m-tb-#{$i} {
+            margin-top: #{$i}px;
+            margin-bottom: #{$i}px;
+        }
+        .m-lr-#{$i} {
+            margin-left: #{$i}px;
+            margin-right: #{$i}px;
+        }
+        .m-#{$i} {
+            margin: #{$i}px;
+        }
+        .p-tb-#{$i} {
+            padding-top: #{$i}px;
+            padding-bottom: #{$i}px;
+        }
+        .p-lr-#{$i} {
+            padding-left: #{$i}px;
+            padding-right: #{$i}px;
+        }
+        .p-#{$i} {
+            padding: #{$i}px;
+        }
+        .f-size-#{$i} {
+            font-size: #{$i}px;
+        }
+        .lh-#{$i} {
+            line-height: #{$i}px;
+        }
     }
-    .mr-#{$i} {
-        margin-right: #{$i}px !important;
-    }
-    .mb-#{$i} {
-        margin-bottom: #{$i}px !important;
-    }
-    .ml-#{$i} {
-        margin-left: #{$i}px !important;
-    }
-    .w-#{$i} {
-        width: #{$i}px;
-    }
-    .mi-w-#{$i} {
-        min-width: #{$i}px;
-    }
-    .ma-w-#{$i} {
-        max-width: #{$i}px;
-    }
-    .m-tb-#{$i} {
-        margin-top: #{$i}px;
-        margin-bottom: #{$i}px;
-    }
-    .m-lr-#{$i} {
-        margin-left: #{$i}px;
-        margin-right: #{$i}px;
-    }
-    .m-#{$i} {
-        margin: #{$i}px;
-    }
-    .p-tb-#{$i} {
-        padding-top: #{$i}px;
-        padding-bottom: #{$i}px;
-    }
-    .p-lr-#{$i} {
-        padding-left: #{$i}px;
-        padding-right: #{$i}px;
-    }
-    .p-#{$i} {
-        padding: #{$i}px;
-    }
-    .f-size-#{$i} {
-        font-size: #{$i}px;
-    }
-    .lh-#{$i} {
-        line-height: #{$i}px;
-    }
+}
+.center-block {
+    margin: auto;
+    display: block;
 }
 
 .flb {
@@ -143,11 +183,34 @@ $container_extraLarge: 1140px;
     justify-content: space-between;
 }
 
-.full-w { 
+.full-w {
     width: 100%;
     max-width: 100%;
 }
 
+.color-white {
+    color: var(--color-background-main);
+}
+
+.color-black {
+    color: var(--color-text-main);
+}
+
+.color-primary {
+    color: var(--color-primary);
+}
+
+.bg-white {
+    background: var(--color-background-main);
+}
+
+.bg-black {
+    background: var(--color-text-main);
+}
+
+.bg-primary {
+    background: var(--color-primary);
+}
 
 @each $col, $width in $gridConfig {
     .col-#{$col} {
@@ -247,6 +310,18 @@ $container_extraLarge: 1140px;
 .text-center {
     text-align: center;
     margin: auto;
+}
+
+.al-center {
+    text-align: center;
+}
+
+.al-left {
+    text-align: left;
+}
+
+.al-right {
+    text-align: right;
 }
 
 .img-app-wrap {

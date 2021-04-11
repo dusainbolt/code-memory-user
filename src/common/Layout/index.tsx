@@ -63,3 +63,19 @@ export const Divider: React.FC<_Divider> = ({ line, ...props }) => {
     const boxStyle = clsx({ 'app-divider': true, show: line, ..._getStyleLayout(props) });
     return <hr className={boxStyle} />;
 };
+
+interface _List extends _styleLayout {
+}
+
+export const List: React.FC<_List> = ({ children, ...props }) => {
+    const boxStyle = clsx({ 'app-list': true, ..._getStyleLayout(props) });
+    return <ul className={boxStyle}>{children}</ul>
+};
+
+interface _ListItem extends _styleLayout {
+}
+
+export const ListItem: React.FC<_ListItem> = ({ children, ...props }) => {
+    const boxStyle = clsx({ 'app-list-item': true, ..._getStyleLayout(props) });
+    return <li className={boxStyle}>{children}</li>
+};

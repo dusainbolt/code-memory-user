@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, AxiosInstance } from 'axios'
-import crypto from "crypto-js";
+// import crypto from "crypto-js";
 
 class AxiosServer {
     private instance: AxiosInstance
@@ -44,13 +44,14 @@ class AxiosServer {
     getFullUrl(url): string {
         url =  !url.startsWith('/') ? "/" + url : url;
         const timeStamp = Date.now()
-        let hash_key = `${process.env.REACT_APP_API_KEY}_${timeStamp}_${url}`
-        this.instance.defaults.headers.common['hash_key'] = crypto
-            .MD5(hash_key)
-            .toString()
+        return url;
+        // let hash_key = `${process.env.REACT_APP_API_KEY}_${timeStamp}_${url}`
+        // this.instance.defaults.headers.common['hash_key'] = crypto
+        //     .MD5(hash_key)
+        //     .toString()
 
-        this.instance.defaults.headers.common['timestamp'] = timeStamp
-        return `${process.env.REACT_APP_API_URL}` + url
+        // this.instance.defaults.headers.common['timestamp'] = timeStamp
+        // return `${process.env.REACT_APP_API_URL}` + url
     }
 
     get(endpoint: string, params: any = {}): Promise<any> {

@@ -21,20 +21,29 @@ export type _styleLayout = {
     mCol?: number;
     height?: number;
     mRow?: number;
-    pTopBottom?: number;
-    pLeftRight?: number;
+    pCol?: number;
+    pRow?: number;
     padding?: number;
     margin?: number;
     fontSize?: number;
-    fontWeight?: number;
+    fontWeight?: string;
     lineHeight?: number;
     className?: string;
     opacity?: number;
     flexBox?: boolean;
     justify?: string;
-    mt?:number,
-    mr?:number,
-    mb?:number,
-    ml?:number,
-    hover?:boolean,
+    mt?: number;
+    mr?: number;
+    mb?: number;
+    ml?: number;
+    pt?: number;
+    pr?: number;
+    pb?: number;
+    pl?: number;
+    hover?: boolean;
+    color?: string;
+    center?: boolean;
+    align?: string;
+    background?: string;
+    radius?: number;
 };
