@@ -21,7 +21,7 @@ const ButtonIcon: React.FC<_ButtonIcon> = ({ label = '', icon = '', fontSize, ho
     return label ? (
         <Box className={style} {...props}>
             <FontAwesomeIcon style={styleJsx} className={className} icon={icon} />
-            <Typography ml={spaceLabel} fontWeight={400} fontSize={fontSize} lineHeight={30} type="span">
+            <Typography ml={spaceLabel} fontWeight="regular" fontSize={fontSize} lineHeight={30} type="span">
                 {label}
             </Typography>
         </Box>
