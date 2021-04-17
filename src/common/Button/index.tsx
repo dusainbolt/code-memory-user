@@ -9,6 +9,7 @@ interface _Button extends _styleLayout {
     outline?: boolean;
     round?: boolean;
     link?: boolean;
+    submit?: boolean;
     href?: string;
     onClick?: VoidFunction;
 }
@@ -16,11 +17,12 @@ interface _Button extends _styleLayout {
 const Button: React.FC<_Button> = ({
     label = '',
     type = 'primary',
-    shadow = false,
-    outline = false,
-    round = false,
-    link = false,
+    shadow,
+    outline,
+    round,
+    link,
     href = '',
+    submit,
     onClick,
     ...props
 }) => {
@@ -34,7 +36,7 @@ const Button: React.FC<_Button> = ({
     });
 
     return !link ? (
-        <button type="button" className={style} onClick={onClick}>
+        <button type={submit ? 'submit' : `button`} className={style} onClick={onClick}>
             {label}
         </button>
     ) : (

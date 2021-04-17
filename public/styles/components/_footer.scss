@@ -1,7 +1,22 @@
 .footer {
-    // height: 500px;
     width: 100%;
     background-color: var(--color-bg-footer);
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
+    &__email-input {
+        font-size: 22px;
+        font-weight: 400px;
+    }
+}
+
+@include _responsive(_sm) {
+    .footer {
+        &__email-input-wrap {
+            flex-direction: column;
+            padding: 15px 38px;
+        }
+        button {
+            max-width: 80%;
+        }
+    }
 }

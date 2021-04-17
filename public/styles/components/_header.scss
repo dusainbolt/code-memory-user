@@ -4,9 +4,9 @@
         top: 0px;
         z-index: 10000;
         transition: all 0.3s;
-        padding-top: 50px;
+        padding-top: 20px;
         &.scrolling {
-            padding-top: 20px !important;
+            // padding-top: 20px !important;
         }
     }
     &__container {

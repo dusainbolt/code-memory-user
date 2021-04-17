@@ -1,11 +1,7 @@
-// import { Link } from '@I18n/index';
-// import HomeMenu from '@Common/Menu/HomeMenu';
 import HomeMenu from '@Common/Menu/HomeMenu';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-// import BGBanner from '@Public/svg/bgBanner.svg';
-
 interface _Header {
     t: any
 }

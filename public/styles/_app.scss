@@ -3,15 +3,16 @@
 @import './mixins';
 @import './typography';
 @import './components/_button';
-@import './components/_collapspe';
-@import './components/_menu-home';
-@import './components/_header';
-@import './components/_image-lazy';
-@import './components/_banner';
+@import './layout';
+@import './components/collapspe';
+@import './components/menu-home';
+@import './components/header';
+@import './components/image-lazy';
+@import './components/banner';
+@import './components/form';
 @import './components/icon-them';
 @import './components/footer';
 @import './components/list';
-@import './layout';
 
 // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');

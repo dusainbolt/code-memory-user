@@ -117,7 +117,7 @@ $container_extraLarge: 1140px;
             width: #{$i}px;
         }
         .h-#{$i} {
-            height: #{$i}px;
+            min-height: #{$i}px;
         }
         .mi-w-#{$i} {
             min-width: #{$i}px;
@@ -147,7 +147,7 @@ $container_extraLarge: 1140px;
         .p-#{$i} {
             padding: #{$i}px;
         }
-        .f-size-#{$i} {
+        .f-sz-#{$i} {
             font-size: #{$i}px;
         }
         .lh-#{$i} {

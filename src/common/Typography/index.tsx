@@ -11,13 +11,6 @@ interface _Typography extends _styleLayout {
 const Typography: React.FC<_Typography> = ({ type, center, children,... props }) => {
     const styles = clsx({ 'app-typography': true, 'text-center': center, ..._getStyleLayout(props) });
     
-    // const stylesJSX = {
-    //     fontWeight: weight,
-    //     maxWidth: width && `${width}px`,
-    //     fontSize: size && `${size}px`,
-    //     lineHeight: lineHeight && `${lineHeight}px`,
-    // };
-
     const getTypography = {
         h1: <h1 className={styles}>{children}</h1>,
         h2: <h1 className={styles}>{children}</h1>,

@@ -18,6 +18,7 @@ export type _styleLayout = {
     width?: number;
     minWidth?: number;
     maxWidth?: number;
+    fullWidth?: boolean;
     mCol?: number;
     height?: number;
     mRow?: number;
