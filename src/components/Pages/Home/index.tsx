@@ -8,6 +8,7 @@ import SecondWrap from './second-wrap';
 import { Divider } from '@Common/Layout';
 import ThirdWrap from './third-wrap';
 import FourthWrap from './fourth-wrap';
+import { useEffect } from 'react';
 
 interface _homePageProps {
     t: object;
@@ -15,7 +16,7 @@ interface _homePageProps {
     listBlogs: [];
 }
 
-const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
+const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs }) => {
     const router = useRouter();
     const count = useAppSelector((state: RootState) => state._indexState.count);
     const dispatch = useAppDispatch();
@@ -30,6 +31,12 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
     const onTestDispatchSaga = () => {
         dispatch(actions.getDemo({ data: 'HELLO' }));
     };
+
+    useEffect(()=>{
+        dispatch(actions.getDemo({ data: 'HELLO' }));
+    }, []);
+
+    console.log(listBlogs);
 
     return (
         <main>

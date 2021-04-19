@@ -1,5 +1,4 @@
 import Footer from '@Components/Footer';
-import Header from '@Components/Header';
 import Meta from '@Components/Meta';
 import { getLocale } from '@Config/locale';
 import { useRouter } from 'next/router';
@@ -18,13 +17,10 @@ const Error = ({ statusCode }) => {
         </Fragment>
     );
 };
-// Error.getInitialProps = async ({ res, err }) => {
-//     let statusCode = null;
-//     if (res) {
-//         ({ statusCode } = res);
-//     } else if (err) {
-//         ({ statusCode } = err);
-//     }
-// };
+
+Error.getInitialProps = ({ res, err }) => {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+    return { statusCode };
+};
 
 export default Error;

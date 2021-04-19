@@ -7,6 +7,7 @@ module.exports = {
         // Pass through env variables
         ENV_HOST_NAME: process.env.ENV_HOST_NAME,
         ENV_PORT: process.env.ENV_PORT,
+        APOLLO_SERVER_URL: process.env.APOLLO_SERVER_URL,
         DOMAIN_IMAGE_AMAZON: process.env.DOMAIN_IMAGE_AMAZON,
         DOMAIN_SAINBOLT_APP: process.env.DOMAIN_SAINBOLT_APP,
     },

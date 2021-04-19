@@ -5,20 +5,28 @@ import Meta from '@Components/Meta';
 import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
+import { gql } from '@apollo/client';
+import client from '@Services/apollo-connect';
+import { getDataUsers } from '@Services/userRequest';
 
 export default function IndexPage(props) {
+    console.log(props);
     return (
         <Fragment>
             <Meta title={props.t.home.title_page} />
             <Header t={props.t} />
-            <HomePageComponent {...props} />
+            GET STATIC PROPS PAGE
+            {/* <HomePageComponent {...props} /> */}
             <Footer />
         </Fragment>
     );
 }
 
 export async function getStaticProps(context) {
+    const { data: { users } } = await getDataUsers();
     return {
-        props: { listBlogs: "heloo" }, // will be passed to the page component as props
+        props: {
+            users: users,
+        },
     };
 }
