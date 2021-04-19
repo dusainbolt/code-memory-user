@@ -1,12 +1,15 @@
 .header {
     &__wrapper {
-        position: sticky;
+        // position: sticky;
         top: 0px;
         z-index: 10000;
         transition: all 0.3s;
-        padding-top: 20px;
+        padding: 20px 0;
         &.scrolling {
-            // padding-top: 20px !important;
+            position: sticky;
+            animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+            box-shadow: 0 10px 15px #19191908;
+            background-color: var(--color-background-main);
         }
     }
     &__container {

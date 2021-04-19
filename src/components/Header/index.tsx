@@ -12,18 +12,24 @@ const Header: React.FC<_Header> = ({ t }) => {
     const onScroll = e => {
         const scrollHeight = e.target.documentElement.scrollTop;
         // top > 0 || top = 0
-        if ((!scrollTop && scrollHeight) || !scrollHeight) {
-            setScrollTop(scrollHeight);
-        }
+        // if ((!scrollTop && scrollHeight) || !scrollHeight) {
+        //     setScrollTop(scrollHeight);
+        // }
+
+        setScrollTop(scrollHeight);
+
         //not remove setScrolling(e.target.documentElement.scrollTop > scrollTop);
     };
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
+        window.scroll({top: 0, left: 0, behavior: 'smooth'});
     }, []);
 
+    console.log(scrollTop);
+
     return (
-        <header className={`header__wrapper ${!scrollTop ? '' : 'scrolling'}`}>
+        <header className={`header__wrapper ${scrollTop > 500 ? 'scrolling' : ''}`}>
             <div className="container header__container">
                 <Link href="/">
                     <div className="header__logo">

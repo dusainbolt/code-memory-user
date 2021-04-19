@@ -16,3 +16,6 @@
  `generator-localization-sainbolt-app` or change it if you want
 6. ==Result==
 ### 
+
+# 3.Generator css Overload to best performance
+`sass --watch public/styles/watch/`

@@ -19,6 +19,8 @@ export type _styleLayout = {
     minWidth?: number;
     maxWidth?: number;
     fullWidth?: boolean;
+    flexCol?: boolean;
+    alignItem?: string;
     mCol?: number;
     height?: number;
     mRow?: number;

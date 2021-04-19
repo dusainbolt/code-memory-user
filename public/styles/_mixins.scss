@@ -1,5 +1,16 @@
 @import './variables';
 
+@keyframes fadeInDown {
+    0% {
+       opacity: 0.5;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+} 
+
 @mixin _responsive($breakpoint) {
     @if $breakpoint == _xs {
         @media (max-width: $screen-xs) {

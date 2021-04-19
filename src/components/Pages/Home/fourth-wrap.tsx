@@ -34,7 +34,7 @@ const FourthWrap: React.FC<_FourthWrap> = ({}) => {
                 </Box>
             </Col>
             <Col md={12} xxl={7}>
-                <ImageWrapper width={795} height={498} alt="img-content-banner-3" src="/images/imgAbout.png" />
+                <ImageWrapper width={795} height={498} alt="img-content-banner-3" src="/images/img_about.png" />
             </Col>
         </Row>
     );

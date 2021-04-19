@@ -10,6 +10,9 @@ export const _tValue = (_tText: string, params: object = {}) => {
 
 export const _getStyleLayout = (props) => ({
     'flb': props.flexBox,
+    'flb-col': props.flexCol,
+    [`flb-al-${props.alignItem}`]: props.alignItem,
+    [`flb-jt-${props.justify}`]: props.justify,
     'hv': props.hover,
     'center-block': props.center,
     'full-w': props.fullWidth,
@@ -29,7 +32,6 @@ export const _getStyleLayout = (props) => ({
     [`lh-${props.lineHeight}`]: props.lineHeight,
     [`op-${props.opacity}`]: props.opacity,
     [`op-${props.opacity}`]: props.opacity,
-    [`flb-jt-${props.justify}`]: props.justify,
     [`mt-${props.mt}`]: props.mt,
     [`mr-${props.mr}`]: props.mr,
     [`mb-${props.mb}`]: props.mb,

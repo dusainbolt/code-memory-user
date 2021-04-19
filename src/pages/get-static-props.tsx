@@ -22,11 +22,11 @@ export default function IndexPage(props) {
     );
 }
 
-export async function getStaticProps(context) {
-    const { data: { users } } = await getDataUsers();
-    return {
-        props: {
-            users: users,
-        },
-    };
-}
+// export async function getStaticProps(context) {
+//     const { data: { users } } = await getDataUsers();
+//     return {
+//         props: {
+//             users: users,
+//         },
+//     };
+// }

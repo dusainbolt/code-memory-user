@@ -8,11 +8,12 @@ const Error = ({ statusCode }) => {
     const router = useRouter();
     const { locale } = router;
     const t = getLocale(locale);
+    
     return (
         <Fragment>
-            <Meta title={t.subtitle} />
+            <Meta title={t.home.title_page} />
             {/* <Header /> */}
-            <p>{statusCode ? statusCode : t.p2}</p>
+            <p>{statusCode ? statusCode : t.home.title_page}</p>
             <Footer />
         </Fragment>
     );

@@ -11,7 +11,7 @@ const Banner: React.FC<_Banner> = ({}) => {
     return (
         <Box className="banner">
             <Box className="banner__background_image_fix">
-                <Image alt="banner__background_image_fix" width={1322} quality={85} height={708} src="/images/bgBannerFix.png" />
+                <Image alt="banner__background_image_fix" width={1322} quality={85} height={708} src="/images/bg_banner_fix.png" />
             </Box>
             <Row container className="banner__container">
                 <Col md={12} mdOrder={2} xxl={5}>
@@ -27,7 +27,7 @@ const Banner: React.FC<_Banner> = ({}) => {
                 </Col>
                 <Col md={12} mdOrder={1} xxl={7}>
                     <Box className="banner__img-content-banner">
-                        <Image width={787} alt="img-content-banner" quality={85} height={637} src="/images/imgBanner.png" />
+                        <Image width={787} alt="img-content-banner" quality={85} height={637} src="/images/img_banner.png" />
                     </Box>
                 </Col>
             </Row>

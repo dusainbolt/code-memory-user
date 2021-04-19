@@ -9,6 +9,7 @@ import { Divider } from '@Common/Layout';
 import ThirdWrap from './third-wrap';
 import FourthWrap from './fourth-wrap';
 import { useEffect } from 'react';
+import FiveWrap from './five-wrap';
 
 interface _homePageProps {
     t: object;
@@ -46,6 +47,8 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs }) =
             <ThirdWrap />
             <Divider mCol={60} />
             <FourthWrap />
+            <Divider mCol={60} />
+            <FiveWrap />
         </main>
     );
 };
