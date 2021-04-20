@@ -11,6 +11,23 @@
     }
 } 
 
+@keyframes fadeInDownComponent {
+    0% {
+       opacity: 0;
+       transform: translateY(-150px);
+    }
+    3% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(5px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+} 
+
 @mixin _responsive($breakpoint) {
     @if $breakpoint == _xs {
         @media (max-width: $screen-xs) {

@@ -23,6 +23,7 @@ export type _styleLayout = {
     alignItem?: string;
     mCol?: number;
     height?: number;
+    minHeightPercent?: number;
     mRow?: number;
     pCol?: number;
     pRow?: number;
@@ -45,8 +46,9 @@ export type _styleLayout = {
     pl?: number;
     hover?: boolean;
     color?: string;
-    center?: boolean;
+    centerBlock?: boolean;
     align?: string;
     background?: string;
     radius?: number;
+    fadeInComponent?: boolean;
 };

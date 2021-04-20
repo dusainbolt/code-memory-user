@@ -10,6 +10,8 @@ import ThirdWrap from './third-wrap';
 import FourthWrap from './fourth-wrap';
 import { useEffect } from 'react';
 import FiveWrap from './five-wrap';
+import LazyLoad from 'react-lazyload';
+import LazyComponent from '@Common/LazyComponent';
 
 interface _homePageProps {
     t: object;
@@ -33,7 +35,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs }) =
         dispatch(actions.getDemo({ data: 'HELLO' }));
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(actions.getDemo({ data: 'HELLO' }));
     }, []);
 
@@ -44,9 +46,13 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs }) =
             <Banner />
             <Divider mCol={90} />
             <SecondWrap />
-            <ThirdWrap />
+            <LazyComponent offset={0} throttle={100}>
+                <ThirdWrap />
+            </LazyComponent>
             <Divider mCol={60} />
-            <FourthWrap />
+            <LazyComponent offset={0} throttle={100}>
+                <FourthWrap />
+            </LazyComponent>
             <Divider mCol={60} />
             <FiveWrap />
         </main>

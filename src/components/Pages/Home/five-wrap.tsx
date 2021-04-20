@@ -15,10 +15,10 @@ const FiveWrap: React.FC<_FiveWrap> = ({}) => {
     return (
         <Row className="fourth-wrap" container>
             <Col md={12} xxl={6}>
-                <ImageWrapper center width={520} height={520} alt="img-content-banner-3" src="/images/avatar_home_page.png" />
+                <ImageWrapper width={526} height={526} alt="img-content-banner-3" src="/images/avatar_home_page.png" />
             </Col>
             <Col md={12} xxl={6}>
-                <Box flexBox flexCol alignItem="start" mt={60}>
+                <Box flexBox minHeightPercent={90} flexCol alignItem="start">
                     <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap__title-small">
                         About Us
                     </Typography>

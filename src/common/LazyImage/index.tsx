@@ -7,6 +7,7 @@ interface _LazyImage {
     smallSrc: string;
 }
 
+//using when page many image or image first time
 const LazyImage: React.FC<_LazyImage> = ({ largeSrc, smallSrc }) => {
     const [isSmallImageLoaded, loadSmallImage] = useState(false);
     const [isLargeImageLoaded, loadLargeImage] = useState(false);

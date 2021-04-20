@@ -18,12 +18,12 @@ const Footer = ({}) => {
         <footer>
             <Box className="footer">
                 <Box container>
-                    <Typography type="h4" fontWeight="bold" pt={128} color="white" fontSize={44} center maxWidth={556}>
+                    <Typography type="h4" fontWeight="bold" pt={128} color="white" fontSize={44} textCenter centerBlock maxWidth={556}>
                         Have Question in mind? Let us help you
                     </Typography>
                     <Box
                         className="footer__email-input-wrap"
-                        center
+                        centerBlock
                         pRow={38}
                         pCol={20}
                         flexBox

@@ -2,6 +2,11 @@
 @import '../variables';
 @import '../mixins';
 
+.center-block {
+    margin: auto;
+    display: block;
+}
+
 .row {
     display: flex;
     display: -webkit-flex; /* Safari */
@@ -93,29 +98,34 @@ $container_extraLarge: 1140px;
 
 @for $i from 0 through 1000 {
     @if ($i % 2) == 0 {
+        @if $i <= 100 {
+            .mhp-#{$i} {
+                min-height: $i/100*100%;
+            }
+        }
         .mt-#{$i} {
-            margin-top: #{$i}px !important;
+            margin-top: #{$i}px;
         }
         .mr-#{$i} {
-            margin-right: #{$i}px !important;
+            margin-right: #{$i}px;
         }
         .mb-#{$i} {
-            margin-bottom: #{$i}px !important;
+            margin-bottom: #{$i}px;
         }
         .ml-#{$i} {
-            margin-left: #{$i}px !important;
+            margin-left: #{$i}px;
         }
         .pt-#{$i} {
-            padding-top: #{$i}px !important;
+            padding-top: #{$i}px;
         }
         .pr-#{$i} {
-            padding-right: #{$i}px !important;
+            padding-right: #{$i}px;
         }
         .pb-#{$i} {
-            padding-bottom: #{$i}px !important;
+            padding-bottom: #{$i}px;
         }
         .pl-#{$i} {
-            padding-left: #{$i}px !important;
+            padding-left: #{$i}px;
         }
         .w-#{$i} {
             width: #{$i}px;
@@ -158,10 +168,6 @@ $container_extraLarge: 1140px;
             line-height: #{$i}px;
         }
     }
-}
-.center-block {
-    margin: auto;
-    display: block;
 }
 
 .flb {
@@ -316,7 +322,6 @@ $container_extraLarge: 1140px;
 
 .text-center {
     text-align: center;
-    margin: auto;
 }
 
 .al-center {
@@ -330,6 +335,23 @@ $container_extraLarge: 1140px;
 .al-right {
     text-align: right;
 }
+
+.fade-cp {
+    opacity: 0;
+    animation: 2s ease-in-out 0.1s forwards running fadeInDownComponent;
+}
+
+
+.fade-cp-1 {
+    opacity: 0;
+    animation: 2s ease-in-out 0.5s forwards running fadeInDownComponent;
+}
+
+.fade-cp-2 {
+    opacity: 0;
+    animation: 2s ease-in-out 1s forwards running fadeInDownComponent;
+}
+
 
 .img-app-wrap {
     &.center {
