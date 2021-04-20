@@ -1,14 +1,23 @@
-@import './variables';
-
 @keyframes fadeInDown {
     0% {
-       opacity: 0.5;
-       transform: translateY(-20px);
-    }
-    100% {
-       opacity: 1;
-       transform: translateY(0);
-    }
+        opacity: 0.5;
+        transform: translateY(-20px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateY(0);
+     }
+} 
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+        transform: scale(1.2);
+     }
+     100% {
+        opacity: 1;
+        transform: scale(1.1);
+     }
 } 
 
 @keyframes fadeInDownComponent {
@@ -27,6 +36,42 @@
        transform: translateY(0);
     }
 } 
+
+@keyframes fadeInRightComponent {
+    0% {
+       opacity: 0;
+       transform: translateX(150px);
+    }
+    3% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(-5px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+} 
+
+@keyframes fadeInLeftComponent {
+    0% {
+       opacity: 0;
+       transform: translateX(-150px);
+    }
+    3% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(5px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+} 
+
+
 
 @mixin _responsive($breakpoint) {
     @if $breakpoint == _xs {

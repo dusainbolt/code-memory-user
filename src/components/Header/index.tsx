@@ -23,7 +23,9 @@ const Header: React.FC<_Header> = ({ t }) => {
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
-        window.scroll({top: 0, left: 0, behavior: 'smooth'});
+        setTimeout(()=>{
+            window.scroll({top: 0, left: 0, behavior: 'smooth'});
+        }, 100)
     }, []);
 
     console.log(scrollTop);

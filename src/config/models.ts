@@ -51,4 +51,7 @@ export type _styleLayout = {
     background?: string;
     radius?: number;
     fadeInComponent?: boolean;
+    fadeRightComponent?: boolean;
+    fadeDownComponent?: boolean;
+    fadeLeftComponent?: boolean;
 };

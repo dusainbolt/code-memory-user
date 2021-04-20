@@ -14,7 +14,7 @@ interface _FourthWrap {
 const FourthWrap: React.FC<_FourthWrap> = ({}) => {
     return (
         <Row className="fourth-wrap" container>
-            <Col md={12} xxl={5} className="fade-cp-1">
+            <Col md={12} xl={6} xxl={5} fadeLeftComponent>
                     <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap__title-small">
                         About Us
                     </Typography>
@@ -29,11 +29,11 @@ const FourthWrap: React.FC<_FourthWrap> = ({}) => {
                         I wrote to let them know ready to come back they kicked me of their team slack all of us are make company email.
                     </Typography>
                     <Box flexBox mt={60} justify="start">
-                        <Button mr={38} round width={206} height={60} label="Learn more" />
+                        <Button mr={38} round maxWidth={206} height={60} label="Learn more" />
                         <ButtonIcon hoverIcon spaceLabel={14} icon={faPlayCircle} fontSize={20} sizeIcon={60} label={'Watch Video'} />
                     </Box>
             </Col>
-            <Col md={12} xxl={7} fadeInComponent>
+            <Col md={12} xl={6} xxl={7} fadeRightComponent>
                 <ImageWrapper width={795} height={498} alt="img-content-banner-3" src="/images/img_about.png" />
             </Col>
         </Row>

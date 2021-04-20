@@ -8,6 +8,8 @@ interface _LazyComponent {
     offset?: number;
     placeholder?: any;
     throttle?: number;
+    height?: number;
+    unmountIfInvisible?: boolean;
 }
 
 const LazyComponent: React.FC<_LazyComponent> = ({ children, className, ...props }) => {

@@ -8,16 +8,16 @@
         transition: transform 0.25s linear;
     }
     &__drawer-mask {
-        cursor: pointer;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        position: fixed;
-        background: blanchedalmond;
-        display: none;
-        animation: fadeIn 0.3s;
-        background: rgba(0, 0, 0, 0.45);
+        // cursor: pointer;
+        // width: 100vw;
+        // height: 100vh;
+        // top: 0;
+        // left: 0;
+        // position: fixed;
+        // background: blanchedalmond;
+        // display: none;
+        // animation: fadeIn 0.3s;
+        // background: rgba(0, 0, 0, 0.45);
     }
     &__list {
         width: 100%;
@@ -59,41 +59,42 @@
 
 @include _responsive(_md) {
     .menu {
+        display: none !important;
         &__wrap {
             display: none;
         }
-        &__xs-wrap {
-            display: block;
-            @include _position_side_draw();
-            button {
-                display: block;
-                margin: auto;
-            }
-        }
-        &__drawer-mask.mask__open {
-            display: block;
-        }
-        &__open {
-            transition: transform 0.25s linear;
-            transform: translateX(0);
-        }
+        // &__xs-wrap {
+        //     display: block;
+        //     @include _position_side_draw();
+        //     button {
+        //         display: block;
+        //         margin: auto;
+        //     }
+        // }
+        // &__drawer-mask.mask__open {
+        //     display: block;
+        // }
+        // &__open {
+        //     transition: transform 0.25s linear;
+        //     transform: translateX(0);
+        // }
         &__collapse {
             display: block;
         }
-        &__list {
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-            padding: 0;
-            margin-right: 0;
-        }
-        &__btn {
-            width: 1005px;
-            flex-direction: column;
+        // &__list {
+        //     flex-direction: column;
+        //     align-items: center;
+        //     margin-bottom: 40px;
+        //     padding: 0;
+        //     margin-right: 0;
+        // }
+        // &__btn {
+        //     width: 1005px;
+        //     flex-direction: column;
 
-            .sign-in__link {
-                margin-bottom: 20px;
-            }
-        }
+        //     .sign-in__link {
+        //         margin-bottom: 20px;
+        //     }
+        // }
     }
 }

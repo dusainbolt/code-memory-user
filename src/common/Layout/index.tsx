@@ -48,11 +48,12 @@ interface _Box extends _styleLayout {
     children?: any;
     className?: string;
     container?: boolean;
+    onClick?: any;
 }
 
-export const Box: React.FC<_Box> = ({ children, container, ...props }) => {
+export const Box: React.FC<_Box> = ({ children, onClick, container, ...props }) => {
     const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
-    return <div className={boxStyle}>{children}</div>;
+    return <div onClick={onClick} className={boxStyle}>{children}</div>;
 };
 
 interface _Divider extends _styleLayout {

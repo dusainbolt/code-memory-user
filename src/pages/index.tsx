@@ -5,6 +5,7 @@ import Meta from '@Components/Meta';
 import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
+import IconTheme from '@Common/IconTheme';
 
 export default function IndexPage(props) {
     return (
@@ -13,6 +14,7 @@ export default function IndexPage(props) {
             <Header t={props.t} />
             <HomePageComponent {...props} />
             <Footer />
+            <IconTheme />
         </Fragment>
     );
 }

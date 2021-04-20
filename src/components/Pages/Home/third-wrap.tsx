@@ -14,7 +14,7 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
         <Box className="third-wrap__container" container>
             <Row className="third-wrap__card-wrap">
                 <Col md={12} xxl={4}>
-                    <LazyComponent className="third-wrap__card-item fade-cp">
+                    <Box className="third-wrap__card-item" fadeLeftComponent>
                         <ImageWrapper
                             {...sizeImageService}
                             centerImg
@@ -27,13 +27,10 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
                         <Typography textCenter fontWeight="regular" type="p" lineHeight={30} className="third-wrap__card-description-service">
                             We all love to share our wins. It;s a lot harder to share our failures. Behind every success there are often a lot{' '}
                         </Typography>
-                    </LazyComponent>
-                    {/* <Box className="third-wrap__card-item">
-      
-                    </Box> */}
+                    </Box>
                 </Col>
                 <Col md={12} xxl={4}>
-                    <LazyComponent className="third-wrap__card-item fade-cp active fade-cp-1">
+                    <Box className="third-wrap__card-item active" fadeInComponent>
                         <ImageWrapper {...sizeImageService} centerImg alt="img-content-banner-2" src="/images/service_2.png" />
                         <Typography textCenter fontWeight="bold" type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
                             Product Design
@@ -41,10 +38,10 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
                         <Typography textCenter fontWeight="regular" type="p" lineHeight={30} className="third-wrap__card-description-service">
                             It's through mistakes that you actually can grow you get rid of everything that is not essential to makihave to get bad.
                         </Typography>
-                    </LazyComponent>
+                    </Box>
                 </Col>
                 <Col md={12} xxl={4}>
-                    <LazyComponent className="third-wrap__card-item fade-cp fade-cp-2">
+                    <Box className="third-wrap__card-item" fadeRightComponent>
                         <ImageWrapper {...sizeImageService} centerImg alt="img-content-banner-3" src="/images/service_3.png" />
                         <Typography textCenter fontWeight="bold" type="h3" lineHeight={37.5} className="third-wrap__card-title-service">
                             Product Design
@@ -52,7 +49,7 @@ const ThirdWrap: React.FC<_ThirdWrap> = ({}) => {
                         <Typography textCenter fontWeight="regular" type="p" lineHeight={30} className="third-wrap__card-description-service">
                             We all love to share our wins. It;s a lot harder to share our failures. Behind every success there are often a lot
                         </Typography>
-                    </LazyComponent>
+                    </Box>
                 </Col>
             </Row>
         </Box>

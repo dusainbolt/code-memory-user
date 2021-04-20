@@ -15,6 +15,7 @@ function NextApp({ Component, pageProps }: AppProps) {
     return (
         <Provider store={store}>
             <Component {...pageProps} t={t} locale={locale} />
+            
         </Provider>
     );
 }

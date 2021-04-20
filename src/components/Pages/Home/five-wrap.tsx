@@ -14,10 +14,10 @@ interface _FiveWrap {
 const FiveWrap: React.FC<_FiveWrap> = ({}) => {
     return (
         <Row className="fourth-wrap" container>
-            <Col md={12} xxl={6}>
+            <Col md={12} xxl={6} fadeLeftComponent>
                 <ImageWrapper width={526} height={526} alt="img-content-banner-3" src="/images/avatar_home_page.png" />
             </Col>
-            <Col md={12} xxl={6}>
+            <Col md={12} xxl={6} fadeRightComponent>
                 <Box flexBox minHeightPercent={90} flexCol alignItem="start">
                     <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap__title-small">
                         About Us
