@@ -20,6 +20,7 @@ export const _getStyleLayout = (props) => ({
     'fade fade-down': props.fadeDownComponent,
     'fade fade-left': props.fadeLeftComponent,
     'full-w': props.fullWidth,
+    [`a-d-${props.delay}`]: props.delay,
     [`al-${props.align}`]: props.align,
     [`w-${props.width}`]: props.width,
     [`h-${props.height}`]: props.height,

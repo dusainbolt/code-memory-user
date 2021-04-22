@@ -97,6 +97,11 @@ $container_extraLarge: 1140px;
 }
 
 @for $i from 0 through 1000 {
+    @if $i <= 100 {
+        .a-d-#{$i} {
+            animation-delay: $i/100*10s !important;
+        }
+    }
     @if ($i % 2) == 0 {
         @if $i <= 100 {
             .mhp-#{$i} {
@@ -201,28 +206,28 @@ $container_extraLarge: 1140px;
     max-width: 100%;
 }
 
-.color-white {
-    color: var(--color-background-main);
+.color {
+    &-white {
+        color: var(--color-background-main);
+    }
+    &-black {
+        color: var(--color-text-main);
+    }
+    &-primary {
+        color: var(--color-primary);
+    }   
 }
 
-.color-black {
-    color: var(--color-text-main);
-}
-
-.color-primary {
-    color: var(--color-primary);
-}
-
-.bg-white {
-    background: var(--color-background-main);
-}
-
-.bg-black {
-    background: var(--color-text-main);
-}
-
-.bg-primary {
-    background: var(--color-primary);
+.bg {
+    &-white {
+        background: var(--color-background-main);
+    }
+    &-black {
+        background: var(--color-text-main);
+    }
+    &primary {
+        background: var(--color-primary);
+    }
 }
 
 @each $col, $width in $gridConfig {
@@ -339,20 +344,20 @@ $container_extraLarge: 1140px;
     text-align: right;
 }
 
-.fade-left {
-    animation: 1.3s ease-in-out forwards running fadeInLeftComponent;
-}
-
-.fade-right {
-    animation: 1.3s ease-in-out forwards running fadeInRightComponent;
-}
-
-.fade-down {
-    animation: 1.3s ease-in-out forwards running fadeInDownComponent;
-}
-
-.fade-in {
-    animation: 1.3s ease-in-out forwards running fadeIn;
+.fade {
+    opacity: 0;
+    &-left {
+        animation: 1.3s ease-in-out forwards running fadeInLeftComponent;
+    }
+    &-right {
+        animation: 1.3s ease-in-out forwards running fadeInRightComponent;
+    }
+    &-down {
+        animation: 1.3s ease-in-out forwards running fadeInDownComponent;
+    }
+    &-in {
+        animation: 1.3s ease-in-out forwards running fadeIn;
+    }
 }
 
 .img-app-wrap {

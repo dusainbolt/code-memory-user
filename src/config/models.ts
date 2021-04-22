@@ -54,4 +54,5 @@ export type _styleLayout = {
     fadeRightComponent?: boolean;
     fadeDownComponent?: boolean;
     fadeLeftComponent?: boolean;
+    delay?: number;
 };
