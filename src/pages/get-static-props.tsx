@@ -13,11 +13,7 @@ export default function IndexPage(props) {
     console.log(props);
     return (
         <Fragment>
-            <Meta title={props.t.home.title_page} />
-            <Header t={props.t} />
-            GET STATIC PROPS PAGE
-            {/* <HomePageComponent {...props} /> */}
-            <Footer />
+
         </Fragment>
     );
 }

@@ -18,14 +18,14 @@ interface _homePageProps {
     listBlogs: [];
 }
 
-const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs }) => {
+const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs = [] }) => {
     const router = useRouter();
     const count = useAppSelector((state: RootState) => state._indexState.count);
     const dispatch = useAppDispatch();
 
     const changeLanguage = e => {
         const locale = e.target.value;
-        router.push(router.pathname, router.asPath, { locale });
+        router.push(router.pathname, router.asPath, {scroll: true});
         dispatch(decrement());
         dispatch(actions.getDemo({ data: 'HELLO' }));
     };
@@ -56,6 +56,14 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs }) =
             <LazyComponent offset={0}>
                 <FiveWrap />
             </LazyComponent>
+            <select onChange={changeLanguage} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
+                <option className="text-black" value="vn">
+                    VN
+                </option>
+                <option className="text-black" value="eng">
+                    Eng
+                </option>
+            </select>
         </main>
     );
 };

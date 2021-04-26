@@ -25,9 +25,9 @@ const HomeMenu: React.FC<_HomeMenu> = ({ t }) => {
         return (
             <>
                 <ul className="menu__list">
-                    {LIST_MENU.map(item => (
+                    {LIST_MENU.map((item, index) => (
                         <MenuItem
-                            key={t.menu[item.name]}
+                            key={index}
                             text={t.menu[item.name]}
                             href={item.href}
                             active={router.pathname.indexOf(item.href) !== -1}

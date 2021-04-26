@@ -6,12 +6,15 @@ import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
 import IconTheme from '@Common/IconTheme';
+import { getDataUsers } from '@Services/userRequest';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 export default function IndexPage(props) {
+    const { t } = useTranslation();
     return (
         <Fragment>
-            <Meta title={props.t.home.title_page} />
-            <Header t={props.t} />
+            <Meta title={t('home.title_page')} />
+            {/* <Header t={props.t} /> */}
             <HomePageComponent {...props} />
             <Footer />
             <IconTheme />
@@ -24,3 +27,14 @@ export async function getStaticProps(context) {
         props: { listBlogs: "heloo" }, // will be passed to the page component as props
     };
 }
+
+// export async function getServerSideProps() {
+//     const {
+//         data: { users },
+//     } = await getDataUsers();
+//     return {
+//         props: {
+//             users: users,
+//         },
+//     };
+// }

@@ -1,4 +1,6 @@
-const i18nConfig = require('./next-i18next.config');
+const i18n = require('./next-i18next.config');
+
+const __nextDefaultLocale = 'vn';
 
 module.exports = {
     serverRuntimeConfig: {
@@ -15,12 +17,20 @@ module.exports = {
         // Will be available on both server and client
         staticFolder: '/static',
     },
-    exportPathMap: async () => ({
-        '/': { page: '/' },
-        '/about': { page: '/about' },
-    }),
+    exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
+        console.log('--------buildID => ', buildId);
+        console.log('--------dev => ', dev);
+        return {
+            '/': { page: '/' },
+            '/about': { page: '/about' },
+        };
+    },
     trailingSlash: true,
-    i18nConfig,
+    // i18n: {
+    //     locales: ['vn', 'en'],
+    //     defaultLocale: __nextDefaultLocale,
+    // },
+    // ...i18n,
     images: {
         loader: 'imgix',
         path: '../',
