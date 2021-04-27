@@ -2,9 +2,8 @@ import { Box, Col, Row } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import ImageWrapper from '@Common/ImageWrapper';
 import Button from '@Common/Button';
-import ButtonIcon from '@Common/ButtonIcon';
+import ButtonIcon from '@Common/Button/ButtonIcon';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import LazyComponent from '@Common/LazyComponent';
 
 interface _FourthWrap {
     // title: string;

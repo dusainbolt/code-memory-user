@@ -1,7 +1,7 @@
 import { Box, Col, Row } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import ImageWrapper from '@Common/ImageWrapper';
-import LazyComponent from '@Common/LazyComponent';
+import LazyComponent from '@Common/Lazy/LazyComponent';
 interface _ThirdWrap {
     // title: string;
     // text: string;

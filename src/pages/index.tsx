@@ -1,5 +1,5 @@
 // import Nav from '../components/nav';
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { _tValue } from '@Utils/index';
 import Meta from '@Components/Meta';
 import HomePageComponent from '@Components/Pages/Home';
@@ -8,13 +8,13 @@ import Footer from '@Components/Footer';
 import IconTheme from '@Common/IconTheme';
 import { getDataUsers } from '@Services/userRequest';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
+import { LanguageContext } from '@Components/LanguageProvider';
 
 export default function IndexPage(props) {
     const { t } = useTranslation();
     return (
         <Fragment>
             <Meta title={t('home.title_page')} />
-            {/* <Header t={props.t} /> */}
             <HomePageComponent {...props} />
             <Footer />
             <IconTheme />

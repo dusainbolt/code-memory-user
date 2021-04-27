@@ -1,11 +1,16 @@
 import { createContext, useEffect, useState } from 'react';
 
 export const defaultLocale = 'vn';
-export const locales = ['vn', 'en'];
+export const locales = ['vn', 'eng'];
 export const LanguageContext = createContext([]);
 
 export const LanguageProvider: React.FC<any> = ({ children }) => {
     const [locale, setLocale] = useState('vn');
+
+    const changeLocale = (value) => {
+        setLocale(value);
+        localStorage.setItem('lang', value);
+    };
 
     useEffect(() => {
         if (!window) {
@@ -13,7 +18,7 @@ export const LanguageProvider: React.FC<any> = ({ children }) => {
         }
         const language = localStorage.getItem('lang') || locale;
         setLocale(language);
-    }, [locale]);
+    }, []);
 
-    return <LanguageContext.Provider value={[locale, setLocale]}>{children}</LanguageContext.Provider>;
+    return <LanguageContext.Provider value={[locale, changeLocale]}>{children}</LanguageContext.Provider>;
 };

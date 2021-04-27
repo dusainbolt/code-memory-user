@@ -8,9 +8,11 @@ import SecondWrap from './second-wrap';
 import { Divider } from '@Common/Layout';
 import ThirdWrap from './third-wrap';
 import FourthWrap from './fourth-wrap';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import FiveWrap from './five-wrap';
-import LazyComponent from '@Common/LazyComponent';
+import LazyComponent from '@Common/Lazy/LazyComponent';
+import { LanguageContext } from '@Components/LanguageProvider';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 interface _homePageProps {
     t: object;
@@ -18,14 +20,19 @@ interface _homePageProps {
     listBlogs: [];
 }
 
-const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs = [] }) => {
+const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
     const router = useRouter();
     const count = useAppSelector((state: RootState) => state._indexState.count);
     const dispatch = useAppDispatch();
+    const { t } = useTranslation();
+
+    console.log("Change state => ", count);
+
+    const [locale, changeLocale] = useContext(LanguageContext);
 
     const changeLanguage = e => {
         const locale = e.target.value;
-        router.push(router.pathname, router.asPath, {scroll: true});
+        changeLocale(locale);
         dispatch(decrement());
         dispatch(actions.getDemo({ data: 'HELLO' }));
     };
@@ -42,21 +49,20 @@ const HomePageComponent: React.FC<_homePageProps> = ({ t, locale, listBlogs = []
 
     return (
         <main>
-            <Banner />
             <Divider mCol={90} />
             <SecondWrap />
             <LazyComponent offset={0}>
                 <ThirdWrap />
             </LazyComponent>
-            <Divider mCol={60} />
+            {/* <Divider mCol={60} />
             <LazyComponent offset={0}>
                 <FourthWrap />
             </LazyComponent>
             <Divider mCol={60} />
             <LazyComponent offset={0}>
                 <FiveWrap />
-            </LazyComponent>
-            <select onChange={changeLanguage} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
+            </LazyComponent> */}
+            <select onChange={changeLanguage} defaultValue={locale} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
                 <option className="text-black" value="vn">
                     VN
                 </option>
