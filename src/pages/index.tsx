@@ -1,22 +1,25 @@
 // import Nav from '../components/nav';
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 import { _tValue } from '@Utils/index';
 import Meta from '@Components/Meta';
 import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
-import IconTheme from '@Common/IconTheme';
-import { getDataUsers } from '@Services/userRequest';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { LanguageContext } from '@Components/LanguageProvider';
+import IconTheme from '@Common/IconApp/IconTheme';
+import IconLanguage from '@Common/IconApp/IconLanguage';
+import Dropdown from '@Common/Dropdown';
 
 export default function IndexPage(props) {
     const { t } = useTranslation();
     return (
         <Fragment>
+            {/* <Dropdown /> */}
             <Meta title={t('home.title_page')} />
+            <Header />
             <HomePageComponent {...props} />
             <Footer />
+            <IconLanguage />
             <IconTheme />
         </Fragment>
     );
@@ -24,7 +27,7 @@ export default function IndexPage(props) {
 
 export async function getStaticProps(context) {
     return {
-        props: { listBlogs: "heloo" }, // will be passed to the page component as props
+        props: { listBlogs: 'heloo' }, // will be passed to the page component as props
     };
 }
 

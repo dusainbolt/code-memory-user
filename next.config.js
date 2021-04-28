@@ -1,7 +1,3 @@
-const i18n = require('./next-i18next.config');
-
-const __nextDefaultLocale = 'vn';
-
 module.exports = {
     serverRuntimeConfig: {
         // Will only be available on the server side
@@ -26,11 +22,6 @@ module.exports = {
         };
     },
     trailingSlash: true,
-    // i18n: {
-    //     locales: ['vn', 'en'],
-    //     defaultLocale: __nextDefaultLocale,
-    // },
-    // ...i18n,
     images: {
         loader: 'imgix',
         path: '../',

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LanguageContext, defaultLocale } from './index';
+import { LanguageContext, _defaultLocale } from './index';
 import vn from '@Locales/vn';
 import en from '@Locales/en';
 
@@ -18,7 +18,7 @@ export default function useTranslation() {
             console.warn(`No string '${key}' for locale '${locale}'`);
         }
 
-        return LangStrings[locale][keys[0]][keys[1]] || LangStrings[defaultLocale][keys[0]][keys[1]] || '';
+        return LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || '';
     }
 
     return { t, locale };

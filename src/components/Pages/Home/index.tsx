@@ -16,23 +16,21 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 interface _homePageProps {
     t: object;
-    locale: string;
     listBlogs: [];
 }
 
 const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
-    const router = useRouter();
     const count = useAppSelector((state: RootState) => state._indexState.count);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
     console.log("Change state => ", count);
 
-    const [locale, changeLocale] = useContext(LanguageContext);
+    const [_locale, _changeLocale] = useContext(LanguageContext);
 
     const changeLanguage = e => {
         const locale = e.target.value;
-        changeLocale(locale);
+        _changeLocale(locale);
         dispatch(decrement());
         dispatch(actions.getDemo({ data: 'HELLO' }));
     };
@@ -42,7 +40,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
     };
 
     useEffect(() => {
-        dispatch(actions.getDemo({ data: 'HELLO' }));
+        // dispatch(actions.getDemo({ data: 'HELLO' }));
     }, []);
 
     console.log(listBlogs);
@@ -54,15 +52,15 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <LazyComponent offset={0}>
                 <ThirdWrap />
             </LazyComponent>
-            {/* <Divider mCol={60} />
+            <Divider mCol={60} />
             <LazyComponent offset={0}>
                 <FourthWrap />
             </LazyComponent>
             <Divider mCol={60} />
             <LazyComponent offset={0}>
                 <FiveWrap />
-            </LazyComponent> */}
-            <select onChange={changeLanguage} defaultValue={locale} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
+            </LazyComponent>
+            <select onChange={changeLanguage} defaultValue={_locale} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
                 <option className="text-black" value="vn">
                     VN
                 </option>

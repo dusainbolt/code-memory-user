@@ -51581,4 +51581,12 @@ body[theme-data=_sainbolt-dark] {
   position: fixed;
 }
 
+.abs {
+  position: absolute;
+}
+
+.rel {
+  position: absolute;
+}
+
 /*# sourceMappingURL=layout.css.map */

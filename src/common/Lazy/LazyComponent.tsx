@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import LazyLoad from 'react-lazyload';
 
 interface _LazyComponent {
@@ -13,7 +14,9 @@ interface _LazyComponent {
 }
 
 const LazyComponent: React.FC<_LazyComponent> = ({ children, className, ...props }) => {
-    return <LazyLoad {...props} classNamePrefix={`${className} `}>{children}</LazyLoad>;
+    const styleDropdown = clsx({[`${className} `]: className });
+
+    return <LazyLoad {...props} classNamePrefix={`${styleDropdown}app-lazy`}>{children}</LazyLoad>;
 };
 
 export default LazyComponent;

@@ -15,10 +15,12 @@ export type _ctxApp = {
 };
 
 export type _styleLayout = {
+    onClick?: VoidFunction;
     width?: number;
     minWidth?: number;
     maxWidth?: number;
     fullWidth?: boolean;
+    relative?: boolean;
     flexCol?: boolean;
     alignItem?: string;
     mCol?: number;

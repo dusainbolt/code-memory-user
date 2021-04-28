@@ -15,6 +15,7 @@ export const _getStyleLayout = (props) => ({
     [`flb-jt-${props.justify}`]: props.justify,
     'cir': props.circle,
     'fxd': props.fixed,
+    'rel': props.relative,
     'hv': props.hover,
     'center-block': props.centerBlock,
     'fade fade-in': props.fadeInComponent,

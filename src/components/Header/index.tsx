@@ -1,12 +1,13 @@
 import HomeMenu from '@Common/Menu/HomeMenu';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 interface _Header {
-    t: any
 }
 
-const Header: React.FC<_Header> = ({ t }) => {
+const Header: React.FC<_Header> = ({ }) => {
+    const { t } = useTranslation();
     const [scrollTop, setScrollTop] = useState(0);
 
     const onScroll = e => {
@@ -28,8 +29,6 @@ const Header: React.FC<_Header> = ({ t }) => {
         }, 100)
     }, []);
 
-    console.log(scrollTop);
-
     return (
         <header className={`header__wrapper ${scrollTop > 500 ? 'scrolling' : ''}`}>
             <div className="container header__container">
@@ -38,7 +37,7 @@ const Header: React.FC<_Header> = ({ t }) => {
                         <Image alt="logo" width={49} height={35} src="/images/logo.png" />
                     </div>
                 </Link>
-                <HomeMenu t={t}/>
+                <HomeMenu />
             </div>
         </header>
     );

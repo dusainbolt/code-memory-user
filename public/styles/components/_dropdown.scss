@@ -1,0 +1,106 @@
+.app-drop-down {
+    // width: 230px;
+    // display: inline-block;
+    // margin-right: 10px;
+    // position: relative;
+    &.toggle {
+    }
+}
+
+.app-drop-down-wrap {
+    display: none;
+    position: fixed;
+    &.visible {
+        display: block;
+    }
+}
+
+.app-drop-down li {
+    // height: 0;
+    overflow: hidden;
+    transition: all 500ms;
+}
+.app-drop-down.hover li {
+    transition-delay: 300ms;
+}
+
+// .app-drop-down.hover:hover ul {
+//     transition-delay: 300ms;
+//     box-shadow: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05);
+// }
+
+.app-drop-down ul {
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.app-drop-down li:first-child .down-arrow::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: all 500ms;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    margin: -10px 0 0 30px;
+}
+
+// .app-drop-down.hover:hover li,
+// .app-drop-down.toggle > input:checked ~ ul li {
+//     height: 40px;
+// }
+
+// .app-drop-down.toggle > input {
+//   display: none;
+// }
+
+.app-drop-down > a::after, .app-drop-down.toggle > label::after {
+  content: "";
+  float: right;
+  margin: 15px 15px 0 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #CCC;
+}
+
+// .app-drop-down a, .app-drop-down.toggle > label {
+//   display: block;
+//   padding: 0 0 0 10px;
+//   text-decoration: none;
+//   line-height: 40px;
+//   font-size: 13px;
+//   text-transform: uppercase;
+//   font-weight: bold;
+//   color: #999;
+//   background-color: #FFF;
+// }
+// .app-drop-down li:first-child a {
+//   border-radius: 2px 2px 0 0;
+// }
+// .app-drop-down li:last-child a {
+//   border-radius: 0 0 2px 2px;
+// }
+
+// .app-drop-down a:hover, .app-drop-down.toggle > label:hover, .app-drop-down.toggle > input:checked ~ label {
+//   background-color: #EEE;
+//   color: #666;
+// }
+// .app-drop-down > a:hover::after, .app-drop-down.toggle > label:hover::after, .app-drop-down.toggle > input:checked ~ label::after {
+//   border-top-color: #AAA;
+// }
+// .app-drop-down li:first-child a:hover::before {
+//   border-bottom-color: #EEE;
+// }
+// .app-drop-down.hover:hover li:first-child, .app-drop-down.toggle > input:checked ~ ul li:first-child {
+//   padding-top: 15px;
+// }
