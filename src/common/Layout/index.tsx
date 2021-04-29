@@ -56,6 +56,18 @@ export const Box: React.FC<_Box> = ({ children, onClick, container, ...props }) 
     return <div onClick={onClick} className={boxStyle}>{children}</div>;
 };
 
+interface _Box extends _styleLayout {
+    children?: any;
+    className?: string;
+    container?: boolean;
+    onClick?: any;
+}
+
+export const Box2: React.FC<_Box> = ({ children, onClick, container, ...props }) => {
+    const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
+    return <div className={boxStyle}>{children}</div>;
+};
+
 interface _Divider extends _styleLayout {
     line?: boolean;
 }

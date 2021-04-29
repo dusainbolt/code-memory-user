@@ -47,6 +47,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
 
     return (
         <main>
+            <Banner />
             <Divider mCol={90} />
             <SecondWrap />
             <LazyComponent offset={0}>

@@ -20,7 +20,7 @@ export default function IndexPage(props) {
             <HomePageComponent {...props} />
             <Footer />
             <IconLanguage />
-            <IconTheme />
+            {/* <IconTheme /> */}
         </Fragment>
     );
 }

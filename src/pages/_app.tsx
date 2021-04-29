@@ -5,6 +5,7 @@ import { AppProps } from 'next/app';
 import { _ctxApp } from '@Config/models';
 import { LanguageProvider } from '@Components/LanguageProvider';
 
+import 'antd/dist/antd.css';
 //generator common css Overload to best performance
 import '@Public/styles/watch/layout.css';
 function NextApp({ Component, pageProps }: AppProps) {

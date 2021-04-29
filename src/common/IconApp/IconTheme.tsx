@@ -1,4 +1,3 @@
-import Dropdown from '@Common/Dropdown';
 import { Box } from '@Common/Layout';
 import { DARK_THEME } from '@Config/contains';
 import { faMagic } from '@fortawesome/free-solid-svg-icons';

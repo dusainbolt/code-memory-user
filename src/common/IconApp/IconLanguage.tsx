@@ -3,6 +3,7 @@ import { Box } from '@Common/Layout';
 import { DARK_THEME } from '@Config/contains';
 import { faMagic } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Menu } from 'antd';
 import { useEffect, useState } from 'react';
 
 interface _IconLanguage {
@@ -10,28 +11,31 @@ interface _IconLanguage {
 }
 
 const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }) => {
-    // const [themeName, setThemeName] = useState('');
-
-    // const toggleTheme = () => {
-    //     const valueTheme = themeName ? '' : DARK_THEME;
-    //     setThemeName(valueTheme);
-    //     document.body.setAttribute('theme-data', valueTheme);
-    //     localStorage.setItem('theme-app', valueTheme);
-    // };
-
-    // useEffect(() => {
-    //     const localTheme = localStorage.getItem('theme-app');
-    //     if (localTheme) {
-    //         setThemeName(localTheme);
-    //         document.body.setAttribute('theme-data', localTheme);
-    //     }
-    // }, []);
-
+    const menu = (
+        <Menu>
+            <Menu.Item>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+                    1st menu item
+                </a>
+            </Menu.Item>
+            <Menu.Item disabled>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+                    2nd menu item
+                </a>
+            </Menu.Item>
+            <Menu.Item disabled>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+                    3rd menu item
+                </a>
+            </Menu.Item>
+            <Menu.Item danger>a danger item</Menu.Item>
+        </Menu>
+    );
     return (
-        <Dropdown right={34} bottom={100}>
-            <Box flexBox fixed width={44} height={44} right={34} circle bottom={100} className="app-icon-theme">
+        <Dropdown placement={['topLeft']} content={menu}>
+            <span className="app-icon-theme">
                 <FontAwesomeIcon icon={faMagic} />
-            </Box>
+            </span>
         </Dropdown>
     );
 };
