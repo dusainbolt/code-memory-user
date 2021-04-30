@@ -30,3 +30,16 @@
         border-radius: 4px;
     }
 }
+
+.icon-sub-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@include _responsive(_md) {
+    .app-setting-icon{
+        right: 20px;
+        bottom: 30px;
+    }
+}
