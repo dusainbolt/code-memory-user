@@ -1,29 +1,11 @@
-import createSagaMiddleware from 'redux-saga';
 import { rootReducer } from './reducer/_rootReducer';
-import rootSaga from './saga/_rootSaga';
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
-// import getConfig from 'next/config';
-// const {
-//     publicRuntimeConfig: { staticFolder }, // Available both client and server side
-//     serverRuntimeConfig: { ENV_HOST_NAME, ENV_PORT, mySecret }, // Only available server side
-// } = getConfig();
 
-//1: create the middleware
-const sagaMiddleware = createSagaMiddleware();
-
-const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
-
-// 2: Add an extra parameter for applying middleware:
 const store: any = configureStore({
     reducer: rootReducer,
-    middleware,
 });
-
-// 3: Run your sagas on server
-sagaMiddleware.run(rootSaga);
-
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}

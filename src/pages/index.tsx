@@ -5,10 +5,10 @@ import Meta from '@Components/Meta';
 import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
-import useTranslation from '@Components/LanguageProvider/useTranslation';
 import IconTheme from '@Common/IconApp/IconTheme';
 import IconLanguage from '@Common/IconApp/IconLanguage';
 import Dropdown from '@Common/Dropdown';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 export default function IndexPage(props) {
     const { t } = useTranslation();

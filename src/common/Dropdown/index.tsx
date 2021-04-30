@@ -1,19 +1,13 @@
-import { Box } from '@Common/Layout';
-import { DARK_THEME } from '@Config/contains';
-import clsx from 'clsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
-import { _styleLayout } from '@Config/models';
-import { Menu, Dropdown } from 'antd';
+import { Dropdown, DropDownProps } from 'antd';
 
-interface _Dropdown {
-    content?: any;
-    className?: string;
-    placement?: any,
-}
+interface _Dropdown extends DropDownProps {}
 
-const DropdownCommon: React.FC<_Dropdown> = ({ children, content, className = '', ...props }) => {
-    return <Dropdown {...props} overlay={content}>{children}</Dropdown>;
+const DropdownCommon: React.FC<_Dropdown> = ({ children, className = '', ...props }) => {
+    return (
+        <Dropdown overlayClassName={className} {...props}>
+            {children}
+        </Dropdown>
+    );
 };
 
 export default DropdownCommon;

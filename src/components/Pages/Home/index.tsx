@@ -1,8 +1,5 @@
-import { useRouter } from 'next/router';
 import { useAppSelector, useAppDispatch, RootState } from '@Redux/store';
-import { decrement } from '@Redux/reducer/indexReducer';
 import { _tValue } from '@Utils/index';
-import { actions } from '@Redux/actions/index';
 import Banner from '@Components/Pages/Home/banner';
 import SecondWrap from './second-wrap';
 import { Divider } from '@Common/Layout';
@@ -11,8 +8,9 @@ import FourthWrap from './fourth-wrap';
 import { useContext, useEffect } from 'react';
 import FiveWrap from './five-wrap';
 import LazyComponent from '@Common/Lazy/LazyComponent';
-import { LanguageContext } from '@Components/LanguageProvider';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
+import { LanguageContext } from '@Components/LanguageProvider';
+import { decrement } from '@Redux/reducer/indexReducer';
 
 interface _homePageProps {
     t: object;
@@ -20,27 +18,23 @@ interface _homePageProps {
 }
 
 const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
-    const count = useAppSelector((state: RootState) => state._indexState.count);
+    const count = useAppSelector((state: RootState) => state._indexReducer.count);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
-    console.log("Change state => ", count);
-
     const [_locale, _changeLocale] = useContext(LanguageContext);
+
+    console.log("Change state => ", count, "LOCALE => ", _locale);
+
 
     const changeLanguage = e => {
         const locale = e.target.value;
         _changeLocale(locale);
-        dispatch(decrement());
-        dispatch(actions.getDemo({ data: 'HELLO' }));
-    };
-
-    const onTestDispatchSaga = () => {
-        dispatch(actions.getDemo({ data: 'HELLO' }));
+        // dispatch(decrement());
     };
 
     useEffect(() => {
-        // dispatch(actions.getDemo({ data: 'HELLO' }));
+        dispatch(decrement());
     }, []);
 
     console.log(listBlogs);
@@ -61,11 +55,11 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <LazyComponent offset={0}>
                 <FiveWrap />
             </LazyComponent>
-            <select onChange={changeLanguage} defaultValue={_locale} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
-                <option className="text-black" value="vn">
+            <select onChange={changeLanguage} defaultChecked={_locale} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
+                <option className="text-black" selected={_locale === "vn"} value="vn">
                     VN
                 </option>
-                <option className="text-black" value="eng">
+                <option className="text-black" selected={_locale === "eng"} value="eng">
                     Eng
                 </option>
             </select>

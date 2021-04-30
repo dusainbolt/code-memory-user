@@ -1,13 +1,15 @@
-import '@Styles/_app.scss';
 import { Provider } from 'react-redux';
 import store from '@Redux/store';
 import { AppProps } from 'next/app';
 import { _ctxApp } from '@Config/models';
 import { LanguageProvider } from '@Components/LanguageProvider';
 
+//load style of ant
 import 'antd/dist/antd.css';
 //generator common css Overload to best performance
 import '@Public/styles/watch/layout.css';
+//load style my app
+import '@Styles/_app.scss';
 function NextApp({ Component, pageProps }: AppProps) {
     return (
         <Provider store={store}>

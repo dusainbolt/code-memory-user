@@ -1,18 +1,18 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { _indexState } from "@Config/models";
+import type { __indexReducer } from "@Config/models";
 
-const initialState: _indexState = {
+const initialState: __indexReducer = {
     todos: [],
     count: 10,
 };
 
-const incrementCase: CaseReducer<_indexState, PayloadAction<any>> = (state, action) => {
+const incrementCase: CaseReducer<__indexReducer, PayloadAction<any>> = (state, action) => {
     const value:number = action.payload;
     state.count += value;
 }
 
 export const todoSlice = createSlice({
-    name: '_indexState',
+    name: '_indexReducer',
     initialState,
     reducers: {
         increment: incrementCase,
