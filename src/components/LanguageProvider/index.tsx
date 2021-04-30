@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 
 export const _defaultLocale = 'vn';
-export const _locales = ['vn', 'eng'];
+export const _locales = ['vn', 'en'];
 export const LanguageContext = createContext([]);
 
 export const LanguageProvider: React.FC<any> = ({ children }) => {

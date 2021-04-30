@@ -59,7 +59,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
                 <option className="text-black" selected={_locale === "vn"} value="vn">
                     VN
                 </option>
-                <option className="text-black" selected={_locale === "eng"} value="eng">
+                <option className="text-black" selected={_locale === "en"} value="en">
                     Eng
                 </option>
             </select>

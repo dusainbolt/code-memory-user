@@ -5,7 +5,7 @@ import en from '@Locales/en';
 
 const LangStrings = {
     vn,
-    eng: en,
+    en,
     default: vn,
 };
 

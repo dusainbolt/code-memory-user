@@ -17,7 +17,7 @@ const IconApp: React.FC<_IconApp> = ({ round, className, propsLayout = {},...pro
         [className]: className
     });
     return (
-        <span {...propsLayout} className={styleIcon}>
+        <span className={styleIcon}>
             <FontAwesomeIcon {...props} />
         </span>
     );

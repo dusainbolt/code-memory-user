@@ -4,8 +4,8 @@ import clsx from 'clsx';
 
 interface _ImageWrapper {
     src: string;
-    width?: number;
-    height?: number;
+    width: number;
+    height: number;
     className?: string;
     quality?: number;
     alt?: string;

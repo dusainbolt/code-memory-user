@@ -1,4 +1,4 @@
-.app-setting-icon{
+.app-setting-icon {
     @include _flex_box();
     background: white;
     box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
@@ -18,10 +18,17 @@
     }
 }
 
-.app-setting-menu.ant-dropdown-menu{
+.app-setting-menu.ant-dropdown-menu {
     border-radius: 4px;
     .app-menu-item {
         width: 150px;
+    }
+    .ant-dropdown-menu-submenu-title {
+        display: flex;
+        align-items: center;
+    }
+    .ant-dropdown-menu-submenu-expand-icon {
+        display: none;
     }
 }
 
@@ -29,16 +36,30 @@
     .ant-dropdown-menu-sub {
         border-radius: 4px;
     }
+    .ant-dropdown-menu-item {
+        @include _flex_box(center, flex-start);
+    }
 }
 
 .icon-sub-menu {
+    @include _flex_box();
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background-color: var(--color-bg-icon);
+    font-size: $base-fontSize - 1;
+}
+
+.app-icon {
+    >svg.svg-inline--fa {
+        font-size: $base-fontSize + 4;
+    }
+}
+
+.app-icon-wrap {
+    @include _flex_box();
 }
 
 @include _responsive(_md) {
-    .app-setting-icon{
+    .app-setting-icon {
         right: 20px;
         bottom: 30px;
     }

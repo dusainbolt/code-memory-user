@@ -12,3 +12,14 @@ export const LIST_MENU = [
 ];
 
 export const DARK_THEME = "_sainbolt-dark";
+
+export const OPTION_LANG = [
+    {
+        src: '/images/vn_flag.svg',
+        value: 'vn',
+    },
+    {
+        src: '/images/en_flag.svg',
+        value: 'en'
+    }
+]
