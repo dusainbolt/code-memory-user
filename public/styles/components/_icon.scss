@@ -1,6 +1,6 @@
 .app-setting-icon {
     @include _flex_box();
-    background: white;
+    background: var(--color-bg-header);
     box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
     transition: color 0.3s;
     cursor: pointer;
@@ -13,7 +13,7 @@
     > svg {
         font-size: 18px;
     }
-    &:hover {
+    &:hover, &.active, &:focus {
         color: var(--color-primary);
     }
 }
@@ -41,6 +41,23 @@
     }
 }
 
+.ant-dropdown-menu, .ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title {
+    background: var(--color-bg-header);
+    color: var(--color-text-main);
+}
+
+.ant-dropdown {
+    .ant-dropdown-menu-item-selected,
+    .ant-dropdown-menu-submenu-selected .ant-dropdown-menu-submenu-title {
+        color: var(--color-text-main);
+    }
+}
+
+.ant-dropdown-menu-item-selected, .ant-dropdown-menu-submenu-title-selected, .ant-dropdown-menu-item-selected > a, .ant-dropdown-menu-submenu-title-selected > a {
+    color: var(--color-text-main);
+    background: var(--color-primary-light);
+}
+
 .icon-sub-menu {
     @include _flex_box();
     display: inline-flex;
@@ -49,7 +66,7 @@
 }
 
 .app-icon {
-    >svg.svg-inline--fa {
+    > svg.svg-inline--fa {
         font-size: $base-fontSize + 4;
     }
 }
@@ -62,5 +79,16 @@
     .app-setting-icon {
         right: 20px;
         bottom: 30px;
+    }
+}
+
+@include _darkTheme(){
+    .ant-dropdown, .ant-dropdown-menu-submenu {
+        .svg-inline--fa {
+            color: var(--color-bg-header);
+        }
+        .ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover {
+            background: var(--color-hover-dark);
+        }
     }
 }

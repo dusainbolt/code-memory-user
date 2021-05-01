@@ -11,8 +11,6 @@ export const LIST_MENU = [
     { name: 'txt_contact', href: '/contact' },
 ];
 
-export const DARK_THEME = "_sainbolt-dark";
-
 export const OPTION_LANG = [
     {
         src: '/images/vn_flag.svg',
@@ -23,3 +21,8 @@ export const OPTION_LANG = [
         value: 'en'
     }
 ]
+
+export const OPTION_THEME = {
+    light: 'light',
+    dark: 'dark'
+}

@@ -11,5 +11,13 @@ export default {
   },
   home: {
     title_page: "Dịch vụ phát triển website và nền tảng blog cộng đồng uy tín"
+  },
+  lang: {
+    vn: "Tiếng việt",
+    en: "Tiếng anh"
+  },
+  theme: {
+    dark: "Chế độ ban đêm",
+    light: "Chế độ ban ngày"
   }
 }

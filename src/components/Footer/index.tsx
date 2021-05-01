@@ -4,6 +4,7 @@ import { Box, List, ListItem } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
+import * as _style from './style';
 
 const Footer = ({}) => {
     const submitReject = values => {
@@ -15,56 +16,34 @@ const Footer = ({}) => {
     });
 
     return (
-        <footer>
-            <Box className="footer">
-                <Box container>
-                    <Typography type="h4" fontWeight="bold" pt={128} color="white" fontSize={44} textCenter centerBlock maxWidth={556}>
-                        Have Question in mind? Let us help you
-                    </Typography>
-                    <Box
-                        className="footer__email-input-wrap"
-                        centerBlock
-                        pRow={38}
-                        pCol={20}
-                        flexBox
-                        justify="space"
-                        mt={72}
-                        background="white"
-                        maxWidth={790}
-                        radius={60}>
-                        <Formik initialValues={{ email: '' }} validationSchema={validationSchema} onSubmit={submitReject} enableReinitialize>
-                            {({ handleSubmit, values }) => (
-                                <>
-                                    <Field
-                                        placeholder="yournam@email.com"
-                                        outline
-                                        boxProps={{ fullWidth: true, mr: 8 }}
-                                        component={InputComponent}
-                                        classInput="footer__email-input"
-                                        name="email"
-                                        type="email"
-                                    />
-                                    <Button submit onClick={handleSubmit} label="Send" height={78} radius={50} maxWidth={200} />
-                                </>
-                            )}
-                        </Formik>
-                    </Box>
-                    <Box container flexBox mt={200}>
-                        <List color="white" flexBox>
-                            <ListItem fontSize={16} fontWeight="medium-xl" align="center" mRow={20}>
-                                ABC
-                            </ListItem>
-                            <ListItem fontSize={16} fontWeight="medium-xl" align="center" mRow={20}>
-                                123
-                            </ListItem>
-                            <ListItem fontSize={16} fontWeight="medium-xl" align="center" mRow={20}>
-                                123
-                            </ListItem>
-                            <ListItem fontSize={16} fontWeight="medium-xl" align="center" mRow={20}>
-                                123
-                            </ListItem>
-                        </List>
-                    </Box>
+        <footer className="app-footer">
+            <Box container>
+                <Typography className="title-footer" {..._style.titleFooter}>
+                    Have Question in mind? Let us help you
+                </Typography>
+                <Formik initialValues={{ email: '' }} validationSchema={validationSchema} onSubmit={submitReject} enableReinitialize>
+                    {({ handleSubmit, values }) => (
+                        <Box className="footer-email-input-wrap" {..._style.boxContact}>
+                            <Field
+                                placeholder="yournam@email.com"
+                                outline
+                                boxProps={{ fullWidth: true, mr: 8 }}
+                                component={InputComponent}
+                                classInput="footer-email-input"
+                                name="email"
+                                type="email"
+                            />
+                            <Button submit onClick={handleSubmit} label="Send" {..._style.buttonSendEmail} />
+                        </Box>
+                    )}
+                </Formik>
+                <Box container className="footer-menu" flexBox mt={128}>
+                    <List color="white" flexBox>
+                        <ListItem {..._style.itemMenuFooter}>ABC</ListItem>
+                        <ListItem {..._style.itemMenuFooter}>123</ListItem>
+                        <ListItem {..._style.itemMenuFooter}>123</ListItem>
+                        <ListItem {..._style.itemMenuFooter}>123</ListItem>
+                    </List>
                 </Box>
             </Box>
         </footer>

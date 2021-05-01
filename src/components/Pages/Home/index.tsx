@@ -24,9 +24,6 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
 
     const [_locale, _changeLocale] = useContext(LanguageContext);
 
-    console.log("Change state => ", count, "LOCALE => ", _locale);
-
-
     const changeLanguage = e => {
         const locale = e.target.value;
         _changeLocale(locale);
@@ -34,10 +31,10 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
     };
 
     useEffect(() => {
-        dispatch(decrement());
+        // dispatch(decrement());
     }, []);
 
-    console.log(listBlogs);
+    console.log("render home-page => ", _locale);
 
     return (
         <main>
@@ -55,14 +52,6 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <LazyComponent offset={0}>
                 <FiveWrap />
             </LazyComponent>
-            <select onChange={changeLanguage} defaultChecked={_locale} className="text-white text-shadow-sm text-lg bg-transparent tracking-wide">
-                <option className="text-black" selected={_locale === "vn"} value="vn">
-                    VN
-                </option>
-                <option className="text-black" selected={_locale === "en"} value="en">
-                    Eng
-                </option>
-            </select>
         </main>
     );
 };

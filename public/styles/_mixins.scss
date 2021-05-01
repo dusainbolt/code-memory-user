@@ -71,6 +71,11 @@
     }
 } 
 
+@mixin _darkTheme {
+    body[theme-data='dark'] {
+        @content;
+    }
+}
 
 
 @mixin _responsive($breakpoint) {

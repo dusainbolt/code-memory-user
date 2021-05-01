@@ -1,15 +1,14 @@
 import Dropdown from '@Common/Dropdown';
-import ImageWrapper from '@Common/ImageWrapper';
 import { faMagic, faSun, faGlobe, faMoon } from '@fortawesome/free-solid-svg-icons';
-import { faWhmcs } from '@fortawesome/free-brands-svg-icons';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu } from 'antd';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import IconApp from '.';
 import IconImage from './IconImage';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '@Components/LanguageProvider';
+import { OPTION_LANG, OPTION_THEME } from '@Config/contains';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 interface _IconLanguage {
     className?: string;
@@ -19,33 +18,55 @@ export const styleIconSubMenu = { width: 36, height: 36, circle: true, mr: 6 };
 
 export const styleIconImage = { width: 36, height: 36, circle: true, mr: 6, imgHeight: 15, imgWidth: 26 };
 
-const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }) => {
+export const getIconTheme = {
+    dark: faMoon,
+    light: faSun,
+};
 
+const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }) => {
     const [_locale, _changeLocale] = useContext(LanguageContext);
+    const { t } = useTranslation();
+    const [themeName, setThemeName] = useState('');
 
     const onClickMenu = value => () => {
         _changeLocale(value);
     };
 
+    const onChangeTheme = valueTheme => () => {
+        setThemeName(valueTheme);
+        document.body.setAttribute('theme-data', valueTheme);
+        localStorage.setItem('theme-app', valueTheme);
+    };
+
+    useEffect(() => {
+        const localTheme = localStorage.getItem('theme-app');
+        const valueTheme = localTheme ? localTheme : OPTION_THEME.light;
+        setThemeName(valueTheme);
+        document.body.setAttribute('theme-data', localTheme);
+    }, []);
+
     const menu = (
-        <Menu className="app-setting-menu">
+        <Menu className="app-setting-menu" selectedKeys={[_locale, themeName]}>
             <SubMenu
                 icon={<IconApp propsLayout={styleIconSubMenu} className="icon-sub-menu" icon={faGlobe} />}
                 popupClassName="app-setting-menu-sub"
                 title="Ngôn ngữ">
-                <Menu.Item onClick={onClickMenu('vn')}>
-                    <IconImage className="icon-sub-menu" {...styleIconImage} src="/images/vn_flag.svg" /> Tieng viet
-                </Menu.Item>
-                <Menu.Item onClick={onClickMenu('en')}>
-                    <IconImage className="icon-sub-menu" {...styleIconImage} src="/images/en_flag.svg" /> Tieng Anh
-                </Menu.Item>
+                {OPTION_LANG.map(item => (
+                    <Menu.Item key={item.value} onClick={onClickMenu(item.value)}>
+                        <IconImage className="icon-sub-menu" {...styleIconImage} src={item.src} />
+                        {t(`lang.${item.value}`)}
+                    </Menu.Item>
+                ))}
             </SubMenu>
             <SubMenu
                 icon={<IconApp propsLayout={styleIconSubMenu} className="icon-sub-menu" icon={faSun} />}
                 popupClassName="app-setting-menu-sub"
                 title="Giao diện">
-                <Menu.Item><IconApp propsLayout={styleIconSubMenu} className="icon-sub-menu" icon={faSun} /> 3rd menu item</Menu.Item>
-                <Menu.Item><IconApp propsLayout={styleIconSubMenu} className="icon-sub-menu" icon={faMoon} /> 4th menu item</Menu.Item>
+                {Object.values(OPTION_THEME).map(item => (
+                    <Menu.Item onClick={onChangeTheme(item)} key={item}>
+                        <IconApp propsLayout={styleIconSubMenu} className="icon-sub-menu" icon={getIconTheme[item]} /> {t(`theme.${item}`)}
+                    </Menu.Item>
+                ))}
             </SubMenu>
         </Menu>
     );

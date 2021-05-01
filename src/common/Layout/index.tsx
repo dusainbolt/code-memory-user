@@ -44,7 +44,7 @@ export const Col: React.FC<_Col> = ({ children, xs, sm, md, lg, xl, xxl, xsOrder
     return <div className={colStyle}>{children}</div>;
 };
 
-interface _Box extends _styleLayout {
+export interface _Box extends _styleLayout {
     children?: any;
     className?: string;
     container?: boolean;
@@ -54,18 +54,6 @@ interface _Box extends _styleLayout {
 export const Box: React.FC<_Box> = ({ children, onClick, container, ...props }) => {
     const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
     return <div onClick={onClick} className={boxStyle}>{children}</div>;
-};
-
-interface _Box extends _styleLayout {
-    children?: any;
-    className?: string;
-    container?: boolean;
-    onClick?: any;
-}
-
-export const Box2: React.FC<_Box> = ({ children, onClick, container, ...props }) => {
-    const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
-    return <div className={boxStyle}>{children}</div>;
 };
 
 interface _Divider extends _styleLayout {
@@ -85,7 +73,7 @@ export const List: React.FC<_List> = ({ children, ...props }) => {
     return <ul className={boxStyle}>{children}</ul>
 };
 
-interface _ListItem extends _styleLayout {
+export interface _ListItem extends _styleLayout {
 }
 
 export const ListItem: React.FC<_ListItem> = ({ children, ...props }) => {

@@ -11,5 +11,13 @@ export default {
   },
   home: {
     title_page: "undefined"
+  },
+  lang: {
+    vn: "undefined",
+    en: "undefined"
+  },
+  theme: {
+    dark: "undefined",
+    light: "undefined"
   }
 }
