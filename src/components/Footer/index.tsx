@@ -3,10 +3,14 @@ import InputComponent from '@Common/Input';
 import { Box, List, ListItem } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import { Field, Formik } from 'formik';
+import Link from 'next/link';
 import * as Yup from 'yup';
 import * as _style from './style';
+import { LIST_MENU } from '@Config/contains';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 const Footer = ({}) => {
+    const { t } = useTranslation();
     const submitReject = values => {
         console.log(values);
     };
@@ -37,12 +41,14 @@ const Footer = ({}) => {
                         </Box>
                     )}
                 </Formik>
-                <Box container className="footer-menu" flexBox mt={128}>
+                <Box container className="footer-menu" flexBox mt={100} pb={30}>
+                <a href="https://github.com/zero-to-mastery" target="_blank" rel="noopener noreferrer">ABOUT</a>
                     <List color="white" flexBox>
-                        <ListItem {..._style.itemMenuFooter}>ABC</ListItem>
-                        <ListItem {..._style.itemMenuFooter}>123</ListItem>
-                        <ListItem {..._style.itemMenuFooter}>123</ListItem>
-                        <ListItem {..._style.itemMenuFooter}>123</ListItem>
+                        {LIST_MENU.map((item, index) => (
+                            <ListItem key={index} {..._style.itemMenuFooter}>
+                                <Link href={item.href}><a>{t(`menu.${item.name}`)}</a></Link>
+                            </ListItem>
+                        ))}
                     </List>
                 </Box>
             </Box>

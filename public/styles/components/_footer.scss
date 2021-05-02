@@ -3,9 +3,16 @@ footer.app-footer {
     background-color: var(--color-bg-footer);
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
+    .footer-email-input-wrap {
+        background: var(--color-bg-input);
+    }
     .footer-email-input {
         font-size: 22px;
-        font-weight: 400px;
+        font-weight: 400;
+        background: var(--color-bg-input);
+    }
+    li a {
+        color: var(--color-background-main);
     }
 }
 
@@ -18,11 +25,39 @@ footer.app-footer {
         button {
             max-width: 80%;
         }
+        .footer-email-input {
+            text-align: center;
+        }
+        .mess-error {
+            display: block;
+            text-align: center;
+        }
     }
 }
 
-@include _darkTheme(){
-    .title-footer, .footer-menu li {
+@include _responsive(_xs) {
+    footer.app-footer {
+        .footer-menu {
+            margin-top: 64px;
+            ul.app-list {
+                flex-direction: column;
+            }
+            .footer-email-input {
+                font-size: 22px;
+                font-weight: 400;
+                text-align: center;
+            }
+            .mess-error {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include _darkTheme() {
+    .title-footer,
+    .footer-menu ul.app-list a {
         color: var(--color-text-main);
     }
 }

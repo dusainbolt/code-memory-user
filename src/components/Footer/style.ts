@@ -35,4 +35,5 @@ export const itemMenuFooter: _ListItem = {
     fontWeight: 'medium-xl',
     align: 'center',
     mRow: 20,
+    pCol: 4,
 };

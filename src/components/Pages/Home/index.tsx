@@ -41,15 +41,15 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <Banner />
             <Divider mCol={90} />
             <SecondWrap />
-            <LazyComponent offset={0}>
+            <LazyComponent offset={40}>
                 <ThirdWrap />
             </LazyComponent>
             <Divider mCol={60} />
-            <LazyComponent offset={0}>
+            <LazyComponent offset={40}>
                 <FourthWrap />
             </LazyComponent>
             <Divider mCol={60} />
-            <LazyComponent offset={0}>
+            <LazyComponent offset={40}>
                 <FiveWrap />
             </LazyComponent>
         </main>
