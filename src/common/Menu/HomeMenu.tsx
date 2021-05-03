@@ -14,8 +14,8 @@ const HomeMenu: React.FC<_HomeMenu> = ({}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const { t } = useTranslation();
 
-    const menuResponsiveClass = clsx('menu__xs-wrap', openMenu && 'menu__open');
-    const menuDrawerMashClass = clsx('menu__drawer-mask', openMenu && 'mask__open');
+    const menuResponsiveClass = clsx('menu--xs-wrap', openMenu && 'menu--open');
+    const menuDrawerMashClass = clsx('menu--drawer-mask', openMenu && 'mask--open');
 
     const toggleOpen = () => {
         setOpenMenu(!openMenu);
@@ -24,7 +24,7 @@ const HomeMenu: React.FC<_HomeMenu> = ({}) => {
     const renderMenu = () => {
         return (
             <>
-                <ul className="menu__list">
+                <ul className="menu--list">
                     {LIST_MENU.map((item, index) => (
                         <MenuItem key={index} text={t(`menu.${item.name}`)} href={item.href} active={router.pathname.indexOf(item.href) !== -1} />
                     ))}
@@ -36,10 +36,10 @@ const HomeMenu: React.FC<_HomeMenu> = ({}) => {
 
     return (
         <>
-            <button onClick={toggleOpen} className="menu__collapse">
+            <button onClick={toggleOpen} className="menu--collapse">
                 <FontAwesomeIcon icon={faBars} />
             </button>
-            <div className="menu__wrap">{renderMenu()}</div>
+            <div className="menu--wrap">{renderMenu()}</div>
         </>
     );
 };

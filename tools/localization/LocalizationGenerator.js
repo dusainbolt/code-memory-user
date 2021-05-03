@@ -14,8 +14,8 @@ const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 // time.
 // make generator-localization-gc
 // window:  mingw32-make generator-localization-ekyc
-const TOKEN_PATH = path.resolve(__dirname, 'token.json');
-const CREDENTIALS_PATH = path.resolve(__dirname, 'credentials.json');
+const TOKEN_PATH = path.resolve(--dirname, 'token.json');
+const CREDENTIALS_PATH = path.resolve(--dirname, 'credentials.json');
 let OUTPUT_LANG_INDEX;
 let SPREADSHEET_ID;
 let GID_ID;

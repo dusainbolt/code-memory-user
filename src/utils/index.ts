@@ -23,6 +23,7 @@ export const _getStyleLayout = (props) => ({
     'fade fade-down': props.fadeDownComponent,
     'fade fade-left': props.fadeLeftComponent,
     'full-w': props.fullWidth,
+    [`l-sp-${props.letterSpacing}`]: props.letterSpacing,
     [`b-${props.bottom}`]: props.bottom,
     [`t-${props.top}`]: props.top,
     [`l-${props.left}`]: props.left,

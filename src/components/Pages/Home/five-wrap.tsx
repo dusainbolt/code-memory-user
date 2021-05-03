@@ -19,10 +19,10 @@ const FiveWrap: React.FC<_FiveWrap> = ({}) => {
             </Col>
             <Col md={12} xxl={6} fadeRightComponent>
                 <Box flexBox minHeightPercent={90} flexCol alignItem="start">
-                    <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap__title-small">
+                    <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap--title-small">
                         About Us
                     </Typography>
-                    <Typography fontWeight="bold" lineHeight={54} type="h3" className="fourth-wrap__title-large">
+                    <Typography fontWeight="bold" lineHeight={54} type="h3" className="fourth-wrap--title-large">
                         We Lead From The Front
                     </Typography>
                     <Typography fontWeight="regular" lineHeight={30} className="mt-36 mb-36">

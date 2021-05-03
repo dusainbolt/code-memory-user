@@ -11,9 +11,9 @@ interface _MenuItem {
 const MenuItem: React.FC<_MenuItem> = ({ text, href, active }) => {
 
     return (
-        <li className={`menu__item ${active ? STATUS.ACTIVE : STATUS.NORMAL}`}>
+        <li className={`menu--item ${active ? STATUS.ACTIVE : STATUS.NORMAL}`}>
             <Link href={href}>
-                <a className="menu__link">{text}</a>
+                <a className="menu--link">{text}</a>
             </Link>
         </li>
     );

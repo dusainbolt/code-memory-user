@@ -84,11 +84,17 @@
   --color-text-main-05: #8090aa;
   --color-text-inactive: #a6b0c1;
   --color-bg-icon: #e4e6eb;
+  --color-bg-header: #ffffff;
+  --color-hover-dark: #514b4b;
+  --color-bg-input: #ffffff;
 }
 
 body[theme-data=dark] {
   --color-background-main: #18191a;
   --color-text-main: #e4e6eb;
+  --color-bg-header: #242526;
+  --color-bg-footer: #161727;
+  --color-bg-input: #3a3b3c;
 }
 
 .center-block {
@@ -50995,6 +51001,10 @@ body[theme-data=dark] {
 .full-w {
   width: 100%;
   max-width: 100%;
+}
+
+.l-sp-1 {
+  letter-spacing: 1px;
 }
 
 .color-white {

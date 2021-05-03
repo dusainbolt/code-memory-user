@@ -1,5 +1,5 @@
 .image-lazy{
-  &__wrapper {
+  &--wrapper {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -11,12 +11,12 @@
       opacity: 0;
       width: 100%;
       transition: all 2s linear;
-      &.image-lazy__loaded {
+      &.image-lazy--loaded {
         opacity: 1;
       }
     }
   }
-  &__loading {
+  &--loading {
     filter: blur(50px);
     transform: scale(1);
   }

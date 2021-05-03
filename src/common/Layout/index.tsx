@@ -1,6 +1,7 @@
 import { _styleLayout } from '@Config/models';
 import { _getStyleLayout } from '@Utils/index';
 import clsx from 'clsx';
+import Link from 'next/link';
 interface _Row extends _styleLayout {
     children: any;
     container?: boolean;
@@ -53,7 +54,27 @@ export interface _Box extends _styleLayout {
 
 export const Box: React.FC<_Box> = ({ children, onClick, container, ...props }) => {
     const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
-    return <div onClick={onClick} className={boxStyle}>{children}</div>;
+    return (
+        <div onClick={onClick} className={boxStyle}>
+            {children}
+        </div>
+    );
+};
+
+export interface _Nav extends _styleLayout {
+    children?: any;
+    className?: string;
+    container?: boolean;
+    onClick?: any;
+}
+
+export const Nav: React.FC<_Nav> = ({ children, onClick, container, ...props }) => {
+    const NavStyle = clsx({ container: container, ..._getStyleLayout(props) });
+    return (
+        <nav onClick={onClick} className={NavStyle}>
+            {children}
+        </nav>
+    );
 };
 
 interface _Divider extends _styleLayout {
@@ -65,18 +86,33 @@ export const Divider: React.FC<_Divider> = ({ line, ...props }) => {
     return <hr className={boxStyle} />;
 };
 
-interface _List extends _styleLayout {
-}
+interface _List extends _styleLayout {}
 
 export const List: React.FC<_List> = ({ children, ...props }) => {
     const boxStyle = clsx({ 'app-list': true, ..._getStyleLayout(props) });
-    return <ul className={boxStyle}>{children}</ul>
+    return <ul className={boxStyle}>{children}</ul>;
 };
-
-export interface _ListItem extends _styleLayout {
-}
+export interface _ListItem extends _styleLayout {}
 
 export const ListItem: React.FC<_ListItem> = ({ children, ...props }) => {
     const boxStyle = clsx({ 'app-list-item': true, ..._getStyleLayout(props) });
-    return <li className={boxStyle}>{children}</li>
+    return <li className={boxStyle}>{children}</li>;
+};
+
+interface _AppLink extends _styleLayout {
+    children?: any;
+    href?: string;
+    aTag?: boolean;
+    rel?: string;
+    target?: string;
+}
+
+export const AppLink: React.FC<_AppLink> = ({ aTag = false, target = '', href = '', children, rel, ...props }) => {
+    const boxStyle = clsx({ 'app-link': true, ..._getStyleLayout(props) });
+    const aElement = (
+        <a rel={rel || children} target={target} className={boxStyle}>
+            {children}
+        </a>
+    );
+    return aTag ? aElement : <Link href={href}>{aElement}</Link>;
 };

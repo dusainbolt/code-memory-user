@@ -14,10 +14,10 @@ const FourthWrap: React.FC<_FourthWrap> = ({}) => {
     return (
         <Row className="fourth-wrap" container>
             <Col md={12} xl={6} xxl={5} fadeLeftComponent>
-                    <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap__title-small">
+                    <Typography fontWeight="bold" lineHeight={30} type="h2" className="fourth-wrap--title-small">
                         About Us
                     </Typography>
-                    <Typography fontWeight="bold" lineHeight={54} type="h3" className="fourth-wrap__title-large">
+                    <Typography fontWeight="bold" lineHeight={54} type="h3" className="fourth-wrap--title-large">
                         We Lead From The Front
                     </Typography>
                     <Typography fontWeight="regular" lineHeight={30} className="mt-36 mb-36">

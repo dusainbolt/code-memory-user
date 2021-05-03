@@ -1,5 +1,5 @@
 .header {
-    &__wrapper {
+    &--wrapper {
         top: 0px;
         z-index: 10000;
         transition: all 0.3s;
@@ -11,10 +11,10 @@
             background-color: var(--color-bg-header);
         }
     }
-    &__container {
+    &--container {
         @include _flex_box(center, space-between);
     }
-    &__logo {
+    &--logo {
         min-width: 140px;
     }
 }

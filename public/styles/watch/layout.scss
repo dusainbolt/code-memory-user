@@ -222,6 +222,11 @@ $container_extraLarge: 1140px;
     max-width: 100%;
 }
 
+.l-sp-1 {
+    letter-spacing: 1px;
+}
+
+
 .color {
     &-white {
         color: var(--color-background-main);

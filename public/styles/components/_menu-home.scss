@@ -1,53 +1,25 @@
 .menu {
-    &__wrap {
+    &--wrap {
         @include _flex_box(center, flex-start);
         width: max-content;
     }
-    &__xs-wrap {
+    &--xs-wrap {
         display: none;
         transition: transform 0.25s linear;
     }
-    &__drawer-mask {
-        // cursor: pointer;
-        // width: 100vw;
-        // height: 100vh;
-        // top: 0;
-        // left: 0;
-        // position: fixed;
-        // background: blanchedalmond;
-        // display: none;
-        // animation: fadeIn 0.3s;
-        // background: rgba(0, 0, 0, 0.45);
-    }
-    &__list {
-        width: 100%;
-        @include _flex_box(center, flex-start);
-        font-size: 17px;
-        list-style: none;
-        margin: 0px 22.5px 0px 0px;
-        transform: translateY(10%);
-    }
-    &__item {
-        margin: 0 21.5px;
-        position: relative;
-        padding-bottom: 10px;
-        white-space: nowrap;
+
+    &--link {
         &.active,
         &:hover {
-            .menu__link {
-                color: var(--color-text-main);
-            }
+            color: var(--color-text-main);
         }
     }
-    &__link {
+
+    &--link {
         text-decoration: none;
-        font-weight: 400;
         color: var(--color-text-inactive);
-        font-weight: 700;
-        font-size: 16px;
-        transition: all 0.3s;
     }
-    &__collapse {
+    &--collapse {
         border: 0;
         background-color: transparent;
         font-size: 17px;
@@ -60,10 +32,10 @@
 @include _responsive(_md) {
     .menu {
         display: none !important;
-        &__wrap {
+        &--wrap {
             display: none;
         }
-        // &__xs-wrap {
+        // &--xs-wrap {
         //     display: block;
         //     @include _position_side_draw();
         //     button {
@@ -71,29 +43,29 @@
         //         margin: auto;
         //     }
         // }
-        // &__drawer-mask.mask__open {
+        // &--drawer-mask.mask--open {
         //     display: block;
         // }
-        // &__open {
+        // &--open {
         //     transition: transform 0.25s linear;
         //     transform: translateX(0);
         // }
-        &__collapse {
+        &--collapse {
             display: block;
             width: unset;
         }
-        // &__list {
+        // &--list {
         //     flex-direction: column;
         //     align-items: center;
         //     margin-bottom: 40px;
         //     padding: 0;
         //     margin-right: 0;
         // }
-        // &__btn {
+        // &--btn {
         //     width: 1005px;
         //     flex-direction: column;
 
-        //     .sign-in__link {
+        //     .sign-in--link {
         //         margin-bottom: 20px;
         //     }
         // }

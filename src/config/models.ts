@@ -20,6 +20,7 @@ export type _ctxApp = {
 
 export type _styleLayout = {
     onClick?: VoidFunction;
+    letterSpacing?: number;
     width?: number;
     minWidth?: number;
     maxWidth?: number;

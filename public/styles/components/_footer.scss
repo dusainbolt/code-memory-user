@@ -12,6 +12,22 @@ footer.app-footer {
         background: var(--color-bg-input);
     }
     li a {
+        // color: var(--color-background-main);
+    }
+    .footer-contact-list {
+        .app-list-item {
+            overflow: hidden;
+            width: 40px;
+            height: 40px;
+            background: white;
+        }
+        a {
+            width: max-content;
+            height: max-content;
+        }
+    }
+    .footer-copyright {
+        background: #1b1e4e;
         color: var(--color-background-main);
     }
 }
@@ -57,7 +73,8 @@ footer.app-footer {
 
 @include _darkTheme() {
     .title-footer,
-    .footer-menu ul.app-list a {
+    .footer-menu ul.app-list a,
+    .footer-copyright {
         color: var(--color-text-main);
     }
 }
