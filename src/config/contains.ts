@@ -7,8 +7,8 @@ export const LIST_MENU = [
     { name: 'txt_home', href: '/' },
     { name: 'txt_blog', href: '/blog' },
     { name: 'txt_about', href: '/about' },
-    { name: 'txt_services', href: '/service' },
     { name: 'txt_contact', href: '/contact' },
+    { name: 'txt_services', href: '/service' },
 ];
 
 export const OPTION_LANG = [

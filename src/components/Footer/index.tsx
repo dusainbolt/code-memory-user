@@ -10,6 +10,7 @@ import { LIST_MENU } from '@Config/contains';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faGooglePlus, faGooglePlusSquare, faSkype, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = ({}) => {
     const { t } = useTranslation();
@@ -45,23 +46,23 @@ const Footer = ({}) => {
                 </Formik>
                 <List mt={70} flexBox className="footer-contact-list">
                     <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://github.com/zero-to-mastery" target="_blank" rel="Facebook">
-                            <FontAwesomeIcon icon={faBars} />
+                        <AppLink href="https://www.facebook.com/sainboltapp" target="_blank" rel="Facebook">
+                            <FontAwesomeIcon icon={faFacebook} />
                         </AppLink>
                     </ListItem>
                     <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://github.com/zero-to-mastery" target="_blank" rel="Facebook">
-                            <FontAwesomeIcon icon={faBars} />
+                        <AppLink href="https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ" target="_blank" rel="Youtube">
+                            <FontAwesomeIcon icon={faYoutube} />
                         </AppLink>
                     </ListItem>
                     <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://github.com/zero-to-mastery" target="_blank" rel="Facebook">
-                            <FontAwesomeIcon icon={faBars} />
+                        <AppLink href="mailto:dulh181199@gmail.com" target="_blank" rel="Email">
+                            <FontAwesomeIcon icon={faGooglePlus} />
                         </AppLink>
                     </ListItem>
                     <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://github.com/zero-to-mastery" target="_blank" rel="Facebook">
-                            <FontAwesomeIcon icon={faBars} />
+                        <AppLink href="https://join.skype.com/invite/kP2kfn0Wu06U" target="_blank" rel="Skype">
+                            <FontAwesomeIcon icon={faSkype} />
                         </AppLink>
                     </ListItem>
                 </List>

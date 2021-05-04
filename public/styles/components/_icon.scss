@@ -41,9 +41,11 @@
     }
 }
 
-.ant-dropdown-menu, .ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title {
-    background: var(--color-bg-header);
-    color: var(--color-text-main);
+.ant-dropdown-menu, .ant-dropdown-menu-item{
+    &:not(.ant-dropdown-menu-submenu){
+        background: var(--color-bg-header);
+        color: var(--color-text-main);
+    }
 }
 
 .ant-dropdown {

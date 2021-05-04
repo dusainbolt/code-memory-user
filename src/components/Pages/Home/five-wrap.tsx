@@ -13,7 +13,7 @@ interface _FiveWrap {
 
 const FiveWrap: React.FC<_FiveWrap> = ({}) => {
     return (
-        <Row className="fourth-wrap" container>
+        <Row className="fourth-wrap" mb={100} container>
             <Col md={12} xxl={6} fadeLeftComponent>
                 <ImageWrapper width={526} height={526} alt="img-content-banner-3" src="/images/avatar_home_page.png" />
             </Col>
