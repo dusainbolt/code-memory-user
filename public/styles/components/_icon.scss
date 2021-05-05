@@ -57,7 +57,7 @@
 
 .ant-dropdown-menu-item-selected, .ant-dropdown-menu-submenu-title-selected, .ant-dropdown-menu-item-selected > a, .ant-dropdown-menu-submenu-title-selected > a {
     color: var(--color-text-main);
-    background: var(--color-primary-light);
+    background: var(--color-primary-light) !important;
 }
 
 .icon-sub-menu {

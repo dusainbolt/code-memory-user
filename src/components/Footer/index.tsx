@@ -1,6 +1,6 @@
 import Button from '@Common/Button';
 import InputComponent from '@Common/Input';
-import { AppLink, Box, List, ListItem, Nav } from '@Common/Layout';
+import { AppLink, Box, List, ListItem } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import { Field, Formik } from 'formik';
 import Link from 'next/link';
@@ -9,8 +9,7 @@ import * as _style from './style';
 import { LIST_MENU } from '@Config/contains';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faGooglePlus, faGooglePlusSquare, faSkype, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGooglePlus, faSkype, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = ({}) => {
     const { t } = useTranslation();
@@ -81,9 +80,6 @@ const Footer = ({}) => {
             <Box className="footer-copyright" letterSpacing={1} pt={6} height={32} align="center">© Copyright Du Sainbolt. All Rights Reserved</Box>
         </footer>
     );
-};
-Footer.propTypes = {
-    // t: PropTypes.func.isRequired,
 };
 
 export default Footer;

@@ -18,3 +18,47 @@
         min-width: 140px;
     }
 }
+
+.menu {
+    &--wrap {
+        @include _flex_box(center, flex-start);
+        width: max-content;
+    }
+    &--xs-wrap {
+        display: none;
+        transition: transform 0.25s linear;
+    }
+
+    &--link {
+        &.active,
+        &:hover {
+            color: var(--color-text-main);
+        }
+    }
+
+    &--link {
+        text-decoration: none;
+        color: var(--color-text-inactive);
+    }
+    &--collapse {
+        border: 0;
+        background-color: transparent;
+        font-size: 17px;
+        color: var(--color-primary);
+        cursor: pointer;
+        display: none;
+    }
+}
+
+@include _responsive(_md) {
+    .menu {
+        display: none !important;
+        &--wrap {
+            display: none;
+        }
+        &--collapse {
+            display: block;
+            width: unset;
+        }
+    }
+}

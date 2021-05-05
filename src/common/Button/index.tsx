@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { _getStyleLayout } from '@Utils/index';
 import { _styleLayout } from '@Config/models';
 interface _Button extends _styleLayout {
-    label: string;
+    label?: string;
     type?: string;
     shadow?: boolean;
     outline?: boolean;

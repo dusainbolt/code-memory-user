@@ -1,4 +1,3 @@
-import Dropdown from '@Common/Dropdown';
 import { faMagic, faSun, faGlobe, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu } from 'antd';
@@ -9,6 +8,7 @@ import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '@Components/LanguageProvider';
 import { OPTION_LANG, OPTION_THEME } from '@Config/contains';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
+import DropdownCommon from '@Common/Dropdown';
 
 interface _IconLanguage {
     className?: string;
@@ -71,11 +71,11 @@ const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }
         </Menu>
     );
     return (
-        <Dropdown placement="topLeft" trigger={['click']} overlay={menu}>
+        <DropdownCommon placement="topLeft" trigger={['click']} overlay={menu}>
             <span className="app-setting-icon cir">
                 <FontAwesomeIcon icon={faMagic} />
             </span>
-        </Dropdown>
+        </DropdownCommon>
     );
 };
 

@@ -20,11 +20,11 @@ const FourthWrap: React.FC<_FourthWrap> = ({}) => {
                     <Typography fontWeight="bold" lineHeight={54} type="h3" className="fourth-wrap--title-large">
                         We Lead From The Front
                     </Typography>
-                    <Typography fontWeight="regular" lineHeight={30} className="mt-36 mb-36">
+                    <Typography fontWeight="regular" lineHeight={30} fontSize={18} className="mt-36 mb-36">
                         We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward
                         tow weeks after we are going for a new project.
                     </Typography>
-                    <Typography fontWeight="regular" lineHeight={30}>
+                    <Typography fontWeight="regular" fontSize={18} lineHeight={30}>
                         I wrote to let them know ready to come back they kicked me of their team slack all of us are make company email.
                     </Typography>
                     <Box flexBox mt={60} justify="start">
