@@ -8,7 +8,7 @@ interface _SecondWrap {
 const SecondWrap: React.FC<_SecondWrap> = ({}) => {
     return (
         <Box className="second-wrap--container" container>
-            <Typography className="second-wrap--title" fontWeight="bold" type="h2" centerBlock textCenter fontSize={44} maxWidth={604}>
+            <Typography idProps={{id: "second"}} className="second-wrap--title" fontWeight="bold" type="h2" centerBlock textCenter fontSize={44} maxWidth={604}>
                 Provide Awesome Service With Our Tools
             </Typography>
             <Typography className="second-wrap--description" fontWeight="medium" type="p" centerBlock textCenter fontSize={20} maxWidth={602}>
