@@ -1,29 +1,46 @@
-import PropTypes from 'prop-types';
 import Head from 'next/head';
+import getConfig from 'next/config';
 
-const HeadSEO = ({ title = 'Sainbolt App', siteTitle = 'SEO - Title', description = 'DESCRIPTION Du Sainbolt' }) => {
-    return (
-        <Head>
-            <title>{`${title} | ${siteTitle}`}</title>
-            <meta name="description" content={description} />
-            <meta name="keywords" content="Du Sainbolt, Sainbolt App, Blog Du Sainbolt" />
-            <meta name="author" content="Du Sainbolt" />
-            <meta property="og:type" content="Du Sainbolt OG Title" />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:site_name" content={siteTitle} />
-            <meta property="og:image" content="/images/avatar_home_page.png" />
-            <meta property="twitter:card" content="summary" />
-            <meta property="og:url" content="https://du-sainbolt.web.app" />
-            {/* <meta property="twitter:creator" content={config.social.twitter} /> */}
-            {/* <meta property="twitter:title" content={title} />
-            <meta property="twitter:description" content={description} /> */}
-        </Head>
-    );
+const {
+    publicRuntimeConfig: { DOMAIN_APP },
+} = getConfig();
+
+export const DEFAULT_SEO = {
+    appName: 'CodeMemory',
+    title: 'Trang chủ CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình',
+    description: 'Hy vọng mình sẽ đem đến cái nhìn chân thưc, sự đam mê và thích thú về lĩnh vực này tới cho các bạn.',
+    keywords: 'CodeMemory, CodeMemory Blog, CodeMemory diễn đàn, CodeMemory khóa học, CodeMemory Dịch vụ, Kiến thức, Lập trình, làm website, làm ứng dụng',
+    ogImage: '/images/avatar_home_page.png',
+    ogType: 'website',
+    ogUrl: DOMAIN_APP
 };
 
-HeadSEO.propTypes = {
-    title: PropTypes.string.isRequired,
+const HeadSEO = ({
+    title = DEFAULT_SEO.title,
+    appName = DEFAULT_SEO.appName,
+    keywords = DEFAULT_SEO.keywords,
+    ogImage = DEFAULT_SEO.ogImage,
+    ogType = DEFAULT_SEO.ogType,
+    description = DEFAULT_SEO.description,
+    ogUrl = DEFAULT_SEO.ogUrl
+}) => {
+    return (
+        <Head>
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta name="keywords" content={keywords} />
+            <meta name="author" content="Du Sainbolt" />
+            <meta property="og:type" content={ogType} />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:site_name" content={appName} />
+            <meta property="og:image" content={ogImage} />
+            <meta property="og:url" content={ogUrl} />
+            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:title" content={title} />
+            <meta property="twitter:description" content={description} />
+        </Head>
+    );
 };
 
 export default HeadSEO;

@@ -2,8 +2,9 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { _getStyleLayout } from '@Utils/index';
 import { _styleLayout } from '@Config/models';
-interface _Button extends _styleLayout {
+export interface _Button extends _styleLayout {
     label?: string;
+    children?: any;
     type?: string;
     shadow?: boolean;
     outline?: boolean;
@@ -23,6 +24,7 @@ const Button: React.FC<_Button> = ({
     link,
     href = '',
     submit,
+    children,
     onClick,
     ...props
 }) => {
@@ -42,7 +44,7 @@ const Button: React.FC<_Button> = ({
     ) : (
         <Link href={href}>
             <a className={style} onClick={onClick}>
-                {label}
+                {label || children}
             </a>
         </Link>
     );

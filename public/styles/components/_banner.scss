@@ -32,6 +32,11 @@
     &--img-content-banner {
         margin-left: auto;
     }
+    &--button-next-view {
+        .svg-inline--fa {
+            margin-left: 6px;
+        }
+    }
 }
 
 @include _responsive(_md) {
@@ -39,6 +44,9 @@
         &--img-content-banner {
             width: 85%;
             margin: auto;
+        }
+        &--title {
+            font-size: $base-fontSize + 28;  
         }
     }
 }

@@ -12,7 +12,7 @@ export default function IndexPage(props) {
     const { t } = useTranslation();
     return (
         <Fragment>
-            <Meta title={t('home.title_page')} />
+            <Meta />
             <Header />
             <HomePageComponent {...props} />
             <Footer />
