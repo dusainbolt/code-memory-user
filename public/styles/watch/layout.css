@@ -50995,6 +50995,10 @@ body[theme-data=dark] {
   opacity: 0.7;
 }
 
+.hl-b {
+  color: #ff9a14;
+}
+
 .cir {
   border-radius: 50%;
 }

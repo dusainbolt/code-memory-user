@@ -18,6 +18,8 @@ export default function useTranslation() {
             console.warn(`No string '${key}' for locale '${locale}'`);
         }
 
+        console.log(LangStrings);
+
         return LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || '';
     }
 

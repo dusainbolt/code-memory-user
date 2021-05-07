@@ -37,8 +37,8 @@ const Banner: React.FC<_Banner> = ({}) => {
                     <Box className="banner--info-wrap">
                         <Typography fontWeight="bold" className="banner--title" type="h1"></Typography>
                         <Typography mt={30} fontWeight="medium" className="banner--description">
-                            Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình. Hy vọng mình sẽ đem đến cái nhìn chân thưc, sự đam mê
-                            và thích thú về lĩnh vực này tới cho các bạn.
+                            Đem đến môi trường kiến thức bổ ích trong lĩnh vực <Typography hightLight type="b">lập trình. </Typography>
+                            Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sáng tạo cho các bạn.
                         </Typography>
                         <Button href="#second" className="banner--button-next-view" {...styleButtonViewNextHome} >
                             Xem tiếp <FontAwesomeIcon icon={faAngleDoubleDown} />
