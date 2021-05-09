@@ -1,3 +1,4 @@
+import { FONT_SIZE } from './../../../config/contains';
 import { _ImageWrapper } from '@Common/ImageWrapper/index';
 import { _Typography } from '@Common/Typography';
 import { _Button } from '@Common/Button/index';
@@ -9,8 +10,16 @@ export const styleDescriptionInteract: _Typography = {
     fontWeight: 'regular',
     type: 'p',
     lineHeight: 30,
-    fontSize: 20,
+    fontSize: FONT_SIZE + 4,
     mt: 14,
+};
+
+export const styleBannerInfoWrap: _Box = {
+    maxWidth: 542,
+    flexBox: true,
+    flexCol: true,
+    minHeightPercent: 100,
+    alignItem: "start"
 };
 
 export const styleImageInteract: _ImageWrapper = { width: 195, height: 183, centerImg: true };
@@ -18,11 +27,15 @@ export const styleImageInteract: _ImageWrapper = { width: 195, height: 183, cent
 export const styleTitleBanner: _Typography = {
     fontWeight: 'bold',
     type: 'h1',
+    fontSize: FONT_SIZE + 44,
+    lineHeight: 86
 };
 
 export const styleDescriptionBanner: _Typography = {
     fontWeight: 'medium',
     mt: 30,
+    fontSize: 18,
+    lineHeight: 26
 };
 
 export const styleImageBanner: ImageProps = {

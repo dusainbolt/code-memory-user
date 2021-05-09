@@ -44,7 +44,7 @@ const Header: React.FC<_Header> = ({}) => {
             <Box className="container header--container">
                 <AppLink rel="trang chu" href="/">
                     <Box className="header--logo">
-                        <Image alt="logo" width={49} height={35} src={staticPath('/images/logo.png')} />
+                        <Image alt="logo" width={209} height={51} src={staticPath('/images/logo_header.png')} />
                     </Box>
                 </AppLink>
                 <button onClick={toggleOpenMenu} className="menu--collapse">

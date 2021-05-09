@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { styleButtonViewNextHome, styleTitleBanner, styleDescriptionBanner, styleImageBanner } from './style';
+import { styleButtonViewNextHome, styleTitleBanner, styleDescriptionBanner, styleImageBanner, styleBannerInfoWrap } from './style';
 import { DEFAULT_SEO } from '@Components/Meta';
 
 interface _Banner {}
@@ -33,7 +33,7 @@ const Banner: React.FC<_Banner> = ({}) => {
             <Box className="banner--background_image_fix"></Box>
             <Row container className="banner--container">
                 <Col md={12} mdOrder={2} xxl={5}>
-                    <Box className="banner--info-wrap">
+                    <Box className="banner--info-wrap" {...styleBannerInfoWrap}>
                         <Typography className="banner--title" {...styleTitleBanner}></Typography>
                         <Typography className="banner--description" {...styleDescriptionBanner}>
                             {t('home.txt_description_banner_1')}

@@ -9,6 +9,7 @@ export const LanguageProvider: React.FC<any> = ({ children }) => {
 
     const _changeLocale = (value) => {
         _setLocale(value);
+        document.body.setAttribute('font-locale', value);
         localStorage.setItem('lang', value);
     };
 
@@ -17,6 +18,7 @@ export const LanguageProvider: React.FC<any> = ({ children }) => {
             return;
         }
         const language = localStorage.getItem('lang') || __locale;
+        document.body.setAttribute('font-locale', language);
         if(language !== _defaultLocale){
             _setLocale(language);
         }

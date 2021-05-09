@@ -14,20 +14,16 @@
         margin-top: 40px;
     }
     &--info-wrap {
-        max-width: 542px;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: center;
+        // max-width: 542px;
+        // display: flex;
+        // flex-direction: column;
+        // height: 100%;
+        // justify-content: center;
     }
     &--title {
-        font-size: $base-fontSize + 45;
-        line-height: 86px;
     }
     &--description {
-        font-size: $base-fontSize + 2;
         color: var(--color-text-main-o4);
-        line-height: 27px;
     }
     &--img-content-banner {
         margin-left: auto;
@@ -35,6 +31,7 @@
     &--button-next-view {
         .svg-inline--fa {
             margin-left: 6px;
+            width: $base-fontSize;
         }
     }
 }
@@ -45,15 +42,18 @@
             width: 85%;
             margin: auto;
         }
+        &--info-wrap {
+            align-items: center;
+        }
         &--title {
-            font-size: $base-fontSize + 28;  
+            // font-size: $base-fontSize + 28;  
             text-align: center;
         }
         &--description {
             text-align: center;
         }
         &--button-next-view {
-            margin: auto;
+            // margin: auto;
             margin-top: 50px;
         }
     }

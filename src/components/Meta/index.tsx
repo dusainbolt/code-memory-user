@@ -9,9 +9,9 @@ const {
 export const DEFAULT_SEO = {
     appName: 'CodeMemory',
     title: 'Trang chủ CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình',
-    description: 'Hy vọng mình sẽ đem đến cái nhìn chân thưc, sự đam mê và thích thú về lĩnh vực này tới cho các bạn.',
+    description: 'Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sự sáng tạo trong chúng ta',
     keywords: 'CodeMemory, CodeMemory Blog, CodeMemory diễn đàn, CodeMemory khóa học, CodeMemory Dịch vụ, Kiến thức, Lập trình, làm website, làm ứng dụng',
-    ogImage:  staticPath('/images/avatar_home_page.png'),
+    ogImage:  staticPath('/images/og_code_memory.png'),
     ogType: 'website',
     ogUrl: DOMAIN_APP
 };
@@ -27,6 +27,7 @@ const HeadSEO = ({
 }) => {
     return (
         <Head>
+            <link rel="icon" href={staticPath('/favicon.png')} type="image/png" sizes="16x16"/>
             <title>{title}</title>
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />
