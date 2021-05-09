@@ -9,6 +9,8 @@ export const styleDescriptionInteract: _Typography = {
     fontWeight: 'regular',
     type: 'p',
     lineHeight: 30,
+    fontSize: 20,
+    mt: 14,
 };
 
 export const styleImageInteract: _ImageWrapper = { width: 195, height: 183, centerImg: true };
@@ -55,7 +57,7 @@ export const styleTitleWrapInteract: _Typography = {
 
 export const styleCardInteract: _Box = {
     padding: 26,
-    height: 100,
+    minHeightPercent: 100,
     radius: 30,
 };
 
@@ -64,4 +66,6 @@ export const styleInteractTitle: _Typography = {
     fontWeight: 'bold',
     type: 'h3',
     lineHeight: 36,
+    fontSize: 26,
+    mt: 28
 };
