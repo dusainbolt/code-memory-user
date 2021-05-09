@@ -13,11 +13,19 @@ export default {
   home: {
     txt_description_banner_1: "undefined",
     txt_description_banner_2: "undefined",
+    txt_title_share: "undefined",
+    txt_description_share: "undefined",
+    txt_title_learn: "undefined",
+    txt_description_learn: "undefined",
+    txt_title_talk: "undefined",
+    txt_description_talk: "undefined",
+    txt_title_interact: "undefined",
+    title_head: "ENG - CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình",
     txt_description_banner_3: "undefined"
   },
   lang: {
     vn: "undefined",
-    en: "undefined"
+    eng: "undefined"
   },
   theme: {
     dark: "undefined",

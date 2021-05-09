@@ -1,7 +1,7 @@
 import { useAppSelector, useAppDispatch, RootState } from '@Redux/store';
 import { _tValue } from '@Utils/index';
 import Banner from '@Components/Pages/Home/banner';
-import SecondWrap from './second-wrap';
+import InteractWrap from './interact-wrap';
 import { Divider } from '@Common/Layout';
 import FourthWrap from './fourth-wrap';
 import { useContext, useEffect } from 'react';
@@ -40,7 +40,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <Banner />
             <Divider mCol={30} />
             <LazyComponent offset={40}>
-                <SecondWrap />
+                <InteractWrap />
             </LazyComponent>
             <Divider mCol={60} />
             <LazyComponent offset={40}>

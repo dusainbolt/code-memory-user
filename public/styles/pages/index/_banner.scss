@@ -47,6 +47,14 @@
         }
         &--title {
             font-size: $base-fontSize + 28;  
+            text-align: center;
+        }
+        &--description {
+            text-align: center;
+        }
+        &--button-next-view {
+            margin: auto;
+            margin-top: 50px;
         }
     }
 }

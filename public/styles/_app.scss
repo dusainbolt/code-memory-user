@@ -6,7 +6,6 @@
 @import './components/collapspe';
 @import './components/header';
 @import './components/image-lazy';
-@import './components/banner';
 @import './components/drawer';
 @import './components/form';
 @import './components/icon';
@@ -44,4 +43,4 @@ html body {
 }
 
 
-@import './pages/index.scss';
+@import './pages/index/index';

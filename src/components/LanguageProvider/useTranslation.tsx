@@ -10,7 +10,8 @@ const LangStrings = {
 };
 
 export default function useTranslation() {
-    const [locale] = useContext(LanguageContext);
+    const [localeContext] = useContext(LanguageContext);
+    let locale = localeContext || _defaultLocale;
     
     function t(key: string) {
         const keys = key.split('.');
