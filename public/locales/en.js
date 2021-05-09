@@ -1,6 +1,7 @@
 export default {
   common: {
-    txt_close: "undefined"
+    txt_close: "undefined",
+    txt_view_next: "undefined"
   },
   menu: {
     txt_home: "undefined",
@@ -10,7 +11,9 @@ export default {
     txt_contact: "undefined"
   },
   home: {
-    title_page: "undefined"
+    txt_description_banner_1: "undefined",
+    txt_description_banner_2: "undefined",
+    txt_description_banner_3: "undefined"
   },
   lang: {
     vn: "undefined",

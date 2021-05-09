@@ -10,7 +10,7 @@ export default function IndexPage(props) {
     return (
         <Fragment>
             <Meta title={"DAY LA TRANG ABOUT"} description="Sainbolt app - description about"/>
-            {/* <Header t={props.t}/> */}
+            <Header />
             {/* <HomePageComponent {...props} /> */}
             <Footer />
         </Fragment>

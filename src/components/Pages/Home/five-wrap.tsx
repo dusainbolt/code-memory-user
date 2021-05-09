@@ -1,6 +1,7 @@
 import { Box, Col, Row } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import ImageWrapper from '@Common/ImageWrapper';
+import { staticPath } from '@Utils/index';
 
 interface _FiveWrap {
     // title: string;
@@ -11,7 +12,7 @@ const FiveWrap: React.FC<_FiveWrap> = ({}) => {
     return (
         <Row className="fourth-wrap" mb={100} container>
             <Col md={12} xxl={6} fadeLeftComponent>
-                <ImageWrapper width={526} height={526} alt="img-content-banner-3" src="/images/avatar_home_page.png" />
+                <ImageWrapper width={526} height={526} alt="img-content-banner-3" src={staticPath('/images/avatar_home_page.png')} />
             </Col>
             <Col md={12} xxl={6} fadeRightComponent>
                 <Box flexBox minHeightPercent={90} flexCol alignItem="start">

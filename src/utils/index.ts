@@ -8,6 +8,10 @@ export const _tValue = (_tText: string, params: object = {}) => {
     return _tText;
 };
 
+export const staticPath = (path) => {
+    return `..${path}`;
+};
+
 export const _getStyleLayout = (props) => ({
     'flb': props.flexBox,
     'flb-col': props.flexCol,

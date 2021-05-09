@@ -9,6 +9,7 @@ import { LanguageContext } from '@Components/LanguageProvider';
 import { OPTION_LANG, OPTION_THEME } from '@Config/contains';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import DropdownCommon from '@Common/Dropdown';
+import { staticPath } from '@Utils/index';
 
 interface _IconLanguage {
     className?: string;
@@ -53,7 +54,7 @@ const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }
                 title="Ngôn ngữ">
                 {OPTION_LANG.map(item => (
                     <Menu.Item key={item.value} onClick={onClickMenu(item.value)}>
-                        <IconImage className="icon-sub-menu" {...styleIconImage} src={item.src} />
+                        <IconImage className="icon-sub-menu" {...styleIconImage} src={staticPath(item.src)} />
                         {t(`lang.${item.value}`)}
                     </Menu.Item>
                 ))}

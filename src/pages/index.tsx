@@ -6,10 +6,8 @@ import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
 import IconLanguage from '@Common/IconApp/IconLanguage';
-import useTranslation from '@Components/LanguageProvider/useTranslation';
 
 export default function IndexPage(props) {
-    const { t } = useTranslation();
     return (
         <Fragment>
             <Meta />

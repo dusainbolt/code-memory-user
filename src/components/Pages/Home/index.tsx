@@ -3,7 +3,6 @@ import { _tValue } from '@Utils/index';
 import Banner from '@Components/Pages/Home/banner';
 import SecondWrap from './second-wrap';
 import { Divider } from '@Common/Layout';
-import ThirdWrap from './third-wrap';
 import FourthWrap from './fourth-wrap';
 import { useContext, useEffect } from 'react';
 import FiveWrap from './five-wrap';
@@ -40,9 +39,8 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
         <main>
             <Banner />
             <Divider mCol={30} />
-            <SecondWrap />
             <LazyComponent offset={40}>
-                <ThirdWrap />
+                <SecondWrap />
             </LazyComponent>
             <Divider mCol={60} />
             <LazyComponent offset={40}>

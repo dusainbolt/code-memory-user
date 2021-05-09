@@ -24,6 +24,9 @@ module.exports = {
     trailingSlash: true,
     images: {
         loader: 'imgix',
-        path: '../',
+        path: '',
     },
+    // images: {
+    //     domains: ['d1.awsstatic.com'],
+    // }
 };

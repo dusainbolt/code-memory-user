@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import getConfig from 'next/config';
+import { staticPath } from '@Utils/index';
 
 const {
     publicRuntimeConfig: { DOMAIN_APP },
@@ -10,7 +11,7 @@ export const DEFAULT_SEO = {
     title: 'Trang chủ CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình',
     description: 'Hy vọng mình sẽ đem đến cái nhìn chân thưc, sự đam mê và thích thú về lĩnh vực này tới cho các bạn.',
     keywords: 'CodeMemory, CodeMemory Blog, CodeMemory diễn đàn, CodeMemory khóa học, CodeMemory Dịch vụ, Kiến thức, Lập trình, làm website, làm ứng dụng',
-    ogImage: '/images/avatar_home_page.png',
+    ogImage:  staticPath('/images/avatar_home_page.png'),
     ogType: 'website',
     ogUrl: DOMAIN_APP
 };

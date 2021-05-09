@@ -1,12 +1,10 @@
 import Button from '@Common/Button';
 import DrawerCommon from '@Common/Drawer';
-import DropdownCommon from '@Common/Dropdown';
 import { AppLink, Box, Nav } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { LIST_MENU } from '@Config/contains';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Drawer } from 'antd';
+import { staticPath } from '@Utils/index';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import MenuHeader from './menuHeader';
@@ -46,7 +44,7 @@ const Header: React.FC<_Header> = ({}) => {
             <Box className="container header--container">
                 <AppLink rel="trang chu" href="/">
                     <Box className="header--logo">
-                        <Image alt="logo" width={49} height={35} src="/images/logo.png" />
+                        <Image alt="logo" width={49} height={35} src={staticPath('/images/logo.png')} />
                     </Box>
                 </AppLink>
                 <button onClick={toggleOpenMenu} className="menu--collapse">

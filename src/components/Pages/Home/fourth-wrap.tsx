@@ -4,6 +4,7 @@ import ImageWrapper from '@Common/ImageWrapper';
 import Button from '@Common/Button';
 import ButtonIcon from '@Common/Button/ButtonIcon';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { staticPath } from '@Utils/index';
 
 interface _FourthWrap {
     // title: string;
@@ -33,7 +34,7 @@ const FourthWrap: React.FC<_FourthWrap> = ({}) => {
                     </Box>
             </Col>
             <Col md={12} xl={6} xxl={7} fadeRightComponent>
-                <ImageWrapper width={795} height={498} alt="img-content-banner-3" src="/images/img_about.png" />
+                <ImageWrapper width={795} height={498} alt="img-content-banner-3" src={staticPath('/images/img_about.png')} />
             </Col>
         </Row>
     );

@@ -1,5 +1,5 @@
-import { _Box, _ListItem } from './../../common/Layout/index';
-import { _Typography } from './../../common/Typography/index';
+import { _Box, _ListItem } from '@Common/Layout/index';
+import { _Typography } from '@Common/Typography/index';
 
 export const boxContact: _Box = {
     centerBlock: true,

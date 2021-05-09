@@ -14,12 +14,13 @@ export default function useTranslation() {
     
     function t(key: string) {
         const keys = key.split('.');
-        if (!LangStrings[locale] || !LangStrings[locale][keys[0]] || !LangStrings[locale][keys[0]][keys[1]]) {
-            console.warn(`No string '${key}' for locale '${locale}'`);
+        if(!keys[0] || !keys[1]){
+            return "";
         }
-
-        console.log(LangStrings);
-
+        if(!LangStrings[locale]?.menu?.txt_home || !LangStrings[_defaultLocale]?.menu?.txt_home){
+            console.warn(`No string '${keys[0]} + ${keys[1]}' for locale '${locale}'`);
+            return "";
+        }
         return LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || '';
     }
 

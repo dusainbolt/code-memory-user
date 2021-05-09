@@ -2,10 +2,10 @@ import { Box } from '@Common/Layout';
 import Image from 'next/image';
 import clsx from 'clsx';
 
-interface _ImageWrapper {
-    src: string;
-    width: number;
-    height: number;
+export interface _ImageWrapper {
+    src?: string;
+    width?: number;
+    height?: number;
     className?: string;
     quality?: number;
     alt?: string;

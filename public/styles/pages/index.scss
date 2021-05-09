@@ -1,16 +1,16 @@
 .second-wrap {
-    &--description {
-        margin-top: 14px;
-        margin-bottom: 51px;
-        color: var(--color-text-main-o4);
-        line-height: 30px;
-    }
-    &--title {
-        line-height: 54px;
-    }
+    // &--description {
+    //     margin-top: 14px;
+    //     margin-bottom: 51px;
+    //     color: var(--color-text-main-o4);
+    //     line-height: 30px;
+    // }
+    // &--title {
+    //     line-height: 54px;
+    // }
 }
 
-.third-wrap {
+.interact {
     &--card-wrap {
         width: 88%;
         margin: auto;
@@ -18,19 +18,16 @@
     &--card-item {
         width: 100%;
         background: var(--color-background-main);
-        padding: 27px;
-        min-height: 100px;
-        border-radius: 30px;
         &.active {
             box-shadow: 0px 4px 60px rgba(254, 99, 71, 0.07);
         }
     }
-    &--card-title-service {
+    &--title {
         font-size: $base-fontSize + 9;
         // line-height: 37.5px;
         margin-top: 29px;
     }
-    &--card-description-service {
+    &--description {
         font-size: $base-fontSize + 4;
         // line-height: 30px;
         margin-top: 14px;

@@ -1,6 +1,7 @@
 export default {
   common: {
-    txt_close: "Đóng"
+    txt_close: "Đóng",
+    txt_view_next: "Xem tiếp"
   },
   menu: {
     txt_home: "Trang Chủ",
@@ -10,7 +11,9 @@ export default {
     txt_contact: "Diễn Đàn"
   },
   home: {
-    title_page: "Dịch vụ phát triển website và nền tảng blog cộng đồng uy tín"
+    txt_description_banner_1: "Đem đến môi trường kiến thức bổ ích trong lĩnh vực",
+    txt_description_banner_2: " lập trình. ",
+    txt_description_banner_3: "Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sáng tạo cho các bạn."
   },
   lang: {
     vn: "Tiếng việt",
