@@ -21,11 +21,12 @@ export default {
     txt_description_talk: "undefined",
     txt_title_interact: "undefined",
     title_head: "ENG - CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình",
+    title_service: "undefined",
     txt_description_banner_3: "undefined"
   },
   lang: {
     vn: "undefined",
-    eng: "undefined"
+    en: "undefined"
   },
   theme: {
     dark: "undefined",

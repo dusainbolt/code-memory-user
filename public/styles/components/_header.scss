@@ -47,6 +47,9 @@
         color: var(--color-primary);
         cursor: pointer;
         display: none;
+        svg.svg-inline--fa {
+            width: $base-fontSize + 4;
+        }
     }
 }
 

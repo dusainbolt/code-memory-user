@@ -45,11 +45,8 @@
         &--info-wrap {
             align-items: center;
         }
-        &--title {
+        &--title, &--description{
             // font-size: $base-fontSize + 28;  
-            text-align: center;
-        }
-        &--description {
             text-align: center;
         }
         &--button-next-view {

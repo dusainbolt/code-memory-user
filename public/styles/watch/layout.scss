@@ -267,13 +267,16 @@ $container_extraLarge: 1140px;
             width: #{$width};
         }
     }
+    .container {
+        max-width: $container_extraLarge;
+    }
+}
+
+@include _responsive(_xxl){
     @for $i from 1 through 10 {
         .order_xl-#{$i} {
             order: $i;
         }
-    }
-    .container {
-        max-width: $container_extraLarge;
     }
 }
 

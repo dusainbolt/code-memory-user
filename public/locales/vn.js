@@ -21,11 +21,12 @@ export default {
     txt_description_talk: "Bàn luận góp ý về những chủ đề hay nóng hổi để có những góc nhìn sâu hơn.",
     txt_title_interact: "Mỗi Chúng Ta Hãy Cùng Nhau",
     title_head: "Trang chủ CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình",
+    title_service: "Hãy Cùng Xem Chúng Ta Có Gì Nào",
     txt_description_banner_3: "Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sự sáng tạo trong chúng ta."
   },
   lang: {
     vn: "Tiếng việt",
-    eng: "Tiếng anh"
+    en: "Tiếng anh"
   },
   theme: {
     dark: "Chế độ ban đêm",

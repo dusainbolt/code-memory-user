@@ -12,8 +12,8 @@ export const Row: React.FC<_Row> = ({ children, container, ...props }) => {
     return <div className={rowStyle}>{children}</div>;
 };
 
-interface _Col extends _styleLayout {
-    children: any;
+export interface _Col extends _styleLayout {
+    children?: any;
     xs?: number;
     sm?: number;
     md?: number;
