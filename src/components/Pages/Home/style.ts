@@ -10,8 +10,8 @@ import { ImageProps } from 'next/image';
 export const styleButtonServiceItem = {
     mr: 38,
     round: true,
-    maxWidth: 206,
-    height: 60,
+    maxWidth: 180,
+    height: 46,
 };
 
 export const styleBoxButtonServiceItem: _Box = {
@@ -25,14 +25,14 @@ export const styleDescriptionServiceItem: _Typography = {
     fontWeight: 'regular',
     lineHeight: 30,
     fontSize: 18,
-    mCol: 36,
+    mCol: 22,
 };
 
 export const styleImageServiceItem: _ImageWrapper = {
     width: 795,
     height: 498,
     boxProps: {
-        maxWidth: 620,
+        maxWidth: 450,
         centerBlock: true,
     },
 };

@@ -35,7 +35,7 @@ const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }
 
     const onChangeTheme = valueTheme => () => {
         setThemeName(valueTheme);
-        document.body.setAttribute('theme-data', valueTheme);
+        document.body.setAttribute('app-theme', valueTheme);
         localStorage.setItem('theme-app', valueTheme);
     };
 
@@ -43,7 +43,7 @@ const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }
         const localTheme = localStorage.getItem('theme-app');
         const valueTheme = localTheme ? localTheme : OPTION_THEME.light;
         setThemeName(valueTheme);
-        document.body.setAttribute('theme-data', localTheme);
+        document.body.setAttribute('app-theme', localTheme);
     }, []);
 
     const menu = (

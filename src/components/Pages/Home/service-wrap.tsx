@@ -21,7 +21,26 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
 
     const DATA_SERVICE = [
         {
-            title: 'We Lead From The Front',
+            title: t('menu.txt_blog'),
+            description: t('home.service_blog_description'),
+            link: '',
+            alt: '',
+            labelButton: '',
+            urlImage: staticPath('/images/img_about.png'),
+            imageAlignLeft: true,
+        },
+        {
+            title: t('home.txt_title_course_service'),
+            description:
+                'We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward tow weeks after we are going for a new project.',
+            link: '',
+            alt: '',
+            labelButton: '',
+            urlImage: staticPath('/images/img_about.png'),
+            imageAlignLeft: false,
+        },
+        {
+            title: t('home.txt_title_forum_service'),
             description:
                 'We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward tow weeks after we are going for a new project.',
             link: '',
@@ -31,7 +50,7 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
             imageAlignLeft: true,
         },
         {
-            title: 'We Lead From The Front',
+            title: t('home.txt_title_service_serivce'),
             description:
                 'We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward tow weeks after we are going for a new project.',
             link: '',
@@ -59,16 +78,16 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
                     },
                 };
                 return (
-                    <Row key={index} mt={34}>
-                        <Col md={12} xl={6} xxl={7} mdOrder={1} {...orderConfig.wrapImage}>
+                    <Row className="service-wrap--item" key={index} mt={44}>
+                        <Col md={12}  xxl={6} mdOrder={1} {...orderConfig.wrapImage}>
                             <ImageWrapper {...styleImageServiceItem} alt="img-content-banner-3" src={item.urlImage} />
                         </Col>
-                        <Col md={12} xl={6} xxl={5} {...styleColContentService} {...orderConfig.wrapText}>
-                            <Typography {...styleTitleServiceItem} className="service-wrap--title-large">
+                        <Col md={12}  xxl={6} {...styleColContentService} {...orderConfig.wrapText} className="service-wrap--content">
+                            <Typography {...styleTitleServiceItem} className="service-wrap--title">
                                 {item.title}
                             </Typography>
-                            <Typography {...styleDescriptionServiceItem}>{item.description}</Typography>
-                            <Box {...styleBoxButtonServiceItem}>
+                            <Typography className="service-wrap--description" {...styleDescriptionServiceItem}>{item.description}</Typography>
+                            <Box {...styleBoxButtonServiceItem} className="service-wrap--button-wrap">
                                 <Button {...styleButtonServiceItem}  label="Learn more" />
                                 {/* <ButtonIcon hoverIcon spaceLabel={14} icon={faPlayCircle} fontSize={20} sizeIcon={60} label={'Watch Video'} /> */}
                             </Box>

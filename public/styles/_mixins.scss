@@ -72,7 +72,7 @@
 } 
 
 @mixin _darkTheme {
-    body[theme-data='dark'] {
+    body[app-theme='dark'] {
         @content;
     }
 }

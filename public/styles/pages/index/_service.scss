@@ -1,0 +1,30 @@
+.service-wrap {
+    &--description {
+        max-width: 90%;
+        color: var(--color-text-main-05);
+    }
+}
+
+@include _responsive(_lg) {
+    .service-wrap {
+        &--description {
+            max-width: 100%;
+        }
+    }
+}
+
+
+@include _responsive(_md) {
+    .service-wrap {
+        &--item {
+            margin-top: 60px;
+        }
+        &--content {
+            align-items: center;
+            text-align: center;
+        }
+        &--button-wrap {
+            justify-content: center;
+        }
+    }
+}

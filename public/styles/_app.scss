@@ -32,10 +32,10 @@ body {
     }
     margin: 0;
     color: var(--color-text-main);
-    &[font-locale='en']{
+    &[app-locale='en']{
         font-family: 'Poppins', sans-serif;
     }
-    &[font-locale='vn']{
+    &[app-locale='vn']{
         font-family: 'Roboto', sans-serif;
     }
     main {

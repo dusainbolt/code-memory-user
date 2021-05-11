@@ -53,7 +53,7 @@
     }
 }
 
-@include _responsive(_md) {
+@include _responsive(_lg) {
     .menu {
         display: none !important;
         &--wrap {

@@ -91,7 +91,7 @@
   --box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
-body[theme-data=dark] {
+body[app-theme=dark] {
   --color-background-main: #18191a;
   --color-text-main: #e4e6eb;
   --color-bg-header: #242526;
