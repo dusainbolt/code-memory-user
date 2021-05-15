@@ -13,6 +13,7 @@ import {
     styleBoxButtonServiceItem,
     styleButtonServiceItem,
 } from './style';
+import LazyComponent from '@Common/Lazy/LazyComponent';
 
 interface _ServiceWrap {}
 
@@ -24,38 +25,31 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
             title: t('menu.txt_blog'),
             description: t('home.service_blog_description'),
             link: '',
-            alt: '',
-            labelButton: '',
+            labelButton: t('home.txt_btn_view_blog'),
             urlImage: staticPath('/images/img_about.png'),
             imageAlignLeft: true,
         },
         {
             title: t('home.txt_title_course_service'),
-            description:
-                'We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward tow weeks after we are going for a new project.',
+            description: t('home.service_course_service_description'),
             link: '',
-            alt: '',
-            labelButton: '',
+            labelButton: t('home.txt_btn_view_course'),
             urlImage: staticPath('/images/img_about.png'),
             imageAlignLeft: false,
         },
         {
             title: t('home.txt_title_forum_service'),
-            description:
-                'We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward tow weeks after we are going for a new project.',
+            description: t('home.service_talk_description'),
             link: '',
-            alt: '',
-            labelButton: '',
+            labelButton: t('home.txt_btn_view_forum'),
             urlImage: staticPath('/images/img_about.png'),
             imageAlignLeft: true,
         },
         {
-            title: t('home.txt_title_service_serivce'),
-            description:
-                'We Lead From The Front They actually assured me over and over that take little time off and come back and work. Fast forward tow weeks after we are going for a new project.',
+            title: t('home.txt_title_develop_service'),
+            description: t('home.service_develop_service_description'),
             link: '',
-            alt: '',
-            labelButton: '',
+            labelButton: t('home.txt_btn_view_develop'),
             urlImage: staticPath('/images/img_about.png'),
             imageAlignLeft: false,
         },
@@ -78,21 +72,25 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
                     },
                 };
                 return (
-                    <Row className="service-wrap--item" key={index} mt={44}>
-                        <Col md={12}  xxl={6} mdOrder={1} {...orderConfig.wrapImage}>
-                            <ImageWrapper {...styleImageServiceItem} alt="img-content-banner-3" src={item.urlImage} />
-                        </Col>
-                        <Col md={12}  xxl={6} {...styleColContentService} {...orderConfig.wrapText} className="service-wrap--content">
-                            <Typography {...styleTitleServiceItem} className="service-wrap--title">
-                                {item.title}
-                            </Typography>
-                            <Typography className="service-wrap--description" {...styleDescriptionServiceItem}>{item.description}</Typography>
-                            <Box {...styleBoxButtonServiceItem} className="service-wrap--button-wrap">
-                                <Button {...styleButtonServiceItem}  label="Learn more" />
-                                {/* <ButtonIcon hoverIcon spaceLabel={14} icon={faPlayCircle} fontSize={20} sizeIcon={60} label={'Watch Video'} /> */}
-                            </Box>
-                        </Col>
-                    </Row>
+                    <LazyComponent height={200} offset={100} key={index}>
+                        <Row className="service-wrap--item" mt={44}>
+                            <Col md={12} xxl={6} mdOrder={1} {...orderConfig.wrapImage}>
+                                <ImageWrapper {...styleImageServiceItem} alt={item.title} src={item.urlImage} />
+                            </Col>
+                            <Col md={12} xxl={6} {...styleColContentService} {...orderConfig.wrapText} className="service-wrap--content">
+                                <Typography {...styleTitleServiceItem} className="service-wrap--title">
+                                    {item.title}
+                                </Typography>
+                                <Typography className="service-wrap--description" {...styleDescriptionServiceItem}>
+                                    {item.description}
+                                </Typography>
+                                <Box {...styleBoxButtonServiceItem} className="service-wrap--button-wrap">
+                                    <Button {...styleButtonServiceItem} label={item.labelButton} />
+                                    {/* <ButtonIcon hoverIcon spaceLabel={14} icon={faPlayCircle} fontSize={20} sizeIcon={60} label={'Watch Video'} /> */}
+                                </Box>
+                            </Col>
+                        </Row>
+                    </LazyComponent>
                 );
             })}
         </Box>

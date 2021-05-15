@@ -30,7 +30,6 @@ const Banner: React.FC<_Banner> = ({}) => {
 
     return (
         <Box mt={30} className="banner">
-            <Box className="banner--background_image_fix"></Box>
             <Row container className="banner--container">
                 <Col md={12} mdOrder={2} xxl={5}>
                     <Box className="banner--info-wrap" {...styleBannerInfoWrap}>

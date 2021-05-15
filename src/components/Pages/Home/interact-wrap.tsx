@@ -15,21 +15,18 @@ const InteractWrap: React.FC<_InteractWrap> = ({}) => {
             title: t('home.txt_title_share'),
             description: t('home.txt_description_share'),
             imageUrl: '/images/interact_share.png',
-            alt: 'img-interact_share',
             fade: { fadeLeftComponent: true },
         },
         {
             title: t('home.txt_title_learn'),
             description: t('home.txt_description_learn'),
             imageUrl: '/images/interact_learn.png',
-            alt: 'img-interact_learn',
             fade: { fadeInComponent: true },
         },
         {
             title: t('home.txt_title_talk'),
             description: t('home.txt_description_talk'),
             imageUrl: '/images/interact_talk.png',
-            alt: 'img-interact_talk',
             fade: { fadeRightComponent: true },
         },
     ];
@@ -43,7 +40,7 @@ const InteractWrap: React.FC<_InteractWrap> = ({}) => {
                 {DATA_INTERACTIVE_INTRODUCE.map((item, index) => (
                     <Col key={index} md={12} xxl={4}>
                         <Box className="interact--card-item active" {...styleCardInteract} {...item.fade}>
-                            <ImageWrapper {...styleImageInteract} alt={item.alt} src={staticPath(item.imageUrl)} />
+                            <ImageWrapper {...styleImageInteract} alt={item.title} src={staticPath(item.imageUrl)} />
                             <Typography {...styleInteractTitle} className="interact--title">
                                 {item.title}
                             </Typography>

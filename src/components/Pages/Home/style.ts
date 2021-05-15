@@ -93,7 +93,7 @@ export const styleDescriptionBanner: _Typography = {
 
 export const styleImageBanner: ImageProps = {
     width: 764,
-    alt: 'img-content-banner',
+    alt: 'banner',
     quality: 85,
     height: 393,
     src: '/images/img_banner.png',
