@@ -26,32 +26,36 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
             description: t('home.service_blog_description'),
             link: '',
             labelButton: t('home.txt_btn_view_blog'),
-            urlImage: staticPath('/images/img_about.png'),
+            urlImage: staticPath('/images/service_blog.png'),
             imageAlignLeft: true,
+            propsImage: {}
         },
         {
             title: t('home.txt_title_course_service'),
             description: t('home.service_course_service_description'),
             link: '',
             labelButton: t('home.txt_btn_view_course'),
-            urlImage: staticPath('/images/img_about.png'),
+            urlImage: staticPath('/images/service_course.png'),
             imageAlignLeft: false,
+            propsImage: {}
         },
         {
             title: t('home.txt_title_forum_service'),
             description: t('home.service_talk_description'),
             link: '',
             labelButton: t('home.txt_btn_view_forum'),
-            urlImage: staticPath('/images/img_about.png'),
+            urlImage: staticPath('/images/service_forum.png'),
             imageAlignLeft: true,
+            propsImage: {}
         },
         {
             title: t('home.txt_title_develop_service'),
             description: t('home.service_develop_service_description'),
             link: '',
             labelButton: t('home.txt_btn_view_develop'),
-            urlImage: staticPath('/images/img_about.png'),
+            urlImage: staticPath('/images/service_develop.png'),
             imageAlignLeft: false,
+            propsImage: {height: 268}
         },
     ];
 
@@ -75,7 +79,7 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
                     <LazyComponent height={200} offset={100} key={index}>
                         <Row className="service-wrap--item" mt={44}>
                             <Col md={12} xxl={6} mdOrder={1} {...orderConfig.wrapImage}>
-                                <ImageWrapper {...styleImageServiceItem} alt={item.title} src={item.urlImage} />
+                                <ImageWrapper {...styleImageServiceItem} {...item.propsImage} alt={item.title} src={item.urlImage} />
                             </Col>
                             <Col md={12} xxl={6} {...styleColContentService} {...orderConfig.wrapText} className="service-wrap--content">
                                 <Typography {...styleTitleServiceItem} className="service-wrap--title">

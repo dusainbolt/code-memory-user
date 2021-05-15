@@ -29,8 +29,8 @@ export const styleDescriptionServiceItem: _Typography = {
 };
 
 export const styleImageServiceItem: _ImageWrapper = {
-    width: 795,
-    height: 498,
+    width: 423,
+    height: 395,
     boxProps: {
         maxWidth: 450,
         centerBlock: true,
