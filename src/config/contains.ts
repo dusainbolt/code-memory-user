@@ -28,3 +28,12 @@ export const OPTION_THEME = {
     light: 'light',
     dark: 'dark'
 }
+
+export const VIEW_SCREEN_WIDTH = {
+    xs: 576,
+    sm: 768,
+    md: 992,
+    lg: 1200,
+    xl: 1366,
+    xxl: 1920,
+};

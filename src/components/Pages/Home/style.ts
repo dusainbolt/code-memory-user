@@ -56,7 +56,6 @@ export const styleAvatarFounder: _ImageWrapper = {
 export const styleFounderWrap: _Row = {
     radius: 30,
     mb: 100,
-    container: true,
     mt: 20
 };
 

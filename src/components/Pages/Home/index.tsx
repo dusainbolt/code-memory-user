@@ -9,6 +9,7 @@ import LazyComponent from '@Common/Lazy/LazyComponent';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { LanguageContext } from '@Components/LanguageProvider';
 import FounderWrap from './founder-wrap';
+import NewsWrap from './news-wrap';
 
 interface _homePageProps {
     t: object;
@@ -47,6 +48,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <LazyComponent offset={40}>
                 <FounderWrap />
             </LazyComponent>
+            <NewsWrap />
         </main>
     );
 };

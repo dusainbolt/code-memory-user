@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import LazyLoad from 'react-lazyload';
-
 interface _LazyComponent {
     // title: string;
     className?: string;

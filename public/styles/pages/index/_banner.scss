@@ -36,8 +36,10 @@
             align-items: center;
         }
         &--title, &--description{
-            // font-size: $base-fontSize + 28;  
             text-align: center;
+        }
+        &--title {
+            font-size: $base-fontSize + 32;
         }
         &--button-next-view {
             // margin: auto;

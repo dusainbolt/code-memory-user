@@ -26,6 +26,7 @@
     "react-dom": "17.0.1",
     "react-lazyload": "^3.2.0",
     "react-redux": "^7.2.3",
+    "swiper": "^6.6.1",
     "yup": "^0.32.9"
   },
   "devDependencies": {
