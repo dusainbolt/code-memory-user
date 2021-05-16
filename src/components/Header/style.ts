@@ -5,6 +5,8 @@ export const styleButtonLogin: _Button = {
     width: 150,
     minWidth: 150,
     round: true,
+    ml: 10,
+    flexBox: true,
 };
 
 export const styleLogoApp = {
@@ -15,6 +17,6 @@ export const styleLogoApp = {
 
 export const styleMenuItem: _AppLink = {
     fontSize: 16,
-    mRow: 20,
+    mRow: 22,
     fontWeight: 'bold',
 };

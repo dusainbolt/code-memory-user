@@ -3,4 +3,9 @@
     > div[class*=col-] {
         padding: 40px;
     }
+    &--letter {
+        .img-app-wrap  {
+            margin-left: auto;
+        }
+    }
 }

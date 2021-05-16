@@ -2,7 +2,7 @@ import Button from '@Common/Button';
 import DrawerCommon from '@Common/Drawer';
 import { AppLink, Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleDown, faBars, faSign, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { staticPath } from '@Utils/index';
 import Image from 'next/image';
@@ -55,7 +55,10 @@ const Header: React.FC<_Header> = ({}) => {
                 </button>
                 <Box className="menu--wrap">
                     <MenuHeader />
-                    <Button label={t('home.txt_btn_login')} {...styleButtonLogin} />
+                    <Button {...styleButtonLogin} className="header--button-login">
+                        <FontAwesomeIcon icon={faSignInAlt} />
+                        {t('home.txt_btn_login')}
+                    </Button>
                 </Box>
             </Box>
             <DrawerCommon

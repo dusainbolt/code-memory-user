@@ -50,7 +50,7 @@ const Banner: React.FC<_Banner> = ({}) => {
                 </Col>
                 <Col md={12} mdOrder={1} xxl={7} fadeInComponent>
                     <Box className="banner--img-content-banner">
-                        <ImageWrapper  {...styleImageBanner} src={staticPath('/images/img_banner.png')} />
+                        <ImageWrapper {...styleImageBanner} src={staticPath('/images/img_banner.png')} />
                     </Box>
                 </Col>
             </Row>

@@ -13,16 +13,16 @@ const MenuHeader: React.FC<_MenuHeader> = ({}) => {
     const router = useRouter();
     const { t } = useTranslation();
 
-    const classActive = href => {
-        return clsx('menu--link', {
-            active: router.pathname.indexOf(href) !== -1,
-        });
+    const classActive = (href) => {
+        return clsx('menu--link',{
+            active: router.pathname.indexOf(href) !== -1
+        })
     };
 
     return (
         <Nav flexBox className="menu--list">
             {LIST_MENU.map((item, index) => (
-                <AppLink {...styleMenuItem} className={classActive(item.href)} key={index} href={item.href}>
+                <AppLink {...styleMenuItem}  className={classActive(item.href)} key={index} href={item.href}>
                     {t(`menu.${item.name}`)}
                 </AppLink>
             ))}

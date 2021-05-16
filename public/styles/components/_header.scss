@@ -17,6 +17,12 @@
     &--logo {
         min-width: 140px;
     }
+    &--button-login {
+        svg.svg-inline--fa{
+            width: 15px;
+            margin-right: 6px
+        }
+    }
 }
 
 .menu {

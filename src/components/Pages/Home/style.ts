@@ -9,7 +9,6 @@ export const styleContentLetter: _Typography = {
     fontWeight: 'regular',
     lineHeight: 30,
     fontSize: 18,
-    mCol: 36,
 };
 
 export const styleAutoGraph: _ImageWrapper = {
@@ -30,7 +29,7 @@ export const styleMissionFounder: _Typography = {
 export const styleNameFounder: _Typography = {
     type: 'h3',
     fontSize: 20,
-    mt: 22,
+    mt: 18,
 };
 
 export const styleTitleFounder: _Typography = {
@@ -42,7 +41,7 @@ export const styleTitleFounder: _Typography = {
 
 export const boxBoxStyleBox: _Box = {
     flexBox: true,
-    minHeightPercent: 90,
+    minHeightPercent: 100,
     flexCol: true,
     alignItem: 'start',
 };
@@ -50,6 +49,7 @@ export const boxBoxStyleBox: _Box = {
 export const styleAvatarFounder: _ImageWrapper = {
     width: 526,
     height: 526,
+    centerImg: true,
     alt: 'founder & author CodeMemory',
 };
 
@@ -57,6 +57,7 @@ export const styleFounderWrap: _Row = {
     radius: 30,
     mb: 100,
     container: true,
+    mt: 20
 };
 
 export const styleButtonServiceItem: _Button = {

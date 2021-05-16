@@ -21,6 +21,29 @@ const Footer = ({}) => {
         email: Yup.string().trim().required('RONG roi nhe').email('PHAI LA EMAIL'),
     });
 
+    const LIST_CONTACT = [
+        {
+            icon: faFacebook,
+            href: 'https://www.facebook.com/sainboltapp',
+            rel: 'Facebook',
+        },
+        {
+            icon: faYoutube,
+            href: 'https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ',
+            rel: 'Youtube',
+        },
+        {
+            icon: faGooglePlus,
+            href: 'mailto:dulh181199@gmail.com',
+            rel: 'Email',
+        },
+        {
+            icon: faSkype,
+            href: 'https://join.skype.com/invite/kP2kfn0Wu06U',
+            rel: 'Skype',
+        },
+    ];
+
     return (
         <footer className="app-footer">
             <Box container>
@@ -39,33 +62,20 @@ const Footer = ({}) => {
                                 name="email"
                                 type="email"
                             />
-                            <Button submit onClick={handleSubmit} label="Send" {..._style.buttonSendEmail} />
+                            <Button onClick={handleSubmit} label="Send" {..._style.buttonSendEmail} />
                         </Box>
                     )}
                 </Formik>
                 <List mt={70} flexBox className="footer-contact-list">
-                    <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://www.facebook.com/sainboltapp" target="_blank" rel="Facebook">
-                            <FontAwesomeIcon icon={faFacebook} />
-                        </AppLink>
-                    </ListItem>
-                    <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ" target="_blank" rel="Youtube">
-                            <FontAwesomeIcon icon={faYoutube} />
-                        </AppLink>
-                    </ListItem>
-                    <ListItem flexBox circle mRow={30}>
-                        <AppLink href="mailto:dulh181199@gmail.com" target="_blank" rel="Email">
-                            <FontAwesomeIcon icon={faGooglePlus} />
-                        </AppLink>
-                    </ListItem>
-                    <ListItem flexBox circle mRow={30}>
-                        <AppLink href="https://join.skype.com/invite/kP2kfn0Wu06U" target="_blank" rel="Skype">
-                            <FontAwesomeIcon icon={faSkype} />
-                        </AppLink>
-                    </ListItem>
+                    {LIST_CONTACT.map((item, key) => (
+                        <ListItem key={key} {..._style.itemContact}>
+                            <AppLink href={item.href} target="_blank" rel={item.rel}>
+                                <FontAwesomeIcon icon={item.icon} />
+                            </AppLink>
+                        </ListItem>
+                    ))}
                 </List>
-                <Box container className="footer-menu" flexBox mt={80} pb={30}>
+                <Box className="footer-menu" {..._style.footerMenu}>
                     <List color="white" flexBox>
                         {LIST_MENU.map((item, index) => (
                             <ListItem key={index} {..._style.itemMenuFooter}>
@@ -77,7 +87,9 @@ const Footer = ({}) => {
                     </List>
                 </Box>
             </Box>
-            <Box className="footer-copyright" letterSpacing={1} pt={6} height={32} align="center">© Copyright Du Sainbolt. All Rights Reserved</Box>
+            <Box className="footer-copyright" {..._style.footerCopyRight}>
+                {t('home.txt_footer_copyright')}
+            </Box>
         </footer>
     );
 };

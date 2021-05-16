@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { _getStyleLayout } from '@Utils/index';
 import { _styleLayout } from '@Config/models';
 export interface _Button extends _styleLayout {
-    label?: string;
+    label?: string | React.ReactNode;
     children?: any;
     type?: string;
     shadow?: boolean;
@@ -39,7 +39,7 @@ const Button: React.FC<_Button> = ({
 
     return !link ? (
         <button type={submit ? 'submit' : `button`} className={style} onClick={onClick}>
-            {label}
+            {label || children}
         </button>
     ) : (
         <Link href={href}>
