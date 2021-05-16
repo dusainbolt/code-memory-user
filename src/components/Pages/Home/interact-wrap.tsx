@@ -39,7 +39,7 @@ const InteractWrap: React.FC<_InteractWrap> = ({}) => {
             <Row className="interact--card-wrap">
                 {DATA_INTERACTIVE_INTRODUCE.map((item, index) => (
                     <Col key={index} md={12} xxl={4}>
-                        <Box className="interact--card-item active" {...styleCardInteract} {...item.fade}>
+                        <Box className="interact--card-item" {...styleCardInteract} {...item.fade}>
                             <ImageWrapper {...styleImageInteract} alt={item.title} src={staticPath(item.imageUrl)} />
                             <Typography {...styleInteractTitle} className="interact--title">
                                 {item.title}

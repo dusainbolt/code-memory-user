@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Box, Col, Row } from '@Common/Layout';
 import Typography from '@Common/Typography';
 import Button from '@Common/Button';
@@ -8,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { styleButtonViewNextHome, styleTitleBanner, styleDescriptionBanner, styleImageBanner, styleBannerInfoWrap } from './style';
 import { DEFAULT_SEO } from '@Components/Meta';
+import ImageWrapper from '@Common/ImageWrapper';
+import { staticPath } from '@Utils/index';
 
 interface _Banner {}
 
@@ -49,7 +50,7 @@ const Banner: React.FC<_Banner> = ({}) => {
                 </Col>
                 <Col md={12} mdOrder={1} xxl={7} fadeInComponent>
                     <Box className="banner--img-content-banner">
-                        <Image {...styleImageBanner} />
+                        <ImageWrapper  {...styleImageBanner} src={staticPath('/images/img_banner.png')} />
                     </Box>
                 </Col>
             </Row>

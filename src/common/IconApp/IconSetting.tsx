@@ -11,7 +11,7 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 import DropdownCommon from '@Common/Dropdown';
 import { staticPath } from '@Utils/index';
 
-interface _IconLanguage {
+interface _IconSetting {
     className?: string;
 }
 
@@ -24,7 +24,9 @@ export const getIconTheme = {
     light: faSun,
 };
 
-const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }) => {
+export const KEY_THEME_APP = 'app-theme';
+
+const IconSetting: React.FC<_IconSetting> = ({ children, className, ...props }) => {
     const [_locale, _changeLocale] = useContext(LanguageContext);
     const { t } = useTranslation();
     const [themeName, setThemeName] = useState('');
@@ -35,15 +37,15 @@ const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }
 
     const onChangeTheme = valueTheme => () => {
         setThemeName(valueTheme);
-        document.body.setAttribute('app-theme', valueTheme);
-        localStorage.setItem('theme-app', valueTheme);
+        document.body.setAttribute(KEY_THEME_APP, valueTheme);
+        localStorage.setItem(KEY_THEME_APP, valueTheme);
     };
 
     useEffect(() => {
-        const localTheme = localStorage.getItem('theme-app');
+        const localTheme = localStorage.getItem(KEY_THEME_APP);
         const valueTheme = localTheme ? localTheme : OPTION_THEME.light;
         setThemeName(valueTheme);
-        document.body.setAttribute('app-theme', localTheme);
+        document.body.setAttribute(KEY_THEME_APP, localTheme);
     }, []);
 
     const menu = (
@@ -80,4 +82,4 @@ const IconLanguage: React.FC<_IconLanguage> = ({ children, className, ...props }
     );
 };
 
-export default IconLanguage;
+export default IconSetting;

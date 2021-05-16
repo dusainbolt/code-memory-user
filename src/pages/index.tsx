@@ -5,7 +5,7 @@ import Meta from '@Components/Meta';
 import HomePageComponent from '@Components/Pages/Home';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
-import IconLanguage from '@Common/IconApp/IconLanguage';
+import IconSetting from '@Common/IconApp/IconSetting';
 
 export default function IndexPage(props) {
     return (
@@ -14,7 +14,7 @@ export default function IndexPage(props) {
             <Header />
             <HomePageComponent {...props} />
             <Footer />
-            <IconLanguage />
+            <IconSetting />
         </Fragment>
     );
 }

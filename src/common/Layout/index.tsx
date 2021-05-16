@@ -2,8 +2,8 @@ import { _styleLayout } from '@Config/models';
 import { _getStyleLayout } from '@Utils/index';
 import clsx from 'clsx';
 import Link from 'next/link';
-interface _Row extends _styleLayout {
-    children: any;
+export interface _Row extends _styleLayout {
+    children?: any;
     container?: boolean;
 }
 
@@ -99,7 +99,7 @@ export const ListItem: React.FC<_ListItem> = ({ children, ...props }) => {
     return <li className={boxStyle}>{children}</li>;
 };
 
-interface _AppLink extends _styleLayout {
+export interface _AppLink extends _styleLayout {
     children?: any;
     href?: string;
     aTag?: boolean;
@@ -107,7 +107,7 @@ interface _AppLink extends _styleLayout {
     target?: string;
 }
 
-export const AppLink: React.FC<_AppLink> = ({ aTag = false, target = '', href = '', children, rel, ...props }) => {
+export const AppLink: React.FC<_AppLink> = ({ aTag = false, target = '_self', href = '', children, rel, ...props }) => {
     const boxStyle = clsx({ 'app-link': true, ..._getStyleLayout(props) });
     const aElement = (
         <a rel={rel || children} target={target} className={boxStyle}>

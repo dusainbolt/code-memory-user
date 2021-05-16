@@ -7,11 +7,12 @@ export interface _Typography extends _styleLayout {
     children?: any;
     textCenter?: boolean;
     idProps?: object;
+    italic?: boolean;
     hightLight?: boolean
 }
 
-const Typography: React.FC<_Typography> = ({ type, textCenter, hightLight,idProps = {}, children,... props }) => {
-    const styles = clsx({ 'app-typography': true, 'text-center': textCenter, 'hl-b': hightLight,..._getStyleLayout(props) });
+const Typography: React.FC<_Typography> = ({ type, italic, textCenter, hightLight,idProps = {}, children,... props }) => {
+    const styles = clsx({ 'app-typography': true, 'text-center': textCenter, 'hl-b': hightLight, 'italic': italic,..._getStyleLayout(props) });
     
     const getTypography = {
         h1: <h1 {...idProps} className={styles}>{children}</h1>,

@@ -1,13 +1,65 @@
-import { _styleLayout } from './../../../config/models';
-import { _Col } from './../../../common/Layout/index';
-import { FONT_SIZE } from './../../../config/contains';
 import { _ImageWrapper } from '@Common/ImageWrapper/index';
 import { _Typography } from '@Common/Typography';
 import { _Button } from '@Common/Button/index';
-import { _Box } from '@Common/Layout';
-import { ImageProps } from 'next/image';
+import { _Box, _Col, _Row } from '@Common/Layout';
+import { FONT_SIZE } from '@Config/contains';
 
-export const styleButtonServiceItem = {
+export const styleContentLetter: _Typography = {
+    italic: true,
+    fontWeight: 'regular',
+    lineHeight: 30,
+    fontSize: 18,
+    mCol: 36,
+};
+
+export const styleAutoGraph: _ImageWrapper = {
+    width: 200,
+    height: 90,
+    alt: 'founder & author CodeMemory',
+    boxProps: {
+        mt: 40,
+    },
+};
+
+export const styleMissionFounder: _Typography = {
+    idProps: { property: 'mission' },
+    type: 'span',
+    fontSize: 14,
+};
+
+export const styleNameFounder: _Typography = {
+    type: 'h3',
+    fontSize: 20,
+    mt: 22,
+};
+
+export const styleTitleFounder: _Typography = {
+    fontWeight: 'bold',
+    lineHeight: 30,
+    type: 'h2',
+    fontSize: 32,
+};
+
+export const boxBoxStyleBox: _Box = {
+    flexBox: true,
+    minHeightPercent: 90,
+    flexCol: true,
+    alignItem: 'start',
+};
+
+export const styleAvatarFounder: _ImageWrapper = {
+    width: 526,
+    height: 526,
+    alt: 'founder & author CodeMemory',
+};
+
+export const styleFounderWrap: _Row = {
+    radius: 30,
+    mb: 100,
+    container: true,
+};
+
+export const styleButtonServiceItem: _Button = {
     mr: 38,
     round: true,
     maxWidth: 180,
@@ -91,12 +143,12 @@ export const styleDescriptionBanner: _Typography = {
     lineHeight: 26,
 };
 
-export const styleImageBanner: ImageProps = {
+export const styleImageBanner: _ImageWrapper = {
     width: 764,
     alt: 'banner',
     quality: 85,
     height: 393,
-    src: '/images/img_banner.png',
+    onlyImage: true,
 };
 
 export const styleButtonViewNextHome: _Button = {
@@ -116,7 +168,7 @@ export const styleTitleWrapInteract: _Typography = {
     textCenter: true,
     pt: 100,
     lineHeight: 54,
-    mb: 30,
+    mb: 60,
     fontSize: 44,
     maxWidth: 604,
 };

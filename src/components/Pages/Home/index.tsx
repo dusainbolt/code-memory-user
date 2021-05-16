@@ -5,11 +5,10 @@ import InteractWrap from './interact-wrap';
 import { Divider } from '@Common/Layout';
 import ServiceWrap from './service-wrap';
 import { useContext, useEffect } from 'react';
-import FiveWrap from './five-wrap';
 import LazyComponent from '@Common/Lazy/LazyComponent';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { LanguageContext } from '@Components/LanguageProvider';
-import { decrement } from '@Redux/reducer/indexReducer';
+import FounderWrap from './founder-wrap';
 
 interface _homePageProps {
     t: object;
@@ -46,7 +45,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
                 <ServiceWrap />
             <Divider mCol={60} />
             <LazyComponent offset={40}>
-                <FiveWrap />
+                <FounderWrap />
             </LazyComponent>
         </main>
     );
