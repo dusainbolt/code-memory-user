@@ -1,11 +1,22 @@
-.founder-wrap {
-    box-shadow: var(--box-shadow-card-primary);
+.founder {
+    &--wrap {
+        box-shadow: var(--box-shadow-card-primary);
+    }
     > div[class*=col-] {
         padding: 40px;
     }
     &--letter {
         .img-app-wrap  {
             margin-left: auto;
+        }
+    }
+}
+
+
+@include _responsive(_md) {
+    .founder {
+        &--container {
+            padding: 0;
         }
     }
 }

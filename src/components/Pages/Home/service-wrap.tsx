@@ -66,22 +66,18 @@ const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
                 let orderConfig: any = {
                     wrapText: {
                         xlOrder: item.imageAlignLeft ? 1 : 2,
-                        fadeRightComponent: !item.imageAlignLeft,
-                        fadeLeftComponent: item.imageAlignLeft,
                     },
                     wrapImage: {
                         xlOrder: item.imageAlignLeft ? 2 : 1,
-                        fadeRightComponent: item.imageAlignLeft,
-                        fadeLeftComponent: !item.imageAlignLeft,
                     },
                 };
                 return (
                     <LazyComponent height={200} offset={100} key={index}>
                         <Row className="service-wrap--item">
-                            <Col md={12} xxl={6} mdOrder={1} {...orderConfig.wrapImage}>
+                            <Col md={12} xxl={6} mdOrder={1} {...orderConfig.wrapImage} fadeInComponent>
                                 <ImageWrapper {...styleImageServiceItem} {...item.propsImage} alt={item.title} src={staticPath(item.urlImage)} />
                             </Col>
-                            <Col md={12} xxl={6} {...styleColContentService} {...orderConfig.wrapText} className="service-wrap--content">
+                            <Col md={12} xxl={6} {...styleColContentService} {...orderConfig.wrapText} className="service-wrap--content" fadeInComponent>
                                 <Typography {...styleTitleServiceItem} className="service-wrap--title">
                                     {item.title}
                                 </Typography>

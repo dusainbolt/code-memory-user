@@ -20,15 +20,15 @@ const FounderWrap: React.FC<_FounderWrap> = ({}) => {
     const { t } = useTranslation();
 
     return (
-        <Box container>
-            <Row className="founder-wrap" fadeInComponent {...styleFounderWrap}>
+        <Box className="founder--container" container>
+            <Row className="founder--wrap" fadeInComponent {...styleFounderWrap}>
                 <Col md={12} xxl={6}>
                     <ImageWrapper {...styleAvatarFounder} src={staticPath('/images/avatar_home_page.png')} />
                 </Col>
                 <Col md={12} xxl={6}>
-                    <Box {...boxBoxStyleBox} className="founder-wrap--letter">
+                    <Box {...boxBoxStyleBox} className="founder--letter">
                         <Typography {...styleTitleFounder}>{t('home.txt_title_founder')}</Typography>
-                        <Typography {...styleNameFounder} className="founder-wrap--name">
+                        <Typography {...styleNameFounder} className="founder--name">
                             {t('home.txt_name_founder')}
                         </Typography>
                         <Typography {...styleMissionFounder}>{t('home.txt_mission_founder')}</Typography>
