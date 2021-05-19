@@ -3,7 +3,6 @@ import { _getStyleLayout } from '@Utils/index';
 import clsx from 'clsx';
 export interface _Typography extends _styleLayout {
     type?: string;
-    className?: string;
     children?: any;
     textCenter?: boolean;
     idProps?: object;

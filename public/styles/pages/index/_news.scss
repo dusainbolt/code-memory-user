@@ -1,16 +1,18 @@
-.news {
+.news--container .news {
     &--container {
-        .swiper-container {
-            margin: 0 -10px;
-        }
-        .swiper-wrapper {
-            padding: 0 10px;
-        }
+        // .swiper-container {
+        //     margin: 0 -10px;
+        // }
+        // .swiper-wrapper {
+        //     padding: 0 10px;
+        // }
     }
     &--item {
         border-radius: 8px;
         overflow: hidden;
         box-shadow: var(--box-shadow-card-primary);
+        height: unset;
+        margin-bottom: 60px;
     }
     &--box-image {
         width: 100%;
@@ -25,5 +27,16 @@
     }
     &--title {
 
+    }
+    &--item-title {
+        @include typoEllipsis();
+    }
+    &--item-description{
+        @include typoEllipsis(3);
+    }
+    &--box-wrap-author {
+        .app-rate {
+            margin-left: 8px;
+        }
     }
 }

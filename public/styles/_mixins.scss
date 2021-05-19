@@ -135,6 +135,17 @@
     transform: translateX(100%);
 }
 
+@mixin typoEllipsis($row: 2) {
+    // max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+    pointer-events: none;
+}
+
 @mixin _position-center() {
     position: absolute;
     top: 50%;

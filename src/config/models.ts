@@ -37,7 +37,7 @@ export type _styleLayout = {
     padding?: number;
     margin?: number;
     fontSize?: number;
-    fontWeight?: string;
+    fontWeight?: string | 'light' | 'thin' | 'regular' | 'medium' | 'medium-xl' | 'bold' | 'bold-lg';
     lineHeight?: number;
     className?: string;
     opacity?: number;
@@ -56,7 +56,7 @@ export type _styleLayout = {
     centerBlock?: boolean;
     align?: string;
     background?: string;
-    radius?: number;
+    radius?: number | 4 | 6 | 8 | 10 | 15 | 20 | 30 | 50 | 60;
     fadeInComponent?: boolean;
     fadeRightComponent?: boolean;
     fadeDownComponent?: boolean;

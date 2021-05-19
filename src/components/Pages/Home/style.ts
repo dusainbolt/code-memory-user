@@ -4,6 +4,13 @@ import { _Button } from '@Common/Button/index';
 import { _Box, _Col, _Row } from '@Common/Layout';
 import { FONT_SIZE } from '@Config/contains';
 
+export const styleCardNewsTitle: _Typography = {
+    type: 'h5',
+    fontWeight: 'bold',
+    mCol: 10,
+    fontSize: 18,
+};
+
 export const styleContentLetter: _Typography = {
     italic: true,
     fontWeight: 'regular',
@@ -56,7 +63,7 @@ export const styleAvatarFounder: _ImageWrapper = {
 export const styleFounderWrap: _Row = {
     radius: 30,
     mb: 100,
-    mt: 20
+    mt: 20,
 };
 
 export const styleButtonServiceItem: _Button = {
@@ -186,4 +193,10 @@ export const styleInteractTitle: _Typography = {
     lineHeight: 36,
     fontSize: 26,
     mt: 28,
+};
+
+export const styleTitleNewWrap: _Typography = {
+    ...styleTitleServiceWrap,
+    mt: 40,
+    mb: 60
 };
