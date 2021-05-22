@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 
-import _indexReducer from "./indexReducer";
-// import _configReducer from "./configReducer";
+import indexReducer, { _indexReducer } from './indexReducer';
+import layoutReducer, { _LayoutReducer } from './layoutReducer';
+
+export type _RootState = {
+    indexReducer: _indexReducer;
+    layoutReducer: _LayoutReducer;
+};
 
 export const rootReducer = combineReducers({
-  _indexReducer,
-  // _configReducer,
+    indexReducer,
+    layoutReducer,
 });
-
-export type _rootState = ReturnType< typeof rootReducer >;

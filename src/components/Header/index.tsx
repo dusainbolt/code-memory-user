@@ -17,7 +17,6 @@ const Header: React.FC<_Header> = ({}) => {
     const { t } = useTranslation();
     const [scrollTop, setScrollTop] = useState<number>(0);
     const [openDrawMenu, setOpenDrawMenu] = useState<boolean>(false);
-    const styleHeader: string = clsx('header--wrapper', scrollTop > 500 && 'scrolling');
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
@@ -43,25 +42,24 @@ const Header: React.FC<_Header> = ({}) => {
     };
 
     return (
-        <header className={styleHeader}>
+        <header className={clsx('header--wrapper', scrollTop > 500 && 'scrolling')}>
             <Box className="container header--container">
                 <AppLink rel="trang chu" href="/">
                     <Box className="header--logo">
-                        <Image {...styleLogoApp} src={staticPath('/images/logo_header.png')} />
+                        <Image width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.png')} />
                     </Box>
                 </AppLink>
-                <button onClick={toggleOpenMenu} className="menu--collapse">
+                {/* <button onClick={toggleOpenMenu} className="menu--collapse">
                     <FontAwesomeIcon icon={faBars} />
-                </button>
-                <Box className="menu--wrap">
+                </button> */}
+                <Box className="header--menu-wrap">
                     <MenuHeader />
-                    <Button {...styleButtonLogin} className="header--button-login">
-                        <FontAwesomeIcon icon={faSignInAlt} />
+                    <Button type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
                         {t('home.txt_btn_login')}
                     </Button>
                 </Box>
             </Box>
-            <DrawerCommon
+            {/* <DrawerCommon
                 className="draw-header-menu"
                 title="Danh sách lựa chọn"
                 placement="right"
@@ -69,7 +67,7 @@ const Header: React.FC<_Header> = ({}) => {
                 visible={openDrawMenu}
                 key="drawer-home-menu">
                 <MenuHeader />
-            </DrawerCommon>
+            </DrawerCommon> */}
         </header>
     );
 };

@@ -10,6 +10,8 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { LanguageContext } from '@Components/LanguageProvider';
 import FounderWrap from './founder-wrap';
 import NewsWrap from './news-wrap';
+import { decrement } from '@Redux/reducer/indexReducer';
+import { _RootState } from '@Redux/reducer/_rootReducer';
 
 interface _homePageProps {
     t: object;
@@ -17,7 +19,7 @@ interface _homePageProps {
 }
 
 const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
-    const count = useAppSelector((state: RootState) => state._indexReducer.count);
+    const count = useAppSelector((state: _RootState) => state.indexReducer.count);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
@@ -33,7 +35,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
         // dispatch(decrement());
     }, []);
 
-    console.log("render home-page => ", _locale);
+    console.log("render home-page => ",count, _locale);
 
     return (
         <main>

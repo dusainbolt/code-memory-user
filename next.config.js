@@ -16,6 +16,8 @@ module.exports = {
     exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
         console.log('--------buildID => ', buildId);
         console.log('--------dev => ', dev);
+        console.log('--------dev => ', defaultPathMap);
+
         return {
             '/': { page: '/' },
             '/about': { page: '/about' },

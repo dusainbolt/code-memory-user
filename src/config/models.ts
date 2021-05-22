@@ -1,10 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export type __indexReducer = {
-    count: number;
-    todos: [];
-};
-
 export type __configReducer = {
     _locale: string;
 };

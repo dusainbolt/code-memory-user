@@ -18,56 +18,93 @@
         min-width: 140px;
     }
     &--button-login {
+        font-size: $base-fontSize;
+        font-weight: $font-bold;
+        width: 150px;
+        @include _flex_box();
         svg.svg-inline--fa{
             width: 15px;
             margin-right: 6px
         }
     }
-}
-
-.menu {
-    &--wrap {
+    &--menu-wrap {
         @include _flex_box(center, flex-start);
         width: max-content;
     }
-    &--xs-wrap {
-        display: none;
-        transition: transform 0.25s linear;
-    }
-
-    &--link {
-        &.active,
-        &:hover {
-            color: var(--color-text-main);
+    &--menu.app-menu {
+        border-bottom: unset;
+        .ant-menu-item {
+            font-weight: $font-bold;   
+            font-size: $base-fontSize;
+            margin: 0 22px;
+            a {
+                color: var(--color-text-inactive);
+            }
+        }
+        .ant-menu-overflowed-submenu {
+            margin-right: 5px;
+            border: none !important;   
         }
     }
-
-    &--link {
-        text-decoration: none;
-        color: var(--color-text-inactive);
-    }
-    &--collapse {
-        border: 0;
-        background-color: transparent;
-        font-size: 17px;
+    &--menu-icon-collapse {
         color: var(--color-primary);
-        cursor: pointer;
-        display: none;
-        svg.svg-inline--fa {
-            width: $base-fontSize + 4;
+        font-size: $base-fontSize + 4 !important;
+    }
+}
+
+//collapse menu small screen
+.ant-menu-submenu-popup {
+    .ant-menu-item {
+        font-weight: $font-bold;   
+        font-size: $base-fontSize;
+        a {
+            color: var(--color-text-inactive);
+            &:hover {
+                color: var(--color-primary);
+            }
         }
     }
 }
 
-@include _responsive(_lg) {
-    .menu {
-        display: none !important;
-        &--wrap {
-            display: none;
-        }
-        &--collapse {
-            display: block;
-            width: unset;
+@include _responsive(_xs) {
+    .header {
+        &--button-login.app-btn {
+            width: max-content;
+            height: 32px;
+            span {display: none;}
         }
     }
 }
+
+// .menu {
+//     &--wrap {
+
+//     }
+//     &--xs-wrap {
+//         display: none;
+//         transition: transform 0.25s linear;
+//     }
+
+//     &--link {
+//         &.active,
+//         &:hover {
+//             color: var(--color-text-main);
+//         }
+//     }
+
+//     &--link {
+//         text-decoration: none;
+//         color: var(--color-text-inactive);
+//     }
+//     &--collapse {
+//         border: 0;
+//         background-color: transparent;
+//         font-size: 17px;
+//         color: var(--color-primary);
+//         cursor: pointer;
+//         display: none;
+//         svg.svg-inline--fa {
+//             width: $base-fontSize + 4;
+//         }
+//     }
+// }

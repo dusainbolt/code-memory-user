@@ -1,0 +1,17 @@
+@mixin menuStyle($classWrap, $color) {
+    #{$classWrap}.ant-menu {
+        .ant-menu-item,
+        .ant-menu-item-active {
+            &:hover {
+                color: $color;
+                border-color: $color;
+                a,
+                a:hover {
+                    color: $color;
+                }
+            }
+        }
+    }
+}
+
+@include menuStyle('.app-menu', var(--color-primary));

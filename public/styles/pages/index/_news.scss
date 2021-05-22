@@ -1,11 +1,6 @@
 .news--container .news {
     &--container {
-        // .swiper-container {
-        //     margin: 0 -10px;
-        // }
-        // .swiper-wrapper {
-        //     padding: 0 10px;
-        // }
+
     }
     &--item {
         border-radius: 8px;
@@ -23,11 +18,12 @@
         }
     }
     &--box-content {
-
+        // border: solid 1px var(--color-primary);
     }
     &--title {
 
     }
+
     &--item-title {
         @include typoEllipsis();
     }
