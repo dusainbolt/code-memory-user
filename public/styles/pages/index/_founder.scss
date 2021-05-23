@@ -1,22 +1,45 @@
-.founder {
+.home-founder {
     &--wrap {
+        padding: 30px 20px;
         box-shadow: var(--box-shadow-card-primary);
+        border-radius: $border-radius-large;
+        margin-bottom: 70px;
+        @include _imageStyle(520px);
+        h4.ant-typography {
+            font-size: $base-fontSize + 16;
+        }
     }
-    > div[class*=col-] {
-        padding: 40px;
+    &--name.ant-typography {
+        font-size: $base-fontSize + 4;
+        font-weight: $font-medium;
+        margin-bottom: 0;
     }
-    &--letter {
-        .img-app-wrap  {
+    &--mission.ant-typography {
+        margin-top: 0;
+        font-size: $base-fontSize - 2;
+    }
+    &--letter.ant-typography {
+        margin-top: 30px;
+        font-size: $base-fontSize + 2;
+        font-style: italic;
+    }
+    &--content {
+        @include _imageStyle(200px);
+        .ant-image {
+            margin: unset;
             margin-left: auto;
+            margin-top: 25px;
         }
     }
 }
 
-
 @include _responsive(_md) {
-    .founder {
-        &--container {
-            padding: 0;
+    .home-founder {
+        &--wrap {
+            h4.ant-typography {
+                text-align: center;
+                margin: 15px 0;
+            }
         }
     }
 }

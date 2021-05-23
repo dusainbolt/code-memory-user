@@ -1,18 +1,8 @@
-import { Box, Col, Row } from '@Common/Layout';
-import Typography from '@Common/Typography';
-import ImageWrapper from '@Common/ImageWrapper';
-import { staticPath } from '@Utils/index';
-import {
-    boxBoxStyleBox,
-    styleAvatarFounder,
-    styleFounderWrap,
-    styleNameFounder,
-    styleTitleFounder,
-    styleMissionFounder,
-    styleAutoGraph,
-    styleContentLetter,
-} from './style';
+import AntImage from '@Common/Image';
+import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
+import { staticPath } from '@Utils/index';
+import { Col, Divider, Row, Typography } from 'antd';
 
 interface _FounderWrap {}
 
@@ -20,28 +10,23 @@ const FounderWrap: React.FC<_FounderWrap> = ({}) => {
     const { t } = useTranslation();
 
     return (
-        <Box className="founder--container" container>
-            <Row className="founder--wrap" fadeInComponent {...styleFounderWrap}>
-                <Col md={12} xxl={6}>
-                    <ImageWrapper {...styleAvatarFounder} src={staticPath('/images/avatar_home_page.png')} />
-                </Col>
-                <Col md={12} xxl={6}>
-                    <Box {...boxBoxStyleBox} className="founder--letter">
-                        <Typography {...styleTitleFounder}>{t('home.txt_title_founder')}</Typography>
-                        <Typography {...styleNameFounder} className="founder--name">
-                            {t('home.txt_name_founder')}
-                        </Typography>
-                        <Typography {...styleMissionFounder}>{t('home.txt_mission_founder')}</Typography>
-                        <Typography {...styleContentLetter} mt={20}>
-                            {t('home.txt_letter_para_1')}
-                        </Typography>
-                        <Typography {...styleContentLetter} mt={8}>
-                            {t('home.txt_letter_para_2')}
-                        </Typography>
-                        <ImageWrapper {...styleAutoGraph} src={staticPath('/images/dusainbolt-autograph.png')} />
-                    </Box>
-                </Col>
-            </Row>
+        <Box className="home-founder--container" container>
+            <Box className="home-founder--wrap">
+                <Row gutter={32} className="home-founder--row">
+                    <Col xs={24} lg={12}>
+                        <AntImage alt="Avatar Founder CodeMemory - Lê Huy Du (Du Sainbolt)" src={staticPath('/images/avatar_home_page.png')} />
+                    </Col>
+                    <Col className="home-founder--content" xs={24} lg={12}>
+                        <Typography.Title level={4}>{t('home.txt_title_founder')}</Typography.Title>
+                        <Typography.Paragraph className="home-founder--name">{t('home.txt_name_founder')}</Typography.Paragraph>
+                        <Typography.Text className="home-founder--mission">{t('home.txt_mission_founder')}</Typography.Text>
+                        <Divider />
+                        <Typography.Paragraph className="home-founder--letter">{t('home.txt_letter_para_1')}</Typography.Paragraph>
+                        <Typography.Paragraph className="home-founder--letter">{t('home.txt_letter_para_2')}</Typography.Paragraph>
+                        <AntImage src={staticPath('/images/dusainbolt-autograph.png')} />
+                    </Col>
+                </Row>
+            </Box>
         </Box>
     );
 };

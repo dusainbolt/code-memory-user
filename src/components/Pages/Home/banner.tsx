@@ -8,7 +8,6 @@ import { staticPath } from '@Utils/index';
 import { Col, Row, Space } from 'antd';
 import { Typography } from 'antd';
 import AntImage from '@Common/Image';
-import Link from 'next/link';
 
 interface _HomeBanner {}
 
@@ -40,12 +39,12 @@ const HomeBanner: React.FC<_HomeBanner> = ({}) => {
                             <Typography.Text className="high-light">{t('home.txt_description_banner_2')}</Typography.Text>
                             {t('home.txt_description_banner_3')}
                         </Typography.Paragraph>
-                        <Typography.Link href="#interact">
-                            <ButtonCommon type="primary" shape="round" fontAWS={faAngleDoubleDown} className="home-banner--button-next-view">
-                                {t('common.txt_view_next')}
-                            </ButtonCommon>
-                        </Typography.Link>
                     </Space>
+                    <Typography.Link className="home-banner--button-link" href="#interact">
+                        <ButtonCommon type="primary" shape="round" fontAWS={faAngleDoubleDown} className="home-banner--button-next-view">
+                            {t('common.txt_view_next')}
+                        </ButtonCommon>
+                    </Typography.Link>
                 </Col>
                 <Col xs={{ span: 24, order: 1 }} lg={{ span: 14, order: 2 }}>
                     <AntImage className="home-banner--img-content" src={staticPath('/images/img_banner.png')} />

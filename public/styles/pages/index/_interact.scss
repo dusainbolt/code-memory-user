@@ -11,11 +11,9 @@
             box-shadow: var(--box-shadow-card-primary);
             border-radius: $border-radius-large;
         }
-        .ant-image {
-            max-width: 195px;
-            margin: auto;
-            display: block;
-        }
+
+        @include _imageStyle(195px);
+
         h3.ant-typography,
         div.ant-typography {
             text-align: center;

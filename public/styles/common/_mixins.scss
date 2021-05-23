@@ -167,6 +167,11 @@
     left: $left;
 }
 
-@mixin theme($property, $variable) {
-    #{$property}: var($variable);
+@mixin _imageStyle($maxWith) {
+    .ant-image {
+        max-width: $maxWith;
+        width: 100%;
+        margin: auto;
+        display: block;
+    }
 }

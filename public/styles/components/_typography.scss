@@ -5,7 +5,8 @@ h4,
 h5,
 h6,
 p,
-span {
+span,
+div {
     &.ant-typography {
         line-height: 1.65em;
         margin: 0;

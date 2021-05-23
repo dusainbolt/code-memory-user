@@ -21,6 +21,9 @@
     &--img-content-banner {
         margin-left: auto;
     }
+    &--button-link {
+        margin-right: auto;
+    }
     &--button-next-view.app-btn {
         width: 206px;
         height: 60px;
@@ -51,8 +54,10 @@
         &--title {
             font-size: $base-fontSize + 32;
         }
-        &--button-next-view.app-btn {
+        &--button-link {
             margin: auto;
+        }
+        &--button-next-view.app-btn {
             margin-top: 25px;
         }
     }

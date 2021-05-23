@@ -1,40 +1,53 @@
 .home-service {
     &--container {
         margin-bottom: 70px;
+        .ant-divider {
+            display: none;
+        }
     }
     &--row {
-        margin-top: 40px;
+        margin-top: 20px;
+        animation: fadeIn 1.3s ease-in-out forwards running;
         div.ant-typography {
             color: var(--color-text-main-05);
             font-size: $base-fontSize + 2;
+            margin-top: 20px;
+            margin-bottom: 26px;
         }
-        .ant-image {
-            max-width: 423px;
-            width: 100%;
-            margin: auto;
-            display: block;
-        }
+        @include _imageStyle(423px)
     }
-    &--content{
-        @include _flex_box(center, flex-start)
+    &--content {
+        @include _flex_box(center, center);
+        flex-direction: column;
     }
-    &--button{
+    &--button {
         width: 180px;
         height: 46px;
+    }
+    &--button-link {
+        margin-right: auto;
     }
 }
 
 @include _responsive(_md) {
     .home-service {
-        &--row{
-            margin-bottom: 60px !important;
-            h2.ant-typography, div.ant-typography {
-                text-align: center;
+        &--container {
+            .ant-divider {
+                display: block;
             }
         }
-        &--button{
+        &--row {
+            margin-bottom: 60px !important;
+            h2.ant-typography,
+            div.ant-typography {
+                text-align: center;
+            }
+            .ant-image {
+                width: 80%;
+            }
+        }
+        &--button-link {
             margin: auto;
         }
-
     }
 }
