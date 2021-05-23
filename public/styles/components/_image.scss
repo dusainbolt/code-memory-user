@@ -1,14 +1,3 @@
-.app-btn {
-    &.ant-btn-primary {
-        background-color: var(--color-primary);
-        border-color: var(--color-primary);
-        height: 42px;
-    }
-    svg.svg-inline--fa {
-        width: 15px;
-    }
-}
-
 .ant-image-img.img-app-antd{
     &.img-app-antd-load {
         filter: blur(5px);

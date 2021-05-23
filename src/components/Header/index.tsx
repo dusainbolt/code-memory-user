@@ -1,4 +1,4 @@
-import Button from '@Common/Button';
+import ButtonCommon from '@Common/Button';
 import DrawerCommon from '@Common/Drawer';
 import { AppLink, Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
@@ -48,9 +48,9 @@ const Header: React.FC<_Header> = ({}) => {
                 </a>
                 <Box className="header--menu-wrap">
                     <MenuHeader />
-                    <Button type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
+                    <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
                         {t('home.txt_btn_login')}
-                    </Button>
+                    </ButtonCommon>
                 </Box>
             </Box>
         </header>

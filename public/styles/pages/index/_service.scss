@@ -1,33 +1,40 @@
-.service-wrap {
-    &--description {
-        color: var(--color-text-main-05);
+.home-service {
+    &--container {
+        margin-bottom: 70px;
     }
-    &--item {
-        margin: 0 -20px;
-        margin-top: 44px;
+    &--row {
+        margin-top: 40px;
+        div.ant-typography {
+            color: var(--color-text-main-05);
+            font-size: $base-fontSize + 2;
+        }
+        .ant-image {
+            max-width: 423px;
+            width: 100%;
+            margin: auto;
+            display: block;
+        }
+    }
+    &--content{
+        @include _flex_box(center, flex-start)
+    }
+    &--button{
+        width: 180px;
+        height: 46px;
     }
 }
-
 
 @include _responsive(_md) {
-    .service-wrap {
-        &--item {
-            margin-top: 60px;
+    .home-service {
+        &--row{
+            margin-bottom: 60px !important;
+            h2.ant-typography, div.ant-typography {
+                text-align: center;
+            }
         }
-        &--content {
-            align-items: center;
-            text-align: center;
+        &--button{
+            margin: auto;
         }
-        &--button-wrap {
-            justify-content: center;
-        }
-    }
-}
 
-@include _responsive(_xs) {
-    .service-wrap {
-        &--item .img-app-wrap {
-            width: 75%;
-        }
     }
 }

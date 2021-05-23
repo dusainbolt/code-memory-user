@@ -1,9 +1,8 @@
-import ImageWrapper from '@Common/ImageWrapper';
-import { Box, Col, Row } from '@Common/Layout';
-import Typography from '@Common/Typography';
+import AntImage from '@Common/Image';
+import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/index';
-import { styleCardInteract, styleInteractTitle, styleTitleWrapInteract, styleImageInteract, styleDescriptionInteract } from './style';
+import { Col, Row, Space, Typography } from 'antd';
 
 interface _InteractWrap {}
 
@@ -32,25 +31,23 @@ const InteractWrap: React.FC<_InteractWrap> = ({}) => {
     ];
 
     return (
-        <Box className="interact--container" container>
-            <Typography idProps={{ id: 'second' }} className="interact--title-wrap" {...styleTitleWrapInteract}>
+        <Box className="home-interact--container" container>
+            <Typography.Text id="interact" className="home--title">
                 {t('home.txt_title_interact')}
-            </Typography>
-            <Row className="interact--card-wrap">
-                {DATA_INTERACTIVE_INTRODUCE.map((item, index) => (
-                    <Col key={index} md={12} xxl={4}>
-                        <Box className="interact--card-item" {...styleCardInteract} {...item.fade}>
-                            <ImageWrapper {...styleImageInteract} alt={item.title} src={staticPath(item.imageUrl)} />
-                            <Typography {...styleInteractTitle} className="interact--title">
-                                {item.title}
-                            </Typography>
-                            <Typography {...styleDescriptionInteract} className="interact--description">
-                                {item.description}
-                            </Typography>
-                        </Box>
-                    </Col>
-                ))}
-            </Row>
+            </Typography.Text>
+            <Box className="home-interact--box">
+                <Row gutter={[40, 40]} className="home-interact--row">
+                    {DATA_INTERACTIVE_INTRODUCE.map((item, index) => (
+                        <Col className="home-interact--card" key={index} md={24} lg={8}>
+                            <Space direction="vertical">
+                                <AntImage alt={`${t('home.txt_title_interact')} ${item.title}`} src={staticPath(item.imageUrl)} />
+                                <Typography.Title level={3}>{item.title}</Typography.Title>
+                                <Typography.Paragraph>{item.description}</Typography.Paragraph>
+                            </Space>
+                        </Col>
+                    ))}
+                </Row>
+            </Box>
         </Box>
     );
 };

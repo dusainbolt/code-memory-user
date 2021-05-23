@@ -1,12 +1,10 @@
-.banner {
+.home-banner {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 70px;
     &--wrap-info {
         @include _flex_box();
         flex-direction: column;
-    }
-    &--info-wrap {
     }
     &--title.ant-typography {
         font-size: $base-fontSize + 44;
@@ -41,13 +39,10 @@
 }
 
 @include _responsive(_md) {
-    .banner {
+    .home-banner {
         &--img-content {
             width: 85%;
             margin: auto;
-        }
-        &--info-wrap {
-            align-items: center;
         }
         &--title,
         &--description {

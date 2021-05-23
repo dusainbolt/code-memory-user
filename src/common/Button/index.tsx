@@ -16,7 +16,6 @@ export interface _ButtonCommon extends BaseButtonProps {
 
 const ButtonCommon: React.FC<_ButtonCommon> = ({ children, shape, type, className, placement = 'bottom', fontAWS, icon, titleTooltip, ...props }) => {
     const iconProps = icon || (fontAWS ? <FontAwesomeIcon icon={fontAWS} /> : null);
-
     return (
         <Tooltip overlayClassName={clsx(`${className}-tooltip`)} placement={placement} title={titleTooltip || children}>
             <Button type={type} shape={shape} className={clsx({ 'app-btn': true, [className]: className })} icon={iconProps}>
