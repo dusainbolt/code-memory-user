@@ -1,8 +1,14 @@
 .app-btn {
+    @include _flex_box();
+    font-weight: $font-bold;
     &.ant-btn-primary {
         background-color: var(--color-primary);
         border-color: var(--color-primary);
         height: 42px;
+        color: var(--color-text-button-white);
+    }
+    svg.svg-inline--fa {
+        width: 15px;
     }
 }
 

@@ -1,49 +1,64 @@
-@keyframes pl1 {
-    100% {box-shadow: 0 0 0 15px var(--color-primary-light)}
-}
-
 .banner {
     width: 100%;
-    .banner &--container {
-        margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    &--wrap-info {
+        @include _flex_box();
+        flex-direction: column;
     }
     &--info-wrap {
     }
-    &--title {
+    &--title.ant-typography {
+        font-size: $base-fontSize + 44;
     }
     &--description {
         color: var(--color-text-main-05);
+        font-weight: $font-medium;
+        font-size: $base-fontSize + 2;
+        margin-top: 20px;
+        .high-light {
+            font-size: $base-fontSize + 2;
+        }
     }
     &--img-content-banner {
         margin-left: auto;
     }
-    &--button-next-view {
-        // animation: 1s infinite pl1;
+    &--button-next-view.app-btn {
+        width: 206px;
+        height: 60px;
+        margin-top: 40px;
+        a {
+            color: var(--color-text-button-white);
+        }
         .svg-inline--fa {
-            margin-left: 6px;
+            margin-right: 6px;
             width: $base-fontSize;
         }
+    }
+    &--button-next-view-tooltip .ant-tooltip-inner a {
+        color: var(--color-text-button-white);
     }
 }
 
 @include _responsive(_md) {
     .banner {
-        &--img-content-banner {
+        &--img-content {
             width: 85%;
             margin: auto;
         }
         &--info-wrap {
             align-items: center;
         }
-        &--title, &--description{
+        &--title,
+        &--description {
             text-align: center;
         }
         &--title {
             font-size: $base-fontSize + 32;
         }
-        &--button-next-view {
-            // margin: auto;
-            margin-top: 50px;
+        &--button-next-view.app-btn {
+            margin: auto;
+            margin-top: 25px;
         }
     }
 }

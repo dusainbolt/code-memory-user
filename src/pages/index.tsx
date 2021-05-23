@@ -7,8 +7,6 @@ import Header from '@Components/Header';
 import Footer from '@Components/Footer';
 import IconSetting from '@Common/IconApp/IconSetting';
 
-import 'swiper/swiper.min.css';
-
 export default function IndexPage(props) {
     return (
         <Fragment>

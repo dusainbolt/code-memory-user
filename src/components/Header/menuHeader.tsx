@@ -21,13 +21,6 @@ const MenuHeader: React.FC<_MenuHeader> = ({}) => {
     };
 
     return (
-        // <Nav flexBox className="menu--list">
-        //     {LIST_MENU.map((item, index) => (
-        //         <AppLink {...styleMenuItem}  className={classActive(item.href)} key={index} href={item.href}>
-        //             {t(`menu.${item.name}`)}
-        //         </AppLink>
-        //     ))}
-        // </Nav>
         <Menu
             selectedKeys={['mail']}
             overflowedIndicator={<MenuOutlined className="header--menu-icon-collapse" />}

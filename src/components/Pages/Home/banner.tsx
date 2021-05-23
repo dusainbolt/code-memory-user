@@ -1,14 +1,14 @@
-import { Box, Col, Row } from '@Common/Layout';
-import Typography from '@Common/Typography';
+import { Box } from '@Common/Layout';
 import Button from '@Common/Button';
 import { useEffect } from 'react';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { styleButtonViewNextHome, styleTitleBanner, styleDescriptionBanner, styleImageBanner, styleBannerInfoWrap } from './style';
 import { DEFAULT_SEO } from '@Components/Meta';
-import ImageWrapper from '@Common/ImageWrapper';
 import { staticPath } from '@Utils/index';
+import { Col, Row, Space } from 'antd';
+import { Typography } from 'antd';
+import AntImage from '@Common/Image';
+import Link from 'next/link';
 
 interface _Banner {}
 
@@ -30,28 +30,23 @@ const Banner: React.FC<_Banner> = ({}) => {
     }, []);
 
     return (
-        <Box mt={30} className="banner">
-            <Row container className="banner--container">
-                <Col md={12} mdOrder={2} xxl={5}>
-                    <Box className="banner--info-wrap" {...styleBannerInfoWrap}>
-                        <Typography className="banner--title" {...styleTitleBanner}></Typography>
-                        <Typography className="banner--description" {...styleDescriptionBanner}>
+        <Box container className="banner">
+            <Row gutter={30}>
+                <Col md={{ span: 24, order: 2 }} lg={{ span: 10, order: 1 }} className="banner--wrap-info">
+                    <Space direction="vertical">
+                        <Typography.Title className="banner--title"></Typography.Title>
+                        <Typography.Paragraph className="banner--description">
                             {t('home.txt_description_banner_1')}
-                            <Typography hightLight type="b">
-                                {t('home.txt_description_banner_2')}
-                            </Typography>
+                            <Typography.Text className="high-light">{t('home.txt_description_banner_2')}</Typography.Text>
                             {t('home.txt_description_banner_3')}
-                        </Typography>
-                        <Button href="#second" className="banner--button-next-view" {...styleButtonViewNextHome}>
-                            {t('common.txt_view_next')}
-                            <FontAwesomeIcon icon={faAngleDoubleDown} />
+                        </Typography.Paragraph>
+                        <Button type="primary" shape="round" fontAWS={faAngleDoubleDown} className="banner--button-next-view">
+                            <Link href="#second">{t('common.txt_view_next')}</Link>
                         </Button>
-                    </Box>
+                    </Space>
                 </Col>
-                <Col md={12} mdOrder={1} xxl={7} fadeInComponent>
-                    <Box className="banner--img-content-banner">
-                        <ImageWrapper {...styleImageBanner} src={staticPath('/images/img_banner.png')} />
-                    </Box>
+                <Col md={{ span: 24, order: 1 }} lg={{ span: 14, order: 2 }}>
+                    <AntImage className="banner--img-content" src={staticPath('/images/img_banner.png')} />
                 </Col>
             </Row>
         </Box>

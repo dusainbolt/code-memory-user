@@ -6,8 +6,6 @@ import { LanguageProvider } from '@Components/LanguageProvider';
 
 //load style of ant
 import 'antd/dist/antd.css';
-//generator common css Overload to best performance
-// import '@Public/styles/watch/layout.css';
 import '@Styles/_app.scss';
 function NextApp({ Component, pageProps }: AppProps) {
     

@@ -18,4 +18,4 @@
 ### 
 
 # 3.Generator css Overload to best performance
-`sass --watch public/styles/watch/`
+`sass --watch public/styles/root/`

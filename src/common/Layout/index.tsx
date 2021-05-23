@@ -45,15 +45,15 @@ export const Col: React.FC<_Col> = ({ children, xs, sm, md, lg, xl, xxl, xsOrder
     return <div className={colStyle}>{children}</div>;
 };
 
-export interface _Box extends _styleLayout {
+export interface _Box  {
     children?: any;
     className?: string;
     container?: boolean;
     onClick?: any;
 }
 
-export const Box: React.FC<_Box> = ({ children, onClick, container, ...props }) => {
-    const boxStyle = clsx({ container: container, ..._getStyleLayout(props) });
+export const Box: React.FC<_Box> = ({ children, onClick, container, className }) => {
+    const boxStyle = clsx({ container: container, [className]: className });
     return (
         <div onClick={onClick} className={boxStyle}>
             {children}

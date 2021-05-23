@@ -11,14 +11,15 @@ export interface _ButtonCommon extends BaseButtonProps {
     className?: string;
     fontAWS?: IconProp;
     placement?: TooltipPlacement;
+    href?: string;
 }
 
-const ButtonCommon: React.FC<_ButtonCommon> = ({ children, className, placement = 'bottom', fontAWS, icon, titleTooltip, ...props }) => {
+const ButtonCommon: React.FC<_ButtonCommon> = ({ children, shape, type, className, placement = 'bottom', fontAWS, icon, titleTooltip, ...props }) => {
     const iconProps = icon || (fontAWS ? <FontAwesomeIcon icon={fontAWS} /> : null);
 
     return (
-        <Tooltip placement={placement} title={titleTooltip || children}>
-            <Button className={clsx({ 'app-btn': true, [className]: className })} icon={iconProps} {...props}>
+        <Tooltip overlayClassName={clsx(`${className}-tooltip`)} placement={placement} title={titleTooltip || children}>
+            <Button type={type} shape={shape} className={clsx({ 'app-btn': true, [className]: className })} icon={iconProps}>
                 {children}
             </Button>
         </Tooltip>

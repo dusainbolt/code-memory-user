@@ -40,7 +40,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
     return (
         <main>
             <Banner />
-            <Divider mCol={30} />
+            {/* <Divider mCol={30} />
             <LazyComponent offset={40}>
                 <InteractWrap />
             </LazyComponent>
@@ -50,7 +50,7 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
             <LazyComponent offset={40}>
                 <FounderWrap />
             </LazyComponent>
-            <NewsWrap />
+            <NewsWrap /> */}
         </main>
     );
 };

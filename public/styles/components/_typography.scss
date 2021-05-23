@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    &.ant-typography {
+        line-height: 1.65em;
+        margin: 0;
+        padding: 0;
+        color: var(--color-text-main);
+    }
+    &.high-light {
+        font-weight: $font-bold;
+        color: var(--color-high-light);
+    }
+}

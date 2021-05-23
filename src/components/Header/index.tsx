@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import MenuHeader from './menuHeader';
 import clsx from 'clsx';
 import { styleButtonLogin, styleLogoApp } from './style';
+import Link from 'next/link';
 
 interface _Header {}
 
@@ -37,21 +38,14 @@ const Header: React.FC<_Header> = ({}) => {
         //not remove setScrolling(e.target.documentElement.scrollTop > scrollTop);
     };
 
-    const toggleOpenMenu = () => {
-        setOpenDrawMenu(!openDrawMenu);
-    };
-
     return (
         <header className={clsx('header--wrapper', scrollTop > 500 && 'scrolling')}>
             <Box className="container header--container">
-                <AppLink rel="trang chu" href="/">
+                <a href="/">
                     <Box className="header--logo">
                         <Image width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.png')} />
                     </Box>
-                </AppLink>
-                {/* <button onClick={toggleOpenMenu} className="menu--collapse">
-                    <FontAwesomeIcon icon={faBars} />
-                </button> */}
+                </a>
                 <Box className="header--menu-wrap">
                     <MenuHeader />
                     <Button type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
@@ -59,15 +53,6 @@ const Header: React.FC<_Header> = ({}) => {
                     </Button>
                 </Box>
             </Box>
-            {/* <DrawerCommon
-                className="draw-header-menu"
-                title="Danh sách lựa chọn"
-                placement="right"
-                onClose={toggleOpenMenu}
-                visible={openDrawMenu}
-                key="drawer-home-menu">
-                <MenuHeader />
-            </DrawerCommon> */}
         </header>
     );
 };
