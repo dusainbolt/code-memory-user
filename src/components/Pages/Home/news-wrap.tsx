@@ -2,9 +2,7 @@ import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { VIEW_SCREEN_WIDTH } from '@Config/contains';
 import { useEffect, useState } from 'react';
-
 import SwiperSlideNewsItem from '@Common/Card/CardNewsSwiper';
-import { useAppSelector } from '@Redux/store';
 import { _RootState } from '@Redux/reducer/_rootReducer';
 import { resize } from '@Redux/reducer/layoutReducer';
 import { Typography } from 'antd';

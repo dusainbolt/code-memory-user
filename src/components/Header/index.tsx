@@ -1,23 +1,18 @@
 import ButtonCommon from '@Common/Button';
-import DrawerCommon from '@Common/Drawer';
-import { AppLink, Box } from '@Common/Layout';
+import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { faAngleDoubleDown, faBars, faSign, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { staticPath } from '@Utils/index';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import MenuHeader from './menuHeader';
 import clsx from 'clsx';
-import { styleButtonLogin, styleLogoApp } from './style';
-import Link from 'next/link';
 
 interface _Header {}
 
 const Header: React.FC<_Header> = ({}) => {
     const { t } = useTranslation();
     const [scrollTop, setScrollTop] = useState<number>(0);
-    const [openDrawMenu, setOpenDrawMenu] = useState<boolean>(false);
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
@@ -28,14 +23,7 @@ const Header: React.FC<_Header> = ({}) => {
 
     const onScroll = e => {
         const scrollHeight = e.target.documentElement.scrollTop;
-        // top > 0 || top = 0
-        // if ((!scrollTop && scrollHeight) || !scrollHeight) {
-        //     setScrollTop(scrollHeight);
-        // }
-
         setScrollTop(scrollHeight);
-
-        //not remove setScrolling(e.target.documentElement.scrollTop > scrollTop);
     };
 
     return (

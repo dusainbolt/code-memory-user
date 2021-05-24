@@ -1,18 +1,15 @@
-import { AppLink, Box, List, ListItem } from '@Common/Layout';
+import { Box } from '@Common/Layout';
 import { LIST_MENU } from '@Config/contains';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { faFacebook, faGooglePlus, faSkype, faTwitter, faTwitterSquare, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faSkype, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Divider, Row, Typography } from 'antd';
 import AntImage from '@Common/Image';
 import { staticPath } from '@Utils/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressBook, faEnvelope, faEnvelopeOpenText, faPhone, faVoicemail } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = ({}) => {
     const { t } = useTranslation();
-    const submitReject = values => {
-        console.log(values);
-    };
 
     const LIST_CONTACT = [
         {
@@ -85,7 +82,7 @@ const Footer = ({}) => {
                         </Typography.Title>
                         <Row className="app-footer--social-wrap" gutter={[8, 12]}>
                             {LIST_CONTACT.map((item, index) => (
-                                <Col xs={6}>
+                                <Col key={index} xs={6}>
                                     <Box className="app-footer--social-icon">
                                         <FontAwesomeIcon icon={item.icon} />
                                     </Box>

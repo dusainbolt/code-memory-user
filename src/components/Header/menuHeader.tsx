@@ -14,11 +14,11 @@ const MenuHeader: React.FC<_MenuHeader> = ({}) => {
     const router = useRouter();
     const { t } = useTranslation();
 
-    const classActive = href => {
-        return clsx('menu--link', {
-            active: router.pathname.indexOf(href) !== -1,
-        });
-    };
+    // const classActive = href => {
+    //     return clsx('menu--link', {
+    //         active: router.pathname.indexOf(href) !== -1,
+    //     });
+    // };
 
     return (
         <Menu
