@@ -16,7 +16,7 @@ export default function IndexPage(props) {
             <Header />
             <HomePageComponent {...props} />
             <Footer />
-            <IconSetting />
+            {/* <IconSetting /> */}
         </Fragment>
     );
 }
