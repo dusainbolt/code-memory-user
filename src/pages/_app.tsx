@@ -1,18 +1,19 @@
-import '@Styles/_app.scss';
 import { Provider } from 'react-redux';
 import store from '@Redux/store';
 import { AppProps } from 'next/app';
 import { _ctxApp } from '@Config/models';
-import { useRouter } from 'next/router';
-import { getLocale } from '@Config/locale';
+import { LanguageProvider } from '@Components/LanguageProvider';
+
+//load style of ant
+import 'antd/dist/antd.css';
+import '@Styles/_app.scss';
 function NextApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  const { locale } = router;
-  const t = getLocale(locale);
-    // console.log(localStorage.getItem("hello"));
+    
     return (
         <Provider store={store}>
-            <Component {...pageProps} t={t} locale={locale} />
+            <LanguageProvider>
+                    <Component {...pageProps} />
+            </LanguageProvider>
         </Provider>
     );
 }

@@ -1,0 +1,81 @@
+.header {
+    &--wrapper {
+        top: 0px;
+        z-index: 10;
+        transition: all 0.3s;
+        padding: 10px 0;
+        &.scrolling {
+            position: sticky;
+            animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+            box-shadow: 0 10px 15px #19191908;
+            background-color: var(--color-bg-header);
+        }
+    }
+    &--container {
+        @include _flex_box(center, space-between);
+    }
+    &--logo {
+        min-width: 140px;
+        cursor: pointer;
+    }
+    &--button-login {
+        font-weight: $font-bold;
+        width: 150px;
+        @include _flex_box();
+        svg.svg-inline--fa {
+            width: 15px;
+            margin-right: 6px;
+        }
+    }
+    &--menu-wrap {
+        @include _flex_box(center, flex-start);
+        width: max-content;
+    }
+    &--menu.app-menu {
+        border-bottom: unset;
+        .ant-menu-item {
+            margin: 0 22px;
+            a {
+                color: var(--color-text-inactive);
+                font-weight: $font-bold;
+            }
+        }
+        .ant-menu-overflowed-submenu {
+            margin-right: 5px;
+            border: none !important;
+        }
+    }
+    &--menu-icon-collapse {
+        color: var(--color-primary);
+        font-size: $base-fontSize + 4 !important;
+    }
+}
+
+//collapse menu small screen
+.ant-menu-submenu-popup {
+    .ant-menu-item {
+        font-weight: $font-bold;
+        a {
+            color: var(--color-text-inactive);
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+@include _responsive(_xs) {
+    .header {
+        &--button-login.app-btn {
+            order: 1;
+            width: max-content;
+            height: 32px;
+            span {
+                display: none;
+            }
+        }
+        &--menu.app-menu {
+            order: 2;
+        }
+    }
+}

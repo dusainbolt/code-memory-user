@@ -1,0 +1,177 @@
+@keyframes fadeInDown {
+    0% {
+        opacity: 0.5;
+        transform: translateY(-20px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateY(0);
+     }
+} 
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+        transform: scale(1.2);
+     }
+     100% {
+        opacity: 1;
+        transform: scale(1.1);
+     }
+} 
+
+@keyframes fadeInDownComponent {
+    0% {
+       opacity: 0;
+       transform: translateY(-150px);
+    }
+    3% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(5px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+} 
+
+@keyframes fadeInRightComponent {
+    0% {
+       opacity: 0;
+       transform: translateX(150px);
+    }
+    3% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(-5px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+} 
+
+@keyframes fadeInLeftComponent {
+    0% {
+       opacity: 0;
+       transform: translateX(-150px);
+    }
+    3% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(5px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+} 
+
+@mixin _darkTheme {
+    body[app-theme='dark'] {
+        @content;
+    }
+}
+
+
+@mixin _responsive($breakpoint) {
+    @if $breakpoint == _xs {
+        @media (max-width: $screen-xs) {
+            @content;
+        }
+    }
+    @if $breakpoint == _sm {
+        @media (max-width: $screen-sm) {
+            @content;
+        }
+    }
+    @if $breakpoint == _md {
+        @media (max-width: $screen-md) {
+            @content;
+        }
+    }
+    @if $breakpoint == _lg {
+        @media (max-width: $screen-lg) {
+            @content;
+        }
+    }
+    @if $breakpoint == _xl {
+        @media (max-width: $screen-xl) {
+            @content;
+        }
+    }
+    @if $breakpoint == _xxl {
+        @media (max-width: $screen-xxl) {
+            @content;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@mixin _position_side_draw() {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background-color: var(--color-background-main);
+    max-width: 300px;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    will-change: transform;
+    transform: translateX(100%);
+}
+
+@mixin typoEllipsis($row: 2) {
+    // max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+    pointer-events: none;
+}
+
+@mixin _position-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin _flex_box($align: center, $justify-content: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify-content;
+}
+
+@mixin _position($pos, $top, $right, $bottom, $left) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin _imageStyle($maxWith) {
+    .ant-image {
+        max-width: $maxWith;
+        width: 100%;
+        margin: auto;
+        display: block;
+    }
+}

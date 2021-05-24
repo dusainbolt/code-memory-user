@@ -1,41 +1,46 @@
-// import { Link } from '@I18n/index';
-// import HomeMenu from '@Common/Menu/HomeMenu';
-import HomeMenu from '@Common/Menu/HomeMenu';
+import ButtonCommon from '@Common/Button';
+import { Box } from '@Common/Layout';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { staticPath } from '@Utils/index';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-// import BGBanner from '@Public/svg/bgBanner.svg';
+import MenuHeader from './menuHeader';
+import clsx from 'clsx';
 
-interface _Header {
-    t: any
-}
+interface _Header {}
 
-const Header: React.FC<_Header> = ({ t }) => {
-    const [scrollTop, setScrollTop] = useState(0);
-
-    const onScroll = e => {
-        const scrollHeight = e.target.documentElement.scrollTop;
-        // top > 0 || top = 0
-        if ((!scrollTop && scrollHeight) || !scrollHeight) {
-            setScrollTop(scrollHeight);
-        }
-        //not remove setScrolling(e.target.documentElement.scrollTop > scrollTop);
-    };
+const Header: React.FC<_Header> = ({}) => {
+    const { t } = useTranslation();
+    const [scrollTop, setScrollTop] = useState<number>(0);
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
+        setTimeout(() => {
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+        }, 100);
     }, []);
 
+    const onScroll = e => {
+        const scrollHeight = e.target.documentElement.scrollTop;
+        setScrollTop(scrollHeight);
+    };
+
     return (
-        <header className={`header__wrapper ${!scrollTop ? '' : 'scrolling'}`}>
-            <div className="container header__container">
-                <Link href="/">
-                    <div className="header__logo">
-                        <Image alt="logo" width={49} height={35} src="/images/logo.png" />
-                    </div>
-                </Link>
-                <HomeMenu t={t}/>
-            </div>
+        <header className={clsx('header--wrapper', scrollTop > 500 && 'scrolling')}>
+            <Box className="container header--container">
+                <a href="/">
+                    <Box className="header--logo">
+                        <Image width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.png')} />
+                    </Box>
+                </a>
+                <Box className="header--menu-wrap">
+                    <MenuHeader />
+                    <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
+                        {t('home.txt_btn_login')}
+                    </ButtonCommon>
+                </Box>
+            </Box>
         </header>
     );
 };

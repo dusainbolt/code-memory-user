@@ -1,0 +1,35 @@
+.app-footer {
+    &--link.ant-typography  {
+        display: block;
+        color: var(--color-text-main) !important;
+        font-weight: $font-regular;
+        margin-bottom: 12px;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &--title.ant-typography {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    &--col-contact {
+        a {
+            display: block;
+        }
+        svg.svg-inline--fa {
+            width: 12px;
+        }
+    }
+    &--social-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-bottom: 4px;
+        background-color: var(--color-primary);
+        @include _flex_box();
+        svg.svg-inline--fa {
+            width: 15px;
+            color: white;
+        }
+    }
+}

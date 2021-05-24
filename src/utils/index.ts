@@ -8,13 +8,35 @@ export const _tValue = (_tText: string, params: object = {}) => {
     return _tText;
 };
 
+export const staticPath = (path) => {
+    return `..${path}`;
+};
+
 export const _getStyleLayout = (props) => ({
     'flb': props.flexBox,
+    'flb-col': props.flexCol,
+    [`flb-al-${props.alignItem}`]: props.alignItem,
+    [`flb-jt-${props.justify}`]: props.justify,
+    'cir': props.circle,
+    'fxd': props.fixed,
+    'rel': props.relative,
     'hv': props.hover,
-    'center-block': props.center,
+    'center-block': props.centerBlock,
+    'fade fade-in': props.fadeInComponent,
+    'fade fade-right': props.fadeRightComponent,
+    'fade fade-down': props.fadeDownComponent,
+    'fade fade-left': props.fadeLeftComponent,
+    'full-w': props.fullWidth,
+    [`l-sp-${props.letterSpacing}`]: props.letterSpacing,
+    [`b-${props.bottom}`]: props.bottom,
+    [`t-${props.top}`]: props.top,
+    [`l-${props.left}`]: props.left,
+    [`r-${props.right}`]: props.right,
+    [`a-d-${props.delay}`]: props.delay,
     [`al-${props.align}`]: props.align,
     [`w-${props.width}`]: props.width,
     [`h-${props.height}`]: props.height,
+    [`mhp-${props.minHeightPercent}`]: props.minHeightPercent,
     [`mi-w-${props.minWidth}`]: props.minWidth,
     [`ma-w-${props.maxWidth}`]: props.maxWidth,
     [`m-tb-${props.mCol}`]: props.mCol,
@@ -23,12 +45,11 @@ export const _getStyleLayout = (props) => ({
     [`p-tb-${props.pCol}`]: props.pCol,
     [`p-lr-${props.pRow}`]: props.pRow,
     [`p-${props.padding}`]: props.padding,
-    [`f-size-${props.fontSize}`]: props.fontSize,
+    [`f-sz-${props.fontSize}`]: props.fontSize,
     [`f-${props.fontWeight}`]: props.fontWeight,
     [`lh-${props.lineHeight}`]: props.lineHeight,
     [`op-${props.opacity}`]: props.opacity,
     [`op-${props.opacity}`]: props.opacity,
-    [`flb-jt-${props.justify}`]: props.justify,
     [`mt-${props.mt}`]: props.mt,
     [`mr-${props.mr}`]: props.mr,
     [`mb-${props.mb}`]: props.mb,

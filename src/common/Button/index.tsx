@@ -1,49 +1,28 @@
+import { Button, Tooltip } from 'antd';
+import { BaseButtonProps } from 'antd/lib/button/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { TooltipPlacement } from 'antd/lib/tooltip';
 import clsx from 'clsx';
-import Link from 'next/link';
-import { _getStyleLayout } from '@Utils/index';
-import { _styleLayout } from '@Config/models';
-interface _Button extends _styleLayout {
-    label: string;
-    type?: string;
-    shadow?: boolean;
-    outline?: boolean;
-    round?: boolean;
-    link?: boolean;
+
+export interface _ButtonCommon extends BaseButtonProps {
+    children?: any;
+    titleTooltip?: string;
+    className?: string;
+    fontAWS?: IconProp;
+    placement?: TooltipPlacement;
     href?: string;
-    onClick?: VoidFunction;
 }
 
-const Button: React.FC<_Button> = ({
-    label = '',
-    type = 'primary',
-    shadow = false,
-    outline = false,
-    round = false,
-    link = false,
-    href = '',
-    onClick,
-    ...props
-}) => {
-    const style = clsx({
-        'app-btn': true,
-        shadow: shadow,
-        outline: outline,
-        round: round,
-        [type]: type,
-        ..._getStyleLayout(props),
-    });
-
-    return !link ? (
-        <button type="button" className={style} onClick={onClick}>
-            {label}
-        </button>
-    ) : (
-        <Link href={href}>
-            <a className={style} onClick={onClick}>
-                {label}
-            </a>
-        </Link>
+const ButtonCommon: React.FC<_ButtonCommon> = ({ children, shape, type, className, placement = 'bottom', fontAWS, icon, titleTooltip, ...props }) => {
+    const iconProps = icon || (fontAWS ? <FontAwesomeIcon icon={fontAWS} /> : null);
+    return (
+        <Tooltip overlayClassName={clsx(`${className}-tooltip`)} placement={placement} title={titleTooltip || children}>
+            <Button type={type} shape={shape} className={clsx({ 'app-btn': true, [className]: className })} icon={iconProps}>
+                {children}
+            </Button>
+        </Tooltip>
     );
 };
 
-export default Button;
+export default ButtonCommon;

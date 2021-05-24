@@ -1,44 +1,46 @@
-import { useRouter } from 'next/router';
-import { useAppSelector, useAppDispatch, RootState } from '@Redux/store';
-import { decrement } from '@Redux/reducer/indexReducer';
+import { useAppSelector, useAppDispatch } from '@Redux/store';
 import { _tValue } from '@Utils/index';
-import { actions } from '@Redux/actions/index';
-import Banner from '@Components/Pages/Home/banner';
-import SecondWrap from './second-wrap';
-import { Divider } from '@Common/Layout';
-import ThirdWrap from './third-wrap';
-import FourthWrap from './fourth-wrap';
+import InteractWrap from './interact-wrap';
+import ServiceWrap from './service-wrap';
+import { useContext, useEffect } from 'react';
+import useTranslation from '@Components/LanguageProvider/useTranslation';
+import { LanguageContext } from '@Components/LanguageProvider';
+import FounderWrap from './founder-wrap';
+import NewsWrap from './news-wrap';
+import { _RootState } from '@Redux/reducer/_rootReducer';
+import HomeBanner from '@Components/Pages/Home/banner';
 
 interface _homePageProps {
     t: object;
-    locale: string;
     listBlogs: [];
 }
 
-const HomePageComponent: React.FC<_homePageProps> = ({ t, locale }) => {
-    const router = useRouter();
-    const count = useAppSelector((state: RootState) => state._indexState.count);
+const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
+    const count = useAppSelector((state: _RootState) => state.indexReducer.count);
     const dispatch = useAppDispatch();
+    const { t } = useTranslation();
+
+    const [_locale, _changeLocale] = useContext(LanguageContext);
 
     const changeLanguage = e => {
         const locale = e.target.value;
-        router.push(router.pathname, router.asPath, { locale });
-        dispatch(decrement());
-        dispatch(actions.getDemo({ data: 'HELLO' }));
+        _changeLocale(locale);
+        // dispatch(decrement());
     };
 
-    const onTestDispatchSaga = () => {
-        dispatch(actions.getDemo({ data: 'HELLO' }));
-    };
+    useEffect(() => {
+        // dispatch(decrement());
+    }, []);
+
+    console.log('render home-page => ', count, _locale);
 
     return (
         <main>
-            <Banner />
-            <Divider mCol={90} />
-            <SecondWrap />
-            <ThirdWrap />
-            <Divider mCol={60} />
-            <FourthWrap />
+            <HomeBanner />
+            <InteractWrap />
+            <ServiceWrap />
+            <FounderWrap />
+            <NewsWrap />
         </main>
     );
 };

@@ -1,8 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export type _indexState = {
-    count: number;
-    todos: [];
+export type __configReducer = {
+    _locale: string;
 };
 
 export type _ctxApp = {
@@ -15,18 +14,25 @@ export type _ctxApp = {
 };
 
 export type _styleLayout = {
+    onClick?: VoidFunction;
+    letterSpacing?: number;
     width?: number;
     minWidth?: number;
     maxWidth?: number;
+    fullWidth?: boolean;
+    relative?: boolean;
+    flexCol?: boolean;
+    alignItem?: string;
     mCol?: number;
     height?: number;
+    minHeightPercent?: number;
     mRow?: number;
     pCol?: number;
     pRow?: number;
     padding?: number;
     margin?: number;
     fontSize?: number;
-    fontWeight?: string;
+    fontWeight?: string | 'light' | 'thin' | 'regular' | 'medium' | 'medium-xl' | 'bold' | 'bold-lg';
     lineHeight?: number;
     className?: string;
     opacity?: number;
@@ -42,8 +48,19 @@ export type _styleLayout = {
     pl?: number;
     hover?: boolean;
     color?: string;
-    center?: boolean;
+    centerBlock?: boolean;
     align?: string;
     background?: string;
-    radius?: number;
+    radius?: number | 4 | 6 | 8 | 10 | 15 | 20 | 30 | 50 | 60;
+    fadeInComponent?: boolean;
+    fadeRightComponent?: boolean;
+    fadeDownComponent?: boolean;
+    fadeLeftComponent?: boolean;
+    circle?: boolean;
+    delay?: number;
+    bottom?: number;
+    top?: number;
+    left?: number;
+    right?: number;
+    fixed?: boolean;
 };

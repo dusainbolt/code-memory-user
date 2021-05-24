@@ -1,0 +1,96 @@
+.app-setting-icon {
+    @include _flex_box();
+    background: var(--color-bg-header);
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    transition: color 0.3s;
+    cursor: pointer;
+    position: fixed;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    right: 30px;
+    bottom: 40px;
+    > svg.svg-inline--fa {
+        width: $base-fontSize + 2;
+    }
+    &:hover, &.active, &:focus {
+        color: var(--color-primary);
+    }
+}
+
+.app-setting-menu.ant-dropdown-menu {
+    border-radius: 4px;
+    .app-menu-item {
+        width: 150px;
+    }
+    .ant-dropdown-menu-submenu-title {
+        display: flex;
+        align-items: center;
+    }
+    .ant-dropdown-menu-submenu-expand-icon {
+        display: none;
+    }
+}
+
+.app-setting-menu-sub.ant-dropdown-menu {
+    .ant-dropdown-menu-sub {
+        border-radius: 4px;
+    }
+    .ant-dropdown-menu-item {
+        @include _flex_box(center, flex-start);
+    }
+}
+
+.ant-dropdown-menu, .ant-dropdown-menu-item{
+    &:not(.ant-dropdown-menu-submenu){
+        background: var(--color-bg-header);
+        color: var(--color-text-main);
+    }
+}
+
+.ant-dropdown {
+    .ant-dropdown-menu-item-selected,
+    .ant-dropdown-menu-submenu-selected .ant-dropdown-menu-submenu-title {
+        color: var(--color-text-main);
+    }
+}
+
+.ant-dropdown-menu-item-selected, .ant-dropdown-menu-submenu-title-selected, .ant-dropdown-menu-item-selected > a, .ant-dropdown-menu-submenu-title-selected > a {
+    color: var(--color-text-main);
+    background: var(--color-primary-light) !important;
+}
+
+.icon-sub-menu {
+    @include _flex_box();
+    display: inline-flex;
+    background-color: var(--color-bg-icon);
+    font-size: $base-fontSize - 1;
+}
+
+.app-icon {
+    > svg.svg-inline--fa {
+        width: $base-fontSize + 4;
+    }
+}
+
+.app-icon-wrap {
+    @include _flex_box();
+}
+
+@include _responsive(_md) {
+    .app-setting-icon {
+        right: 20px;
+        bottom: 30px;
+    }
+}
+
+@include _darkTheme(){
+    .ant-dropdown, .ant-dropdown-menu-submenu {
+        .svg-inline--fa {
+            color: var(--color-bg-header);
+        }
+        .ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover {
+            background: var(--color-hover-dark);
+        }
+    }
+}
