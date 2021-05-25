@@ -24,7 +24,7 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         background-color: var(--color-primary);
         @include _flex_box();
         svg.svg-inline--fa {
@@ -45,12 +45,34 @@
 
 @include _responsive(_md) {
     .app-footer {
+        &--description-logo {
+            margin-bottom: 14px !important;
+        }
         &--logo-col {
             text-align: center;
         }
         &--description-logo.ant-typography {
             max-width: unset;
             margin-bottom: 25px;
+        }
+        &--title.ant-typography {
+            font-size: 18px;
+            margin-top: 25px;
+        }
+    }
+}
+
+@include _responsive(_xs) {
+    .app-footer {
+
+        &--title.ant-typography {
+            text-align: center;
+        }
+        &--link.ant-typography {
+            text-align: center;
+        }
+        &--social-icon{
+            margin: auto;
         }
     }
 }

@@ -67,11 +67,11 @@ const Footer = ({}) => {
             <Divider />
             <Box container>
                 <Row gutter={32}>
-                    <Col xs={24} lg={6} className="app-footer--logo-col">
+                    <Col xs={24} lg={8} xl={6} className="app-footer--logo-col">
                         <AntImage src={staticPath('/images/logo_header.png')} />
                         <Typography.Paragraph className="app-footer--description-logo">{t('footer.txt_description_logo')}</Typography.Paragraph>
                     </Col>
-                    <Col xs={24} sm={5} md={6} lg={4}>
+                    <Col xs={24} sm={8} lg={8} xl={4}>
                         <Typography.Title className="app-footer--title" level={4}>
                             {t('footer.txt_platform')}
                         </Typography.Title>
@@ -90,7 +90,7 @@ const Footer = ({}) => {
                                 )
                         )}
                     </Col>
-                    <Col xs={24} sm={11} md={10} lg={6} className="app-footer--col-contact">
+                    <Col xs={24} sm={12} lg={8} xl={6} className="app-footer--col-contact">
                         <Typography.Title className="app-footer--title" level={4}>
                             {t('footer.txt_contact')}
                         </Typography.Title>
@@ -100,13 +100,13 @@ const Footer = ({}) => {
                             </Typography.Link>
                         ))}
                     </Col>
-                    <Col xs={16} sm={8} md={8} lg={8}>
+                    <Col xs={24} xl={8}>
                         <Typography.Title className="app-footer--title" level={4}>
                             {t('footer.text_connect')}
                         </Typography.Title>
                         <Row className="app-footer--social-wrap" gutter={[8, 12]}>
                             {LIST_CONNECT.map((item, index) => (
-                                <Col key={index} xs={6} sm={12} md={8}>
+                                <Col key={index} xs={8}>
                                     <Typography.Link title={item.title} target="_blank" href={item.href} className="app-footer--link">
                                         <Box className="app-footer--social-icon">
                                             <FontAwesomeIcon icon={item.icon} />
