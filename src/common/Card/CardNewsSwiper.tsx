@@ -1,7 +1,4 @@
-import ImageWrapper from '@Common/ImageWrapper';
 import { Box } from '@Common/Layout';
-import RateCommon from '@Common/Rate';
-import TagCommon from '@Common/Tag';
 import Avatar from 'antd/lib/avatar/avatar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

@@ -1,9 +1,6 @@
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { LIST_MENU } from '@Config/contains';
-import { _styleLayout } from '@Config/models';
-import { _getStyleLayout } from '@Utils/index';
 import { useRouter } from 'next/router';
-import clsx from 'clsx';
 import { Menu } from 'antd';
 import Link from 'next/link';
 import { MenuOutlined } from '@ant-design/icons';
