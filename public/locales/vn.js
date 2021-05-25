@@ -1,6 +1,9 @@
 export default {
   common: {
     txt_close: "Đóng",
+    txt_tooltip_contact: "{{contact}} của CodeMemory",
+    txt_tooltip_connect: "Liên kết tới {{connect}} của CodeMemory",
+    txt_tooltip_access: "Truy cập tới {{access}} của CodeMemory",
     txt_view_next: "Xem tiếp"
   },
   menu: {
@@ -50,8 +53,6 @@ export default {
     txt_phone_number: "Số điện thoại",
     txt_gmail: "Email",
     txt_address: "Địa chỉ",
-    txt_tooltip_contact: "{{contact}} của CodeMemory",
-    txt_tooltip_connect: "Liên kết tới {{connect}} của CodeMemory",
     phone_number: "8432811197",
     gmail_support: "codememory.hotro@gmail.com",
     address: "219 Trung Kính, Cầu Giấy, Hà Nội",

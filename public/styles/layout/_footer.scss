@@ -1,5 +1,5 @@
 .app-footer {
-    &--link.ant-typography  {
+    &--link.ant-typography {
         display: block;
         color: var(--color-text-main) !important;
         font-weight: $font-regular;
@@ -30,6 +30,27 @@
         svg.svg-inline--fa {
             width: 15px;
             color: white;
+        }
+    }
+    &--description-logo {
+        max-width: 190px;
+    }
+    &--copyright {
+        margin-top: 35px;
+        text-align: center;
+        padding: 0 10px;
+        padding-bottom: 25px;
+    }
+}
+
+@include _responsive(_md) {
+    .app-footer {
+        &--logo-col {
+            text-align: center;
+        }
+        &--description-logo.ant-typography {
+            max-width: unset;
+            margin-bottom: 25px;
         }
     }
 }

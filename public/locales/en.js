@@ -1,6 +1,9 @@
 export default {
   common: {
     txt_close: "undefined",
+    txt_tooltip_contact: "undefined",
+    txt_tooltip_connect: "undefined",
+    txt_tooltip_access: "undefined",
     txt_view_next: "undefined"
   },
   menu: {
@@ -50,8 +53,6 @@ export default {
     txt_phone_number: "undefined",
     txt_gmail: "undefined",
     txt_address: "undefined",
-    txt_tooltip_contact: "undefined",
-    txt_tooltip_connect: "undefined",
     phone_number: "undefined",
     gmail_support: "codememory.hotro@gmail.com",
     address: "219 Trung Kính, Cầu Giấy, Hà Nội",

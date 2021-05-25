@@ -16,26 +16,31 @@ const Footer = ({}) => {
             icon: faFacebook,
             href: 'https://www.facebook.com/sainboltapp',
             rel: 'Fanpage',
+            title: t('common.txt_tooltip_connect', { connect: 'Fanpage' }),
         },
         {
             icon: faFacebook,
             href: 'https://www.facebook.com/sainboltapp',
-            rel: 'Facebook',
+            rel: 'Profile',
+            title: t('common.txt_tooltip_connect', { connect: 'Profile' }),
         },
         {
             icon: faYoutube,
             href: 'https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ',
             rel: 'Youtube',
+            title: t('common.txt_tooltip_connect', { connect: 'Youtube' }),
         },
         {
             icon: faTwitter,
             href: 'https://join.skype.com/invite/kP2kfn0Wu06U',
             rel: 'Twitter',
+            title: t('common.txt_tooltip_connect', { connect: 'Twitter' }),
         },
         {
             icon: faSkype,
             href: 'https://join.skype.com/invite/kP2kfn0Wu06U',
             rel: 'Skype',
+            title: t('common.txt_tooltip_connect', { connect: 'Skype' }),
         },
     ];
 
@@ -43,17 +48,17 @@ const Footer = ({}) => {
         {
             icon: faEnvelope,
             value: t('footer.gmail_support'),
-            title: t('footer.txt_tooltip_contact', { contact: t('footer.txt_gmail') }),
+            title: t('common.txt_tooltip_contact', { contact: t('footer.txt_gmail') }),
         },
         {
             icon: faAddressBook,
             value: t('footer.address'),
-            title: t('footer.txt_tooltip_contact', { contact: t('footer.txt_address') }),
+            title: t('common.txt_tooltip_contact', { contact: t('footer.txt_address') }),
         },
         {
             icon: faPhone,
             value: `+${t('footer.phone_number')}`,
-            title: t('footer.txt_tooltip_contact', { contact: t('footer.txt_phone_number') }),
+            title: t('common.txt_tooltip_contact', { contact: t('footer.txt_phone_number') }),
         },
     ];
 
@@ -62,11 +67,11 @@ const Footer = ({}) => {
             <Divider />
             <Box container>
                 <Row gutter={32}>
-                    <Col lg={6}>
+                    <Col xs={24} lg={6} className="app-footer--logo-col">
                         <AntImage src={staticPath('/images/logo_header.png')} />
-                        <Typography.Paragraph>{t('footer.txt_description_logo')}</Typography.Paragraph>
+                        <Typography.Paragraph className="app-footer--description-logo">{t('footer.txt_description_logo')}</Typography.Paragraph>
                     </Col>
-                    <Col lg={4}>
+                    <Col xs={24} sm={5} md={6} lg={4}>
                         <Typography.Title className="app-footer--title" level={4}>
                             {t('footer.txt_platform')}
                         </Typography.Title>
@@ -74,13 +79,18 @@ const Footer = ({}) => {
                             (item, index) =>
                                 index > 0 &&
                                 index !== LIST_MENU.length - 1 && (
-                                    <Typography.Link className="app-footer--link" key={index} href={item.href}>
+                                    <Typography.Link
+                                        title={t('common.txt_tooltip_access', { access: t(`menu.${item.name}`) })}
+                                        className="app-footer--link"
+                                        key={index}
+                                        target="_self"
+                                        href={item.href}>
                                         {t(`menu.${item.name}`)}
                                     </Typography.Link>
                                 )
                         )}
                     </Col>
-                    <Col lg={6} className="app-footer--col-contact">
+                    <Col xs={24} sm={11} md={10} lg={6} className="app-footer--col-contact">
                         <Typography.Title className="app-footer--title" level={4}>
                             {t('footer.txt_contact')}
                         </Typography.Title>
@@ -90,14 +100,14 @@ const Footer = ({}) => {
                             </Typography.Link>
                         ))}
                     </Col>
-                    <Col lg={8}>
+                    <Col xs={16} sm={8} md={8} lg={8}>
                         <Typography.Title className="app-footer--title" level={4}>
                             {t('footer.text_connect')}
                         </Typography.Title>
                         <Row className="app-footer--social-wrap" gutter={[8, 12]}>
                             {LIST_CONNECT.map((item, index) => (
-                                <Col key={index} xs={6}>
-                                    <Typography.Link target="_blank" href={item.href} className="app-footer--link">
+                                <Col key={index} xs={6} sm={12} md={8}>
+                                    <Typography.Link title={item.title} target="_blank" href={item.href} className="app-footer--link">
                                         <Box className="app-footer--social-icon">
                                             <FontAwesomeIcon icon={item.icon} />
                                         </Box>
@@ -109,7 +119,7 @@ const Footer = ({}) => {
                     </Col>
                 </Row>
             </Box>
-            <Box className="footer-copyright">{t('home.txt_footer_copyright')}</Box>
+            <Box className="app-footer--copyright">{t('home.txt_footer_copyright')}</Box>
         </footer>
     );
 };
