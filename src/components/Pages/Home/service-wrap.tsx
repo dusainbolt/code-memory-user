@@ -2,7 +2,7 @@ import ButtonCommon from '@Common/Button';
 import AntImage from '@Common/Image';
 import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { staticPath } from '@Utils/index';
+import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Space, Typography } from 'antd';
 
 interface _ServiceWrap {}

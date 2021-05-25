@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import getConfig from 'next/config';
-import { staticPath } from '@Utils/index';
+import { staticPath } from '@Utils/func';
 
 const {
     publicRuntimeConfig: { DOMAIN_APP },

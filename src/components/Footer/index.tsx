@@ -4,14 +4,14 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { faFacebook, faSkype, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Divider, Row, Typography } from 'antd';
 import AntImage from '@Common/Image';
-import { staticPath } from '@Utils/index';
+import { staticPath } from '@Utils/func';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = ({}) => {
     const { t } = useTranslation();
 
-    const LIST_CONTACT = [
+    const LIST_CONNECT = [
         {
             icon: faFacebook,
             href: 'https://www.facebook.com/sainboltapp',
@@ -39,6 +39,24 @@ const Footer = ({}) => {
         },
     ];
 
+    const LIST_CONTACT = [
+        {
+            icon: faEnvelope,
+            value: t('footer.gmail_support'),
+            title: t('footer.txt_tooltip_contact', { contact: t('footer.txt_gmail') }),
+        },
+        {
+            icon: faAddressBook,
+            value: t('footer.address'),
+            title: t('footer.txt_tooltip_contact', { contact: t('footer.txt_address') }),
+        },
+        {
+            icon: faPhone,
+            value: `+${t('footer.phone_number')}`,
+            title: t('footer.txt_tooltip_contact', { contact: t('footer.txt_phone_number') }),
+        },
+    ];
+
     return (
         <footer className="app-footer">
             <Divider />
@@ -46,11 +64,11 @@ const Footer = ({}) => {
                 <Row gutter={32}>
                     <Col lg={6}>
                         <AntImage src={staticPath('/images/logo_header.png')} />
-                        <Typography.Paragraph>Fuel the rise of the Digital Content World</Typography.Paragraph>
+                        <Typography.Paragraph>{t('footer.txt_description_logo')}</Typography.Paragraph>
                     </Col>
                     <Col lg={4}>
                         <Typography.Title className="app-footer--title" level={4}>
-                            NỀN TẢNG
+                            {t('footer.txt_platform')}
                         </Typography.Title>
                         {LIST_MENU.map(
                             (item, index) =>
@@ -64,29 +82,27 @@ const Footer = ({}) => {
                     </Col>
                     <Col lg={6} className="app-footer--col-contact">
                         <Typography.Title className="app-footer--title" level={4}>
-                            LIÊN HỆ
+                            {t('footer.txt_contact')}
                         </Typography.Title>
-                        <Typography.Link className="app-footer--link">
-                            <FontAwesomeIcon icon={faEnvelope} /> <Typography.Text>codememory.hotro@gmail.com</Typography.Text>
-                        </Typography.Link>
-                        <Typography.Link className="app-footer--link">
-                            <FontAwesomeIcon icon={faAddressBook} /> <Typography.Text>219 Trung Kính, Cầu Giấy, Hà Nội</Typography.Text>
-                        </Typography.Link>
-                        <Typography.Link className="app-footer--link">
-                            <FontAwesomeIcon icon={faPhone} /> <Typography.Text>+8432811197</Typography.Text>
-                        </Typography.Link>{' '}
+                        {LIST_CONTACT.map((item, index) => (
+                            <Typography.Link title={item.title} target="_blank" key={index} className="app-footer--link">
+                                <FontAwesomeIcon icon={item.icon} /> <Typography.Text>{item.value}</Typography.Text>
+                            </Typography.Link>
+                        ))}
                     </Col>
                     <Col lg={8}>
                         <Typography.Title className="app-footer--title" level={4}>
-                            MẠNG XÃ HỘI
+                            {t('footer.text_connect')}
                         </Typography.Title>
                         <Row className="app-footer--social-wrap" gutter={[8, 12]}>
-                            {LIST_CONTACT.map((item, index) => (
+                            {LIST_CONNECT.map((item, index) => (
                                 <Col key={index} xs={6}>
-                                    <Box className="app-footer--social-icon">
-                                        <FontAwesomeIcon icon={item.icon} />
-                                    </Box>
-                                    <Typography>{item.rel}</Typography>
+                                    <Typography.Link target="_blank" href={item.href} className="app-footer--link">
+                                        <Box className="app-footer--social-icon">
+                                            <FontAwesomeIcon icon={item.icon} />
+                                        </Box>
+                                        <Typography>{item.rel}</Typography>
+                                    </Typography.Link>
                                 </Col>
                             ))}
                         </Row>

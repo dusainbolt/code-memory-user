@@ -42,6 +42,25 @@ export default {
     title_service: "Hãy Cùng Xem Chúng Ta Có Gì Nào",
     txt_description_banner_3: "Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sự sáng tạo trong chúng ta."
   },
+  footer: {
+    txt_contact: "LIÊN HỆ",
+    text_connect: "LIÊN KẾT",
+    txt_platform: "NỀN TẢNG",
+    txt_description_logo: "Fuel the rise of the Digital Content World",
+    txt_phone_number: "Số điện thoại",
+    txt_gmail: "Email",
+    txt_address: "Địa chỉ",
+    txt_tooltip_contact: "{{contact}} của CodeMemory",
+    txt_tooltip_connect: "Liên kết tới {{connect}} của CodeMemory",
+    phone_number: "8432811197",
+    gmail_support: "codememory.hotro@gmail.com",
+    address: "219 Trung Kính, Cầu Giấy, Hà Nội",
+    url_skype: "https://join.skype.com/invite/kP2kfn0Wu06U",
+    url_twitter: "https://join.skype.com/invite/kP2kfn0Wu06U",
+    url_youtube: "https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ",
+    url_fanpage: "https://www.facebook.com/sainboltapp",
+    url_profile: "https://www.facebook.com/dusainbolt/"
+  },
   lang: {
     vn: "Tiếng việt",
     en: "Tiếng anh"

@@ -2,7 +2,7 @@ import ButtonCommon from '@Common/Button';
 import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { staticPath } from '@Utils/index';
+import { staticPath } from '@Utils/func';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import MenuHeader from './menuHeader';

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { DEFAULT_SEO } from '@Components/Meta';
-import { staticPath } from '@Utils/index';
+import { staticPath } from '@Utils/func';
 import { Col, Row, Space } from 'antd';
 import { Typography } from 'antd';
 import AntImage from '@Common/Image';
