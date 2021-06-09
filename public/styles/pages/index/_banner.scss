@@ -51,7 +51,7 @@
     &--description {
       text-align: center;
     }
-    &--title {
+    &--title.ant-typography {
       font-size: $base-fontSize + 32;
     }
     &--button-link {

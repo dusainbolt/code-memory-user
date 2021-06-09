@@ -10,37 +10,37 @@ import { _RootState } from '@Redux/reducer/_rootReducer';
 import HomeBanner from '@Components/Pages/Home/banner';
 
 interface _homePageProps {
-    t: object;
-    listBlogs: [];
+  t: object;
+  listBlogs: [];
 }
 
 const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
-    const count = useAppSelector((state: _RootState) => state.indexReducer.count);
-    const dispatch = useAppDispatch();
-    const { t } = useTranslation();
+  const count = useAppSelector((state: _RootState) => state.indexReducer.count);
+  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
-    const [_locale, _changeLocale] = useContext(LanguageContext);
+  const [_locale, _changeLocale] = useContext(LanguageContext);
 
-    const changeLanguage = e => {
-        const locale = e.target.value;
-        _changeLocale(locale);
-        // dispatch(decrement());
-    };
+  const changeLanguage = e => {
+    const locale = e.target.value;
+    _changeLocale(locale);
+    // dispatch(decrement());
+  };
 
-    useEffect(() => {
-        // dispatch(decrement());
-    }, []);
+  useEffect(() => {
+    // dispatch(decrement());
+  }, []);
 
-    console.log('render home-page => ', count, _locale);
+  console.log('render home-page => ', count, _locale);
 
-    return (
-        <main>
-            <HomeBanner />
-            <InteractWrap />
-            <ServiceWrap />
-            <FounderWrap />
-            <NewsWrap />
-        </main>
-    );
+  return (
+    <main>
+      <HomeBanner />
+      <InteractWrap />
+      <ServiceWrap />
+      <FounderWrap />
+      <NewsWrap />
+    </main>
+  );
 };
 export default HomePageComponent;
