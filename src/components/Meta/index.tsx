@@ -1,10 +1,14 @@
 import Head from 'next/head';
 import getConfig from 'next/config';
-import { staticPath } from '@Utils/func';
+import { objToArrayValues, staticPath } from '@Utils/func';
 
 const {
     publicRuntimeConfig: { DOMAIN_APP },
 } = getConfig();
+
+export const TYPE_SEO = {
+    SEO_HOME: 1,
+};
 
 export const DEFAULT_SEO = {
     appName: 'CodeMemory',
@@ -19,56 +23,107 @@ export const DEFAULT_SEO = {
     ogUrl: DOMAIN_APP,
 };
 
-const HeadSEO = ({
-    title = DEFAULT_SEO.title,
-    appName = DEFAULT_SEO.appName,
-    keywords = DEFAULT_SEO.keywords,
-    ogImage = DEFAULT_SEO.ogImage,
-    ogType = DEFAULT_SEO.ogType,
-    description = DEFAULT_SEO.description,
-    ogUrl = DEFAULT_SEO.ogUrl,
-}) => {
-    return (
-        <Head>
-            <link rel="icon" href={staticPath('/favicon.png')} type="image/png" sizes="16x16" />
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <meta name="keywords" content={keywords} />
-            <meta name="author" content="Du Sainbolt" />
-            <meta property="og:type" content={ogType} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:site_name" content={appName} />
-            <meta property="og:image" content={ogImage} />
-            <meta property="og:url" content={ogUrl} />
-            <meta property="twitter:card" content="summary" />
-            <meta property="twitter:title" content={title} />
-            <meta property="twitter:description" content={description} />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@id': 'https://du-sainbolt.web.app/#Organization',
-                        '@context': 'http://schema.org',
-                        '@type': 'Organization',
-                        name: appName,
-                        url: 'https://du-sainbolt.web.app/',
-                        logo: { '@type': 'ImageObject', url: ogImage, width: 289, height: 67 },
-                        contactPoint: [
-                            {
-                                '@type': 'ContactPoint',
-                                telephone: '0328111597',
-                                contactType: 'customer service',
-                                areaServed: 'VN',
-                                availableLanguage: ['EN', 'VN'],
-                            },
-                        ],
-                        sameAs: ['https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ', 'https://www.facebook.com/dusainbolt/'],
-                    }),
-                }}
-            />
-        </Head>
+export interface SeoContact {
+    address: string;
+    email: string;
+    phone: string;
+}
+
+export interface SeoSocial {
+    youtube: string;
+    facebook: string;
+    facebookPage: string;
+    skype: string;
+    twitter: string;
+}
+
+export class SeoMeta {
+    title: string;
+
+    description: string;
+
+    imageUrl: string;
+
+    domain: string;
+
+    jsonType: string;
+
+    logoUrl: string;
+
+    logoWidth: number;
+
+    logoHeight: number;
+
+    facebookPageId: string;
+}
+
+export interface SeoHome {
+    owner: string;
+    appName: string;
+    keyWord: string;
+    author: string;
+    publisher: string;
+    contact: SeoContact;
+    social: SeoSocial;
+    meta: SeoMeta;
+}
+
+export interface HeadSEO {
+    seoHome: SeoHome;
+    type: any;
+}
+
+const HeadSEO = ({ seoHome, type = '' }: HeadSEO) => {
+    const jsonLDHome = (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    '@id': `${seoHome.meta.domain}/#${seoHome.meta.jsonType}`,
+                    '@context': 'http://schema.org',
+                    '@type': seoHome.meta.jsonType,
+                    name: seoHome.appName,
+                    url: seoHome.meta.domain,
+                    address: seoHome.contact.address,
+                    email: seoHome.contact.email,
+                    logo: { '@type': 'ImageObject', url: seoHome.meta.logoUrl, width: seoHome.meta.logoWidth, height: seoHome.meta.logoHeight },
+                    contactPoint: [
+                        {
+                            '@type': 'ContactPoint',
+                            telephone: seoHome.contact.phone,
+                            contactType: 'customer service',
+                            areaServed: 'VN',
+                            availableLanguage: ['EN', 'VN'],
+                        },
+                    ],
+                    sameAs: objToArrayValues(seoHome.social),
+                }),
+            }}
+        />
     );
+    console.log(Object.entries(seoHome.social));
+    switch (type) {
+        default:
+            return (
+                <Head>
+                    <link rel="icon" href={staticPath('/favicon.png')} type="image/png" sizes="16x16" />
+                    <title>{seoHome.meta.title}</title>
+                    <meta name="description" content={seoHome.meta.description} />
+                    <meta name="keywords" content={seoHome.keyWord} />
+                    <meta name="author" content={seoHome.author} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content={seoHome.meta.title} />
+                    <meta property="og:description" content={seoHome.meta.description} />
+                    <meta property="og:site_name" content={seoHome.appName} />
+                    <meta property="og:image" content={seoHome.meta.imageUrl} />
+                    <meta property="og:url" content={seoHome.meta.domain} />
+                    <meta property="twitter:card" content="summary" />
+                    <meta property="twitter:title" content={seoHome.meta.title} />
+                    <meta property="twitter:description" content={seoHome.meta.description} />
+                    {jsonLDHome}
+                </Head>
+            );
+    }
 };
 
 export default HeadSEO;

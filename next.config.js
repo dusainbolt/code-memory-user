@@ -13,16 +13,16 @@ module.exports = {
         DOMAIN_APP: process.env.DOMAIN_APP,
         staticFolder: '/static',
     },
-    exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
-        console.log('--------buildID => ', buildId);
-        console.log('--------dev => ', dev);
-        console.log('--------dev => ', defaultPathMap);
+    // exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
+    //     console.log('--------buildID => ', buildId);
+    //     console.log('--------dev => ', dev);
+    //     console.log('--------dev => ', defaultPathMap);
 
-        return {
-            '/': { page: '/' },
-            '/about': { page: '/about' },
-        };
-    },
+    //     return {
+    //         '/': { page: '/' },
+    //         '/about': { page: '/about' },
+    //     };
+    // },
     trailingSlash: true,
     images: {
         loader: 'imgix',

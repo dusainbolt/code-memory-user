@@ -3,6 +3,7 @@ import store from '@Redux/store';
 import { AppProps } from 'next/app';
 import { LanguageProvider } from '@Components/LanguageProvider';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { ApolloProvider } from '@apollo/client';
 
 export type _ctxApp = {
     pathname: string; //  Current route. That is the path of the page in /pages
@@ -15,13 +16,17 @@ export type _ctxApp = {
 //load style of ant
 import 'antd/dist/antd.css';
 import '@Styles/_app.scss';
+import { useApollo } from '@Services/apollo-connect';
 function NextApp({ Component, pageProps }: AppProps) {
-    
+    const apolloClient = useApollo(pageProps);
+
     return (
         <Provider store={store}>
-            <LanguageProvider>
-                    <Component {...pageProps} />
-            </LanguageProvider>
+            <ApolloProvider client={apolloClient}>
+                {/* <LanguageProvider> */}
+                <Component {...pageProps} />
+                {/* </LanguageProvider> */}
+            </ApolloProvider>
         </Provider>
     );
 }

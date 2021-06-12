@@ -8,39 +8,45 @@ import FounderWrap from './founder-wrap';
 import NewsWrap from './news-wrap';
 import { _RootState } from '@Redux/reducer/_rootReducer';
 import HomeBanner from '@Components/Pages/Home/banner';
-
+import { pluginChat } from '@Utils/func';
 interface _homePageProps {
-  t: object;
-  listBlogs: [];
+    t: object;
+    listBlogs: [];
 }
 
 const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
-  const count = useAppSelector((state: _RootState) => state.indexReducer.count);
-  const dispatch = useAppDispatch();
-  const { t } = useTranslation();
+    const count = useAppSelector((state: _RootState) => state.indexReducer.count);
+    const dispatch = useAppDispatch();
+    const { t } = useTranslation();
 
-  const [_locale, _changeLocale] = useContext(LanguageContext);
+    const [_locale, _changeLocale] = useContext(LanguageContext);
 
-  const changeLanguage = e => {
-    const locale = e.target.value;
-    _changeLocale(locale);
-    // dispatch(decrement());
-  };
+    const changeLanguage = e => {
+        const locale = e.target.value;
+        _changeLocale(locale);
+        // dispatch(decrement());
+    };
 
-  useEffect(() => {
-    // dispatch(decrement());
-  }, []);
+    useEffect(() => {}, []);
 
-  console.log('render home-page => ', count, _locale);
+    console.log('render home-page => ', count, _locale);
 
-  return (
-    <main>
-      <HomeBanner />
-      <InteractWrap />
-      <ServiceWrap />
-      <FounderWrap />
-      <NewsWrap />
-    </main>
-  );
+    return (
+        <main>
+            <HomeBanner />
+            <InteractWrap />
+            <ServiceWrap />
+            <FounderWrap />
+            <NewsWrap />
+            <div id="fb-root"></div>
+            {/* <!-- Your Plugin chat code -->  */}
+            <div id="fb-customer-chat" className="fb-customerchat"></div>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: pluginChat(),
+                }}
+            />
+        </main>
+    );
 };
 export default HomePageComponent;
