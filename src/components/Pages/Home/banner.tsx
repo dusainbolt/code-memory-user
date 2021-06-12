@@ -13,19 +13,18 @@ interface _HomeBanner {}
 
 const HomeBanner: React.FC<_HomeBanner> = ({}) => {
     const { t } = useTranslation();
-    const myTitle = DEFAULT_SEO.appName;
     useEffect(() => {
-        let countChar = 0;
-        const titlePage = document.getElementsByClassName('home-banner--title')[0];
-        titlePage.innerHTML = '';
-        const typeWriter = () => {
-            if (countChar < myTitle.length) {
-                titlePage.innerHTML += myTitle.charAt(countChar);
-                countChar++;
-                setTimeout(typeWriter, 60);
-            }
-        };
-        typeWriter();
+        // let countChar = 0;
+        // const titlePage = document.getElementsByClassName('home-banner--title')[0];
+        // titlePage.innerHTML = '';
+        // const typeWriter = () => {
+        //     if (countChar < myTitle.length) {
+        //         titlePage.innerHTML += myTitle.charAt(countChar);
+        //         countChar++;
+        //         setTimeout(typeWriter, 60);
+        //     }
+        // };
+        // typeWriter();
     }, []);
 
     return (
@@ -33,7 +32,7 @@ const HomeBanner: React.FC<_HomeBanner> = ({}) => {
             <Row gutter={30}>
                 <Col xs={{ span: 24, order: 2 }} lg={{ span: 10, order: 1 }} className="home-banner--wrap-info">
                     <Space direction="vertical">
-                        <Typography.Title className="home-banner--title"></Typography.Title>
+                        <Typography.Title className="home-banner--title">{DEFAULT_SEO.appName}</Typography.Title>
                         <Typography.Paragraph className="home-banner--description">
                             {t('home.txt_description_banner_1')}
                             <Typography.Text className="high-light">{t('home.txt_description_banner_2')}</Typography.Text>
