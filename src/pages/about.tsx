@@ -8,7 +8,7 @@ import { getSeoHome } from '@Services/seo-home-request';
 export default function IndexPage(props) {
     return (
         <Fragment>
-            <Meta title={'DAY LA TRANG ABOUT'} description="Sainbolt app - description about" />
+            <Meta seoHome={props.seoHome} />
             <Header />
             <Footer />
         </Fragment>

@@ -9,7 +9,7 @@ import { getSeoHome } from '@Services/seo-home-request';
 export default function IndexPage(props) {
     return (
         <Fragment>
-            <Meta seoHome={props.seoHome}/>
+            <Meta seoHome={props.seoHome} />
             <Header />
             <HomePageComponent {...props} />
             <Footer />

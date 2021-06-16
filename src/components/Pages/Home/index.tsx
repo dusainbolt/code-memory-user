@@ -28,7 +28,6 @@ const HomePageComponent: React.FC<_homePageProps> = ({ listBlogs = [] }) => {
     };
 
     useEffect(() => {}, []);
-
     console.log('render home-page => ', count, _locale);
 
     return (

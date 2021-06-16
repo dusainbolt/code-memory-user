@@ -70,7 +70,7 @@ export interface SeoHome {
 
 export interface HeadSEO {
     seoHome: SeoHome;
-    type: any;
+    type?: any;
 }
 
 const HeadSEO = ({ seoHome, type = '' }: HeadSEO) => {
