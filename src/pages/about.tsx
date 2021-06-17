@@ -1,11 +1,15 @@
-// import Nav from '../components/nav';
 import { Fragment } from 'react';
-import Meta from '@Components/Meta';
+import Meta, { SeoHome } from '@Components/Meta';
 import Header from '@Components/Header';
 import Footer from '@Components/Footer';
 import { getSeoHome } from '@Services/seo-home-request';
+import { GetStaticProps } from 'next';
 
-export default function IndexPage(props) {
+export interface IAboutPage {
+    seoHome: SeoHome;
+}
+
+const AboutPage: React.FC<IAboutPage> = props => {
     return (
         <Fragment>
             <Meta seoHome={props.seoHome} />
@@ -13,11 +17,13 @@ export default function IndexPage(props) {
             <Footer />
         </Fragment>
     );
-}
+};
 
-export async function getStaticProps(context) {
+export default AboutPage;
+
+export const getStaticProps: GetStaticProps = async () => {
     const { data: seoHome } = await getSeoHome();
     return {
         props: { ...seoHome }, // will be passed to the page component as props
     };
-}
+};
