@@ -1,7 +1,6 @@
 import { Provider } from 'react-redux';
 import store from '@Redux/store';
 import { AppProps } from 'next/app';
-import { LanguageProvider } from '@Components/LanguageProvider';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ApolloProvider } from '@apollo/client';
 
@@ -17,21 +16,24 @@ export type _ctxApp = {
 import 'antd/dist/antd.css';
 import '@Styles/_app.scss';
 import { useApollo } from '@Services/apollo-connect';
-function NextApp({ Component, pageProps }: AppProps) {
-    const apolloClient = useApollo(pageProps);
+import { FC } from 'react';
+
+const NextApp: FC<AppProps> = ({ Component, pageProps }) => {
+    console.log('==============>', pageProps);
+    const apolloClient = useApollo(pageProps.initialApolloState);
 
     return (
-        <Provider store={store}>
-            <ApolloProvider client={apolloClient}>
+        <ApolloProvider client={apolloClient}>
+            <Provider store={store}>
                 {/* <LanguageProvider> */}
                 <Component {...pageProps} />
                 {/* </LanguageProvider> */}
-            </ApolloProvider>
-        </Provider>
+            </Provider>
+        </ApolloProvider>
     );
-}
+};
 
-NextApp.getInitialProps = async ({ Component, ctx: _ctxApp }) => {
+export const getInitialProps: any = async ({ Component, ctx: _ctxApp }) => {
     return {
         pageProps: {
             ...(Component.getInitialProps ? await Component.getInitialProps(_ctxApp) : {}),

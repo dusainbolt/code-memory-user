@@ -5,9 +5,9 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Space, Typography } from 'antd';
 
-interface _ServiceWrap {}
+// interface _ServiceWrap {}
 
-const ServiceWrap: React.FC<_ServiceWrap> = ({}) => {
+const ServiceWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
 
     const DATA_SERVICE = [

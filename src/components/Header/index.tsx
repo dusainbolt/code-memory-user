@@ -10,9 +10,9 @@ import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Drawer } from 'antd';
 
-interface _Header {}
+// interface _Header {}
 
-const Header: React.FC<_Header> = ({}): any => {
+const Header: React.FC<any> = ({}) => {
     const { t } = useTranslation();
     const [scrollTop, setScrollTop] = useState<number>(0);
     const [visibleDraw, setVisibleDraw] = useState<boolean>(false);

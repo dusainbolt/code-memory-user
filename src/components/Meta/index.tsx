@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import getConfig from 'next/config';
 import { objToArrayValues, staticPath } from '@Utils/func';
+import { FC } from 'react';
 
 const {
     publicRuntimeConfig: { DOMAIN_APP },
@@ -73,7 +74,7 @@ export interface HeadSEO {
     type?: any;
 }
 
-const HeadSEO = ({ seoHome, type = '' }: HeadSEO) => {
+const HeadSEO: FC<HeadSEO> = ({ seoHome, type = '' }) => {
     const jsonLDHome = (
         <script
             type="application/ld+json"
@@ -101,7 +102,7 @@ const HeadSEO = ({ seoHome, type = '' }: HeadSEO) => {
             }}
         />
     );
-    console.log(Object.entries(seoHome.social));
+    // console.log(Object.entries(seoHome.social));
     switch (type) {
         default:
             return (

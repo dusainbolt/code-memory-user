@@ -1,12 +1,12 @@
 import { Box } from '@Common/Layout';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import SwiperSlideNewsItem from '@Common/Card/CardNewsSwiper';
-import { _RootState } from '@Redux/reducer/_rootReducer';
+// import { _RootState } from '@Redux/reducer/_rootReducer';
 import { Typography } from 'antd';
 
-interface _NewsWrap {}
+// interface _NewsWrap {}
 
-const NewsWrap: React.FC<_NewsWrap> = ({}) => {
+const NewsWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
     return (
         <Box container className="home-news--container">

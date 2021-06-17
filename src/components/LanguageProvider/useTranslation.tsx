@@ -10,7 +10,7 @@ const LangStrings = {
     default: vn,
 };
 
-export const _tValue = (_tText: string, params: object = {}) => {
+export const _tValue = (_tText: string, params: any = {}): string => {
     const arrPrams = Object.keys(params);
     if (arrPrams.length) {
         arrPrams.forEach(key => {
@@ -20,11 +20,16 @@ export const _tValue = (_tText: string, params: object = {}) => {
     return _tText;
 };
 
-export default function useTranslation() {
-    const [localeContext] = useContext(LanguageContext);
-    let locale = localeContext || _defaultLocale;
+interface IUseTranslation {
+    t: (value: string, params?: any) => string;
+    locale: string;
+}
 
-    function t(key: string, params: object = {}) {
+export default function useTranslation(): IUseTranslation {
+    const [localeContext] = useContext(LanguageContext);
+    const locale = localeContext || _defaultLocale;
+
+    function t(key: string, params: any = {}) {
         const keys = key.split('.');
         if (!keys[0] || !keys[1]) {
             return '';
@@ -34,8 +39,8 @@ export default function useTranslation() {
             return `${keys[0]}.${keys[1]}`;
         }
         const value = LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || '';
-        if(!isEmptyObj(params)){
-            return _tValue(value, params)
+        if (!isEmptyObj(params)) {
+            return _tValue(value, params);
         }
         return value;
     }

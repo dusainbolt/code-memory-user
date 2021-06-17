@@ -4,9 +4,9 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Typography } from 'antd';
 
-interface _FounderWrap {}
+// interface _FounderWrap {}
 
-const FounderWrap: React.FC<_FounderWrap> = ({}) => {
+const FounderWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
 
     return (

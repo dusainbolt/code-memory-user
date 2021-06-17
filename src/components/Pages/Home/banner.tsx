@@ -1,6 +1,5 @@
 import { Box } from '@Common/Layout';
 import ButtonCommon from '@Common/Button';
-import { useEffect } from 'react';
 import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { DEFAULT_SEO } from '@Components/Meta';
@@ -9,23 +8,10 @@ import { Col, Row, Space } from 'antd';
 import { Typography } from 'antd';
 import AntImage from '@Common/Image';
 
-interface _HomeBanner {}
+// interface _HomeBanner {}
 
-const HomeBanner: React.FC<_HomeBanner> = ({}) => {
+const HomeBanner: React.FC<any> = () => {
     const { t } = useTranslation();
-    useEffect(() => {
-        // let countChar = 0;
-        // const titlePage = document.getElementsByClassName('home-banner--title')[0];
-        // titlePage.innerHTML = '';
-        // const typeWriter = () => {
-        //     if (countChar < myTitle.length) {
-        //         titlePage.innerHTML += myTitle.charAt(countChar);
-        //         countChar++;
-        //         setTimeout(typeWriter, 60);
-        //     }
-        // };
-        // typeWriter();
-    }, []);
 
     return (
         <Box container className="home-banner">

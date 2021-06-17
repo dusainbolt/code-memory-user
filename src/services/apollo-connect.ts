@@ -1,40 +1,32 @@
 import getConfig from 'next/config';
-// import { ApolloClient, InMemoryCache } from '@apollo/client';
-
-const {
-    serverRuntimeConfig: { APOLLO_SERVER_URL },
-} = getConfig();
-
-// const client = new ApolloClient({
-//     uri: APOLLO_SERVER_URL,
-//     cache: new InMemoryCache(),
-// });
-
-// export default client;
 
 import { useMemo } from 'react';
 import merge from 'deepmerge';
-// import cookie from 'cookie';
+import cookie from 'cookie';
 import type { GetServerSidePropsContext } from 'next';
 // import type { IncomingMessage } from 'http';
 import type { NormalizedCacheObject } from '@apollo/client';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { IncomingMessage } from 'node:http';
 
-interface PageProps {
-    props?: Record<string, any>;
-}
+// interface PageProps {
+//     props?: Record<string, any>;
+// }
 
-export const APOLLO_STATE_PROPERTY_NAME = '__APOLLO_STATE__';
+const {
+    serverRuntimeConfig: { APOLLO_SERVER_URL },
+} = getConfig();
+
+export const APOLLO_STATE_PROPERTY_NAME = 'initialApolloState';
 export const COOKIES_TOKEN_NAME = 'jwt';
 
-// const getToken = (req?: IncomingMessage) => {
-//   const parsedCookie = cookie.parse(
-//     req ? req.headers.cookie ?? '' : document.cookie,
-//   );
+const getToken = (req?: IncomingMessage) => {
+    console.log(req.headers.cookie);
+    const parsedCookie = cookie.parse(req ? req.headers.cookie ?? '' : document.cookie);
 
-//   return parsedCookie[COOKIES_TOKEN_NAME];
-// };
+    return parsedCookie[COOKIES_TOKEN_NAME];
+};
 
 let apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
@@ -45,15 +37,16 @@ const createApolloClient = (ctx?: GetServerSidePropsContext) => {
     });
 
     const authLink = setContext((_, { headers }) => {
-        // Get the authentication token from cookies
+        // // Get the authentication token from cookies
         // const token = getToken(ctx?.req);
 
-        return {
-            headers: {
-                ...headers,
-                authorization: 'token' ? `Bearer ${'token'}` : '',
-            },
-        };
+        // return {
+        //     headers: {
+        //         ...headers,
+        //         authorization: token ? `Bearer ${token}` : '',
+        //     },
+        // };
+        return {};
     });
 
     return new ApolloClient({
@@ -65,8 +58,9 @@ const createApolloClient = (ctx?: GetServerSidePropsContext) => {
     });
 };
 
-export function initializeApollo(initialState = null, ctx = null) {
-    const client = apolloClient ?? createApolloClient(ctx);
+export function initializeApollo(initialState = null): any {
+    console.log(initialState);
+    const client = apolloClient ?? createApolloClient(initialState);
 
     // If your page has Next.js data fetching methods that use Apollo Client,
     // the initial state gets hydrated here
@@ -95,7 +89,7 @@ export function initializeApollo(initialState = null, ctx = null) {
     return client;
 }
 
-export function addApolloState(client: ApolloClient<NormalizedCacheObject>, pageProps: PageProps) {
+export function addApolloState(client: ApolloClient<NormalizedCacheObject>, pageProps: PageProps): any {
     if (pageProps?.props) {
         pageProps.props[APOLLO_STATE_PROPERTY_NAME] = client.cache.extract();
     }
@@ -103,9 +97,9 @@ export function addApolloState(client: ApolloClient<NormalizedCacheObject>, page
     return pageProps;
 }
 
-export function useApollo(pageProps: PageProps) {
-    const state = pageProps[APOLLO_STATE_PROPERTY_NAME];
-    const store = useMemo(() => initializeApollo(state), [state]);
+export function useApollo(initialState: NormalizedCacheObject): any {
+    // console.log(pageProps);
+    const store = useMemo(() => initializeApollo(initialState), [initialState]);
 
     return store;
 }

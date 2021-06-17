@@ -4,9 +4,9 @@ import useTranslation from '@Components/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Row, Space, Typography } from 'antd';
 
-interface _InteractWrap {}
+// interface _InteractWrap {}
 
-const InteractWrap: React.FC<_InteractWrap> = ({}) => {
+const InteractWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
 
     const DATA_INTERACTIVE_INTRODUCE = [

@@ -1,8 +1,8 @@
 import useTranslation from '@Components/LanguageProvider/useTranslation';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-export interface _MenuHeader {}
+// export interface _MenuHeader {}
 
 export const LIST_MENU = [
     { name: 'txt_home', href: '/' },
@@ -12,8 +12,8 @@ export const LIST_MENU = [
     { name: 'txt_services', href: '/service' },
 ];
 
-const MenuHeader: React.FC<_MenuHeader> = ({}) => {
-    const router = useRouter();
+const MenuHeader: React.FC<any> = ({}) => {
+    // const router = useRouter();
     const { t } = useTranslation();
 
     return (
