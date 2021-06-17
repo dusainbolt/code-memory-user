@@ -1,3 +1,5 @@
+const generateSitemap = require('./generate-sitemap');
+
 module.exports = {
     serverRuntimeConfig: {
         // Will only be available on the server side
@@ -23,6 +25,12 @@ module.exports = {
     //         '/about': { page: '/about' },
     //     };
     // },
+    webpack: (config, { isServer }) => {
+        if (isServer) {
+            generateSitemap();
+        }
+        return config;
+    },
     trailingSlash: true,
     images: {
         loader: 'imgix',

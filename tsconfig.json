@@ -58,7 +58,8 @@
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "src/store/saga/saga.js"
+        "src/store/saga/saga.js",
+        "generate-sitemap.js"
     ],
     "exclude": [
         "node_modules"
