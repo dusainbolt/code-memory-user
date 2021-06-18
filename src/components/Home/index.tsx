@@ -7,7 +7,7 @@ import ServiceWrap from './service-wrap';
 import FounderWrap from './founder-wrap';
 import NewsWrap from './news-wrap';
 // import { _RootState } from '@Redux/reducer/_rootReducer';
-import HomeBanner from '@Components/Pages/Home/banner';
+import HomeBanner from '@Components/Home/banner';
 import { pluginChat } from '@Utils/func';
 // interface _homePageProps {
 //     t: object;

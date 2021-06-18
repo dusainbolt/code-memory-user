@@ -1,5 +1,5 @@
 import { Box } from '@Common/Layout';
-import useTranslation from '@Components/LanguageProvider/useTranslation';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
 import SwiperSlideNewsItem from '@Common/Card/CardNewsSwiper';
 // import { _RootState } from '@Redux/reducer/_rootReducer';
 import { Typography } from 'antd';

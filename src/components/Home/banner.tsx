@@ -1,8 +1,8 @@
 import { Box } from '@Common/Layout';
 import ButtonCommon from '@Common/Button';
-import useTranslation from '@Components/LanguageProvider/useTranslation';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { DEFAULT_SEO } from '@Components/Meta';
+import { DEFAULT_SEO } from '@Common/Meta';
 import { staticPath } from '@Utils/func';
 import { Col, Row, Space } from 'antd';
 import { Typography } from 'antd';

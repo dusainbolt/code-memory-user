@@ -7,7 +7,7 @@ export const LanguageContext = createContext([]);
 export const LanguageProvider: React.FC<any> = ({ children }) => {
     const [__locale, _setLocale] = useState(_defaultLocale);
 
-    const _changeLocale = (value) => {
+    const _changeLocale = value => {
         _setLocale(value);
         document.body.setAttribute('app-locale', value);
         localStorage.setItem('lang', value);
@@ -19,7 +19,7 @@ export const LanguageProvider: React.FC<any> = ({ children }) => {
         }
         const language = localStorage.getItem('lang') || __locale;
         document.body.setAttribute('app-locale', language);
-        if(language !== _defaultLocale){
+        if (language !== _defaultLocale) {
             _setLocale(language);
         }
     }, []);

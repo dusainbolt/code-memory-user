@@ -1,4 +1,4 @@
-import useTranslation from '@Components/LanguageProvider/useTranslation';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
 // import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -13,7 +13,6 @@ export const LIST_MENU = [
 ];
 
 const MenuHeader: React.FC<any> = ({}) => {
-    // const router = useRouter();
     const { t } = useTranslation();
 
     return (

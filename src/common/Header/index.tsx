@@ -1,6 +1,6 @@
 import ButtonCommon from '@Common/Button';
 import { Box } from '@Common/Layout';
-import useTranslation from '@Components/LanguageProvider/useTranslation';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faBars, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { staticPath } from '@Utils/func';
 import Image from 'next/image';

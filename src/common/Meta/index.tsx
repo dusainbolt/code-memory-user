@@ -72,9 +72,11 @@ export interface SeoHome {
 export interface HeadSEO {
     seoHome: SeoHome;
     type?: any;
+    title?: string;
 }
 
-const HeadSEO: FC<HeadSEO> = ({ seoHome, type = '' }) => {
+const HeadSEO: FC<HeadSEO> = ({ seoHome, type = '', title = '' }) => {
+    const titleMeta = title || seoHome.meta.title;
     const jsonLDHome = (
         <script
             type="application/ld+json"
@@ -108,18 +110,18 @@ const HeadSEO: FC<HeadSEO> = ({ seoHome, type = '' }) => {
             return (
                 <Head>
                     <link rel="icon" href={staticPath('/favicon.png')} type="image/png" sizes="16x16" />
-                    <title>{seoHome.meta.title}</title>
+                    <title>{titleMeta}</title>
                     <meta name="description" content={seoHome.meta.description} />
                     <meta name="keywords" content={seoHome.keyWord} />
                     <meta name="author" content={seoHome.author} />
                     <meta property="og:type" content="website" />
-                    <meta property="og:title" content={seoHome.meta.title} />
+                    <meta property="og:title" content={titleMeta} />
                     <meta property="og:description" content={seoHome.meta.description} />
                     <meta property="og:site_name" content={seoHome.appName} />
                     <meta property="og:image" content={seoHome.meta.imageUrl} />
                     <meta property="og:url" content={seoHome.meta.domain} />
                     <meta property="twitter:card" content="summary" />
-                    <meta property="twitter:title" content={seoHome.meta.title} />
+                    <meta property="twitter:title" content={titleMeta} />
                     <meta property="twitter:description" content={seoHome.meta.description} />
                     {jsonLDHome}
                 </Head>

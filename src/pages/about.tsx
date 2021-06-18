@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import Meta, { SeoHome } from '@Components/Meta';
-import Header from '@Components/Header';
+import Meta, { SeoHome } from '@Common/Meta';
+import Header from '@Common/Header';
 import Footer from '@Components/Footer';
 import { getSeoHome } from '@Services/seo-home-request';
 import { GetStaticProps } from 'next';

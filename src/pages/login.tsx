@@ -1,23 +1,24 @@
 import { FC, Fragment } from 'react';
 import Meta, { SeoHome } from '@Common/Meta';
-import HomePageComponent from '@Components/Home';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 
 import 'swiper/swiper.min.css';
 import { getSeoHome } from '@Services/seo-home-request';
 import { GetStaticProps } from 'next';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
 
 interface IIndexPage {
     seoHome: SeoHome;
 }
 
 const IndexPage: FC<IIndexPage> = props => {
+    const { t } = useTranslation();
     return (
         <Fragment>
-            <Meta seoHome={props.seoHome} />
+            <Meta title={t('login.title_meta')} seoHome={props.seoHome} />
             <Header />
-            <HomePageComponent {...props} />
+            {/* <HomePageComponent {...props} /> */}
             <Footer />
         </Fragment>
     );

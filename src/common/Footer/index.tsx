@@ -1,12 +1,12 @@
 import { Box } from '@Common/Layout';
-import useTranslation from '@Components/LanguageProvider/useTranslation';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faFacebook, faSkype, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Divider, Row, Typography } from 'antd';
 import AntImage from '@Common/Image';
 import { staticPath } from '@Utils/func';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { LIST_MENU } from '@Components/Header/menuHeader';
+import { LIST_MENU } from '@Common/Header/menuHeader';
 import { FC } from 'react';
 
 const Footer: FC<any> = () => {
@@ -112,7 +112,7 @@ const Footer: FC<any> = () => {
                                         <Box className="app-footer--social-icon">
                                             <FontAwesomeIcon icon={item.icon} />
                                         </Box>
-                                        <Typography>{item.rel}</Typography>
+                                        <Typography.Text>{item.rel}</Typography.Text>
                                     </Typography.Link>
                                 </Col>
                             ))}
