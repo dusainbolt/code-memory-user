@@ -7,12 +7,12 @@ import { useApollo } from '@Services/apollo-connect';
 import { FC } from 'react';
 import dynamic from 'next/dynamic';
 
+// load style lib
+import 'nprogress/nprogress.css';
+import 'antd/dist/antd.css';
+
 // load style local
 import '@Styles/_app.scss';
-
-// load style lib
-import 'antd/dist/antd.css';
-import 'nprogress/nprogress.css';
 
 import { withRouter } from 'next/router';
 

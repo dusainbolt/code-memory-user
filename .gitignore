@@ -46,3 +46,5 @@ yarn.lock
 
 public/sitemap.xml
 public/robots.txt
+
+/.firebase

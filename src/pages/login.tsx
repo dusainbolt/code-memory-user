@@ -18,7 +18,6 @@ const IndexPage: FC<IIndexPage> = props => {
         <Fragment>
             <Meta title={t('login.title_meta')} seoHome={props.seoHome} />
             <Header />
-            {/* <HomePageComponent {...props} /> */}
             <Footer />
         </Fragment>
     );
