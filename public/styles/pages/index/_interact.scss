@@ -13,20 +13,6 @@
         }
 
         @include _imageStyle(195px);
-
-        h3.ant-typography,
-        div.ant-typography {
-            text-align: center;
-        }
-        h3.ant-typography {
-            font-size: $fontSize-base + 10;
-            margin-top: 24px;
-        }
-        div.ant-typography {
-            color: var(--color-text-main-05);
-            font-weight: $font-regular;
-            font-size: $fontSize-base + 4;
-        }
     }
 }
 

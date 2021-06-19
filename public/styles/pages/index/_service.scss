@@ -1,19 +1,12 @@
 .home-service {
     &--container {
-        margin-bottom: 70px;
+        margin-bottom: 80px;
         .ant-divider {
             display: none;
         }
     }
     &--row {
-        margin-top: 20px;
         animation: fadeIn 1.3s ease-in-out forwards running;
-        div.ant-typography {
-            color: var(--color-text-main-05);
-            font-size: $fontSize-base + 2;
-            margin-top: 20px;
-            margin-bottom: 26px;
-        }
         @include _imageStyle(423px);
     }
     &--content {

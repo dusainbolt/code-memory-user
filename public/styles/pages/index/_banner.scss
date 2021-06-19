@@ -1,6 +1,5 @@
 .home-banner {
     width: 100%;
-    margin-top: 30px;
     margin-bottom: 70px;
     &--wrap-info {
         @include _flex_box();
@@ -13,7 +12,6 @@
         color: var(--color-text-main-05);
         font-weight: $font-medium;
         font-size: $fontSize-base + 2;
-        margin-top: 20px;
         .high-light {
             font-size: $fontSize-base + 2;
         }

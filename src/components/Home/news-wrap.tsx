@@ -10,7 +10,7 @@ const NewsWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
     return (
         <Box container className="home-news--container">
-            <Typography.Text className="home--title">{t('home.title_service')}</Typography.Text>
+            <Typography.Text className="home--title title txt-center">{t('home.title_service')}</Typography.Text>
             <SwiperSlideNewsItem />
         </Box>
     );

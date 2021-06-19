@@ -73,7 +73,7 @@ const Footer: FC<any> = () => {
                         <Typography.Paragraph className="app-footer--description-logo">{t('footer.txt_description_logo')}</Typography.Paragraph>
                     </Col>
                     <Col xs={24} sm={8} lg={8} xl={4}>
-                        <Typography.Title className="app-footer--title mb-10" level={4}>
+                        <Typography.Title className="title-2 mb-10" level={4}>
                             {t('footer.txt_platform')}
                         </Typography.Title>
                         {LIST_MENU.map(
@@ -92,7 +92,7 @@ const Footer: FC<any> = () => {
                         )}
                     </Col>
                     <Col xs={24} sm={12} lg={8} xl={6} className="app-footer--col-contact">
-                        <Typography.Title className="app-footer--title mb-10" level={4}>
+                        <Typography.Title className="title-2 mb-10" level={4}>
                             {t('footer.txt_contact')}
                         </Typography.Title>
                         {LIST_CONTACT.map((item, index) => (
@@ -102,14 +102,14 @@ const Footer: FC<any> = () => {
                         ))}
                     </Col>
                     <Col xs={24} xl={8}>
-                        <Typography.Title className="app-footer--title mb-10" level={4}>
+                        <Typography.Title className="title-2 mb-10" level={4}>
                             {t('footer.text_connect')}
                         </Typography.Title>
                         <Row className="app-footer--social-wrap" gutter={[8, 12]}>
                             {LIST_CONNECT.map((item, index) => (
                                 <Col key={index} xs={8}>
                                     <Typography.Link title={item.title} target="_blank" href={item.href} className="app-footer--link mb-12">
-                                        <Box className="app-footer--social-icon">
+                                        <Box className="app-footer--social-icon mb-6">
                                             <FontAwesomeIcon icon={item.icon} />
                                         </Box>
                                         <Typography.Text>{item.rel}</Typography.Text>

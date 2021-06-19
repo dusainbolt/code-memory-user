@@ -21,8 +21,8 @@ const FounderWrap: React.FC<any> = ({}) => {
                         <Typography.Paragraph className="home-founder--name">{t('home.txt_name_founder')}</Typography.Paragraph>
                         <Typography.Text className="home-founder--mission">{t('home.txt_mission_founder')}</Typography.Text>
                         <Divider />
-                        <Typography.Paragraph className="text-description-light-1 italic">{t('home.txt_letter_para_1')}</Typography.Paragraph>
-                        <Typography.Paragraph className="text-description-light-1 italic">{t('home.txt_letter_para_2')}</Typography.Paragraph>
+                        <Typography.Paragraph className="txt-dec-light-1 italic mb-16">{t('home.txt_letter_para_1')}</Typography.Paragraph>
+                        <Typography.Paragraph className="txt-dec-light-1 italic mb-16">{t('home.txt_letter_para_2')}</Typography.Paragraph>
                         <AntImage alt="Chữ ký của founder" src={staticPath('/images/dusainbolt-autograph.png')} />
                     </Col>
                 </Row>

@@ -43,50 +43,50 @@
 @for $i from 0 through 32 {
     @if ($i % 2) == 0 {
         .mt-#{$i} {
-            margin-top: #{$i}px;
+            margin-top: #{$i}px !important;
         }
         .mr-#{$i} {
-            margin-right: #{$i}px;
+            margin-right: #{$i}px !important;
         }
         .mb-#{$i} {
-            margin-bottom: #{$i}px;
+            margin-bottom: #{$i}px !important;
         }
         .ml-#{$i} {
-            margin-left: #{$i}px;
+            margin-left: #{$i}px !important;
         }
         .pt-#{$i} {
-            padding-top: #{$i}px;
+            padding-top: #{$i}px !important;
         }
         .pr-#{$i} {
-            padding-right: #{$i}px;
+            padding-right: #{$i}px !important;
         }
         .pb-#{$i} {
-            padding-bottom: #{$i}px;
+            padding-bottom: #{$i}px !important;
         }
         .pl-#{$i} {
-            padding-left: #{$i}px;
+            padding-left: #{$i}px !important;
         }
         .m-tb-#{$i} {
-            margin-top: #{$i}px;
-            margin-bottom: #{$i}px;
+            margin-top: #{$i}px !important;
+            margin-bottom: #{$i}px !important;
         }
         .m-lr-#{$i} {
-            margin-left: #{$i}px;
-            margin-right: #{$i}px;
+            margin-left: #{$i}px !important;
+            margin-right: #{$i}px !important;
         }
         .m-#{$i} {
-            margin: #{$i}px;
+            margin: #{$i}px !important;
         }
         .p-tb-#{$i} {
-            padding-top: #{$i}px;
-            padding-bottom: #{$i}px;
+            padding-top: #{$i}px !important;
+            padding-bottom: #{$i}px !important;
         }
         .p-lr-#{$i} {
-            padding-left: #{$i}px;
-            padding-right: #{$i}px;
+            padding-left: #{$i}px !important;
+            padding-right: #{$i}px !important;
         }
         .p-#{$i} {
-            padding: #{$i}px;
+            padding: #{$i}px !important;
         }
     }
 }

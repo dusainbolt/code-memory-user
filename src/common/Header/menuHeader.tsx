@@ -1,8 +1,4 @@
 import useTranslation from '@Common/LanguageProvider/useTranslation';
-// import { useRouter } from 'next/router';
-import Link from 'next/link';
-
-// export interface _MenuHeader {}
 
 export const LIST_MENU = [
     { name: 'txt_home', href: '/' },
@@ -18,9 +14,9 @@ const MenuHeader: React.FC<any> = ({}) => {
     return (
         <nav className="header--menu">
             {LIST_MENU.map((item, index) => (
-                <Link key={index} href={item.href}>
+                <a key={index} className="m-lr-16" href={item.href}>
                     {t(`menu.${item.name}`)}
-                </Link>
+                </a>
             ))}
         </nav>
     );

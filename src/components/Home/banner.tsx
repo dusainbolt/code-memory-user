@@ -14,12 +14,12 @@ const HomeBanner: React.FC<any> = () => {
     const { t } = useTranslation();
 
     return (
-        <Box container className="home-banner">
+        <Box container className="home-banner mt-30">
             <Row gutter={30}>
                 <Col xs={{ span: 24, order: 2 }} lg={{ span: 10, order: 1 }} className="home-banner--wrap-info">
                     <Space direction="vertical">
                         <Typography.Title className="home-banner--title">{DEFAULT_SEO.appName}</Typography.Title>
-                        <Typography.Paragraph className="home-banner--description">
+                        <Typography.Paragraph className="home-banner--description mt-20">
                             {t('home.txt_description_banner_1')}
                             <Typography.Text className="high-light">{t('home.txt_description_banner_2')}</Typography.Text>
                             {t('home.txt_description_banner_3')}

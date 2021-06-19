@@ -22,13 +22,33 @@ div {
     }
 }
 
-.txt-description-light.ant-typography {
+// typography title bold
+.title.ant-typography {
+    font-size: $fontSize-base + 28;
+    font-weight: $font-bold;
+}
+
+.title-1.ant-typography {
+    font-size: $fontSize-base + 12;
+}
+
+.title-2.ant-typography {
+    font-size: $fontSize-base + 2;
+}
+
+// typography description normal
+.txt-dec-1.ant-typography {
+    font-weight: $font-regular;
+    font-size: $fontSize-base + 4;
+}
+
+// typography description light
+.txt-dec-light.ant-typography {
     font-weight: $font-light;
-    color: var(--color-text-main);
     font-size: $fontSize-base - 2;
 }
 
-.text-description-light-1.ant-typography {
-    @extend .txt-description-light;
+.txt-dec-light-1.ant-typography {
+    @extend .txt-dec-light;
     font-size: $fontSize-base + 2;
 }

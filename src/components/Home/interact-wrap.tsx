@@ -32,7 +32,7 @@ const InteractWrap: React.FC<any> = ({}) => {
 
     return (
         <Box className="home-interact--container" container>
-            <Typography.Text id="interact" className="home--title">
+            <Typography.Text id="interact" className="home--title title txt-center">
                 {t('home.txt_title_interact')}
             </Typography.Text>
             <Box className="home-interact--box">
@@ -41,8 +41,10 @@ const InteractWrap: React.FC<any> = ({}) => {
                         <Col className="home-interact--card" key={index} md={24} lg={8}>
                             <Space direction="vertical">
                                 <AntImage alt={`${t('home.txt_title_interact')} ${item.title}`} src={staticPath(item.imageUrl)} />
-                                <Typography.Title level={3}>{item.title}</Typography.Title>
-                                <Typography.Paragraph>{item.description}</Typography.Paragraph>
+                                <Typography.Title className="title-1 txt-center mt-24" level={3}>
+                                    {item.title}
+                                </Typography.Title>
+                                <Typography.Paragraph className="txt-dec-1 txt-center">{item.description}</Typography.Paragraph>
                             </Space>
                         </Col>
                     ))}

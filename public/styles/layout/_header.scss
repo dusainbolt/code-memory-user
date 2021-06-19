@@ -33,7 +33,6 @@
         width: max-content;
     }
     &--menu a {
-        margin: 0 16px;
         color: var(--color-text-inactive);
         font-weight: $font-bold;
         transition: 0.2s all;
@@ -75,19 +74,3 @@
         }
     }
 }
-
-// @include _responsive(_xs) {
-//   .header {
-//     &--button-login.app-btn {
-//       order: 1;
-//       width: max-content;
-//       height: 32px;
-//       span {
-//         display: none;
-//       }
-//     }
-//     &--menu.app-menu {
-//       order: 2;
-//     }
-//   }
-// }

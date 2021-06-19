@@ -8,9 +8,7 @@
             opacity: 0.8;
         }
     }
-    &--title.ant-typography {
-        font-size: $fontSize-base + 2;
-    }
+
     &--col-contact {
         a {
             display: block;
@@ -23,7 +21,6 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        margin-bottom: 6px;
         background-color: var(--color-primary);
         @include _flex_box();
         svg.svg-inline--fa {

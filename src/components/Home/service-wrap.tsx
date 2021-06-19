@@ -47,18 +47,20 @@ const ServiceWrap: React.FC<any> = ({}) => {
 
     return (
         <Box className="home-service--container" container>
-            <Typography.Text className="home--title">{t('home.title_service')}</Typography.Text>
+            <Typography.Text className="home--title title txt-center">{t('home.title_service')}</Typography.Text>
             {DATA_SERVICE.map((item, index) => {
                 return (
-                    <Row gutter={[40, 40]} key={index} className="home-service--row">
+                    <Row gutter={[40, 40]} key={index} className="home-service--row m-tb-30">
                         <Divider />
                         <Col xs={{ span: 24, order: 1 }} lg={{ span: 12, order: item.imageAlignLeft ? 1 : 2 }}>
                             <AntImage alt={item.title} src={staticPath(item.urlImage)} />
                         </Col>
                         <Col className="home-service--content" xs={{ span: 24, order: 2 }} lg={{ span: 12, order: item.imageAlignLeft ? 2 : 1 }}>
                             <Space direction="vertical">
-                                <Typography.Title level={2}>{item.title}</Typography.Title>
-                                <Typography.Paragraph>{item.description}</Typography.Paragraph>
+                                <Typography.Title className="title-1 mt-20 mb-26" level={2}>
+                                    {item.title}
+                                </Typography.Title>
+                                <Typography.Paragraph className="txt-dec-1 mb-26 mt-2">{item.description}</Typography.Paragraph>
                             </Space>
                             <Typography.Link className="home-service--button-link" href={item.link}>
                                 <ButtonCommon className="home-service--button" type="primary" shape="round">
