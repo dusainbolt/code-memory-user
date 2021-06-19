@@ -32,7 +32,7 @@ const HomeBanner: React.FC<any> = () => {
                     </Typography.Link>
                 </Col>
                 <Col xs={{ span: 24, order: 1 }} lg={{ span: 14, order: 2 }}>
-                    <AntImage className="home-banner--img-content" src={staticPath('/images/img_banner.png')} />
+                    <AntImage alt="Ảnh banner của CodeMemory" className="home-banner--img-content" src={staticPath('/images/img_banner.webp')} />
                 </Col>
             </Row>
         </Box>

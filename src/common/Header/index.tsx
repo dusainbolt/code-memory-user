@@ -9,6 +9,7 @@ import MenuHeader from './menuHeader';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Drawer } from 'antd';
+import AntImage from '@Common/Image';
 
 // interface _Header {}
 
@@ -46,7 +47,7 @@ const Header: React.FC<any> = ({}) => {
             <Box className="container header--container">
                 <a href="/">
                     <Box className="header--logo">
-                        <Image width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.png')} />
+                        <AntImage width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.webp')} />
                     </Box>
                 </a>
                 {menuHeaderCommon}

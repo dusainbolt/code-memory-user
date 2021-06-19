@@ -16,7 +16,7 @@ const ServiceWrap: React.FC<any> = ({}) => {
             description: t('home.service_blog_description'),
             link: '',
             labelButton: t('home.txt_btn_view_blog'),
-            urlImage: '/images/service_blog.png',
+            urlImage: '/images/service_blog.webp',
             imageAlignLeft: true,
         },
         {
@@ -24,7 +24,7 @@ const ServiceWrap: React.FC<any> = ({}) => {
             description: t('home.service_course_service_description'),
             link: '',
             labelButton: t('home.txt_btn_view_course'),
-            urlImage: '/images/service_course.png',
+            urlImage: '/images/service_course.webp',
             imageAlignLeft: false,
         },
         {
@@ -32,7 +32,7 @@ const ServiceWrap: React.FC<any> = ({}) => {
             description: t('home.service_talk_description'),
             link: '',
             labelButton: t('home.txt_btn_view_forum'),
-            urlImage: '/images/service_forum.png',
+            urlImage: '/images/service_forum.webp',
             imageAlignLeft: true,
         },
         {
@@ -40,7 +40,7 @@ const ServiceWrap: React.FC<any> = ({}) => {
             description: t('home.service_develop_service_description'),
             link: '',
             labelButton: t('home.txt_btn_view_develop'),
-            urlImage: '/images/service_develop.png',
+            urlImage: '/images/service_develop.webp',
             imageAlignLeft: false,
         },
     ];

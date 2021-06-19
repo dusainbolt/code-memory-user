@@ -31,7 +31,7 @@ module.exports = {
         }
         return config;
     },
-    trailingSlash: true,
+    // trailingSlash: true,
     images: {
         loader: 'imgix',
         path: '',

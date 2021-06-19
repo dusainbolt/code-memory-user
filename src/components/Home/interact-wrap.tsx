@@ -13,19 +13,19 @@ const InteractWrap: React.FC<any> = ({}) => {
         {
             title: t('home.txt_title_share'),
             description: t('home.txt_description_share'),
-            imageUrl: '/images/interact_share.png',
+            imageUrl: '/images/interact_share.webp',
             fade: { fadeLeftComponent: true },
         },
         {
             title: t('home.txt_title_learn'),
             description: t('home.txt_description_learn'),
-            imageUrl: '/images/interact_learn.png',
+            imageUrl: '/images/interact_learn.webp',
             fade: { fadeInComponent: true },
         },
         {
             title: t('home.txt_title_talk'),
             description: t('home.txt_description_talk'),
-            imageUrl: '/images/interact_talk.png',
+            imageUrl: '/images/interact_talk.webp',
             fade: { fadeRightComponent: true },
         },
     ];

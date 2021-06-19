@@ -30,5 +30,8 @@ export const getStaticProps: GetStaticProps = async () => {
     const { data: seoHome } = await getSeoHome();
     return {
         props: { ...seoHome }, // will be passed to the page component as props
+        // Re-generate the post at most once per second
+        // if a request comes in
+        revalidate: 1800,
     };
 };

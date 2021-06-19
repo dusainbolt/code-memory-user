@@ -69,7 +69,7 @@ const Footer: FC<any> = () => {
             <Box container>
                 <Row gutter={32}>
                     <Col xs={24} lg={8} xl={6} className="app-footer--logo-col">
-                        <AntImage src={staticPath('/images/logo_header.png')} />
+                        <AntImage src={staticPath('/images/logo_header.webp')} />
                         <Typography.Paragraph className="app-footer--description-logo">{t('footer.txt_description_logo')}</Typography.Paragraph>
                     </Col>
                     <Col xs={24} sm={8} lg={8} xl={4}>

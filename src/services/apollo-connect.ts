@@ -59,7 +59,6 @@ const createApolloClient = (ctx?: GetServerSidePropsContext) => {
 };
 
 export function initializeApollo(initialState = null): any {
-    console.log(initialState);
     const client = apolloClient ?? createApolloClient(initialState);
 
     // If your page has Next.js data fetching methods that use Apollo Client,
@@ -78,6 +77,7 @@ export function initializeApollo(initialState = null): any {
 
     // For SSG and SSR always create a new Apollo Client
     if (typeof window === 'undefined') {
+        console.log('=======> init apollo', initialState);
         return client;
     }
 
@@ -89,16 +89,15 @@ export function initializeApollo(initialState = null): any {
     return client;
 }
 
-export function addApolloState(client: ApolloClient<NormalizedCacheObject>, pageProps: PageProps): any {
-    if (pageProps?.props) {
-        pageProps.props[APOLLO_STATE_PROPERTY_NAME] = client.cache.extract();
-    }
+// export function addApolloState(client: ApolloClient<NormalizedCacheObject>, pageProps: PageProps): any {
+//     if (pageProps?.props) {
+//         pageProps.props[APOLLO_STATE_PROPERTY_NAME] = client.cache.extract();
+//     }
 
-    return pageProps;
-}
+//     return pageProps;
+// }
 
 export function useApollo(initialState: NormalizedCacheObject): any {
-    // console.log(pageProps);
     const store = useMemo(() => initializeApollo(initialState), [initialState]);
 
     return store;

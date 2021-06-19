@@ -14,7 +14,7 @@ const FounderWrap: React.FC<any> = ({}) => {
             <Box className="home-founder--wrap">
                 <Row gutter={32} className="home-founder--row">
                     <Col xs={24} lg={12}>
-                        <AntImage alt="Avatar Founder CodeMemory - Lê Huy Du (Du Sainbolt)" src={staticPath('/images/avatar_home_page.png')} />
+                        <AntImage alt="Avatar Founder CodeMemory - Lê Huy Du (Du Sainbolt)" src={staticPath('/images/avatar_home_page.webp')} />
                     </Col>
                     <Col className="home-founder--content" xs={24} lg={12}>
                         <Typography.Title level={4}>{t('home.txt_title_founder')}</Typography.Title>
@@ -23,7 +23,7 @@ const FounderWrap: React.FC<any> = ({}) => {
                         <Divider />
                         <Typography.Paragraph className="home-founder--letter">{t('home.txt_letter_para_1')}</Typography.Paragraph>
                         <Typography.Paragraph className="home-founder--letter">{t('home.txt_letter_para_2')}</Typography.Paragraph>
-                        <AntImage src={staticPath('/images/dusainbolt-autograph.png')} />
+                        <AntImage alt="Chữ ký của founder" src={staticPath('/images/dusainbolt-autograph.png')} />
                     </Col>
                 </Row>
             </Box>
