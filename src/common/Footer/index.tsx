@@ -73,7 +73,7 @@ const Footer: FC<any> = () => {
                         <Typography.Paragraph className="app-footer--description-logo">{t('footer.txt_description_logo')}</Typography.Paragraph>
                     </Col>
                     <Col xs={24} sm={8} lg={8} xl={4}>
-                        <Typography.Title className="app-footer--title" level={4}>
+                        <Typography.Title className="app-footer--title mb-10" level={4}>
                             {t('footer.txt_platform')}
                         </Typography.Title>
                         {LIST_MENU.map(
@@ -82,7 +82,7 @@ const Footer: FC<any> = () => {
                                 index !== LIST_MENU.length - 1 && (
                                     <Typography.Link
                                         title={t('common.txt_tooltip_access', { access: t(`menu.${item.name}`) })}
-                                        className="app-footer--link"
+                                        className="app-footer--link mb-12"
                                         key={index}
                                         target="_self"
                                         href={item.href}>
@@ -92,23 +92,23 @@ const Footer: FC<any> = () => {
                         )}
                     </Col>
                     <Col xs={24} sm={12} lg={8} xl={6} className="app-footer--col-contact">
-                        <Typography.Title className="app-footer--title" level={4}>
+                        <Typography.Title className="app-footer--title mb-10" level={4}>
                             {t('footer.txt_contact')}
                         </Typography.Title>
                         {LIST_CONTACT.map((item, index) => (
-                            <Typography.Link title={item.title} target="_blank" key={index} className="app-footer--link">
+                            <Typography.Link title={item.title} target="_blank" key={index} className="app-footer--link mb-12">
                                 <FontAwesomeIcon icon={item.icon} /> <Typography.Text>{item.value}</Typography.Text>
                             </Typography.Link>
                         ))}
                     </Col>
                     <Col xs={24} xl={8}>
-                        <Typography.Title className="app-footer--title" level={4}>
+                        <Typography.Title className="app-footer--title mb-10" level={4}>
                             {t('footer.text_connect')}
                         </Typography.Title>
                         <Row className="app-footer--social-wrap" gutter={[8, 12]}>
                             {LIST_CONNECT.map((item, index) => (
                                 <Col key={index} xs={8}>
-                                    <Typography.Link title={item.title} target="_blank" href={item.href} className="app-footer--link">
+                                    <Typography.Link title={item.title} target="_blank" href={item.href} className="app-footer--link mb-12">
                                         <Box className="app-footer--social-icon">
                                             <FontAwesomeIcon icon={item.icon} />
                                         </Box>
@@ -120,7 +120,7 @@ const Footer: FC<any> = () => {
                     </Col>
                 </Row>
             </Box>
-            <Box className="app-footer--copyright">{t('home.txt_footer_copyright')}</Box>
+            <Box className="p-10 pb-24 mt-34 txt-center">{t('home.txt_footer_copyright')}</Box>
         </footer>
     );
 };

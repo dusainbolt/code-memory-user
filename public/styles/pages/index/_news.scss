@@ -19,13 +19,8 @@
             font-size: $fontSize-base - 2;
         }
     }
-    &--box-content {
-        padding: 12px 22px;
-    }
     &--box-wrap-author {
         @include _flex_box(center, flex-start);
-        margin-top: 14px;
-        margin-bottom: 6px;
         .app-rate {
             margin-left: 8px;
             span.anticon {
@@ -36,6 +31,5 @@
     &--author-name {
         font-weight: $font-light;
         font-size: $fontSize-base - 2;
-        margin-left: 4px;
     }
 }

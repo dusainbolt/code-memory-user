@@ -27,3 +27,8 @@ div {
     color: var(--color-text-main);
     font-size: $fontSize-base - 2;
 }
+
+.text-description-light-1.ant-typography {
+    @extend .txt-description-light;
+    font-size: $fontSize-base + 2;
+}

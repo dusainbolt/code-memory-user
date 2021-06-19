@@ -11,7 +11,7 @@ const FounderWrap: React.FC<any> = ({}) => {
 
     return (
         <Box className="home-founder--container" container>
-            <Box className="home-founder--wrap">
+            <Box className="home-founder--wrap p-tb-30 p-lr-20">
                 <Row gutter={32} className="home-founder--row">
                     <Col xs={24} lg={12}>
                         <AntImage alt="Avatar Founder CodeMemory - Lê Huy Du (Du Sainbolt)" src={staticPath('/images/avatar_home_page.webp')} />
@@ -21,8 +21,8 @@ const FounderWrap: React.FC<any> = ({}) => {
                         <Typography.Paragraph className="home-founder--name">{t('home.txt_name_founder')}</Typography.Paragraph>
                         <Typography.Text className="home-founder--mission">{t('home.txt_mission_founder')}</Typography.Text>
                         <Divider />
-                        <Typography.Paragraph className="home-founder--letter">{t('home.txt_letter_para_1')}</Typography.Paragraph>
-                        <Typography.Paragraph className="home-founder--letter">{t('home.txt_letter_para_2')}</Typography.Paragraph>
+                        <Typography.Paragraph className="text-description-light-1 italic">{t('home.txt_letter_para_1')}</Typography.Paragraph>
+                        <Typography.Paragraph className="text-description-light-1 italic">{t('home.txt_letter_para_2')}</Typography.Paragraph>
                         <AntImage alt="Chữ ký của founder" src={staticPath('/images/dusainbolt-autograph.png')} />
                     </Col>
                 </Row>

@@ -33,7 +33,7 @@ const SwiperSlideNewsItem: React.FC<any> = ({ children, className, slidesPerView
                 alt="thumbnail-new"
                 src="https://appdu-storage.s3-ap-southeast-1.amazonaws.com/118005360_928999227584443_8060562362571425079_o.png"
             />
-            <Box className="home-news--box-content">
+            <Box className="p-tb-12 p-lr-22">
                 <Typography.Text className="home-news--item-created-date">April 30th, 2021 · 3 View</Typography.Text>
                 <Typography.Title level={4} ellipsis={{ rows: 2 }} className="home-news--item-title">
                     Key Takeaways for Designers from Figma's Config 2021 Virtual Conference 213432 2134231 42134 231 4213 4 3214 1234 213 4321 4
@@ -43,9 +43,9 @@ const SwiperSlideNewsItem: React.FC<any> = ({ children, className, slidesPerView
                     2021.
                 </Typography.Paragraph>
 
-                <Box className="home-news--box-wrap-author">
+                <Box className="home-news--box-wrap-author mt-14 mb-6">
                     <Avatar size={36} alt="avatar-blog" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                    <Typography.Text className="home-news--author-name">Du Sainbolt</Typography.Text>
+                    <Typography.Text className="home-news--author-name ml-4">Du Sainbolt</Typography.Text>
                     <Rate className="app-rate" allowHalf disabled defaultValue={2.5} />
                 </Box>
                 <Tag className="app-tag">Lập trình</Tag>

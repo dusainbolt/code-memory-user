@@ -3,7 +3,6 @@
         display: block;
         color: var(--color-text-main) !important;
         font-weight: $font-regular;
-        margin-bottom: 12px;
         width: max-content;
         &:hover {
             opacity: 0.8;
@@ -11,7 +10,6 @@
     }
     &--title.ant-typography {
         font-size: $fontSize-base + 2;
-        margin-bottom: 10px;
     }
     &--col-contact {
         a {
@@ -35,12 +33,6 @@
     }
     &--description-logo {
         max-width: 190px;
-    }
-    &--copyright {
-        margin-top: 35px;
-        text-align: center;
-        padding: 0 10px;
-        padding-bottom: 25px;
     }
 }
 
