@@ -1,13 +1,13 @@
 // import { useAppSelector, useAppDispatch } from '@Redux/store';
-import InteractWrap from './interact-wrap';
-import ServiceWrap from './service-wrap';
+import InteractWrap from './InteractWrap';
+import ServiceWrap from './ServiceWrap';
 // import { useContext } from 'react';
 // import useTranslation from '@Components/LanguageProvider/useTranslation';
 // import { LanguageContext } from '@Components/LanguageProvider';
-import FounderWrap from './founder-wrap';
-import NewsWrap from './news-wrap';
+import FounderWrap from './FounderWrap';
+import NewsWrap from './NewsWrap';
 // import { _RootState } from '@Redux/reducer/_rootReducer';
-import HomeBanner from '@Components/Home/banner';
+import HomeBanner from './Banner';
 import { pluginChat } from '@Utils/func';
 // interface _homePageProps {
 //     t: object;

@@ -45,6 +45,7 @@ export default {
     service_develop_service_description: "Ngoài những nền tảng phía trên CodeMemory có thể hợp tác giúp bạn xây dựng được hầu hết các nền tảng ứng dụng tiện ích mà bạn mong muốn.",
     title_head: "Trang chủ CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình",
     title_service: "Hãy Cùng Xem Chúng Ta Có Gì Nào",
+    title_new_wrap: "Bài Viết Nổi Bật",
     txt_description_banner_3: "Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sự sáng tạo trong chúng ta."
   },
   footer: {
@@ -76,6 +77,10 @@ export default {
     title_meta: "Đăng nhập tài khoản | CodeMemory",
     description: "Đăng nhập để cùng tương tác trên CodeMemory",
     question_acc: "Nếu chưa có tài khoản?",
-    register_now: "Đăng ký ngay"
+    register_now: "Đăng ký ngay",
+    credential: "Tài khoản",
+    password: "Mật khẩu",
+    place_credential: "nhập username hoặc email",
+    place_password: "nhập mật khẩu"
   }
 }

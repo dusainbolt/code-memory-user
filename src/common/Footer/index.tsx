@@ -6,7 +6,7 @@ import AntImage from '@Common/Image';
 import { staticPath } from '@Utils/func';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { LIST_MENU } from '@Common/Header/menuHeader';
+import { LIST_MENU } from '@Common/Header/MenuHeader';
 import { FC } from 'react';
 
 const Footer: FC<any> = () => {

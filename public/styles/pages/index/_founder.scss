@@ -5,17 +5,17 @@
         margin-bottom: 70px;
         @include _imageStyle(520px);
         h4.ant-typography {
-            font-size: $fontSize-base + 16;
+            font-size: $font_size_base + 16;
         }
     }
     &--name.ant-typography {
-        font-size: $fontSize-base + 4;
+        font-size: $font_size_base + 4;
         font-weight: $font-medium;
         margin-bottom: 0;
     }
     &--mission.ant-typography {
         margin-top: 0;
-        font-size: $fontSize-base - 2;
+        font-size: $font_size_base - 2;
     }
     &--content {
         @include _imageStyle(200px);

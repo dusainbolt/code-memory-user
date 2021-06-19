@@ -18,15 +18,9 @@
         }
     }
     &__logo-wrap {
-        width: max-content;
-        margin: auto;
-        display: block;
     }
-    &__description.ant-typography {
-        font-size: $fontSize-base + 8;
-        font-weight: $font-medium;
-        text-align: center;
-        margin-top: 24px;
-        line-height: 35px;
+    &__content {
+        max-width: 400px;
+        margin: auto;
     }
 }

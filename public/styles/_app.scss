@@ -5,6 +5,7 @@
 @import './components/typography';
 @import './components/button';
 @import './components/tag';
+@import './components/input';
 @import './layout/header';
 @import './layout/footer';
 
@@ -14,7 +15,7 @@
 * {
     box-sizing: border-box !important;
     -webkit-tap-highlight-color: transparent;
-    font-size: $fontSize-base;
+    font-size: $font_size_base;
 }
 
 html {

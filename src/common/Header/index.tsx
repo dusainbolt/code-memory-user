@@ -3,13 +3,12 @@ import { Box } from '@Common/Layout';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faBars, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { staticPath } from '@Utils/func';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import MenuHeader from './menuHeader';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Drawer } from 'antd';
 import AntImage from '@Common/Image';
+import MenuHeader from './MenuHeader';
 
 // interface _Header {}
 
