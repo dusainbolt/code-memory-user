@@ -1,39 +1,39 @@
 .home-interact {
-  &--box {
-    width: 85%;
-    margin: auto;
-    margin-bottom: 70px;
-  }
-  &--card {
-    animation: fadeIn 1.3s ease-in-out forwards running;
-    .ant-space {
-      padding: 26px;
-      box-shadow: var(--box-shadow-card-primary);
-      border-radius: $border-radius-large;
+    &--box {
+        width: 85%;
+        margin: auto;
+        margin-bottom: 70px;
     }
+    &--card {
+        animation: fadeIn 1.3s ease-in-out forwards running;
+        .ant-space {
+            padding: 26px;
+            box-shadow: var(--box-shadow-card-primary);
+            border-radius: $border-radius-large;
+        }
 
-    @include _imageStyle(195px);
+        @include _imageStyle(195px);
 
-    h3.ant-typography,
-    div.ant-typography {
-      text-align: center;
+        h3.ant-typography,
+        div.ant-typography {
+            text-align: center;
+        }
+        h3.ant-typography {
+            font-size: $fontSize-base + 10;
+            margin-top: 24px;
+        }
+        div.ant-typography {
+            color: var(--color-text-main-05);
+            font-weight: $font-regular;
+            font-size: $fontSize-base + 4;
+        }
     }
-    h3.ant-typography {
-      font-size: $base-fontSize + 10;
-      margin-top: 24px;
-    }
-    div.ant-typography {
-      color: var(--color-text-main-05);
-      font-weight: $font-regular;
-      font-size: $base-fontSize + 4;
-    }
-  }
 }
 
 @include _responsive(_lg) {
-  .home-interact {
-    &--box {
-      width: 100%;
+    .home-interact {
+        &--box {
+            width: 100%;
+        }
     }
-  }
 }

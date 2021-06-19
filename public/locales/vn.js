@@ -73,6 +73,9 @@ export default {
     light: "Chế độ ban ngày"
   },
   login: {
-    title_meta: "Đăng nhập tài khoản CodeMemory"
+    title_meta: "Đăng nhập tài khoản | CodeMemory",
+    description: "Đăng nhập để cùng tương tác trên CodeMemory",
+    question_acc: "Nếu chưa có tài khoản?",
+    register_now: "Đăng ký ngay"
   }
 }

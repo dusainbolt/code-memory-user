@@ -7,6 +7,7 @@ import 'swiper/swiper.min.css';
 import { getSeoHome } from '@Services/seo-home-request';
 import { GetStaticProps } from 'next';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
+import { LoginComponent } from '@Components/Login';
 
 interface IIndexPage {
     seoHome: SeoHome;
@@ -18,6 +19,7 @@ const IndexPage: FC<IIndexPage> = props => {
         <Fragment>
             <Meta title={t('login.title_meta')} seoHome={props.seoHome} />
             <Header />
+            <LoginComponent />
             <Footer />
         </Fragment>
     );

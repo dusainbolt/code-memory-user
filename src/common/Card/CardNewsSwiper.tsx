@@ -38,7 +38,7 @@ const SwiperSlideNewsItem: React.FC<any> = ({ children, className, slidesPerView
                 <Typography.Title level={4} ellipsis={{ rows: 2 }} className="home-news--item-title">
                     Key Takeaways for Designers from Figma's Config 2021 Virtual Conference 213432 2134231 42134 231 4213 4 3214 1234 213 4321 4
                 </Typography.Title>
-                <Typography.Paragraph ellipsis={{ rows: 3 }} className="home-news--item-description">
+                <Typography.Paragraph ellipsis={{ rows: 3 }} className="txt-description-light">
                     Zero To Mastery's Lead Designer, Laura, discusses her key takeaways for Designers from Figma's recent virtual conference - Config
                     2021.
                 </Typography.Paragraph>

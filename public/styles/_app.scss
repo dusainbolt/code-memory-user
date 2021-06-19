@@ -1,4 +1,4 @@
-//Common style in system
+// common style in system
 @import './common/variables';
 @import './common/mixins';
 @import './layout/layout';
@@ -14,7 +14,7 @@
 * {
     box-sizing: border-box !important;
     -webkit-tap-highlight-color: transparent;
-    font-size: $base-fontSize;
+    font-size: $fontSize-base;
 }
 
 html {
@@ -37,4 +37,6 @@ body {
     }
 }
 
+// import style each pages
 @import './pages/index/index';
+@import './pages/login/index';

@@ -11,17 +11,12 @@
             overflow: hidden;
         }
         &-title.ant-typography {
-            font-size: $base-fontSize + 2;
+            font-size: $fontSize-base + 2;
             margin-top: 10px !important;
             margin-bottom: 10px;
         }
         &-created-date {
-            font-size: $base-fontSize - 2;
-        }
-        &-description.ant-typography {
-            font-weight: $font-light;
-            color: var(--color-text-main);
-            font-size: $base-fontSize - 2;
+            font-size: $fontSize-base - 2;
         }
     }
     &--box-content {
@@ -40,7 +35,7 @@
     }
     &--author-name {
         font-weight: $font-light;
-        font-size: $base-fontSize - 2;
+        font-size: $fontSize-base - 2;
         margin-left: 4px;
     }
 }

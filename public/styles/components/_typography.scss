@@ -17,4 +17,13 @@ div {
         font-weight: $font-bold;
         color: var(--color-high-light);
     }
+    &.italic {
+        font-style: italic;
+    }
+}
+
+.txt-description-light.ant-typography {
+    font-weight: $font-light;
+    color: var(--color-text-main);
+    font-size: $fontSize-base - 2;
 }

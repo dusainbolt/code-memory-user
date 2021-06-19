@@ -6,21 +6,21 @@
         margin-bottom: 70px;
         @include _imageStyle(520px);
         h4.ant-typography {
-            font-size: $base-fontSize + 16;
+            font-size: $fontSize-base + 16;
         }
     }
     &--name.ant-typography {
-        font-size: $base-fontSize + 4;
+        font-size: $fontSize-base + 4;
         font-weight: $font-medium;
         margin-bottom: 0;
     }
     &--mission.ant-typography {
         margin-top: 0;
-        font-size: $base-fontSize - 2;
+        font-size: $fontSize-base - 2;
     }
     &--letter.ant-typography {
         margin-top: 30px;
-        font-size: $base-fontSize + 2;
+        font-size: $fontSize-base + 2;
         font-style: italic;
     }
     &--content {

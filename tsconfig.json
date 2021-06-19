@@ -28,20 +28,11 @@
             "@Pages/*": [
                 "./src/pages/*"
             ],
-            "@Redux/*": [
-                "./src/redux/*"
-            ],
-            "@Interfaces/*": [
-                "./src/interfaces/*"
-            ],
             "@Services/*": [
                 "./src/services/*"
             ],
             "@Components/*": [
                 "./src/components/*"
-            ],
-            "@I18n/*": [
-                "./i18n/*"
             ],
             "@Common/*": [
                 "./src/common/*"

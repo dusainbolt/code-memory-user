@@ -7,15 +7,15 @@
         flex-direction: column;
     }
     &--title.ant-typography {
-        font-size: $base-fontSize + 44;
+        font-size: $fontSize-base + 44;
     }
     &--description.ant-typography {
         color: var(--color-text-main-05);
         font-weight: $font-medium;
-        font-size: $base-fontSize + 2;
+        font-size: $fontSize-base + 2;
         margin-top: 20px;
         .high-light {
-            font-size: $base-fontSize + 2;
+            font-size: $fontSize-base + 2;
         }
     }
     &--img-content-banner {
@@ -33,7 +33,7 @@
         }
         .svg-inline--fa {
             margin-right: 6px;
-            width: $base-fontSize;
+            width: $fontSize-base;
         }
     }
     &--button-next-view-tooltip .ant-tooltip-inner a {
@@ -52,7 +52,7 @@
             text-align: center;
         }
         &--title.ant-typography {
-            font-size: $base-fontSize + 32;
+            font-size: $fontSize-base + 32;
         }
         &--button-link {
             margin: auto;
