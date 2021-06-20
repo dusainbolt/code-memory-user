@@ -4,8 +4,10 @@ import { Formik, Field } from 'formik';
 import { InputComponent } from '@Common/Input';
 import ButtonCommon from '@Common/Button';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
+import GoogleLogin from 'react-google-login';
+import getConfig from 'next/config';
 
-interface ILoginInput {
+export interface ILoginInput {
     credential: string;
     password: string;
 }
@@ -14,13 +16,29 @@ interface ILoginForm {
     submitLogin: (values: ILoginInput) => void | Promise<any>;
 }
 
+const {
+    publicRuntimeConfig: { GOOGLE_CLIENT_ID },
+} = getConfig();
+
 export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
     const { t } = useTranslation();
     const initialValues: ILoginInput = { credential: '', password: '' };
+
+    const responseGoogle = response => {
+        console.log(response);
+    };
+    console.log(GOOGLE_CLIENT_ID);
     return (
         <Formik initialValues={initialValues} onSubmit={submitLogin}>
             {({ handleSubmit }) => (
                 <Box className="login__form mt-30">
+                    <GoogleLogin
+                        clientId={GOOGLE_CLIENT_ID}
+                        buttonText="Login"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        // cookiePolicy={'single_host_origin'}
+                    />
                     <Box className="form__row">
                         <Field name="credential" label={t('login.credential')} placeholder={t('login.place_credential')} component={InputComponent} />
                     </Box>
@@ -33,7 +51,7 @@ export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
                             component={InputComponent}
                         />
                     </Box>
-                    <ButtonCommon />
+                    <ButtonCommon>{t('common')}</ButtonCommon>
                 </Box>
             )}
         </Formik>

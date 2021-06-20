@@ -28,6 +28,9 @@
             "@Pages/*": [
                 "./src/pages/*"
             ],
+            "@Redux/*": [
+                "./src/redux/*"
+            ],
             "@Services/*": [
                 "./src/services/*"
             ],

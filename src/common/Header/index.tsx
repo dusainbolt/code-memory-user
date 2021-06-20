@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Drawer } from 'antd';
 import AntImage from '@Common/Image';
 import MenuHeader from './MenuHeader';
+import Link from 'next/link';
 
 // interface _Header {}
 
@@ -35,20 +36,22 @@ const Header: React.FC<any> = ({}) => {
     const menuHeaderCommon = (
         <Box className="header--menu-wrap">
             <MenuHeader />
-            <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
-                {t('home.txt_btn_login')}
-            </ButtonCommon>
+            <a href="/login">
+                <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
+                    {t('home.txt_btn_login')}
+                </ButtonCommon>
+            </a>
         </Box>
     );
 
     return (
         <header className={clsx('header--wrapper', scrollTop > 500 && 'scrolling')}>
             <Box className="container header--container">
-                <a href="/">
+                <Link href="/">
                     <Box className="header--logo">
                         <AntImage width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.webp')} />
                     </Box>
-                </a>
+                </Link>
                 {menuHeaderCommon}
                 <FontAwesomeIcon onClick={onToggleDraw} className="header--menu-icon" icon={faBars} />
                 <Drawer

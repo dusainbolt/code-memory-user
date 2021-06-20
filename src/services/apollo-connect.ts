@@ -1,5 +1,4 @@
 import getConfig from 'next/config';
-
 import { useMemo } from 'react';
 import merge from 'deepmerge';
 import cookie from 'cookie';
@@ -9,10 +8,6 @@ import type { NormalizedCacheObject } from '@apollo/client';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { IncomingMessage } from 'node:http';
-
-// interface PageProps {
-//     props?: Record<string, any>;
-// }
 
 const {
     serverRuntimeConfig: { APOLLO_SERVER_URL },
@@ -32,7 +27,7 @@ let apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
 const createApolloClient = (ctx?: GetServerSidePropsContext) => {
     const httpLink = new HttpLink({
-        uri: APOLLO_SERVER_URL,
+        uri: `${APOLLO_SERVER_URL}/graphql`,
         credentials: 'same-origin',
     });
 

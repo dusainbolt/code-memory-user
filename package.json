@@ -27,6 +27,7 @@
     "nprogress": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^18.0.0-alpha-e6be2d531",
+    "react-google-login": "^5.2.2",
     "react-lazyload": "^3.2.0",
     "react-redux": "^7.2.3",
     "swiper": "^6.6.1",

@@ -2,7 +2,7 @@ import AntImage from '@Common/Image';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { Box } from '@Common/Layout';
 import { staticPath } from '@Utils/func';
-import { Card, Typography } from 'antd';
+import { Card, Divider, Typography } from 'antd';
 import { FC, useCallback } from 'react';
 import { LoginForm } from './LoginForm';
 

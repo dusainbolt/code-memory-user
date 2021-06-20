@@ -15,6 +15,7 @@ import 'antd/dist/antd.css';
 import '@Styles/_app.scss';
 
 import { withRouter } from 'next/router';
+import { AuthProvider } from 'src/Provider/auth';
 
 const TopProgressBar = dynamic(
     () => {
@@ -27,12 +28,14 @@ const CodeMemory: FC<AppProps> = ({ Component, pageProps }) => {
     const apolloClient = useApollo(pageProps.initialApolloState);
 
     return (
-        <ApolloProvider client={apolloClient}>
+        // <ApolloProvider client={apolloClient}>
+        <AuthProvider>
             <Provider store={store}>
                 <TopProgressBar />
                 <Component {...pageProps} />
             </Provider>
-        </ApolloProvider>
+        </AuthProvider>
+        // </ApolloProvider>
     );
 };
 
