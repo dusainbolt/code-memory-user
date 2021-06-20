@@ -62,7 +62,7 @@ const SwiperSlideNewsItem: React.FC<any> = ({ children, className, slidesPerView
             autoplay={{ delay: 3000, disableOnInteraction: true }}
             breakpoints={BREAK_SIZE_SCREEN_PRODUCER}
             loop={true}
-            slidesPerView={7}
+            // slidesPerView={7}
             spaceBetween={16}
             className="home-news--swiper">
             {swiperCommon}

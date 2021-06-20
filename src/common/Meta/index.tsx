@@ -59,14 +59,14 @@ export class SeoMeta {
 }
 
 export interface SeoHome {
-    owner: string;
-    appName: string;
-    keyWord: string;
-    author: string;
-    publisher: string;
-    contact: SeoContact;
-    social: SeoSocial;
-    meta: SeoMeta;
+    owner?: string;
+    appName?: string;
+    keyWord?: string;
+    author?: string;
+    publisher?: string;
+    contact?: SeoContact;
+    social?: SeoSocial;
+    meta?: SeoMeta;
 }
 
 export interface HeadSEO {

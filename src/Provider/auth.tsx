@@ -1,6 +1,6 @@
 import React, { useState, useContext, createContext, Context } from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink, gql } from '@apollo/client';
-import { ILoginInput } from '@Components/Login/LoginForm';
+import { LoginInput } from '@Components/Login/LoginForm';
 
 interface IAuthProvider {
     children: any;
@@ -53,7 +53,7 @@ function useProvideAuth() {
         });
     };
 
-    const signIn = async ({ credential, password }: ILoginInput) => {
+    const signIn = async ({ credential, password }: LoginInput) => {
         const client = createApolloClient();
         const LoginMutation = gql`
             mutation signin($credential: String!, $password: String!) {

@@ -1,11 +1,9 @@
-import { Provider } from 'react-redux';
-import store from '@Redux/store';
-import { AppProps } from 'next/app';
-import { ApolloProvider } from '@apollo/client';
-
-import { useApollo } from '@Services/apollo-connect';
+import { AppContext, AppProps } from 'next/app';
+import { AuthProvider } from 'src/Provider/auth';
 import { FC } from 'react';
 import dynamic from 'next/dynamic';
+import { wrapper } from '@Redux/store';
+import { END } from 'redux-saga';
 
 // load style lib
 import 'nprogress/nprogress.css';
@@ -13,9 +11,6 @@ import 'antd/dist/antd.css';
 
 // load style local
 import '@Styles/_app.scss';
-
-import { withRouter } from 'next/router';
-import { AuthProvider } from 'src/Provider/auth';
 
 const TopProgressBar = dynamic(
     () => {
@@ -25,18 +20,30 @@ const TopProgressBar = dynamic(
 );
 
 const CodeMemory: FC<AppProps> = ({ Component, pageProps }) => {
-    const apolloClient = useApollo(pageProps.initialApolloState);
-
     return (
-        // <ApolloProvider client={apolloClient}>
         <AuthProvider>
-            <Provider store={store}>
-                <TopProgressBar />
-                <Component {...pageProps} />
-            </Provider>
+            <TopProgressBar />
+            <Component {...pageProps} />
         </AuthProvider>
-        // </ApolloProvider>
     );
 };
 
-export default withRouter(CodeMemory);
+export const getInitialProps = async ({ Component, ctx }: AppContext) => {
+    // 1. Wait for all page actions to dispatch
+    const pageProps = {
+        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+    };
+
+    // 2. Stop the saga if on server
+    if (ctx.req) {
+        ctx.store.dispatch(END);
+        await ctx.store.sagaTask.toPromise();
+    }
+
+    // 3. Return props
+    return {
+        pageProps,
+    };
+};
+
+export default wrapper.withRedux(CodeMemory);

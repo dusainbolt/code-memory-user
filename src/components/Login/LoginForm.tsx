@@ -7,13 +7,13 @@ import useTranslation from '@Common/LanguageProvider/useTranslation';
 import GoogleLogin from 'react-google-login';
 import getConfig from 'next/config';
 
-export interface ILoginInput {
+export interface LoginInput {
     credential: string;
     password: string;
 }
 
 interface ILoginForm {
-    submitLogin: (values: ILoginInput) => void | Promise<any>;
+    submitLogin: (values: LoginInput) => void | Promise<any>;
 }
 
 const {
@@ -22,7 +22,7 @@ const {
 
 export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
     const { t } = useTranslation();
-    const initialValues: ILoginInput = { credential: '', password: '' };
+    const initialValues: LoginInput = { credential: '', password: '' };
 
     const responseGoogle = response => {
         console.log(response);
