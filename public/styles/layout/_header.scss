@@ -16,6 +16,7 @@
     }
     &--logo {
         min-width: 140px;
+        height: 51px;
         cursor: pointer;
     }
     &--button-login {
@@ -31,51 +32,45 @@
         @include _flex_box(center, flex-start);
         width: max-content;
     }
-    &--menu.app-menu {
-        border-bottom: unset;
-        .ant-menu-item {
-            margin: 0 22px;
-            a {
-                color: var(--color-text-inactive);
-                font-weight: $font-bold;
-            }
-        }
-        .ant-menu-overflowed-submenu {
-            margin-right: 5px;
-            border: none !important;
-        }
-    }
-    &--menu-icon-collapse {
-        color: var(--color-primary);
-        font-size: $base-fontSize + 4 !important;
-    }
-}
-
-//collapse menu small screen
-.ant-menu-submenu-popup {
-    .ant-menu-item {
+    &--menu a {
+        color: var(--color-text-inactive);
         font-weight: $font-bold;
-        a {
-            color: var(--color-text-inactive);
-            &:hover {
-                color: var(--color-primary);
-            }
+        transition: 0.2s all;
+        &:hover {
+            color: var(--color-primary);
         }
+    }
+    &--menu-icon {
+        display: none;
+        color: var(--color-primary);
     }
 }
 
-@include _responsive(_xs) {
+@include _responsive(_lg) {
     .header {
-        &--button-login.app-btn {
-            order: 1;
-            width: max-content;
-            height: 32px;
-            span {
-                display: none;
-            }
+        &--menu-wrap {
+            display: none;
         }
-        &--menu.app-menu {
-            order: 2;
+        &--menu-icon {
+            display: block;
+            width: 24px;
+        }
+        &--drawer {
+            .header--menu-wrap {
+                display: block;
+            }
+            .ant-drawer-title {
+                color: var(--color-text-main);
+                font-weight: $font-bold;
+                font-size: $font_size_base + 2;
+            }
+            .header--menu a {
+                display: block;
+                margin: 12px 0;
+                &:last-child {
+                    margin-bottom: 34px;
+                }
+            }
         }
     }
 }

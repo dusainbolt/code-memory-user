@@ -1,17 +1,14 @@
 .app-footer {
-    &--link.ant-typography  {
+    &--link.ant-typography {
         display: block;
         color: var(--color-text-main) !important;
         font-weight: $font-regular;
-        margin-bottom: 12px;
+        width: max-content;
         &:hover {
             opacity: 0.8;
         }
     }
-    &--title.ant-typography {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
+
     &--col-contact {
         a {
             display: block;
@@ -24,12 +21,58 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        margin-bottom: 4px;
         background-color: var(--color-primary);
         @include _flex_box();
         svg.svg-inline--fa {
             width: 15px;
             color: white;
+        }
+    }
+    &--description-logo {
+        max-width: 190px;
+    }
+}
+
+@include _responsive(_md) {
+    .app-footer {
+        &--description-logo {
+            margin-bottom: 14px !important;
+        }
+        &--logo-col {
+            text-align: center;
+        }
+        &--description-logo.ant-typography {
+            max-width: unset;
+            margin-bottom: 25px;
+        }
+        &--title.ant-typography {
+            margin-top: 25px;
+        }
+    }
+}
+
+@include _responsive(_xs) {
+    .app-footer {
+        &--title.ant-typography {
+            text-align: left;
+        }
+        &--link.ant-typography {
+            text-align: left;
+        }
+        &--social-icon {
+            margin: auto;
+        }
+        &--logo-col {
+            .ant-image {
+                margin-right: auto;
+                display: block;
+                width: 251px;
+                margin-bottom: 5px;
+            }
+            width: max-content;
+        }
+        &--description-logo {
+            text-align: left;
         }
     }
 }

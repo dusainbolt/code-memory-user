@@ -1,20 +1,38 @@
-import { Box } from '@Common/Layout';
-import Typography from '@Common/Typography';
-import { _getStyleLayout } from '@Utils/index';
-import clsx from 'clsx';
+import { Input } from 'antd';
+import { FieldInputProps, FieldMetaProps, FormikState } from 'formik';
+import { FC } from 'react';
 
-function InputComponent({ field, form: { errors, touched }, message, classInput = '', disable, fieldType, boxProps, outline, fullWidth, ...props }) {
-    const error = Boolean(message) || (touched[field.name] && Boolean(errors[field.name]));
-    const textError = message || (touched[field.name] && errors[field.name]);
-    const boxInputStyle = clsx({ form__app: true, ..._getStyleLayout(props), [`form--app-${fieldType}`]: fieldType });
-    const inputStyle = clsx({ 'form--app--input': true, error: error, [classInput]: classInput, disable: disable, 'outline': outline });
-
-    return (
-        <Box {...boxProps} className={boxInputStyle}>
-            <input className={inputStyle} {...field} {...props} />
-            {error && <Typography type="span" fontWeight="light" className={`mess-error error-${field.name}`}>{textError}</Typography>}
-        </Box>
-    );
+interface IInputComponent {
+    label?: string;
+    prefix?: any;
+    suffix?: any;
+    placeholder?: string;
+    className?: string;
+    passwordMode?: boolean;
+    field: FieldInputProps<any>;
+    form: FormikState<any>;
+    meta: FieldMetaProps<any>;
 }
 
-export default InputComponent;
+export const InputComponent: FC<IInputComponent> = ({
+    field: { name, value },
+    form: { touched: formTouched, errors: formErrors },
+    label = '',
+    prefix = null,
+    suffix = null,
+    placeholder = '',
+    passwordMode = false,
+    className = '',
+    ...props
+}) => {
+    const touched = formTouched[name];
+    const errorMessage = formErrors[name];
+    const InputCommon = passwordMode ? Input.Password : Input;
+    return (
+        <div className="field-wrap">
+            {label && <label className="field-wrap__label">{label}</label>}
+            <InputCommon className={`app-input ${className}`} placeholder={placeholder} prefix={prefix} suffix={suffix} {...props} />
+            {errorMessage && touched && <span className="required">{errorMessage}</span>}
+        </div>
+    );
+};

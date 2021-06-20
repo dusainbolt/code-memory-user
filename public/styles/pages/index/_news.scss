@@ -11,26 +11,16 @@
             overflow: hidden;
         }
         &-title.ant-typography {
-            font-size: $base-fontSize + 2;
+            font-size: $font_size_base + 2;
             margin-top: 10px !important;
             margin-bottom: 10px;
         }
         &-created-date {
-            font-size: $base-fontSize - 2;
+            font-size: $font_size_base - 2;
         }
-        &-description.ant-typography {
-            font-weight: $font-light;
-            color: var(--color-text-main);
-            font-size: $base-fontSize - 2;
-        }
-    }
-    &--box-content {
-        padding: 12px 22px;
     }
     &--box-wrap-author {
         @include _flex_box(center, flex-start);
-        margin-top: 14px;
-        margin-bottom: 6px;
         .app-rate {
             margin-left: 8px;
             span.anticon {
@@ -40,7 +30,6 @@
     }
     &--author-name {
         font-weight: $font-light;
-        font-size: $base-fontSize - 2;
-        margin-left: 4px;
+        font-size: $font_size_base - 2;
     }
 }

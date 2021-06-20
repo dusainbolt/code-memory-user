@@ -1,9 +1,13 @@
 export default {
   common: {
     txt_close: "Đóng",
+    txt_tooltip_contact: "{{contact}} của CodeMemory",
+    txt_tooltip_connect: "Liên kết tới {{connect}} của CodeMemory",
+    txt_tooltip_access: "Truy cập tới {{access}} của CodeMemory",
     txt_view_next: "Xem tiếp"
   },
   menu: {
+    list_menu: "Danh sách menu",
     txt_home: "Trang Chủ",
     txt_about: "Khóa Học",
     txt_services: "Dịch Vụ",
@@ -28,6 +32,7 @@ export default {
     txt_btn_view_course: "Xem Khóa Học",
     txt_btn_view_forum: "Truy Cập",
     txt_btn_login: "Đăng Nhập",
+    txt_title_post_hot: "Bài Viết Nổi Bật",
     txt_btn_view_develop: "Xem Chi Tiết",
     txt_title_founder: "Tâm Thư Từ Nhà Sáng Lập",
     txt_name_founder: "LÊ HUY DU",
@@ -40,7 +45,25 @@ export default {
     service_develop_service_description: "Ngoài những nền tảng phía trên CodeMemory có thể hợp tác giúp bạn xây dựng được hầu hết các nền tảng ứng dụng tiện ích mà bạn mong muốn.",
     title_head: "Trang chủ CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình",
     title_service: "Hãy Cùng Xem Chúng Ta Có Gì Nào",
+    title_new_wrap: "Bài Viết Nổi Bật",
     txt_description_banner_3: "Mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sự sáng tạo trong chúng ta."
+  },
+  footer: {
+    txt_contact: "LIÊN HỆ",
+    text_connect: "LIÊN KẾT",
+    txt_platform: "NỀN TẢNG",
+    txt_description_logo: "Fuel the rise of the Digital Content World",
+    txt_phone_number: "Số điện thoại",
+    txt_gmail: "Email",
+    txt_address: "Địa chỉ",
+    phone_number: "8432811197",
+    gmail_support: "codememory.hotro@gmail.com",
+    address: "219 Trung Kính, Cầu Giấy, Hà Nội",
+    url_skype: "https://join.skype.com/invite/kP2kfn0Wu06U",
+    url_twitter: "https://join.skype.com/invite/kP2kfn0Wu06U",
+    url_youtube: "https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ",
+    url_fanpage: "https://www.facebook.com/sainboltapp",
+    url_profile: "https://www.facebook.com/dusainbolt/"
   },
   lang: {
     vn: "Tiếng việt",
@@ -49,5 +72,15 @@ export default {
   theme: {
     dark: "Chế độ ban đêm",
     light: "Chế độ ban ngày"
+  },
+  login: {
+    title_meta: "Đăng nhập tài khoản | CodeMemory",
+    description: "Đăng nhập để cùng tương tác trên CodeMemory",
+    question_acc: "Nếu chưa có tài khoản?",
+    register_now: "Đăng ký ngay",
+    credential: "Tài khoản",
+    password: "Mật khẩu",
+    place_credential: "nhập username hoặc email",
+    place_password: "nhập mật khẩu"
   }
 }

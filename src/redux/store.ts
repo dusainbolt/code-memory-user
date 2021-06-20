@@ -1,18 +1,30 @@
-import { rootReducer, _RootState } from './reducer/_rootReducer';
-import { configureStore } from '@reduxjs/toolkit';
+import { applyMiddleware, createStore } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer, { IRootState } from './reducers';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createWrapper } from 'next-redux-wrapper';
+import rootSaga from './sagas';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
+function bindMiddleware(middleware: any) {
+    // Just use redux devtools in dev mode
+    if (process.env.NODE_ENV !== 'production') {
+        return composeWithDevTools(applyMiddleware(...middleware));
+    }
+    return applyMiddleware(...middleware);
+}
 
-const store: any = configureStore({
-    reducer: rootReducer,
-});
-// Infer the `RootState` and `AppDispatch` types from the store itself
-// export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
+function makeStore<T>(initialState?: T) {
+    const sagaMiddleware = createSagaMiddleware();
+    const store = createStore(rootReducer, initialState, bindMiddleware([sagaMiddleware]));
+    store.sagaTask = sagaMiddleware.run(rootSaga);
+    return store;
+}
+
+console.clear();
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<_RootState> = useSelector;
+export const useAppDispatch = () => useDispatch<any>();
+export const useAppSelector: TypedUseSelectorHook<IRootState> = useSelector;
 
-export default store;
+export const wrapper = createWrapper(makeStore, { debug: false });

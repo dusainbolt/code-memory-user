@@ -43,3 +43,8 @@ yarn.lock
 /dist
 
 *.css.map
+
+public/sitemap.xml
+public/robots.txt
+
+/.firebase

@@ -1,31 +1,21 @@
-//Common style in system
+// common style in system
 @import './common/variables';
 @import './common/mixins';
 @import './layout/layout';
 @import './components/typography';
 @import './components/button';
-@import './components/menu';
-@import './components/image';
 @import './components/tag';
+@import './components/input';
 @import './layout/header';
 @import './layout/footer';
 
-// @import './components/collapspe';
-// @import './components/image-lazy';
-// @import './components/drawer';
-// @import './components/form';
-// @import './components/icon';
-// @import './components/footer';
-// @import './components/list';
-// @import './components/rate';
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');
 
 * {
     box-sizing: border-box !important;
     -webkit-tap-highlight-color: transparent;
-    font-size: $base-fontSize;
+    font-size: $font_size_base;
 }
 
 html {
@@ -40,12 +30,14 @@ body {
     margin: 0;
     color: var(--color-text-main);
     font-family: 'Roboto', sans-serif;
-    &[app-locale='en'] {
-        font-family: 'Poppins', sans-serif;
-    }
+    // &[app-locale='en'] {
+    //   font-family: 'Poppins', sans-serif;
+    // }
     &[app-locale='vn'] {
         font-family: 'Roboto', sans-serif;
     }
 }
 
+// import style each pages
 @import './pages/index/index';
+@import './pages/login/index';

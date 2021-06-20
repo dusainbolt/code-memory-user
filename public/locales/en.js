@@ -1,6 +1,9 @@
 export default {
   common: {
     txt_close: "undefined",
+    txt_tooltip_contact: "undefined",
+    txt_tooltip_connect: "undefined",
+    txt_tooltip_access: "undefined",
     txt_view_next: "undefined"
   },
   menu: {
@@ -41,6 +44,23 @@ export default {
     title_head: "ENG - CodeMemory - Điểm đến của sự chia sẻ, học hỏi, trao đổi trong lĩnh vực lập trình",
     title_service: "undefined",
     txt_description_banner_3: "undefined"
+  },
+  footer: {
+    txt_contact: "undefined",
+    text_connect: "undefined",
+    txt_platform: "undefined",
+    txt_description_logo: "undefined",
+    txt_phone_number: "undefined",
+    txt_gmail: "undefined",
+    txt_address: "undefined",
+    phone_number: "undefined",
+    gmail_support: "codememory.hotro@gmail.com",
+    address: "219 Trung Kính, Cầu Giấy, Hà Nội",
+    url_skype: "https://join.skype.com/invite/kP2kfn0Wu06U",
+    url_twitter: "https://join.skype.com/invite/kP2kfn0Wu06U",
+    url_youtube: "https://www.youtube.com/channel/UCUPwDA86_PRWPDYvvOlj8IQ",
+    url_fanpage: "https://www.facebook.com/sainboltapp",
+    url_profile: "https://www.facebook.com/dusainbolt/"
   },
   lang: {
     vn: "undefined",

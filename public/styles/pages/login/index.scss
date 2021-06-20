@@ -1,0 +1,26 @@
+.login {
+    &__page {
+        @include _flex_box;
+        min-height: 100vh;
+        background-position: 0px -35vh;
+        background-repeat: no-repeat;
+        background-image: -webkit-radial-gradient(50% 50%, 50% 50%, rgba(232, 57, 14, 0.23) 0%, rgba(232, 57, 14, 0) 74.48%);
+        background-image: radial-gradient(50% 50% at 50% 50%, rgba(232, 57, 14, 0.23) 0%, rgba(232, 57, 14, 0) 74.48%);
+    }
+    &__card {
+        max-width: 550px;
+        width: 100%;
+        box-shadow: 0px 32px 64px -24px rgba(51, 54, 60, 0.15);
+        border-radius: 20px;
+        border: none;
+        .ant-card-body {
+            padding: 40px;
+        }
+    }
+    &__logo-wrap {
+    }
+    &__content {
+        max-width: 400px;
+        margin: auto;
+    }
+}

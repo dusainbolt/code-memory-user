@@ -1,15 +1,18 @@
 import { gql } from '@apollo/client';
-import client from "./apollo-connect";
+import { initializeApollo } from './apollo-connect';
+// import client from './apollo-connect';
+
+const client = initializeApollo();
 
 export const getDataUsers = async () => {
-    return await client.query({
+    return client.query({
         query: gql`
             query users {
                 users {
-                    id,
-                    username,
+                    id
+                    username
                 }
             }
         `,
     });
-}
+};

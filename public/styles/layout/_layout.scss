@@ -40,310 +40,63 @@
 @include _responsive(_xs) {
 }
 
-// .row {
-//     display: flex;
-//     display: -webkit-flex; /* Safari */
-//     flex-wrap: wrap;
-//     &::after {
-//         content: '';
-//         clear: both;
-//         display: table;
-//     }
-//     &.container {
-//         padding: 0;
-//     }
-// }
+@for $i from 0 through 32 {
+    @if ($i % 2) == 0 {
+        .mt-#{$i} {
+            margin-top: #{$i}px !important;
+        }
+        .mr-#{$i} {
+            margin-right: #{$i}px !important;
+        }
+        .mb-#{$i} {
+            margin-bottom: #{$i}px !important;
+        }
+        .ml-#{$i} {
+            margin-left: #{$i}px !important;
+        }
+        .pt-#{$i} {
+            padding-top: #{$i}px !important;
+        }
+        .pr-#{$i} {
+            padding-right: #{$i}px !important;
+        }
+        .pb-#{$i} {
+            padding-bottom: #{$i}px !important;
+        }
+        .pl-#{$i} {
+            padding-left: #{$i}px !important;
+        }
+        .m-tb-#{$i} {
+            margin-top: #{$i}px !important;
+            margin-bottom: #{$i}px !important;
+        }
+        .m-lr-#{$i} {
+            margin-left: #{$i}px !important;
+            margin-right: #{$i}px !important;
+        }
+        .m-#{$i} {
+            margin: #{$i}px !important;
+        }
+        .p-tb-#{$i} {
+            padding-top: #{$i}px !important;
+            padding-bottom: #{$i}px !important;
+        }
+        .p-lr-#{$i} {
+            padding-left: #{$i}px !important;
+            padding-right: #{$i}px !important;
+        }
+        .p-#{$i} {
+            padding: #{$i}px !important;
+        }
+    }
+}
 
-// [class*='col-'] {
-//     float: left;
-//     padding: 20px;
-// }
+.txt-center {
+    text-align: center;
+}
 
-// $fontWeight: (
-//     thin: 100,
-//     light: 300,
-//     regular: 400,
-//     medium: 500,
-//     medium-xl: 600,
-//     bold: 700,
-//     bold-lg: 900,
-// );
-
-// $borderRadius: (
-//     4: 4,
-//     6: 6,
-//     8: 8,
-//     10: 10,
-//     15: 15,
-//     20: 20,
-//     30: 30,
-//     50: 50,
-//     60: 60,
-// );
-
-// $gridConfig: (
-//     1: 8.33%,
-//     2: 16.66%,
-//     3: 25%,
-//     4: 33.33%,
-//     5: 41.66%,
-//     6: 50%,
-//     7: 58.33%,
-//     8: 66.66%,
-//     9: 75%,
-//     10: 83.33%,
-//     11: 91.66%,
-//     12: 100%,
-// );
-
-// @each $name, $size in $fontWeight {
-//     .f-#{$name} {
-//         font-weight: $size;
-//         &.i {
-//             font-style: italic;
-//         }
-//     }
-// }
-
-// @each $name, $size in $borderRadius {
-//     .br-#{$name} {
-//         border-radius: #{$size}px;
-//     }
-// }
-
-// @for $i from 0 through 10 {
-//     .op-#{$i} {
-//         opacity: 0.1 * $i;
-//     }
-// }
-
-// @for $i from 0 through 1000 {
-//     @if $i <= 100 {
-//         .a-d-#{$i} {
-//             animation-delay: $i/100*10s !important;
-//         }
-//     }
-//     @if ($i % 2) == 0 {
-//         @if $i <= 100 {
-//             .mhp-#{$i} {
-//                 min-height: $i/100*100%;
-//             }
-//         }
-//         .t-#{$i} {
-//             top: #{$i}px;
-//         }
-//         .b-#{$i} {
-//             bottom: #{$i}px;
-//         }
-//         .l-#{$i} {
-//             left: #{$i}px;
-//         }
-//         .r-#{$i} {
-//             right: #{$i}px;
-//         }
-//         .mt-#{$i} {
-//             margin-top: #{$i}px;
-//         }
-//         .mr-#{$i} {
-//             margin-right: #{$i}px;
-//         }
-//         .mb-#{$i} {
-//             margin-bottom: #{$i}px;
-//         }
-//         .ml-#{$i} {
-//             margin-left: #{$i}px;
-//         }
-//         .pt-#{$i} {
-//             padding-top: #{$i}px;
-//         }
-//         .pr-#{$i} {
-//             padding-right: #{$i}px;
-//         }
-//         .pb-#{$i} {
-//             padding-bottom: #{$i}px;
-//         }
-//         .pl-#{$i} {
-//             padding-left: #{$i}px;
-//         }
-//         .w-#{$i} {
-//             width: #{$i}px;
-//         }
-//         .h-#{$i} {
-//             min-height: #{$i}px;
-//         }
-//         .mi-w-#{$i} {
-//             min-width: #{$i}px;
-//         }
-//         .ma-w-#{$i} {
-//             max-width: #{$i}px;
-//         }
-//         .m-tb-#{$i} {
-//             margin-top: #{$i}px;
-//             margin-bottom: #{$i}px;
-//         }
-//         .m-lr-#{$i} {
-//             margin-left: #{$i}px;
-//             margin-right: #{$i}px;
-//         }
-//         .m-#{$i} {
-//             margin: #{$i}px;
-//         }
-//         .p-tb-#{$i} {
-//             padding-top: #{$i}px;
-//             padding-bottom: #{$i}px;
-//         }
-//         .p-lr-#{$i} {
-//             padding-left: #{$i}px;
-//             padding-right: #{$i}px;
-//         }
-//         .p-#{$i} {
-//             padding: #{$i}px;
-//         }
-//         .f-sz-#{$i} {
-//             font-size: #{$i}px;
-//         }
-//         .lh-#{$i} {
-//             line-height: #{$i}px;
-//         }
-//     }
-// }
-
-// .flb {
-//     @include _flex_box(center);
-//     &-col {
-//         flex-direction: column;
-//     }
-//     &-jt-start {
-//         justify-content: flex-start;
-//     }
-//     &-jt-center {
-//         justify-content: center;
-//     }
-//     &-jt-space {
-//         justify-content: space-between;
-//     }
-//     &-al-start {
-//         align-items: start;
-//     }
-// }
-
-// .hv {
-//     cursor: pointer;
-//     &:hover {
-//         opacity: 0.7;
-//     }
-// }
-
-// .hl-b {
-//     color: #ff9a14;
-// }
-
-// .cir {
-//     border-radius: 50%;
-// }
-
-// .full-w {
-//     width: 100%;
-//     max-width: 100%;
-// }
-
-// .l-sp-1 {
-//     letter-spacing: 1px;
-// }
-
-// .color {
-//     &-white {
-//         color: var(--color-background-main);
-//     }
-//     &-black {
-//         color: var(--color-text-main);
-//     }
-//     &-primary {
-//         color: var(--color-primary);
-//     }
-// }
-
-// .bg {
-//     &-white {
-//         background: var(--color-background-main);
-//     }
-//     &-black {
-//         background: var(--color-text-main);
-//     }
-//     &primary {
-//         background: var(--color-primary);
-//     }
-// }
-
-// @each $col, $width in $gridConfig {
-//     .col-#{$col} {
-//         width: #{$width};
-//     }
-// }
-
-// .app-divider {
-//     opacity: 0;
-// }
-
-// .hide {
-//     display: none;
-// }
-
-// .show {
-//     opacity: 1;
-// }
-
-// .text-center {
-//     text-align: center;
-// }
-
-// .al-center {
-//     text-align: center;
-// }
-
-// .al-left {
-//     text-align: left;
-// }
-
-// .al-right {
-//     text-align: right;
-// }
-
-// .fade {
-//     opacity: 0;
-//     &-left {
-//         animation: 1.3s ease-in-out forwards running fadeInLeftComponent;
-//     }
-//     &-right {
-//         animation: 1.3s ease-in-out forwards running fadeInRightComponent;
-//     }
-//     &-down {
-//         animation: 1.3s ease-in-out forwards running fadeInDownComponent;
-//     }
-//     &-in {
-//         animation: 1.3s ease-in-out forwards running fadeIn;
-//     }
-// }
-
-// .img-app-wrap {
-//     &.center {
-//         display: flex;
-//         justify-content: center;
-//     }
-// }
-
-// .italic {
-//     font-style: italic;
-// }
-
-// .fxd {
-//     position: fixed;
-// }
-
-// .abs {
-//     position: absolute;
-// }
-
-// .rel {
-//     position: absolute;
-// }
+.center-block {
+    width: max-content;
+    margin: auto;
+    display: block;
+}

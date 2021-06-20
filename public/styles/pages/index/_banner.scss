@@ -1,21 +1,16 @@
 .home-banner {
     width: 100%;
-    margin-top: 30px;
     margin-bottom: 70px;
     &--wrap-info {
         @include _flex_box();
         flex-direction: column;
     }
     &--title.ant-typography {
-        font-size: $base-fontSize + 44;
+        font-size: $font_size_base + 44;
     }
-    &--description {
-        color: var(--color-text-main-05);
-        font-weight: $font-medium;
-        font-size: $base-fontSize + 2;
-        margin-top: 20px;
+    &--description.ant-typography {
         .high-light {
-            font-size: $base-fontSize + 2;
+            font-size: $font_size_base + 2;
         }
     }
     &--img-content-banner {
@@ -33,7 +28,7 @@
         }
         .svg-inline--fa {
             margin-right: 6px;
-            width: $base-fontSize;
+            width: $font_size_base;
         }
     }
     &--button-next-view-tooltip .ant-tooltip-inner a {
@@ -51,8 +46,8 @@
         &--description {
             text-align: center;
         }
-        &--title {
-            font-size: $base-fontSize + 32;
+        &--title.ant-typography {
+            font-size: $font_size_base + 32;
         }
         &--button-link {
             margin: auto;

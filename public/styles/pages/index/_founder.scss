@@ -1,27 +1,21 @@
 .home-founder {
     &--wrap {
-        padding: 30px 20px;
         box-shadow: var(--box-shadow-card-primary);
         border-radius: $border-radius-large;
         margin-bottom: 70px;
         @include _imageStyle(520px);
         h4.ant-typography {
-            font-size: $base-fontSize + 16;
+            font-size: $font_size_base + 16;
         }
     }
     &--name.ant-typography {
-        font-size: $base-fontSize + 4;
+        font-size: $font_size_base + 4;
         font-weight: $font-medium;
         margin-bottom: 0;
     }
     &--mission.ant-typography {
         margin-top: 0;
-        font-size: $base-fontSize - 2;
-    }
-    &--letter.ant-typography {
-        margin-top: 30px;
-        font-size: $base-fontSize + 2;
-        font-style: italic;
+        font-size: $font_size_base - 2;
     }
     &--content {
         @include _imageStyle(200px);

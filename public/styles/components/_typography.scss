@@ -17,4 +17,54 @@ div {
         font-weight: $font-bold;
         color: var(--color-high-light);
     }
+    &.italic {
+        font-style: italic;
+    }
+}
+
+// typography title bold
+.title.ant-typography {
+    font-size: $font_size_base + 28;
+    font-weight: $font-bold;
+}
+
+.title-1.ant-typography {
+    font-size: $font_size_base + 12;
+    font-weight: $font-bold;
+}
+
+.title-2.ant-typography {
+    font-size: $font_size_base + 2;
+    font-weight: $font-bold;
+}
+
+.title-3.ant-typography {
+    font-size: $font_size_base + 4;
+    font-weight: $font-bold;
+}
+// typography description normal
+.txt-dec-1.ant-typography {
+    font-weight: $font-regular;
+    font-size: $font_size_base + 4;
+}
+
+// typography description light
+.txt-dec-light.ant-typography {
+    font-weight: $font-light;
+    font-size: $font_size_base - 2;
+}
+
+.txt-dec-light-1.ant-typography {
+    @extend .txt-dec-light;
+    font-size: $font_size_base + 2;
+}
+
+.txt-action {
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+    }
+    &.high-light:hover {
+        color: var(--color-high-light);
+    }
 }
