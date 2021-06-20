@@ -6,7 +6,7 @@ import * as actionTypes from '../actionsTypes/seoHomeActionTypes';
 
 function* onGetSeoHome() {
     try {
-        yield put(getSeoHomeRequest());
+        // yield put(getSeoHomeRequest());
         // const { data } = yield call(fetchLyrics, artist, song);
         // yield put(actionCreators.getLyricsSuccess(data.lyrics));
     } catch (error) {

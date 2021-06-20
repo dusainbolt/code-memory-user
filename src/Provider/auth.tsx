@@ -1,5 +1,5 @@
 // Import for this provider
-import React, { useState, useContext, createContext, Context } from 'react';
+import React, { useState, useContext, createContext, Context, useEffect } from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import getConfig from 'next/config';
 
@@ -11,7 +11,7 @@ const {
 interface IAuthProvider {
     children: any;
 }
-interface UseProvideAuth {
+export interface UseProvideAuth {
     setAuthentication: (token: string) => void;
     isSignedIn: () => boolean;
     createApolloClient: () => any;
@@ -23,7 +23,7 @@ export const KEY_TOKEN = 'secret';
 export const AuthContext: Context<any> = createContext(null);
 
 export function AuthProvider({ children }: IAuthProvider): any {
-    const auth = useProvideAuth();
+    const auth: UseProvideAuth = useProvideAuth();
 
     return (
         <AuthContext.Provider value={auth}>
@@ -38,7 +38,7 @@ export const useAuth = () => {
 
 export function useProvideAuth(): UseProvideAuth {
     const [authToken, setAuthToken] = useState<string>(null);
-
+    // const [user, setUser] = useState<any>(null);
     const isSignedIn = () => {
         if (authToken) {
             return true;
@@ -46,6 +46,13 @@ export function useProvideAuth(): UseProvideAuth {
             return false;
         }
     };
+
+    useEffect(() => {
+        if (typeof window !== undefined) {
+            const token = localStorage.getItem(KEY_TOKEN);
+            setAuthToken(token);
+        }
+    }, []);
 
     const getAuthHeaders = () => {
         if (!authToken) return null;
@@ -71,30 +78,6 @@ export function useProvideAuth(): UseProvideAuth {
         setAuthToken(token);
         localStorage.setItem(KEY_TOKEN, token);
     };
-
-    // const signIn = async ({ credential, password }: LoginInput) => {
-    //     const client = createApolloClient();
-    //     const LoginMutation = gql`
-    //         mutation signin($credential: String!, $password: String!) {
-    //             login(credential: $credential, password: $password) {
-    //                 token
-    //             }
-    //         }
-    //     `;
-
-    //     const result = await client.mutate({
-    //         mutation: LoginMutation,
-    //         variables: { credential, password },
-    //     });
-
-    //     if (result?.data?.login?.token) {
-    //         setAuthToken(result.data.login.token);
-    //     }
-    // };
-
-    // const signOut = () => {
-    //     setAuthToken(null);
-    // };
 
     return {
         isSignedIn,

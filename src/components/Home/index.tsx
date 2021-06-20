@@ -9,6 +9,7 @@ import NewsWrap from './NewsWrap';
 // import { _RootState } from '@Redux/reducer/_rootReducer';
 import HomeBanner from './Banner';
 import { pluginChat } from '@Utils/func';
+// import { memo } from 'react';
 // interface _homePageProps {
 //     t: object;
 //     listBlogs: [];
@@ -29,7 +30,6 @@ const HomePageComponent: React.FC<any> = () => {
 
     // useEffect(() => {}, []);
     // console.log('render home-page => ', count, _locale);
-
     return (
         <main>
             <HomeBanner />

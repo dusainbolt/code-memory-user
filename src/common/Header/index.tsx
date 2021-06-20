@@ -3,13 +3,14 @@ import { Box } from '@Common/Layout';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faBars, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { staticPath } from '@Utils/func';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Drawer } from 'antd';
 import AntImage from '@Common/Image';
 import MenuHeader from './MenuHeader';
 import Link from 'next/link';
+import { AuthContext, UseProvideAuth } from 'src/Provider/auth';
 
 // interface _Header {}
 
@@ -17,6 +18,8 @@ const Header: React.FC<any> = ({}) => {
     const { t } = useTranslation();
     const [scrollTop, setScrollTop] = useState<number>(0);
     const [visibleDraw, setVisibleDraw] = useState<boolean>(false);
+    // const authContext: UseProvideAuth = useContext(AuthContext);
+    // console.log(authContext.isSignedIn());
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
         setTimeout(() => {

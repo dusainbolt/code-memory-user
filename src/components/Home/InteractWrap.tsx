@@ -8,7 +8,6 @@ import { Col, Row, Space, Typography } from 'antd';
 
 const InteractWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
-
     const DATA_INTERACTIVE_INTRODUCE = [
         {
             title: t('home.txt_title_share'),
