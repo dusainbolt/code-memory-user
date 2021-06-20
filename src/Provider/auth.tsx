@@ -1,10 +1,24 @@
+// Import for this provider
 import React, { useState, useContext, createContext, Context } from 'react';
-import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink, gql } from '@apollo/client';
-import { LoginInput } from '@Components/Login/LoginForm';
+import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import getConfig from 'next/config';
 
+const {
+    serverRuntimeConfig: { APOLLO_SERVER_URL },
+} = getConfig();
+
+// define interface
 interface IAuthProvider {
     children: any;
 }
+interface UseProvideAuth {
+    setAuthentication: (token: string) => void;
+    isSignedIn: () => boolean;
+    createApolloClient: () => any;
+}
+
+// define hooks
+export const KEY_TOKEN = 'secret';
 
 export const AuthContext: Context<any> = createContext(null);
 
@@ -22,7 +36,7 @@ export const useAuth = () => {
     return useContext(AuthContext);
 };
 
-function useProvideAuth() {
+export function useProvideAuth(): UseProvideAuth {
     const [authToken, setAuthToken] = useState<string>(null);
 
     const isSignedIn = () => {
@@ -43,7 +57,7 @@ function useProvideAuth() {
 
     const createApolloClient = () => {
         const link = new HttpLink({
-            uri: 'http://localhost:4001/graphql',
+            uri: `${APOLLO_SERVER_URL}/graphql`,
             headers: getAuthHeaders(),
         });
 
@@ -53,35 +67,38 @@ function useProvideAuth() {
         });
     };
 
-    const signIn = async ({ credential, password }: LoginInput) => {
-        const client = createApolloClient();
-        const LoginMutation = gql`
-            mutation signin($credential: String!, $password: String!) {
-                login(credential: $credential, password: $password) {
-                    token
-                }
-            }
-        `;
-
-        const result = await client.mutate({
-            mutation: LoginMutation,
-            variables: { credential, password },
-        });
-
-        if (result?.data?.login?.token) {
-            setAuthToken(result.data.login.token);
-        }
+    const setAuthentication = token => {
+        setAuthToken(token);
+        localStorage.setItem(KEY_TOKEN, token);
     };
 
-    const signOut = () => {
-        setAuthToken(null);
-    };
+    // const signIn = async ({ credential, password }: LoginInput) => {
+    //     const client = createApolloClient();
+    //     const LoginMutation = gql`
+    //         mutation signin($credential: String!, $password: String!) {
+    //             login(credential: $credential, password: $password) {
+    //                 token
+    //             }
+    //         }
+    //     `;
+
+    //     const result = await client.mutate({
+    //         mutation: LoginMutation,
+    //         variables: { credential, password },
+    //     });
+
+    //     if (result?.data?.login?.token) {
+    //         setAuthToken(result.data.login.token);
+    //     }
+    // };
+
+    // const signOut = () => {
+    //     setAuthToken(null);
+    // };
 
     return {
-        setAuthToken,
         isSignedIn,
-        signIn,
-        signOut,
+        setAuthentication,
         createApolloClient,
     };
 }

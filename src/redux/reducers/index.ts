@@ -1,10 +1,11 @@
 import { isLoadingReducer } from './loadingReducer';
+import { seoHomeReducer } from './seoHomeReducer';
 import { AnyAction, combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 
-const reducers = combineReducers({ isLoadingReducer });
+const reducers = combineReducers({ isLoadingReducer, seoHomeReducer });
 
-const rootReducer = (state: IRootState, action: AnyAction) => {
+const rootReducer = (state: IRootState, action: AnyAction): IRootState => {
     /**
      * @description We are using Next-Redux-Wrapper and Saga
      * so, server will execute the dispatch in server, after dispatch new state will be passed to

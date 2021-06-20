@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client';
-import { initializeApollo } from './apollo-connect';
+import { useProvideAuth } from 'src/Provider/auth';
 
-const client = initializeApollo();
+// const client = initializeApollo();
+const client = useProvideAuth().createApolloClient();
 
-export const getSeoHome = async () => {
-    return await client.query({
+export const getSeoHomeRequest = () => {
+    return client.query({
         query: gql`
             {
                 seoHome {
