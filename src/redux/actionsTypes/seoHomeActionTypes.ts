@@ -10,7 +10,7 @@ export interface GetSeoHomeAction {
 export const GET_SEO_HOME_SUCCESS = `${SEO_HOME_ACTION_TYPES}/GET_SEO_HOME_SUCCESS`;
 export interface GetSeoHomeSuccessAction {
     type: typeof GET_SEO_HOME_SUCCESS;
-    data: SeoHome;
+    payload: SeoHome;
 }
 
 export type SeoHomeAction = GetSeoHomeSuccessAction | GetSeoHomeAction;

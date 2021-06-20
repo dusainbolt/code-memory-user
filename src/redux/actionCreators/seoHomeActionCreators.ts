@@ -1,7 +1,11 @@
-import { GetSeoHomeAction, GET_SEO_HOME } from '@Redux/actionsTypes/seoHomeActionTypes';
+import { SeoHome } from '@Common/Meta';
+import { GetSeoHomeAction, GetSeoHomeSuccessAction, GET_SEO_HOME, GET_SEO_HOME_SUCCESS } from '@Redux/actionsTypes/seoHomeActionTypes';
 
-export const getSeoHome = (): GetSeoHomeAction => {
-    return {
-        type: GET_SEO_HOME,
-    };
-};
+export const getSeoHome = (): GetSeoHomeAction => ({
+    type: GET_SEO_HOME,
+});
+
+export const getSeoHomeSuccess = (payload: SeoHome): GetSeoHomeSuccessAction => ({
+    type: GET_SEO_HOME_SUCCESS,
+    payload,
+});

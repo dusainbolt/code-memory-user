@@ -1,3 +1,5 @@
+import { SeoHome } from '@Common/Meta';
+import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
 import { getSeoHomeRequest } from '@Services/seoHomeRequest';
 import { put, call, takeEvery, all, fork } from 'redux-saga/effects';
 
@@ -6,7 +8,8 @@ import * as actionTypes from '../actionsTypes/seoHomeActionTypes';
 
 function* onGetSeoHome() {
     try {
-        // yield put(getSeoHomeRequest());
+        const seoHome: SeoHome = yield getSeoHomeRequest();
+        yield put(getSeoHomeSuccess(seoHome));
         // const { data } = yield call(fetchLyrics, artist, song);
         // yield put(actionCreators.getLyricsSuccess(data.lyrics));
     } catch (error) {

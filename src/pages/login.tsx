@@ -1,4 +1,4 @@
-import { FC, Fragment, useContext, useEffect } from 'react';
+import { FC, Fragment } from 'react';
 import Meta, { SeoHome } from '@Common/Meta';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
@@ -8,10 +8,9 @@ import 'swiper/swiper.min.css';
 import { GetStaticProps } from 'next';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { LoginComponent } from '@Components/Login';
-import { AuthContext, UseProvideAuth } from 'src/Provider/auth';
-import router, { useRouter } from 'next/router';
-import { useAppDispatch, useAppSelector } from '@Redux/store';
-import { setVisibleLoadingAuth } from '@Redux/actionCreators/loadingActionCreators';
+import { useAppSelector, wrapper } from '@Redux/store';
+import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
+import { END } from 'redux-saga';
 
 interface IIndexPage {
     seoHome: SeoHome;
@@ -19,6 +18,8 @@ interface IIndexPage {
 
 const IndexPage: FC<IIndexPage> = props => {
     const { t } = useTranslation();
+    const seoHome = useAppSelector(store => store.seoHomeReducer);
+
     // const router = useRouter();
     // const authContext: UseProvideAuth = useContext(AuthContext);
     // const dispatch = useAppDispatch();
@@ -37,7 +38,7 @@ const IndexPage: FC<IIndexPage> = props => {
     return (
         <Fragment>
             {/* {!loadingAuth && <div className="loading__auth">123123123213213</div>} */}
-            {/* <Meta title={t('login.title_meta')} seoHome={props.seoHome} /> */}
+            <Meta title={t('login.title_meta')} seoHome={seoHome} />
             <Header />
             <LoginComponent />
             <Footer />
@@ -47,12 +48,9 @@ const IndexPage: FC<IIndexPage> = props => {
 
 export default IndexPage;
 
-// export const getStaticProps: GetStaticProps = async () => {
-//     const { data: seoHome } = await getSeoHome();
-//     return {
-//         props: { ...seoHome }, // will be passed to the page component as props
-//         // Re-generate the post at most once per second
-//         // if a request comes in
-//         revalidate: 1800,
-//     };
-// };
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
+    store.dispatch(getSeoHome());
+    store.dispatch(END);
+    await store.sagaTask.toPromise();
+    return { props: {} };
+});

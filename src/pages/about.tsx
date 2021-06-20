@@ -2,17 +2,21 @@ import { Fragment } from 'react';
 import Meta, { SeoHome } from '@Common/Meta';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
-import { getSeoHome } from '@Services/seo-home-request';
 import { GetStaticProps } from 'next';
+import { useAppSelector, wrapper } from '@Redux/store';
+import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
+import { END } from 'redux-saga';
 
 export interface IAboutPage {
     seoHome: SeoHome;
 }
 
 const AboutPage: React.FC<IAboutPage> = props => {
+    const seoHome = useAppSelector(store => store.seoHomeReducer);
+
     return (
         <Fragment>
-            <Meta seoHome={props.seoHome} />
+            <Meta seoHome={seoHome} />
             <Header />
             <Footer />
         </Fragment>
@@ -21,9 +25,9 @@ const AboutPage: React.FC<IAboutPage> = props => {
 
 export default AboutPage;
 
-export const getStaticProps: GetStaticProps = async () => {
-    const { data: seoHome } = await getSeoHome();
-    return {
-        props: { ...seoHome }, // will be passed to the page component as props
-    };
-};
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
+    store.dispatch(getSeoHome());
+    store.dispatch(END);
+    await store.sagaTask.toPromise();
+    return { props: {} };
+});
