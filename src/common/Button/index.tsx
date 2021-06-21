@@ -12,6 +12,7 @@ export interface _ButtonCommon extends BaseButtonProps {
     fontAWS?: IconProp;
     placement?: TooltipPlacement;
     href?: string;
+    onClick?: any;
 }
 
 const ButtonCommon: React.FC<_ButtonCommon> = ({ children, shape, type, className, placement = 'bottom', fontAWS, icon, titleTooltip, ...props }) => {

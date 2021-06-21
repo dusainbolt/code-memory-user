@@ -61,7 +61,7 @@ export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
                             component={InputComponent}
                         />
                     </Box>
-                    <ButtonCommon onClick={submitLogin} type="primary" shape="round">
+                    <ButtonCommon onClick={handleSubmit} type="primary" shape="round">
                         {t('home.txt_btn_login')}
                     </ButtonCommon>
                 </Box>
