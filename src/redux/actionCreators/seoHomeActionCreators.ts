@@ -5,7 +5,7 @@ export const getSeoHome = (): GetSeoHomeAction => ({
     type: GET_SEO_HOME,
 });
 
-export const getSeoHomeSuccess = (payload: SeoHome): GetSeoHomeSuccessAction => ({
+export const getSeoHomeSuccess = (seoHomePayload: SeoHome): GetSeoHomeSuccessAction => ({
     type: GET_SEO_HOME_SUCCESS,
-    payload,
+    seoHomePayload,
 });

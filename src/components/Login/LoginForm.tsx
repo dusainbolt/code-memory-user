@@ -6,6 +6,7 @@ import ButtonCommon from '@Common/Button';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import GoogleLogin from 'react-google-login';
 import getConfig from 'next/config';
+import * as Yup from 'yup';
 
 export interface LoginInput {
     credential: string;
@@ -13,7 +14,7 @@ export interface LoginInput {
 }
 
 interface ILoginForm {
-    submitLogin: (values: LoginInput) => void | Promise<any>;
+    submitLogin?: any;
 }
 
 const {
@@ -23,35 +24,46 @@ const {
 export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
     const { t } = useTranslation();
     const initialValues: LoginInput = { credential: '', password: '' };
+    const validateLoginInput = Yup.object({
+        credential: Yup.string().required(t('txt.msg_required_unique_login')),
+        password: Yup.string().required(t('txt.msg_required', { name: t('txt.val_password') })),
+    });
 
     const responseGoogle = response => {
         console.log(response);
     };
-    console.log(GOOGLE_CLIENT_ID);
+
+    // const onSubmitInit = (values?: LoginInput) => {
+    //     return values;
+    // };
+
     return (
-        <Formik initialValues={initialValues} onSubmit={submitLogin}>
+        <Formik initialValues={initialValues} onSubmit={submitLogin} validationSchema={validateLoginInput}>
             {({ handleSubmit }) => (
                 <Box className="login__form mt-30">
-                    <GoogleLogin
-                        clientId={GOOGLE_CLIENT_ID}
-                        buttonText="Login"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        // cookiePolicy={'single_host_origin'}
-                    />
+                    <GoogleLogin clientId={GOOGLE_CLIENT_ID} buttonText="Login" onSuccess={responseGoogle} onFailure={responseGoogle} />
                     <Box className="form__row">
-                        <Field name="credential" label={t('login.credential')} placeholder={t('login.place_credential')} component={InputComponent} />
+                        <Field
+                            name="credential"
+                            onPressEnter={handleSubmit}
+                            label={t('login.credential')}
+                            placeholder={t('login.place_credential')}
+                            component={InputComponent}
+                        />
                     </Box>
                     <Box className="form__row">
                         <Field
                             name="password"
                             passwordMode
+                            onPressEnter={handleSubmit}
                             label={t('login.password')}
                             placeholder={t('login.password')}
                             component={InputComponent}
                         />
                     </Box>
-                    <ButtonCommon>{t('common')}</ButtonCommon>
+                    <ButtonCommon onClick={submitLogin} type="primary" shape="round">
+                        {t('home.txt_btn_login')}
+                    </ButtonCommon>
                 </Box>
             )}
         </Formik>

@@ -7,7 +7,7 @@ export const GET_SEO_HOME = `${SEO_HOME_ACTION_TYPES}/GET_SEO_HOME_REQUEST`;
 export const GET_SEO_HOME_SUCCESS = `${SEO_HOME_ACTION_TYPES}/GET_SEO_HOME_SUCCESS`;
 export interface GetSeoHomeSuccessAction {
     type: typeof GET_SEO_HOME_SUCCESS;
-    payload: SeoHome;
+    seoHomePayload: SeoHome;
 }
 
 export interface GetSeoHomeAction {
@@ -16,5 +16,5 @@ export interface GetSeoHomeAction {
 
 export type SeoHomeAction = {
     type: string;
-    payload: SeoHome;
+    seoHomePayload: SeoHome;
 };

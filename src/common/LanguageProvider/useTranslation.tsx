@@ -32,12 +32,18 @@ export default function useTranslation(): IUseTranslation {
     function t(key: string, params: any = {}) {
         const keys = key.split('.');
         if (!keys[0] || !keys[1]) {
-            return '';
+            return undefined;
+        }
+
+        const groups = LangStrings[locale][keys[0]];
+        if (!groups) {
+            return undefined;
         }
         if (!LangStrings[locale]?.menu?.txt_home || !LangStrings[_defaultLocale]?.menu?.txt_home) {
             console.warn(`No string '${keys[0]}.${keys[1]}' for locale '${locale}'`);
             return `${keys[0]}.${keys[1]}`;
         }
+
         const value = LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || '';
         if (!isEmptyObj(params)) {
             return _tValue(value, params);
