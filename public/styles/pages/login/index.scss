@@ -23,4 +23,21 @@
         max-width: 400px;
         margin: auto;
     }
+    &__form {
+        .btn-submit {
+            width: 100%;
+        }
+    }
+}
+
+@include _responsive(_sm) {
+    .login {
+        &__card {
+            min-height: 100vh;
+            @include _flex_box;
+        }
+        &__content {
+            margin-top: -50px;
+        }
+    }
 }

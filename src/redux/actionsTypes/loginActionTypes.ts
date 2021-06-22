@@ -2,7 +2,7 @@ import { LoginInput } from '@Components/Login/LoginForm';
 
 export const LOGIN_ACTION_TYPES = 'loginActionTypes';
 
-export const POST_LOGIN = `${LOGIN_ACTION_TYPES}/POST_LOGIN`;
+export const POST_LOGIN = `${LOGIN_ACTION_TYPES}/POST_LOGIN_REQUESTING`;
 export interface postLoginAction {
     type: typeof POST_LOGIN;
     loginInput: LoginInput;

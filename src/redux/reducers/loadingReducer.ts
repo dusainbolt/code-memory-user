@@ -5,13 +5,13 @@ export interface IsLoadingState {
 
 const getLoadingMatches = (actionType: string) => /(.*)_(REQUEST|SUCCESS|ERROR)/.exec(actionType);
 
-export const isLoadingReducer = (state: IsLoadingState = {}, action: actions.LoadingAction) => {
+export const isLoadingReducer = (state: IsLoadingState = {}, action: actions.LoadingAction): IsLoadingState => {
     switch (action.type) {
-        case actions.SET_VISIBLE_LOADING_AUTH:
-            return {
-                ...state,
-                loadingAuth: action.visible,
-            };
+        // case actions.SET_VISIBLE_LOADING_AUTH:
+        //     return {
+        //         ...state,
+        //         loadingAuth: action.visible,
+        //     };
         default:
             const matches = getLoadingMatches(action.type);
             if (!matches) {
@@ -21,7 +21,7 @@ export const isLoadingReducer = (state: IsLoadingState = {}, action: actions.Loa
             const [, requestName, requestStatus] = matches;
             return {
                 ...state,
-                [requestName]: requestStatus === 'REQUEST',
+                [`${requestName}_REQUESTING`]: requestStatus === 'REQUEST',
             };
     }
 };

@@ -82,5 +82,8 @@ export default {
     password: "Mật khẩu",
     place_credential: "nhập username hoặc email",
     place_password: "nhập mật khẩu"
+  },
+  message: {
+    MSG_1: "{{fieldName}} không được để trống"
   }
 }

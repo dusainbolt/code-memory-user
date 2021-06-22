@@ -13,7 +13,7 @@
         margin-right: 8px;
     }
     &.ant-input {
-        color: var(--color-primary) !important;
+        // color: var(--color-primary) !important;
         font-weight: 500;
         font-size: $font_size_base - 2;
         line-height: 21px;
@@ -38,6 +38,10 @@ input::placeholder {
         font-size: $font_size_base - 2;
         line-height: 21px;
         margin-bottom: 4px;
+    }
+    .required {
+        color: red;
+        font-size: $font_size_base - 4;
     }
 }
 

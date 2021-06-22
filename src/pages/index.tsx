@@ -15,7 +15,7 @@ import 'swiper/swiper.min.css';
 // }
 
 const IndexPage: FC<any> = props => {
-    const seoHome = useAppSelector(store => store.seoHomeReducer);
+    const seoHome = useAppSelector(store => store.isLoadingReducer);
     return (
         <Fragment>
             <Meta seoHome={seoHome} />

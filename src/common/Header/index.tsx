@@ -39,22 +39,20 @@ const Header: React.FC<any> = ({}) => {
     const menuHeaderCommon = (
         <Box className="header--menu-wrap">
             <MenuHeader />
-            <a href="/login">
-                <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
-                    {t('home.txt_btn_login')}
-                </ButtonCommon>
-            </a>
+            <ButtonCommon href="/login" type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
+                {t('home.txt_btn_login')}
+            </ButtonCommon>
         </Box>
     );
 
     return (
         <header className={clsx('header--wrapper', scrollTop > 500 && 'scrolling')}>
             <Box className="container header--container">
-                <Link href="/">
-                    <Box className="header--logo">
+                <Box className="header--logo">
+                    <a href="/">
                         <AntImage width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.webp')} />
-                    </Box>
-                </Link>
+                    </a>
+                </Box>
                 {menuHeaderCommon}
                 <FontAwesomeIcon onClick={onToggleDraw} className="header--menu-icon" icon={faBars} />
                 <Drawer
