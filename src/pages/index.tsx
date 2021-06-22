@@ -2,7 +2,7 @@ import { FC, Fragment } from 'react';
 import HomePageComponent from '@Components/Home';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
-import Meta, { SeoHome } from '@Common/Meta';
+import Meta from '@Common/Meta';
 import { GetStaticProps } from 'next';
 import { useAppSelector, wrapper } from '@Redux/store';
 import { END } from 'redux-saga';
@@ -15,7 +15,7 @@ import 'swiper/swiper.min.css';
 // }
 
 const IndexPage: FC<any> = props => {
-    const seoHome = useAppSelector(store => store.isLoadingReducer);
+    const seoHome = useAppSelector(store => store.seoHomeReducer);
     return (
         <Fragment>
             <Meta seoHome={seoHome} />

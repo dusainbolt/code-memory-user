@@ -11,6 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 
 const {
     serverRuntimeConfig: { APOLLO_SERVER_URL },
+    publicRuntimeConfig: {CLIENT_APOLLO_SERVER_URL}
 } = getConfig();
 
 export const APOLLO_STATE_PROPERTY_NAME = 'initialApolloState';
@@ -26,8 +27,10 @@ export const COOKIES_TOKEN_NAME = 'jwt';
 let apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
 const createApolloClient = (ctx?: GetServerSidePropsContext) => {
+
+    const apolloURl = typeof window === 'undefined' ?APOLLO_SERVER_URL : CLIENT_APOLLO_SERVER_URL;
     const httpLink = new HttpLink({
-        uri: `${APOLLO_SERVER_URL}/graphql`,
+        uri: `${apolloURl}/graphql`,
         credentials: 'same-origin',
     });
 

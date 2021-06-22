@@ -19,7 +19,6 @@ interface IIndexPage {
 const IndexPage: FC<IIndexPage> = props => {
     const { t } = useTranslation();
     const seoHome = useAppSelector(store => store.seoHomeReducer);
-
     return (
         <Fragment>
             <Meta title={t('login.title_meta')} seoHome={seoHome} />

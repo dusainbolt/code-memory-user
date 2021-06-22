@@ -1,9 +1,9 @@
 import { LoginInput } from '@Components/Login/LoginForm';
-import { POST_LOGIN, postLoginAction } from '@Redux/actionsTypes/loginActionTypes';
+import { POST_LOGIN_REQUESTING, postLoginAction } from '@Redux/actionsTypes/loginActionTypes';
 
 export const postLogin = (loginInput: LoginInput): postLoginAction => {
     return {
-        type: POST_LOGIN,
+        type: POST_LOGIN_REQUESTING,
         loginInput,
     };
 };

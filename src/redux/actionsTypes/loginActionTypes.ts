@@ -2,18 +2,17 @@ import { LoginInput } from '@Components/Login/LoginForm';
 
 export const LOGIN_ACTION_TYPES = 'loginActionTypes';
 
-export const POST_LOGIN = `${LOGIN_ACTION_TYPES}/POST_LOGIN_REQUESTING`;
+export const POST_LOGIN_REQUESTING = `${LOGIN_ACTION_TYPES}/POST_LOGIN_REQUESTING`;
 export interface postLoginAction {
-    type: typeof POST_LOGIN;
+    type: typeof POST_LOGIN_REQUESTING;
     loginInput: LoginInput;
 }
 
-export const SHOW_LOADING_AUTH = `${LOGIN_ACTION_TYPES}/SHOW_LOADING_AUTH`;
-export interface showLoadingAuth {
-    type: typeof SHOW_LOADING_AUTH;
-}
-
-export type loginAction = postLoginAction | showLoadingAuth;
+export type loginAction = postLoginAction;
+// export const SHOW_LOADING_AUTH = `${LOGIN_ACTION_TYPES}/SHOW_LOADING_AUTH`;
+// export interface showLoadingAuth {
+//     type: typeof SHOW_LOADING_AUTH;
+// }
 
 // export const SET_LYRICS = 'lyricsActionTypes/SET_LYRICS';
 // export interface SetLyricsAction {

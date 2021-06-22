@@ -9,9 +9,10 @@ module.exports = {
     },
     publicRuntimeConfig: {
         // Will be available on both server and client
-        DOMAIN_APP: process.env.DOMAIN_APP,
-        GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
-        staticFolder: '/static',
+        CLIENT_DOMAIN_APP: process.env.DOMAIN_APP,
+        CLIENT_GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+        CLIENT_APOLLO_SERVER_URL: process.env.APOLLO_SERVER_URL,
+        CLIENT_STATIC_FOLDER: '/static',
     },
     // exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
     //     console.log('--------buildID => ', buildId);
