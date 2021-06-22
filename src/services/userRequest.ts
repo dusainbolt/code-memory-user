@@ -9,8 +9,8 @@ export const postLoginRequest = (input: LoginInput): any => {
     console.log(12321321);
     return client
         .mutate({
-            mutation: gql` mutation LoginMutation($input: String!, $password: String!){
-                login(input: {credential: $input, password: $password} ){
+            mutation: gql` mutation LoginMutation($credential: String!, $password: String!){
+                login(input: {credential: $credential, password: $password} ){
                     token
                     user {
                         id,
@@ -25,7 +25,7 @@ export const postLoginRequest = (input: LoginInput): any => {
               }
                 
             `,
-            variables: { input: "123123", password: "123123213" }
+            variables: { ...input }
         })
         .then(res => res.data.seoHome);
 };
