@@ -11,7 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 
 const {
     serverRuntimeConfig: { APOLLO_SERVER_URL },
-    publicRuntimeConfig: {CLIENT_APOLLO_SERVER_URL}
+    publicRuntimeConfig: { CLIENT_APOLLO_SERVER_URL }
 } = getConfig();
 
 export const APOLLO_STATE_PROPERTY_NAME = 'initialApolloState';
@@ -28,7 +28,7 @@ let apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
 const createApolloClient = (ctx?: GetServerSidePropsContext) => {
 
-    const apolloURl = typeof window === 'undefined' ?APOLLO_SERVER_URL : CLIENT_APOLLO_SERVER_URL;
+    const apolloURl = typeof window === 'undefined' ? APOLLO_SERVER_URL : CLIENT_APOLLO_SERVER_URL;
     const httpLink = new HttpLink({
         uri: `${apolloURl}/graphql`,
         credentials: 'same-origin',
@@ -94,8 +94,8 @@ export function initializeApollo(initialState = null): any {
 //     return pageProps;
 // }
 
-export function useApollo(initialState: NormalizedCacheObject): any {
-    const store = useMemo(() => initializeApollo(initialState), [initialState]);
+// export function useApollo(initialState: NormalizedCacheObject): any {
+//     const store = useMemo(() => initializeApollo(initialState), [initialState]);
 
-    return store;
-}
+//     return store;
+// }

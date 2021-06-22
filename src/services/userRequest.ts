@@ -15,7 +15,7 @@ export const postLoginRequest = (input: LoginInput): any => {
                     user {
                         id,
                         email,
-                            firstName,
+                        firstName,
                         password,
                         lastName,
                         avatar,
