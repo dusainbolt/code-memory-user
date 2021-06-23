@@ -1,4 +1,4 @@
-import { LoginInput } from '@Components/Login/LoginForm';
+import { LoginInput } from "src/models/login-dto";
 
 export const LOGIN_ACTION_TYPES = 'loginActionTypes';
 
@@ -7,8 +7,16 @@ export interface postLoginAction {
     type: typeof POST_LOGIN_REQUESTING;
     loginInput: LoginInput;
 }
+export const POST_LOGIN_SUCCESS = `${LOGIN_ACTION_TYPES}/POST_LOGIN_SUCCESS`;
+export interface postLoginActionSuccess {
+    type: typeof POST_LOGIN_SUCCESS;
+}
 
-export type loginAction = postLoginAction;
+export type loginAction = {
+    type: string,
+    loginInput: LoginInput;
+
+};
 // export const SHOW_LOADING_AUTH = `${LOGIN_ACTION_TYPES}/SHOW_LOADING_AUTH`;
 // export interface showLoadingAuth {
 //     type: typeof SHOW_LOADING_AUTH;

@@ -1,31 +1,26 @@
 import { gql } from '@apollo/client';
-import { LoginInput } from '@Components/Login/LoginForm';
-import { initializeApollo } from './apollo-connect';
+import { LoginInput } from 'src/models/login-dto';
+import RequestService from './requestService';
 // import client from './apollo-connect';
 
-const client = initializeApollo();
+const requestService = new RequestService();
 
-export const postLoginRequest = (input: LoginInput): any => {
-    console.log(12321321);
-    return client
-        .mutate({
-            mutation: gql` mutation LoginMutation($credential: String!, $password: String!){
-                login(input: {credential: $credential, password: $password} ){
-                    token
-                    user {
-                        id,
-                        email,
-                        firstName,
-                        password,
-                        lastName,
-                        avatar,
-                        facebook
-                    }
-                }
-              }
-                
-            `,
-            variables: { ...input }
-        })
-        .then(res => res.data.seoHome);
+const postLoginQuery = gql` mutation LoginMutation($credential: String!, $password: String!){
+    login(input: {credential: $credential, password: $password} ){
+        token
+        user {
+            id,
+            email,
+            firstName,
+            password,
+            lastName,
+            avatar,
+            facebook
+        }
+    }
+  }
+`;
+
+export const postLoginRequest = (variables: LoginInput): any => {
+    return requestService.mutation(postLoginQuery, variables);
 };

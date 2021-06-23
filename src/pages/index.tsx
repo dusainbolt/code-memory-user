@@ -9,21 +9,22 @@ import { END } from 'redux-saga';
 import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 
 import 'swiper/swiper.min.css';
+import { SeoHome } from 'src/models/seo-home';
 
 // interface IIndexPage {
 //     seoHome: SeoHome;
 // }
 
 const IndexPage: FC<any> = props => {
-    const seoHome = useAppSelector(store => store.seoHomeReducer);
-    return (
-        <Fragment>
-            <Meta seoHome={seoHome} />
-            <Header />
-            <HomePageComponent {...props} />
-            <Footer />
-        </Fragment>
-    );
+    const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
+    const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
+    return !messageCrash && <Fragment>
+        <Meta seoHome={seoHome} />
+        <Header />
+        <HomePageComponent {...props} />
+        <Footer />
+    </Fragment>;
+
 };
 
 export default IndexPage;

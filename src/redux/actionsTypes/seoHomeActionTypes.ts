@@ -1,4 +1,4 @@
-import { SeoHome } from '@Common/Meta';
+import { SeoHome } from "src/models/seo-home";
 
 export const SEO_HOME_ACTION_TYPES = 'seoHomeActionTypes';
 

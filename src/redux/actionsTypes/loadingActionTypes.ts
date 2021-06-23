@@ -6,4 +6,13 @@ export interface SetVisibleLoadingAuth {
     visible: boolean;
 }
 
-export type LoadingAction = SetVisibleLoadingAuth;
+export const SET_MESSAGE_TRY_CATH_SERVER = `${LOADING_ACTION_TYPES}/SET_MESSAGE_TRY_CATH_SERVER`;
+export interface SetTryCatchServer {
+    type: typeof SET_MESSAGE_TRY_CATH_SERVER;
+    messageCrash: string;
+}
+
+export type LoadingAction = {
+    type: string;
+    messageCrash: string;
+};

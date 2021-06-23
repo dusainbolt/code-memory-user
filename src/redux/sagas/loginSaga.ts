@@ -8,11 +8,10 @@ import * as actionTypes from '../actionsTypes/loginActionTypes';
 function* onPostLogin(action: postLoginAction) {
     try {
         const loginOutput = yield postLoginRequest(action.loginInput);
-        yield console.log(loginOutput);
         // yield put(getSeoHomeSuccess(seoHome));
-        // const { data } = yield call(fetchLyrics, artist, song);
-        // yield put(actionCreators.getLyricsSuccess(data.lyrics));
     } catch (error) {
+
+        yield console.log(error.message);
         // yield put(actionCreators.getLyricsFailure(error.response.data.error));
     }
 }

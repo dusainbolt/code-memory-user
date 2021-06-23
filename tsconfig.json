@@ -25,6 +25,9 @@
             "@Public/*": [
                 "./public/*"
             ],
+            "@Models/*": [
+                "./src/models/*"
+            ],
             "@Pages/*": [
                 "./src/pages/*"
             ],

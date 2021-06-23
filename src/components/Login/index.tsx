@@ -6,7 +6,8 @@ import { staticPath } from '@Utils/func';
 import { Card, Divider, Typography } from 'antd';
 import { FC, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { LoginForm, LoginInput } from './LoginForm';
+import { LoginInput } from 'src/models/login-dto';
+import { LoginForm } from './LoginForm';
 
 export const LoginComponent: FC<any> = () => {
     const { t } = useTranslation();

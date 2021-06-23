@@ -1,5 +1,5 @@
-import { SeoHome } from '@Common/Meta';
 import * as actions from '@Redux/actionsTypes/seoHomeActionTypes';
+import { SeoHome } from 'src/models/seo-home';
 
 export const seoHomeReducer = (state: SeoHome = {}, action: actions.SeoHomeAction): SeoHome => {
     switch (action.type) {

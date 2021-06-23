@@ -4,15 +4,8 @@ import { Formik, Field } from 'formik';
 import { InputComponent } from '@Common/Input';
 import ButtonCommon from '@Common/Button';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
-// import GoogleLogin from 'react-google-login';
-// import getConfig from 'next/config';
 import * as Yup from 'yup';
-
-export interface LoginInput {
-    credential: string;
-    password: string;
-}
-
+import { LoginInput } from 'src/models/login-dto';
 interface ILoginForm {
     submitLogin?: any;
 }
@@ -23,7 +16,7 @@ interface ILoginForm {
 
 export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
     const { t } = useTranslation();
-    const initialValues: LoginInput = { credential: '', password: '' };
+    const initialValues = { credential: '', password: '' } as LoginInput;
     const validateLoginInput = Yup.object({
         credential: Yup.string().required(t('message.MSG_1', { fieldName: t('login.credential') })),
         password: Yup.string().required(t('message.MSG_1', { fieldName: t('login.password') })),

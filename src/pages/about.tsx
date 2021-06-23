@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
-import Meta, { SeoHome } from '@Common/Meta';
+import Meta from '@Common/Meta';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 import { GetStaticProps } from 'next';
 import { useAppSelector, wrapper } from '@Redux/store';
 import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import { END } from 'redux-saga';
+import { SeoHome } from 'src/models/seo-home';
 
 export interface IAboutPage {
     seoHome: SeoHome;
