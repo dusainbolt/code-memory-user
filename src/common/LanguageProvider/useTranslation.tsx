@@ -44,7 +44,7 @@ export default function useTranslation(): IUseTranslation {
             return `${keys[0]}.${keys[1]}`;
         }
 
-        const value = LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || '';
+        const value = LangStrings[locale][keys[0]][keys[1]] || LangStrings[_defaultLocale][keys[0]][keys[1]] || `${keys[0]}.${keys[1]}`;
         if (!isEmptyObj(params)) {
             return _tValue(value, params);
         }

@@ -1,20 +1,23 @@
 import AntImage from '@Common/Image';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { Box } from '@Common/Layout';
-import { postLogin } from '@Redux/actionCreators/loginActionCreators';
+import { actionLogin } from '@Redux/actionCreators/loginActionCreators';
+import { useAppSelector } from '@Redux/store';
 import { staticPath } from '@Utils/func';
-import { Card, Divider, Typography } from 'antd';
+import { Card, Divider, message, Typography } from 'antd';
 import { FC, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { LoginInput } from 'src/models/login-dto';
 import { LoginForm } from './LoginForm';
+import { AlertCommon } from "@Common/Alert";
 
 export const LoginComponent: FC<any> = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
+    const { messageError } = useAppSelector(store => store.loginReducer);
 
     const handleSubmitLogin = useCallback((values: LoginInput) => {
-        dispatch(postLogin(values));
+        dispatch(actionLogin.postLogin(values));
     }, []);
 
     return (
@@ -29,6 +32,7 @@ export const LoginComponent: FC<any> = () => {
                             {t('login.register_now')}
                         </Typography.Link>
                     </Typography.Paragraph>
+                    <AlertCommon message={t(`message.${messageError}`)} />
                     <LoginForm submitLogin={handleSubmitLogin} />
                 </Box>
             </Card>

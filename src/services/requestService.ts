@@ -8,13 +8,6 @@ export default class RequestService {
     }
 
     handleResponse = (callback = "") => (res: any): any => {
-        // handle if client-side
-        console.log(res);
-        if (typeof window !== undefined) {
-            console.log(res);
-
-        }
-
         return callback ? res.data[callback] : res.data;
     }
 

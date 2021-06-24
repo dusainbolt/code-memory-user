@@ -1,9 +1,10 @@
+import { loginReducer } from './loginReducer';
 import { isLoadingReducer } from './loadingReducer';
 import { seoHomeReducer } from './seoHomeReducer';
 import { AnyAction, combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 
-const reducers = combineReducers({ isLoadingReducer, seoHomeReducer });
+const reducers = combineReducers({ isLoadingReducer, seoHomeReducer, loginReducer });
 
 const rootReducer = (state: IRootState, action: AnyAction): IRootState => {
     /**

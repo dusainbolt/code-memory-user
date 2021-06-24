@@ -22,5 +22,5 @@ const postLoginQuery = gql` mutation LoginMutation($credential: String!, $passwo
 `;
 
 export const postLoginRequest = (variables: LoginInput): any => {
-    return requestService.mutation(postLoginQuery, variables);
+    return requestService.mutation(postLoginQuery, variables, 'login');
 };

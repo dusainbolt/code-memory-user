@@ -84,6 +84,7 @@ export default {
     place_password: "nhập mật khẩu"
   },
   message: {
-    MSG_1: "{{fieldName}} không được để trống"
+    MSG_1: "{{fieldName}} không được để trống",
+    MSG_2: "Tài khoản hoặc mật khẩu không chính xác"
   }
 }
