@@ -1,13 +1,11 @@
-import { Alert } from 'antd';
+import { Alert, AlertProps } from 'antd';
 import clsx from 'clsx';
-// export interface _Box {
-//     children?: any;
-//     className?: string;
-//     container?: boolean;
-//     onClick?: any;
-// }
 
-export const AlertCommon: React.FC<any> = ({ children, onClick, container, message = "", className }) => {
-    return <Alert message={message} className={clsx({ [className]: className, 'app-alert': true })} type="error" />;
+interface IAlertCommon extends AlertProps {
+    className?: string;
+}
+
+export const AlertCommon: React.FC<IAlertCommon> = ({ className, type = 'error', ...props }) => {
+    return <Alert className={clsx({ [className]: className, 'app-alert mt-18': true })} type={type} {...props} />;
 
 };

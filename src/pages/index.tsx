@@ -11,13 +11,16 @@ import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import 'swiper/swiper.min.css';
 import { SeoHome } from 'src/models/seo-home';
 
+
 // interface IIndexPage {
 //     seoHome: SeoHome;
 // }
+// 123
 
 const IndexPage: FC<any> = props => {
     const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
     const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
+
     return !messageCrash && <Fragment>
         <Meta seoHome={seoHome} />
         <Header />

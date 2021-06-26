@@ -6,13 +6,11 @@ import ButtonCommon from '@Common/Button';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import * as Yup from 'yup';
 import { LoginInput } from 'src/models/login-dto';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+
 interface ILoginForm {
     submitLogin?: any;
 }
-
-// const {
-//     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
-// } = getConfig();
 
 export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
     const { t } = useTranslation();
@@ -32,6 +30,7 @@ export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
                             name="credential"
                             onPressEnter={handleSubmit}
                             label={t('login.credential')}
+                            prefix={<UserOutlined />}
                             placeholder={t('login.place_credential')}
                             component={InputComponent}
                         />
@@ -41,6 +40,7 @@ export const LoginForm: FC<ILoginForm> = ({ submitLogin }) => {
                             name="password"
                             passwordMode
                             onPressEnter={handleSubmit}
+                            prefix={<LockOutlined />}
                             label={t('login.password')}
                             placeholder={t('login.place_password')}
                             component={InputComponent}

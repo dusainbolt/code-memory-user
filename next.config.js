@@ -12,7 +12,7 @@ module.exports = {
         CLIENT_DOMAIN_APP: process.env.DOMAIN_APP,
         CLIENT_GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         CLIENT_APOLLO_SERVER_URL: process.env.APOLLO_SERVER_URL,
-        CLIENT_STATIC_FOLDER: '/static',
+        CLIENT_APP_KEY: process.env.APP_KEY,
     },
     // exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
     //     console.log('--------buildID => ', buildId);

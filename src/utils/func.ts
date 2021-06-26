@@ -1,15 +1,15 @@
-export const staticPath = (path: string = '') => {
+export const staticPath = (path = ''): string => {
     return `..${path}`;
 };
 
-export const isEmptyObj = (pbj: object = {}) => {
+export const isEmptyObj = (pbj = {}): boolean => {
     return Object.keys(pbj).length === 0 && pbj.constructor === Object;
 };
 
-export const objToArrayValues = obj => {
+export const objToArrayValues = (obj = {}): any => {
     return Object.keys(obj).map(key => obj[key]);
 };
 
-export const pluginChat = () => {
+export const pluginChat = (): string => {
     return `setTimeout(() => { var chatbox = document.getElementById('fb-customer-chat'); chatbox.setAttribute('page_id', '108642264227705'); chatbox.setAttribute('attribution', 'biz_inbox'); window.fbAsyncInit = function () { FB.init({ xfbml: true, version: 'v11.0' }); }; (function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js'; fjs.parentNode.insertBefore(js, fjs); })(document, 'script', 'facebook-jssdk'); }, 1000);`;
 };

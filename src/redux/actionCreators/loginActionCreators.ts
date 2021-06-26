@@ -7,10 +7,9 @@ export const actionLogin = {
         type: POST_LOGIN_REQUESTING,
         loginInput,
     }),
-    postLoginSuccess: (token: string, user: string): postLoginActionSuccess => ({
+    postLoginSuccess: (token: string): postLoginActionSuccess => ({
         type: POST_LOGIN_SUCCESS,
         token,
-        user
     }),
     postLoginError: (messageError: string): postLoginActionError => ({
         type: POST_LOGIN_ERROR,

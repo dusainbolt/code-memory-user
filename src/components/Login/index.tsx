@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { LoginInput } from 'src/models/login-dto';
 import { LoginForm } from './LoginForm';
 import { AlertCommon } from "@Common/Alert";
+import { useEffect } from 'react';
 
 export const LoginComponent: FC<any> = () => {
     const { t } = useTranslation();
@@ -18,6 +19,10 @@ export const LoginComponent: FC<any> = () => {
 
     const handleSubmitLogin = useCallback((values: LoginInput) => {
         dispatch(actionLogin.postLogin(values));
+    }, []);
+
+    useEffect(() => {
+        dispatch(actionLogin.postLogin({ credential: "123", password: "123213" }));
     }, []);
 
     return (
@@ -32,7 +37,7 @@ export const LoginComponent: FC<any> = () => {
                             {t('login.register_now')}
                         </Typography.Link>
                     </Typography.Paragraph>
-                    <AlertCommon message={t(`message.${messageError}`)} />
+                    {messageError && <AlertCommon message={t(`message.${messageError}`)} />}
                     <LoginForm submitLogin={handleSubmitLogin} />
                 </Box>
             </Card>

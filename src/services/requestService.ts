@@ -1,6 +1,5 @@
+import { initializeApollo } from "@GraphQL/apollo-connect";
 import { DocumentNode } from "graphql";
-import { initializeApollo } from "./apollo-connect";
-
 export default class RequestService {
     client = null;
     constructor() {

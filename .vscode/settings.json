@@ -17,6 +17,7 @@
         "reduxjs",
         "swiper",
         "lazyload",
-        "globby"
+        "globby",
+        "persistor",
     ],
 }

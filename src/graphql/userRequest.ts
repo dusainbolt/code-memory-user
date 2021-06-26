@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client';
+import RequestService from '@Services/requestService';
 import { LoginInput } from 'src/models/login-dto';
-import RequestService from './requestService';
-// import client from './apollo-connect';
 
 const requestService = new RequestService();
 

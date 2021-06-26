@@ -1,11 +1,8 @@
+import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
+import { SeoHome } from '@Models/seo-home';
 import { setTryCatchServer } from '@Redux/actionCreators/loadingActionCreators';
 import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
-import { getSeoHomeRequest } from '@Services/seoHomeRequest';
-import { GraphQLError } from 'graphql';
 import { put, takeEvery, all, fork } from 'redux-saga/effects';
-import { SeoHome } from 'src/models/seo-home';
-
-// import * as actionCreators from '../actionCreators/lyricsActionCreators';
 import * as actionTypes from '../actionsTypes/seoHomeActionTypes';
 
 function* onGetSeoHome() {

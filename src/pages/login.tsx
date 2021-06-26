@@ -12,14 +12,27 @@ import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import { END } from 'redux-saga';
 import { SeoHome } from 'src/models/seo-home';
 
-interface IIndexPage {
+interface ILoginPage {
     seoHome: SeoHome;
 }
 
-const IndexPage: FC<IIndexPage> = props => {
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
+const LoginPage: FC<ILoginPage> = props => {
     const { t } = useTranslation();
     const seoHome = useAppSelector(store => store.seoHomeReducer);
     const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
+
+    const { token } = useAppSelector(store => store.loginReducer);
+    const router = useRouter();
+
+    useEffect(() => {
+        if (token) {
+            router.push('/blog');
+        }
+    }, [token]);
+
 
     return !messageCrash && <Fragment>
         <Meta title={t('login.title_meta')} seoHome={seoHome} />
@@ -29,7 +42,7 @@ const IndexPage: FC<IIndexPage> = props => {
     </Fragment>;
 };
 
-export default IndexPage;
+export default LoginPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
     store.dispatch(getSeoHome());

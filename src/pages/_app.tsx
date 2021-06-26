@@ -1,6 +1,5 @@
 import { AppContext, AppProps } from 'next/app';
-import { AuthProvider } from 'src/Provider/auth';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import { wrapper } from '@Redux/store';
 import { END } from 'redux-saga';
@@ -20,11 +19,13 @@ const TopProgressBar = dynamic(
 );
 
 const CodeMemory: FC<AppProps> = ({ Component, pageProps }) => {
+
     return (
-        <AuthProvider>
+        <Fragment>
             <TopProgressBar />
             <Component {...pageProps} />
-        </AuthProvider>
+        </Fragment>
+
     );
 };
 
@@ -39,6 +40,7 @@ export const getInitialProps = async ({ Component, ctx }: AppContext) => {
         ctx.store.dispatch(END);
         await ctx.store.sagaTask.toPromise();
     }
+
 
     // 3. Return props
     return {

@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import RequestService from './requestService';
+import RequestService from '@Services/requestService';
 
 const requestService = new RequestService();
 

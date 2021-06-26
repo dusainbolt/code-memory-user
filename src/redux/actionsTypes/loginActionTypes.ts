@@ -1,3 +1,4 @@
+import { User } from "@Models/user.dto";
 import { LoginInput } from "src/models/login-dto";
 
 export const LOGIN_ACTION_TYPES = 'loginActionTypes';
@@ -11,7 +12,6 @@ export const POST_LOGIN_SUCCESS = `${LOGIN_ACTION_TYPES}/POST_LOGIN_SUCCESS`;
 export interface postLoginActionSuccess {
     type: typeof POST_LOGIN_SUCCESS;
     token: string;
-    user: string
 }
 
 export const POST_LOGIN_ERROR = `${LOGIN_ACTION_TYPES}/POST_LOGIN_ERROR`;
@@ -25,5 +25,4 @@ export type loginAction = {
     loginInput: LoginInput;
     token: string;
     messageError: string;
-    user: string
 };

@@ -1,5 +1,4 @@
 import getConfig from 'next/config';
-import { useMemo } from 'react';
 import merge from 'deepmerge';
 // import cookie from 'cookie';
 import type { GetServerSidePropsContext } from 'next';
@@ -7,6 +6,7 @@ import type { GetServerSidePropsContext } from 'next';
 import type { NormalizedCacheObject } from '@apollo/client';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { storeWrapper } from '@Redux/store';
 // import { IncomingMessage } from 'node:http';
 
 const {
@@ -35,16 +35,17 @@ const createApolloClient = (ctx?: GetServerSidePropsContext) => {
     });
 
     const authLink = setContext((_, { headers }) => {
-        // // Get the authentication token from cookies
-        // const token = getToken(ctx?.req);
+        let token = "";
+        if (typeof window !== 'undefined') {
+            token = storeWrapper.getState().loginReducer.token;
+        }
 
-        // return {
-        //     headers: {
-        //         ...headers,
-        //         authorization: token ? `Bearer ${token}` : '',
-        //     },
-        // };
-        return {};
+        return {
+            headers: {
+                ...headers,
+                authorization: token ? `Bearer ${token}` : '',
+            },
+        };
     });
     return new ApolloClient({
         ssrMode: typeof window === 'undefined',

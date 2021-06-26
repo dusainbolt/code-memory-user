@@ -32,7 +32,7 @@ const ButtonCommon: React.FC<_ButtonCommon> = ({
 }) => {
     const iconProps = icon || (fontAWS ? <FontAwesomeIcon icon={fontAWS} /> : null);
     const isLoadingReducer = useAppSelector(store => store.isLoadingReducer);
-    const loadingRequest = actionTypeLoading && isLoadingReducer[actionTypeLoading];
+    const loadingRequest = actionTypeLoading && isLoadingReducer[actionTypeLoading] ? true : false;
 
     return (
         <Tooltip overlayClassName={clsx(`${className}-tooltip`)} placement={placement} title={titleTooltip || children}>
