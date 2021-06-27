@@ -3,3 +3,16 @@
     grid-area: content;
     margin-top: 15px;
 }
+
+.box-suggest-login {
+    padding: 10px 20px;
+    @include _flex_box(center, space-between);
+    margin-bottom: 20px;
+    .btn-login {
+        width: 200px;
+        margin-left: 20px;
+        .svg-inline--fa {
+            margin-right: 8px;
+        }
+    }
+}

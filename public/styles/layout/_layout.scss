@@ -24,19 +24,40 @@ body {
 
 @include _responsive(_xl) {
     .container {
-        max-width: $container_extraLarge + 100;
+        max-width: $container_extraLarge;
+    }
+    body {
+        &[style='blog'] {
+            .container {
+                max-width: $container_extraLarge + 100;
+            }
+        }
     }
 }
 
 @include _responsive(_lg) {
     .container {
-        max-width: $container_large + 100;
+        max-width: $container_large;
+    }
+    body {
+        &[style='blog'] {
+            .container {
+                max-width: $container_large + 100;
+            }
+        }
     }
 }
 
 @include _responsive(_md) {
     .container {
-        max-width: $container_medium + 100;
+        max-width: $container_medium;
+    }
+    body {
+        &[style='blog'] {
+            .container {
+                max-width: $container_medium + 100;
+            }
+        }
     }
 }
 
@@ -114,7 +135,4 @@ body {
     border: solid 1px var(--blog-border-card);
     border-radius: 6px;
     background: var(--blog-color-bg-card);
-    > div {
-        padding: 20px;
-    }
 }

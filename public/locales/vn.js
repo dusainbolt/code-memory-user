@@ -8,6 +8,7 @@ export default {
   },
   blog: {
     txt_view_next: "undefined",
+    login_now: "Đăng nhập ngay",
     txt_suggest_login: "Bạn chưa đăng nhập. Hãy đăng nhập ngay để tương tác cùng CodeMemory nhé",
     lasted: "Gần Đây",
     txt_home: "Trang Chủ",
