@@ -1,28 +1,23 @@
-import getConfig from 'next/config';
 import { LoginHashCookie } from '@Models/login-dto';
 import { User, UserHashCookie } from '@Models/user.dto';
 import HashService from './hashService';
-
-const {
-    publicRuntimeConfig: { CLIENT_APP_KEY }
-} = getConfig();
-
 export default class CookieService {
     instance = null;
     hashService: HashService = null;
     readonly KEY_LOGIN_COOKIE = "__login";
     readonly KEY_USER_COOKIE = "__user";
+    readonly EXPIRES_DEFAULT = 14;
 
     constructor() {
         this.instance = require('js-cookie');
         this.hashService = new HashService();
     }
 
-    setByHashAES = (key: string, data: any): void => {
+    setByHashAES = (key: string, data: any, expires = this.EXPIRES_DEFAULT): void => {
         // using hash service to hash data
         const dataHash = this.hashService.hashCryptoAES(data);
         // set data hash to cookie
-        this.instance.set(key, dataHash);
+        this.instance.set(key, dataHash, { expires });
     };
 
     setLoginCookie = (token: string): void => {

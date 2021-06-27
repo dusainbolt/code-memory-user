@@ -18,10 +18,12 @@ $container_small: 540px;
 $container_medium: 720px;
 $container_large: 960px;
 $container_extraLarge: 1140px;
+$container_universe: 1380px;
 
 $border-radius-large: 30px;
 
 :root {
+    // variable home page
     --color-primary: #fe6347;
     --antd-wave-shadow-color: #fe6347;
     --color-box-primary-light: #ff831833;
@@ -41,12 +43,20 @@ $border-radius-large: 30px;
     --color-high-light: #ff9a14;
     --box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     --box-shadow-card-primary: rgb(235 88 15 / 10%) 1px 2px 20px;
+
+    // variable blog page
+    --blog-color-bg-main: #f5f7fa;
+    --blog-color-bg-card: #ffffff;
+    --blog-border-card: rgba(229, 231, 235);
+    --blog-color-text-main: #233d62;
+    --blog-color-icon-menu: #a6a9a6;
+    --blog-color-primary: #fe6347;
 }
 
 body[app-theme='dark'] {
-    --color-background-main: #18191a;
-    --color-text-main: #e4e6eb;
-    --color-bg-header: #242526;
-    --color-bg-footer: #161727;
-    --color-bg-input: #3a3b3c;
+    // --color-background-main: #18191a;
+    // --color-text-main: #e4e6eb;
+    // --color-bg-header: #242526;
+    // --color-bg-footer: #161727;
+    // --color-bg-input: #3a3b3c;
 }

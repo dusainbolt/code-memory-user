@@ -1,26 +1,21 @@
-import { Fragment } from 'react';
 import Meta from '@Common/Meta';
-import Header from '@Common/Header';
-import Footer from '@Common/Footer';
+import BlogComponent from '@Components/Blog';
 import { GetStaticProps } from 'next';
 import { useAppSelector, wrapper } from '@Redux/store';
 import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import { END } from 'redux-saga';
 import { SeoHome } from 'src/models/seo-home';
+import LayoutCommon from '@Common/Layout';
 
-export interface IBlogPage {
-    seoHome: SeoHome;
-}
 
-const BlogPage: React.FC<IBlogPage> = props => {
-    const seoHome = useAppSelector(store => store.seoHomeReducer);
+const BlogPage: React.FC<any> = () => {
+    const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
 
     return (
-        <Fragment>
+        <LayoutCommon header={false} scrollHeader seoHome={seoHome}>
             <Meta seoHome={seoHome} />
-            <Header />
-            <Footer />
-        </Fragment>
+            <BlogComponent />
+        </LayoutCommon>
     );
 };
 

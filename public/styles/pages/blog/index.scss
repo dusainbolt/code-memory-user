@@ -1,0 +1,6 @@
+@import './siderBarLeft.scss';
+@import './blogContent.scss';
+
+.layout-content {
+    @include _flex_box(center, flex-start);
+}

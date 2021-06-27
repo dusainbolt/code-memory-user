@@ -1,4 +1,4 @@
-import { Box } from '@Common/Layout';
+import { Box } from '@Common/Box';
 import Avatar from 'antd/lib/avatar/avatar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

@@ -1,6 +1,6 @@
 import AntImage from '@Common/Image';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
-import { Box } from '@Common/Layout';
+import { Box } from '@Common/Box';
 import { actionLogin } from '@Redux/actionCreators/loginActionCreators';
 import { useAppSelector } from '@Redux/store';
 import { staticPath } from '@Utils/func';

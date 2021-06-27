@@ -1,13 +1,13 @@
 import ButtonCommon from '@Common/Button';
 import AntImage from '@Common/Image';
-import { Box } from '@Common/Layout';
+import { Box } from '@Common/Box';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Space, Typography } from 'antd';
 
 // interface _ServiceWrap {}
 
-const ServiceWrap: React.FC<any> = ({}) => {
+const ServiceWrap: React.FC<any> = ({ }) => {
     const { t } = useTranslation();
 
     const DATA_SERVICE = [

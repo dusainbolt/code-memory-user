@@ -1,33 +1,24 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 import HomePageComponent from '@Components/Home';
-import Header from '@Common/Header';
-import Footer from '@Common/Footer';
 import Meta from '@Common/Meta';
 import { GetStaticProps } from 'next';
 import { useAppSelector, wrapper } from '@Redux/store';
 import { END } from 'redux-saga';
 import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
+import LayoutCommon from '@Common/Layout';
 
 import 'swiper/swiper.min.css';
 import { SeoHome } from 'src/models/seo-home';
 
-
-// interface IIndexPage {
-//     seoHome: SeoHome;
-// }
-// 123
-
-const IndexPage: FC<any> = props => {
+const IndexPage: FC<any> = () => {
     const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
     const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
-
-    return !messageCrash && <Fragment>
-        <Meta seoHome={seoHome} />
-        <Header />
-        <HomePageComponent {...props} />
-        <Footer />
-    </Fragment>;
-
+    return !messageCrash && (
+        <LayoutCommon blogBackground={false} scrollHeader seoHome={seoHome}>
+            <Meta seoHome={seoHome} />
+            <HomePageComponent />
+        </LayoutCommon>
+    );
 };
 
 export default IndexPage;

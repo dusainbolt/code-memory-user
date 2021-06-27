@@ -1,12 +1,12 @@
 import AntImage from '@Common/Image';
-import { Box } from '@Common/Layout';
+import { Box } from '@Common/Box';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Typography } from 'antd';
 
 // interface _FounderWrap {}
 
-const FounderWrap: React.FC<any> = ({}) => {
+const FounderWrap: React.FC<any> = ({ }) => {
     const { t } = useTranslation();
 
     return (

@@ -1,4 +1,4 @@
-import { Box } from '@Common/Layout';
+import { Box } from '@Common/Box';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faFacebook, faSkype, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Divider, Row, Typography } from 'antd';
@@ -8,8 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { LIST_MENU } from '@Common/Header/MenuHeader';
 import { FC } from 'react';
+import { SeoHome } from '@Models/seo-home';
 
-const Footer: FC<any> = () => {
+interface IFooter {
+    seoHome: SeoHome;
+}
+
+const Footer: FC<IFooter> = ({ seoHome }) => {
     const { t } = useTranslation();
 
     const LIST_CONNECT = [
@@ -78,8 +83,7 @@ const Footer: FC<any> = () => {
                         </Typography.Title>
                         {LIST_MENU.map(
                             (item, index) =>
-                                index > 0 &&
-                                index !== LIST_MENU.length - 1 && (
+                                index > 0 && (
                                     <Typography.Link
                                         title={t('common.txt_tooltip_access', { access: t(`menu.${item.name}`) })}
                                         className="app-footer--link mb-12"

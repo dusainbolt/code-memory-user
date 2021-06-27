@@ -1,8 +1,17 @@
 .container {
     width: 100%;
-    max-width: 1380px;
+    max-width: $container_universe;
     padding: 0 20px;
     margin: auto;
+}
+
+body {
+    &[style='blog'] {
+        .container {
+            position: relative;
+            max-width: $container_universe + 150;
+        }
+    }
 }
 
 @include _responsive(_xxl) {
@@ -15,19 +24,19 @@
 
 @include _responsive(_xl) {
     .container {
-        max-width: $container_extraLarge;
+        max-width: $container_extraLarge + 100;
     }
 }
 
 @include _responsive(_lg) {
     .container {
-        max-width: $container_large;
+        max-width: $container_large + 100;
     }
 }
 
 @include _responsive(_md) {
     .container {
-        max-width: $container_medium;
+        max-width: $container_medium + 100;
     }
 }
 
@@ -99,4 +108,13 @@
     width: max-content;
     margin: auto;
     display: block;
+}
+
+.card-blog {
+    border-color: solid 1px var(--blog-border-card);
+    border-radius: 6px;
+    background: var(--blog-color-bg-card);
+    > div {
+        padding: 20px;
+    }
 }

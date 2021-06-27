@@ -9,10 +9,10 @@ export default {
   menu: {
     list_menu: "Danh sách menu",
     txt_home: "Trang Chủ",
-    txt_about: "Khóa Học",
+    txt_course: "Khóa Học",
     txt_services: "Dịch Vụ",
     txt_blog: "Blog Lập Trình",
-    txt_contact: "Diễn Đàn"
+    txt_forum: "Diễn Đàn"
   },
   home: {
     txt_description_banner_1: "Đem đến môi trường kiến thức bổ ích trong lĩnh vực",

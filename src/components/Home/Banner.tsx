@@ -1,4 +1,4 @@
-import { Box } from '@Common/Layout';
+import { Box } from '@Common/Box';
 import ButtonCommon from '@Common/Button';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';

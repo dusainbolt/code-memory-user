@@ -19,7 +19,7 @@ const AboutPage: React.FC<IAboutPage> = props => {
         <Fragment>
             <Meta seoHome={seoHome} />
             <Header />
-            <Footer />
+            <Footer seoHome={seoHome} />
         </Fragment>
     );
 };

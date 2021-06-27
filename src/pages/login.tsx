@@ -38,7 +38,7 @@ const LoginPage: FC<ILoginPage> = props => {
         <Meta title={t('login.title_meta')} seoHome={seoHome} />
         <Header />
         <LoginComponent />
-        <Footer />
+        <Footer seoHome={seoHome} />
     </Fragment>;
 };
 

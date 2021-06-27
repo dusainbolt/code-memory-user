@@ -37,8 +37,15 @@ body {
     &[app-locale='vn'] {
         font-family: 'Roboto', sans-serif;
     }
+    &[style='blog'] {
+        #__next {
+            position: relative;
+            background-color: var(--blog-color-bg-main);
+        }
+    }
 }
 
 // import style each pages
 @import './pages/index/index';
 @import './pages/login/index';
+@import './pages/blog/index';
