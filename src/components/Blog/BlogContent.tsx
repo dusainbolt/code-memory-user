@@ -8,12 +8,12 @@ const BlogContent: FC<any> = () => {
         <Box className="blog-content">
             <Box className="sticky-content">
                 <BoxSuggestLogin />
-                <Box className="list-blog card-blog">
-                    <Row gutter={[32, 0]}>
-                        <Col xs={24}>123213</Col>
-                        <Col xs={24}>123213</Col>
-                    </Row>
-                </Box>
+                {/* <Box className="list-blog card-blog"> */}
+                <Row gutter={[32, 0]}>
+                    <Col xs={24}>123213</Col>
+                    <Col xs={24}>123213</Col>
+                </Row>
+                {/* </Box> */}
             </Box>
         </Box>
     );

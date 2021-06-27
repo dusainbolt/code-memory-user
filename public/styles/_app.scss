@@ -39,8 +39,7 @@ body {
     }
     &[style='blog'] {
         #__next {
-            position: relative;
-            background-color: var(--blog-color-bg-main);
+            // background-color: var(--blog-color-bg-main);
         }
     }
 }
