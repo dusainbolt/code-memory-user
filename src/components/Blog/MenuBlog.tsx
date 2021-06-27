@@ -1,40 +1,54 @@
 import { Box } from '@Common/Box';
-import { FC } from 'react';
-import { Menu } from 'antd';
-import { MailOutlined, CalendarOutlined } from '@ant-design/icons';
+import { FC, ReactNode } from 'react';
+import { Menu, Typography } from 'antd';
+import { SearchOutlined, ClockCircleOutlined, MessageOutlined, TagOutlined, ReadOutlined } from '@ant-design/icons';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
+
+interface IMenuBlog {
+    text: string;
+    link: string;
+    icon: ReactNode;
+}
 
 const MenuBlog: FC<any> = () => {
-    const MENU_BLOG = [
+    const { t } = useTranslation();
+    const MENU_BLOG: IMenuBlog[] = [
         {
-            text: "Gần Đây",
-            link: "/blog",
+            text: 'lasted',
+            link: '/blog',
+            icon: <ClockCircleOutlined />,
         },
         {
-            text: "Tâm Sự Dev",
-            link: "/blog",
+            text: 'txt_talk_dev',
+            link: '/dev',
+            icon: <MessageOutlined />,
         },
         {
-            text: "Thẻ",
-            link: "/tag",
+            text: 'txt_tag',
+            link: '/tag',
+            icon: <TagOutlined />,
         },
         {
-            text: "Tìm kiếm",
-            link: "/tag",
+            text: 'txt_search',
+            link: '/search',
+            icon: <SearchOutlined />,
         },
         {
-            text: "Tin tức",
-            link: "/tag",
+            text: 'txt_news',
+            link: '/news',
+            icon: <ReadOutlined />,
         },
-    ]
+    ];
     return (
         <Box className="sider-left__menu">
-            <Menu style={{ width: 256 }} defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} mode="vertical">
-                <Menu.Item key="1" icon={<MailOutlined />}>
-                    Navigation One
-                </Menu.Item>
-                <Menu.Item key="2" icon={<CalendarOutlined />}>
-                    Navigation Two
-                </Menu.Item>
+            <Menu style={{ width: 256 }} defaultSelectedKeys={[MENU_BLOG[0].link]} mode="vertical">
+                {MENU_BLOG.map(item => (
+                    <Menu.Item key={item.link} icon={item.icon}>
+                        <Typography.Link href={item.link} rel="noopener noreferrer">
+                            {t(`blog.${item.text}`)}
+                        </Typography.Link>
+                    </Menu.Item>
+                ))}
             </Menu>
         </Box>
     );

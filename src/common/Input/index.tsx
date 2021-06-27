@@ -1,7 +1,7 @@
 import { Input } from 'antd';
 import { FieldInputProps, FieldMetaProps, FormikState } from 'formik';
 import { FC } from 'react';
-
+import { Box } from '@Common/Box';
 interface IInputComponent {
     label?: string;
     prefix?: any;
@@ -29,10 +29,10 @@ export const InputComponent: FC<IInputComponent> = ({
     const errorMessage = formErrors[field.name];
     const InputCommon = passwordMode ? Input.Password : Input;
     return (
-        <div className="field-wrap">
+        <Box className="field-wrap">
             {label && <label className="field-wrap__label">{label}</label>}
             <InputCommon className={`app-input ${className}`} placeholder={placeholder} prefix={prefix} suffix={suffix} {...field} {...props} />
             {errorMessage && touched && <span className="required">{errorMessage}</span>}
-        </div>
+        </Box>
     );
 };

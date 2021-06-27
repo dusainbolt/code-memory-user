@@ -1,6 +1,11 @@
 @import './siderBarLeft.scss';
+@import './siderBarRight.scss';
 @import './blogContent.scss';
 
-.layout-content {
-    @include _flex_box(center, flex-start);
+.content-wrapper {
+    display: grid;
+    grid-template-areas: 'sidebar_1 content sidebar_2 ';
+    grid-template-columns: 210px auto 300px;
+    min-height: 100vh;
+    grid-gap: 20px;
 }

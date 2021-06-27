@@ -1,8 +1,13 @@
 .sider-left {
-    min-height: 100vh;
-    position: fixed;
-    width: 209px;
+    grid-area: sidebar_1;
+    position: sticky;
     padding-top: 20px;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
     &__menu {
         margin-top: 30px;
         @include _flex_box(flex-start, center);
@@ -18,7 +23,7 @@
             border-radius: 6px;
             &.ant-menu-item-selected {
                 background-color: transparent;
-                span,
+                a.ant-typography,
                 span.anticon {
                     color: var(--blog-color-primary);
                 }
@@ -28,10 +33,11 @@
             }
         }
         .ant-menu-item span {
-            font-size: $font_size_base + 2;
-            color: var(--blog-color-text-main);
-            font-weight: $font-medium;
-
+            a.ant-typography {
+                color: var(--blog-color-text-main);
+                font-size: $font_size_base + 2;
+                font-weight: $font-medium;
+            }
             &.anticon {
                 color: var(--blog-color-icon-menu);
                 > svg {

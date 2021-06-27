@@ -111,7 +111,7 @@ body {
 }
 
 .card-blog {
-    border-color: solid 1px var(--blog-border-card);
+    border: solid 1px var(--blog-border-card);
     border-radius: 6px;
     background: var(--blog-color-bg-card);
     > div {

@@ -6,6 +6,16 @@ export default {
     txt_tooltip_access: "Truy cập tới {{access}} của CodeMemory",
     txt_view_next: "Xem tiếp"
   },
+  blog: {
+    txt_view_next: "undefined",
+    txt_suggest_login: "Bạn chưa đăng nhập. Hãy đăng nhập ngay để tương tác cùng CodeMemory nhé",
+    lasted: "Gần Đây",
+    txt_home: "Trang Chủ",
+    txt_talk_dev: "Tâm Sự Dev",
+    txt_tag: "Thẻ",
+    txt_search: "Tìm kiếm",
+    txt_news: "Tin tức"
+  },
   menu: {
     list_menu: "Danh sách menu",
     txt_home: "Trang Chủ",
