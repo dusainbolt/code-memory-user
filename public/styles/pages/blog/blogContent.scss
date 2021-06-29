@@ -1,18 +1,76 @@
 .blog-content {
     min-height: 2000vh;
     grid-area: content;
-    margin-top: 15px;
 }
 
 .box-suggest-login {
-    padding: 10px 20px;
     @include _flex_box(center, space-between);
-    margin-bottom: 20px;
     .btn-login {
         width: 200px;
-        margin-left: 20px;
         .svg-inline--fa {
             margin-right: 8px;
+        }
+    }
+}
+
+.blog-item {
+    @include _flex_box(flex-start, flex-start);
+    width: 100%;
+    &__image {
+        min-width: 300px;
+        height: 200px;
+        border-radius: 12px;
+        background-position: center;
+        background-size: cover;
+    }
+    &__content {
+    }
+    &__title.ant-typography {
+        line-height: 25px;
+        a {
+            color: var(--blog-color-text-main);
+        }
+    }
+    &__info-create {
+        .create-info a {
+            display: block;
+        }
+        .txt-user-name {
+            white-space: nowrap;
+        }
+    }
+    &__interact {
+        justify-content: space-between;
+        width: 100%;
+        .interact-wrap {
+            cursor: pointer;
+        }
+        .anticon,
+        .anticon svg {
+            font-size: $font_size_base + 2;
+            margin-right: 1px;
+            color: var(--blog-color-created-at);
+        }
+        .anticon.anticon-thunderbolt svg {
+            font-size: $font_size_base + 8;
+        }
+        .interact-value.ant-typography {
+            font-size: $font_size_base + 2;
+            color: var(--blog-color-created-at);
+        }
+    }
+    &__popover-row {
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+@include _responsive(_xl) {
+    .blog-item {
+        &__image {
+            min-width: 250px;
         }
     }
 }

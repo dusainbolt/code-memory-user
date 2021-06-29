@@ -5,6 +5,7 @@
 @import './components/typography';
 @import './components/button';
 @import './components/tag';
+@import './components/popover';
 @import './components/input';
 @import './components/alert';
 @import './layout/header';
@@ -38,8 +39,9 @@ body {
         font-family: 'Roboto', sans-serif;
     }
     &[style='blog'] {
+        color: var(--blog-color-text-main);
         #__next {
-            // background-color: var(--blog-color-bg-main);
+            background-color: var(--blog-color-bg-main);
         }
     }
 }

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import SwiperCore, { Autoplay } from 'swiper';
 import AntImage from '@Common/Image';
-import { Rate, Tag, Typography } from 'antd';
+import { Tag, Typography } from 'antd';
 
 export const BREAK_SIZE_SCREEN_PRODUCER = {
     0: {
@@ -46,7 +46,7 @@ const SwiperSlideNewsItem: React.FC<any> = ({ children, className, slidesPerView
                 <Box className="home-news--box-wrap-author mt-14 mb-6">
                     <Avatar size={36} alt="avatar-blog" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                     <Typography.Text className="home-news--author-name ml-4">Du Sainbolt</Typography.Text>
-                    <Rate className="app-rate" allowHalf disabled defaultValue={2.5} />
+                    {/* <Rate className="app-rate" allowHalf disabled defaultValue={2.5} /> */}
                 </Box>
                 <Tag className="app-tag">Lập trình</Tag>
                 <Tag className="app-tag">Lập trình</Tag>

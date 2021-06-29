@@ -9,3 +9,12 @@
     min-height: 100vh;
     grid-gap: 20px;
 }
+
+@include _responsive(_lg) {
+    .content-wrapper {
+        grid-template-columns: 210px auto;
+        .sider-right {
+            display: none;
+        }
+    }
+}

@@ -8,6 +8,9 @@ export default {
   },
   blog: {
     txt_view_next: "undefined",
+    share: "Chia sẻ bài viết",
+    add_list: "Thêm vào danh sách",
+    copy_url: "Sao chép URL",
     login_now: "Đăng nhập ngay",
     txt_suggest_login: "Bạn chưa đăng nhập. Hãy đăng nhập ngay để tương tác cùng CodeMemory nhé",
     lasted: "Gần Đây",

@@ -42,16 +42,38 @@ div {
     font-size: $font_size_base + 4;
     font-weight: $font-bold;
 }
+
 // typography description normal
 .txt-dec-1.ant-typography {
     font-weight: $font-regular;
     font-size: $font_size_base + 4;
 }
 
+.txt-user-name.ant-typography {
+    font-size: $font_size_base;
+    font-weight: $font-medium;
+    color: var(--blog-color-title-name);
+    line-height: $font_size_base;
+    &:hover {
+        opacity: 0.7;
+        color: var(--blog-color-title-name);
+    }
+}
+
+.txt-dec-gray.ant-typography {
+    font-size: $font_size_base - 2;
+    line-height: $font_size_base - 2;
+    color: var(--blog-color-created-at);
+    &:hover {
+        opacity: 0.7;
+        color: var(--blog-color-created-at);
+    }
+}
+
 // typography description light
 .txt-dec-light.ant-typography {
-    font-weight: $font-light;
     font-size: $font_size_base - 2;
+    color: var(--blog-color-created-at);
 }
 
 .txt-dec-light-1.ant-typography {

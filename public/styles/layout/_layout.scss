@@ -132,7 +132,14 @@ body {
 }
 
 .card-blog {
-    border: solid 1px var(--blog-border-card);
+    padding: 20px;
     border-radius: 6px;
-    background: var(--blog-color-bg-card);
+    box-shadow: var(--blog-color-box-shadow-primary);
+}
+
+.flx-center {
+    @include _flex_box;
+    &.align-left {
+        justify-content: flex-start;
+    }
 }

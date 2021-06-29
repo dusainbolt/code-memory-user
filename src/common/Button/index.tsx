@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { TooltipPlacement } from 'antd/lib/tooltip';
 import clsx from 'clsx';
-import { useSelector } from 'react-redux';
 import { useAppSelector } from '@Redux/store';
 
 export interface _ButtonCommon extends BaseButtonProps {
