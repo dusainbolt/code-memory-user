@@ -3,5 +3,19 @@
     position: sticky;
     padding-top: 25px;
     top: 0;
-    height: 100vh;
+    .title-wrap {
+        padding-bottom: 6px !important;
+        .anticon-crown {
+            color: var(--blog-color-primary);
+        }
+        .sub-title {
+            color: var(--blog-color-created-at);
+        }
+    }
+    .app-tab .ant-tabs-nav-list {
+        padding-left: 20px;
+    }
+}
+
+.list-top-article {
 }

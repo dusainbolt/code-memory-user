@@ -11,12 +11,13 @@ interface ILayout {
     scrollHeader?: boolean;
     blogBackground?: boolean;
     header?: boolean;
+    footer?: boolean;
 }
 
 export const KEY_STYLE_BLOG = 'style';
 export const TYPE_STYLE_BLOG = 'blog';
 
-const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, blogBackground = true, header = true }) => {
+const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, footer = true, blogBackground = true, header = true }) => {
     useEffect(() => {
         if (blogBackground) {
             document.body.setAttribute(KEY_STYLE_BLOG, TYPE_STYLE_BLOG);
@@ -33,7 +34,7 @@ const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, bl
         <Fragment>
             {header && <Header scrollHeader={scrollHeader} />}
             {children}
-            <Footer seoHome={seoHome} />
+            {footer && <Footer seoHome={seoHome} />}
         </Fragment>
     );
 };

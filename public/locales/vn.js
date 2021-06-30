@@ -16,6 +16,11 @@ export default {
     lasted: "Gần Đây",
     txt_home: "Trang Chủ",
     txt_talk_dev: "Tâm Sự Dev",
+    aWeek: "Trong tuần qua",
+    aMonth: "Trong tháng qua",
+    threeMonth: "3 Tháng qua",
+    sixMonth: "6 Tháng qua",
+    top_blog: "Top Bài Viết",
     txt_tag: "Thẻ",
     txt_search: "Tìm kiếm",
     txt_news: "Tin tức"

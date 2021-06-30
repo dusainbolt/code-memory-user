@@ -7,12 +7,11 @@ import { END } from 'redux-saga';
 import { SeoHome } from 'src/models/seo-home';
 import LayoutCommon from '@Common/Layout';
 
-
 const BlogPage: React.FC<any> = () => {
     const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
 
     return (
-        <LayoutCommon header={false} scrollHeader seoHome={seoHome}>
+        <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
             <Meta seoHome={seoHome} />
             <BlogComponent />
         </LayoutCommon>
