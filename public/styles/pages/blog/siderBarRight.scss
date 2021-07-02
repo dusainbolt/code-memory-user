@@ -3,6 +3,12 @@
     position: sticky;
     padding-top: 25px;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    // height: max-content;
+    .sticky-spacer {
+        flex-grow: 1;
+    }
     .title-wrap {
         padding-bottom: 6px !important;
         .anticon-crown {
@@ -15,7 +21,16 @@
     .app-tab .ant-tabs-nav-list {
         padding-left: 20px;
     }
+    &__content {
+        position: sticky;
+        bottom: 15px;
+        min-height: calc(100vh - 50px);
+        margin-top: 15px;
+    }
 }
 
 .list-top-article {
+    .blog-item__title.ant-typography a {
+        font-size: 14px;
+    }
 }

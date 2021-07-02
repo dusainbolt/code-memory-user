@@ -5,7 +5,10 @@ import TopArticleTab from '@Components/Blog/TopArticleTab';
 const SiderBarRight: FC<any> = () => {
     return (
         <Box className="sider-right">
-            <TopArticleTab />
+            <Box className="sticky-spacer"></Box>
+            <Box className="sider-right__content">
+                <TopArticleTab />
+            </Box>
         </Box>
     );
 };

@@ -7,9 +7,8 @@ export interface _Box {
 }
 
 export const Box: React.FC<_Box> = ({ children, onClick, container, className }) => {
-    const boxStyle = clsx({ [className]: className, container: container });
     return (
-        <div onClick={onClick} className={boxStyle}>
+        <div onClick={onClick} className={clsx({ [className]: className, container: container })}>
             {children}
         </div>
     );

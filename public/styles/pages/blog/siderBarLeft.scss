@@ -5,7 +5,7 @@
     position: -webkit-sticky;
     top: 0;
     z-index: 1;
-    display: flex;
+    @include _flex_box(center, space-between);
     flex-direction: column;
     height: 100vh;
     &__menu {
@@ -44,6 +44,21 @@
                     font-size: $font_size_base + 2;
                 }
             }
+        }
+    }
+    &__bottom {
+        .anticon-bell {
+            font-size: $font_size_base + 12;
+            color: var(--blog-color-primary);
+        }
+        // .badge-notify {
+        //     // width: 2
+        // }
+        .svg-inline--fa.fa-bell,
+        .svg-inline--fa.fa-moon {
+            width: 30px;
+            font-size: 30px;
+            color: #ff9d54;
         }
     }
 }

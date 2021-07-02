@@ -40,7 +40,7 @@ const MenuBlog: FC<any> = () => {
         },
         {
             text: 'txt_news',
-            link: '/news',
+            link: '/favorite',
             icon: <HistoryOutlined />,
         },
     ];

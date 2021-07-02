@@ -5,6 +5,7 @@ import { CrownFilled } from '@ant-design/icons';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { useState } from 'react';
 import ListTopArticle from '@Components/Blog/ListTopArticle';
+import CardBlog from '@Components/Blog/CardBlog';
 
 const { TabPane } = Tabs;
 
@@ -31,13 +32,14 @@ const TopArticleTab: FC<any> = () => {
                 </Typography.Title>
             </Box>
             <Tabs onTabClick={onChangeTab} activeKey={activeKey} className="app-tab">
-                <TabPane tab="1M" key="aMonth">
+                <TabPane tab="1M" key={TIME_TOP.aMonth}>
+                    <ListTopArticle />
                     <ListTopArticle />
                 </TabPane>
-                <TabPane tab="3M" key="threeMonth">
+                <TabPane tab="3M" key={TIME_TOP.threeMonth}>
                     2M
                 </TabPane>
-                <TabPane tab="6M" key="sixMonth">
+                <TabPane tab="6M" key={TIME_TOP.sixMonth}>
                     2M
                 </TabPane>
             </Tabs>

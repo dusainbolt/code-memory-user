@@ -2,7 +2,6 @@ import { Box } from '@Common/Box';
 import { FC } from 'react';
 import BoxSuggestLogin from '@Components/Blog/BoxSuggestLogin';
 import CardBlog from '@Components/Blog/CardBlog';
-import { Col, Row } from 'antd';
 
 const BlogContent: FC<any> = () => {
     return (
