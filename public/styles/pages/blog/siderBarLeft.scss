@@ -51,14 +51,17 @@
             font-size: $font_size_base + 12;
             color: var(--blog-color-primary);
         }
-        // .badge-notify {
-        //     // width: 2
-        // }
         .svg-inline--fa.fa-bell,
         .svg-inline--fa.fa-moon {
             width: 30px;
             font-size: 30px;
             color: #ff9d54;
+        }
+        > div {
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
         }
     }
 }

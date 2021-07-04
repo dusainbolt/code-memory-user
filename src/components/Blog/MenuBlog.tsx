@@ -1,7 +1,7 @@
 import { Box } from '@Common/Box';
 import { FC, ReactNode } from 'react';
 import { Menu, Typography } from 'antd';
-import { SearchOutlined, ClockCircleOutlined, MessageOutlined, TagOutlined, ReadOutlined, HistoryOutlined } from '@ant-design/icons';
+import { SearchOutlined, ClockCircleOutlined, StarOutlined, TagOutlined, ReadOutlined } from '@ant-design/icons';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 
 interface IMenuBlog {
@@ -19,9 +19,15 @@ const MenuBlog: FC<any> = () => {
             icon: <ClockCircleOutlined />,
         },
         {
-            text: 'txt_talk_dev',
-            link: '/dev',
-            icon: <MessageOutlined />,
+            text: 'txt_search',
+            link: '/search',
+            icon: <SearchOutlined />,
+        },
+
+        {
+            text: 'txt_news',
+            link: '/news',
+            icon: <ReadOutlined />,
         },
         {
             text: 'txt_tag',
@@ -29,20 +35,16 @@ const MenuBlog: FC<any> = () => {
             icon: <TagOutlined />,
         },
         {
-            text: 'txt_search',
-            link: '/search',
-            icon: <SearchOutlined />,
+            text: 'saved',
+            link: '/dev',
+            icon: <StarOutlined />,
         },
-        {
-            text: 'txt_news',
-            link: '/news',
-            icon: <ReadOutlined />,
-        },
-        {
-            text: 'txt_news',
-            link: '/favorite',
-            icon: <HistoryOutlined />,
-        },
+
+        // {
+        //     text: 'txt_news',
+        //     link: '/favorite',
+        //     icon: <HistoryOutlined />,
+        // },
     ];
     return (
         <Box className="sider-left__menu">

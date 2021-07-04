@@ -1,29 +1,19 @@
 import { Box } from '@Common/Box';
 import TagCommon from '@Common/Tag';
-import { Avatar, Popover, Typography } from 'antd';
+import { PopoverCardBlog } from '@Common/Popover/popoverCardBlog';
+import { Avatar, Typography } from 'antd';
 import { FC } from 'react';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
-import { LikeOutlined, CommentOutlined, ThunderboltOutlined, StarOutlined, ShareAltOutlined, LinkOutlined } from '@ant-design/icons';
+import { LikeOutlined, CommentOutlined } from '@ant-design/icons';
+import { useEffect } from 'react';
 
 const CardBlog: FC<any> = () => {
     const { t } = useTranslation();
 
-    const contentPopoverThunder = (
-        <Box className="blog-item__share-wrap">
-            <Box className="flx-center align-left blog-item__popover-row p-lr-12 p-tb-8">
-                <StarOutlined />
-                <Typography.Text className="ml-4">{t('blog.share')}</Typography.Text>
-            </Box>
-            <Box className="flx-center align-left blog-item__popover-row p-lr-12 p-tb-8">
-                <LinkOutlined />
-                <Typography.Text className="ml-4">{t('blog.add_list')}</Typography.Text>
-            </Box>
-            <Box className="flx-center align-left blog-item__popover-row p-lr-12 p-tb-8">
-                <ShareAltOutlined />
-                <Typography.Text className="ml-4">{t('blog.copy_url')}</Typography.Text>
-            </Box>
-        </Box>
-    );
+    useEffect(() => {
+        // alert(234234);
+    }, []);
+
     return (
         <Box className="card-blog blog-item mt-16">
             <div
@@ -71,9 +61,7 @@ const CardBlog: FC<any> = () => {
                             <CommentOutlined />
                             <Typography.Text className="interact-value">13</Typography.Text>
                         </Box>
-                        <Popover overlayClassName="app-popover" placement="bottom" content={contentPopoverThunder} trigger="click">
-                            <ThunderboltOutlined />
-                        </Popover>
+                        <PopoverCardBlog />
                     </Box>
                 </Box>
             </Box>

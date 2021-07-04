@@ -8,6 +8,7 @@ export default {
   },
   blog: {
     txt_view_next: "undefined",
+    saved: "Đã Lưu",
     share: "Chia sẻ bài viết",
     add_list: "Thêm vào danh sách",
     copy_url: "Sao chép URL",
@@ -16,7 +17,6 @@ export default {
     lasted: "Gần Đây",
     txt_home: "Trang Chủ",
     txt_talk_dev: "Tâm Sự Dev",
-    aWeek: "Trong tuần qua",
     aMonth: "Trong tháng qua",
     threeMonth: "3 Tháng qua",
     sixMonth: "6 Tháng qua",
