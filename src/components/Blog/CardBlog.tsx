@@ -6,8 +6,10 @@ import { FC } from 'react';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { LikeOutlined, CommentOutlined } from '@ant-design/icons';
 import { useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const CardBlog: FC<any> = () => {
+const CardBlog: FC<any> = ({ scrollPosition, blog }) => {
     const { t } = useTranslation();
 
     useEffect(() => {
@@ -16,11 +18,7 @@ const CardBlog: FC<any> = () => {
 
     return (
         <Box className="card-blog blog-item mt-16">
-            <div
-                className="blog-item__image"
-                style={{
-                    backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYt45_LAlzErKc52N2Xurys--ogeZC1Bxf2Y9Qk81D78UXC8m39z66ljFHdfdqALAFJc&usqp=CAU")`,
-                }}></div>
+            <LazyLoadImage effect="blur" alt={'hello'} scrollPosition={scrollPosition} src={blog.thumbnailUrl} className="blog-item__image" />
             <Box className="blog-item__content ml-12">
                 <Typography.Title className="blog-item__title title-2 mb-10" ellipsis={{ rows: 2 }} level={3}>
                     <a href="/">

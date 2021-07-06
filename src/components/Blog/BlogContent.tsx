@@ -1,20 +1,17 @@
 import { Box } from '@Common/Box';
 import { FC } from 'react';
 import BoxSuggestLogin from '@Components/Blog/BoxSuggestLogin';
-import CardBlog from '@Components/Blog/CardBlog';
+import ListContentBlog from './ListContentBlog';
 
 const BlogContent: FC<any> = () => {
+    const onBeforeLoad = e => {
+        console.log('EEEEEEEEEVNT', e);
+    };
     return (
         <Box className="blog-content mt-26">
             <Box className="sticky-content">
                 <BoxSuggestLogin />
-                <Box>
-                    <CardBlog />
-                    <CardBlog />
-                    <CardBlog />
-                    <CardBlog />
-                </Box>
-                {/* </Box> */}
+                <ListContentBlog />
             </Box>
         </Box>
     );

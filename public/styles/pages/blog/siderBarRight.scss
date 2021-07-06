@@ -1,7 +1,6 @@
 .sider-right {
     grid-area: sidebar_2;
     position: sticky;
-    padding-top: 25px;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -25,12 +24,11 @@
         position: sticky;
         bottom: 15px;
         min-height: calc(100vh - 50px);
-        margin-top: 15px;
     }
 }
 
 .list-top-article {
     .blog-item__title.ant-typography a {
-        font-size: 14px;
+        font-size: $font_size_base - 2;
     }
 }

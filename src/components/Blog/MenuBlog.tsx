@@ -39,12 +39,6 @@ const MenuBlog: FC<any> = () => {
             link: '/dev',
             icon: <StarOutlined />,
         },
-
-        // {
-        //     text: 'txt_news',
-        //     link: '/favorite',
-        //     icon: <HistoryOutlined />,
-        // },
     ];
     return (
         <Box className="sider-left__menu">
