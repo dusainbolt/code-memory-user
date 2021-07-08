@@ -84,7 +84,7 @@ export const AttendedProjects: FC<any> = () => {
             timeStart: 'Tháng 6, 2020',
             titleProject: 'Web Nomi Live Streaming',
             listDec: [
-                `Mô tả: Xây dựng hệ thóng phát live Streaming  ở phía client sử dụng WebRTC`,
+                `Mô tả: Xây dựng hệ thóng phát live streaming  ở phía client sử dụng WebRTC`,
                 `Công nghệ: ReactJS, Socket.io, Ant Design, WebRTC`,
             ],
         },

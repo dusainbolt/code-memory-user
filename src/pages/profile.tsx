@@ -16,7 +16,7 @@ const IndexPage: FC<any> = () => {
     return (
         !messageCrash && (
             <LayoutCommon blogBackground={false} header={false} footer={false} seoHome={seoHome}>
-                <Meta seoHome={seoHome} />
+                <Meta title="Lê Huy Du - Developer Profile" seoHome={seoHome} />
                 <ProfileComponent />
             </LayoutCommon>
         )
