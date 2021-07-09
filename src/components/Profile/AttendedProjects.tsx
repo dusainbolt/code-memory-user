@@ -39,7 +39,7 @@ export const AttendedProjects: FC<any> = () => {
             timeStart: 'Tháng 12, 2020',
             titleProject: 'Xplor Studio: Phần mềm fitness',
             listDec: [
-                `Mô tả: Cung cấp nền tảng cho PT quản lý, training, theo dõi sưc khỏe, mở lớp tập luyện`,
+                `Mô tả: Cung cấp nền tảng cho PT quản lý, training, theo dõi sức khỏe, lên lịch trình tập luyện`,
                 `Công nghệ: Zend Framework, HTML, CSS, Bootstrap, JQuery, HighCharts, Ajax`,
             ],
         },
@@ -47,7 +47,7 @@ export const AttendedProjects: FC<any> = () => {
             timeEnd: 'Tháng 4, 2021',
             timeStart: 'Tháng 2, 2021',
             titleProject: 'Glocaly EKYC',
-            listDec: [`Mô tả: Dịch vụ quản lý và xác minh customer`, `Công nghệ: ReactJS, Meterial UI, ChartJS, Socket.io`],
+            listDec: [`Mô tả: Xây dựng ứng dụng quản lí và xác minh customer`, `Công nghệ: ReactJS, Meterial UI, ChartJS, Socket.io`],
         },
         {
             timeEnd: 'Tháng 2, 2021',
@@ -62,7 +62,7 @@ export const AttendedProjects: FC<any> = () => {
             timeEnd: 'Tháng 1, 2021',
             timeStart: 'Tháng 10, 2020',
             titleProject: 'SAT MIGRATION',
-            listDec: [`Mô tả: Convert 1 - 1 từ code Adobe Flex sang Angular`, `Công nghệ: AngularJS, AgGrid`],
+            listDec: [`Mô tả: Migrate ứng dụng quản lý doanh nghiệp từ source code Adobe Flex sang AngularJS`, `Công nghệ: AngularJS, AgGrid`],
         },
         {
             timeEnd: 'Tháng 10, 2021',
@@ -123,7 +123,7 @@ export const AttendedProjects: FC<any> = () => {
                 {data.map((item, index) => (
                     <Row key={index}>
                         <Col className="project-time" xs={24} md={4}>
-                            <div>{item.timeEnd} -</div>
+                            <div>{item.timeEnd} - </div>
                             <div>{item.timeStart}</div>
                         </Col>
                         <Col xs={24} md={20}>

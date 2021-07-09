@@ -71,7 +71,7 @@
 
 @include _responsive(_md) {
     .project-time {
-        @include _flex_box(center, start);
+        @include _flex_box(center, flex-start);
     }
     .profile {
         &__wrap {
