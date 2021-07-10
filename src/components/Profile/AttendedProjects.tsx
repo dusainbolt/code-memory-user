@@ -22,7 +22,7 @@ export const AttendedProjects: FC<any> = () => {
             titleProject: 'CodeMemory: Nền tảng Blog lập trình',
             listDec: [
                 `Mô tả: Nền tảng chia sẻ kiến thức, khóa học, và diễn đàn lập trình`,
-                `Công nghệ: NextJS, TypeScript, Ant Design, Nest, Mongodb, GraphQL, AWS S3, Redis`,
+                `Công nghệ: NextJS, TypeScript, Ant Design, NestJS, Mongodb, GraphQL, AWS S3, Redis`,
             ],
         },
         {
@@ -108,7 +108,7 @@ export const AttendedProjects: FC<any> = () => {
             timeStart: 'Tháng 12, 2019',
             titleProject: 'Hai Van ERP: Quản trị doanh nghiệp Hải Vân',
             listDec: [
-                `Mô tả: Xây dựng chức năng lịch trình điều độ xe, quản lý chuyên đi trên hệ thông ERP của doanh nghiệp Hải Vân`,
+                `Mô tả: Xây dựng chức năng lịch trình điều độ xe, quản lý chuyên đi trên hệ thống ERP của doanh nghiệp Hải Vân`,
                 `Công nghệ: PHP, JQuery, HTML, CSS, Laravel`,
             ],
         },
