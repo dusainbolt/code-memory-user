@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import { Row, Col, Avatar, Typography, Divider } from 'antd';
 import { CalendarOutlined, EnvironmentOutlined, PhoneOutlined, MailOutlined, GlobalOutlined, BookFilled, DashboardFilled } from '@ant-design/icons';

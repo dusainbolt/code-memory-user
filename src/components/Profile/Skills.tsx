@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import { Row, Col, Typography, Progress } from 'antd';
 import useTranslation from '@Common/LanguageProvider/useTranslation';

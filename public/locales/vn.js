@@ -34,7 +34,9 @@ export default {
     txt_tooltip_contact: "{{contact}} của CodeMemory",
     txt_tooltip_connect: "Liên kết tới {{connect}} của CodeMemory",
     txt_tooltip_access: "Truy cập tới {{access}} của CodeMemory",
-    txt_view_next: "Xem tiếp",
+    txt_view_next: "Xem tiếp"
+  },
+  blog: {
     saved: "Đã Lưu",
     share: "Chia sẻ bài viết",
     add_list: "Thêm vào danh sách",

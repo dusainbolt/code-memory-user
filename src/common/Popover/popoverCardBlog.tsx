@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import { Popover, Typography } from 'antd';
 import { ThunderboltOutlined, StarOutlined, ShareAltOutlined, LinkOutlined } from '@ant-design/icons';

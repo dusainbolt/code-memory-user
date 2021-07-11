@@ -1,8 +1,9 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC, ReactNode } from 'react';
 import { Menu, Typography } from 'antd';
 import { SearchOutlined, ClockCircleOutlined, StarOutlined, TagOutlined, ReadOutlined } from '@ant-design/icons';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
+import clsx from 'clsx';
 
 interface IMenuBlog {
     text: string;
@@ -10,7 +11,7 @@ interface IMenuBlog {
     icon: ReactNode;
 }
 
-const MenuBlog: FC<any> = () => {
+const MenuBlog: FC<any> = ({ className }) => {
     const { t } = useTranslation();
     const MENU_BLOG: IMenuBlog[] = [
         {
@@ -41,7 +42,7 @@ const MenuBlog: FC<any> = () => {
         },
     ];
     return (
-        <Box className="sider-left__menu">
+        <Box className={clsx('sider-left__menu mt-30', [className] && className)}>
             <Menu style={{ width: 256 }} defaultSelectedKeys={[MENU_BLOG[0].link]} mode="vertical">
                 {MENU_BLOG.map(item => (
                     <Menu.Item key={item.link} icon={item.icon}>

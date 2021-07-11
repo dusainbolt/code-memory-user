@@ -8,11 +8,11 @@ export const LIST_MENU = [
     { name: 'txt_services', href: '/service' },
 ];
 
-const MenuHeader: React.FC<any> = ({ }) => {
+const MenuHeader: React.FC<any> = ({}) => {
     const { t } = useTranslation();
 
     return (
-        <nav className="header--menu">
+        <nav className="header__menu">
             {LIST_MENU.map((item, index) => (
                 <a key={index} className="m-lr-16" href={item.href}>
                     {t(`menu.${item.name}`)}

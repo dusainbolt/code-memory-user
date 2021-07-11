@@ -1,5 +1,5 @@
 .header {
-    &--wrapper {
+    &__wrapper {
         top: 0px;
         z-index: 10;
         transition: all 0.3s;
@@ -11,15 +11,15 @@
             background-color: var(--color-bg-header);
         }
     }
-    &--container {
+    &__container {
         @include _flex_box(center, space-between);
     }
-    &--logo {
+    &__logo {
         min-width: 140px;
         height: 51px;
         cursor: pointer;
     }
-    &--button-login {
+    &__button-login {
         font-weight: $font-bold;
         width: 150px;
         @include _flex_box();
@@ -28,11 +28,11 @@
             margin-right: 6px;
         }
     }
-    &--menu-wrap {
+    &__menu-wrap {
         @include _flex_box(center, flex-start);
         width: max-content;
     }
-    &--menu a {
+    &__menu a {
         color: var(--color-text-inactive);
         font-weight: $font-bold;
         transition: 0.2s all;
@@ -40,7 +40,7 @@
             color: var(--color-primary);
         }
     }
-    &--menu-icon {
+    &__menu-icon {
         display: none;
         color: var(--color-primary);
     }
@@ -48,15 +48,15 @@
 
 @include _responsive(_lg) {
     .header {
-        &--menu-wrap {
+        &__menu-wrap {
             display: none;
         }
-        &--menu-icon {
+        &__menu-icon {
             display: block;
             width: 24px;
         }
-        &--drawer {
-            .header--menu-wrap {
+        &__drawer {
+            .header__menu-wrap {
                 display: block;
             }
             .ant-drawer-title {
@@ -64,7 +64,7 @@
                 font-weight: $font-bold;
                 font-size: $font_size_base + 2;
             }
-            .header--menu a {
+            .header__menu a {
                 display: block;
                 margin: 12px 0;
                 &:last-child {

@@ -1,15 +1,13 @@
-import AntImage from '@Common/Image';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { actionLogin } from '@Redux/actionCreators/loginActionCreators';
 import { useAppSelector } from '@Redux/store';
-import { staticPath } from '@Utils/func';
-import { Card, Divider, message, Typography } from 'antd';
+import { Card, Typography } from 'antd';
 import { FC, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { LoginInput } from 'src/models/login-dto';
 import { LoginForm } from './LoginForm';
-import { AlertCommon } from "@Common/Alert";
+import { AlertCommon } from '@Common/Alert';
 import { useEffect } from 'react';
 
 export const LoginComponent: FC<any> = () => {
@@ -22,7 +20,7 @@ export const LoginComponent: FC<any> = () => {
     }, []);
 
     useEffect(() => {
-        dispatch(actionLogin.postLogin({ credential: "123", password: "123213" }));
+        dispatch(actionLogin.postLogin({ credential: '123', password: '123213' }));
     }, []);
 
     return (

@@ -9,7 +9,6 @@
     flex-direction: column;
     height: 100vh;
     &__menu {
-        margin-top: 30px;
         @include _flex_box(flex-start, center);
         flex-direction: column;
         .ant-menu {
@@ -20,7 +19,6 @@
         .ant-menu-item {
             padding-left: 8px;
             padding-right: 8px;
-            border-radius: 6px;
             &.ant-menu-item-selected {
                 background-color: transparent;
                 a.ant-typography,
@@ -29,6 +27,7 @@
                 }
             }
             &.ant-menu-item-active {
+                border-radius: 6px;
                 background-color: var(--blog-color-hover-primary);
             }
         }
@@ -47,20 +46,58 @@
         }
     }
     &__bottom {
-        .anticon-bell {
-            font-size: $font_size_base + 12;
-            color: var(--blog-color-primary);
-        }
-        .svg-inline--fa.fa-bell,
-        .svg-inline--fa.fa-moon {
-            width: 30px;
-            font-size: 30px;
+        .svg-inline--fa {
+            width: $font_size_base + 14;
             color: #ff9d54;
         }
         > div {
             cursor: pointer;
             &:hover {
                 opacity: 0.7;
+            }
+        }
+    }
+    &__drawer.full-w {
+        .sider-left__menu {
+            margin-top: 0 !important;
+            .ant-menu-item {
+                padding: 0;
+                height: 44px;
+                margin-bottom: 18px;
+                border-bottom: 1px solid var(--blog-color-icon-menu);
+                &.ant-menu-item-active {
+                    background-color: unset;
+                }
+            }
+        }
+    }
+}
+
+@include _responsive(_md) {
+    .sider-left {
+        margin: 0 -20px;
+        padding: 8px 20px;
+        background-color: white;
+        &__menu-pc {
+            display: none;
+        }
+        &__top {
+            @include _flex_box(center, flex-start);
+            .header__logo {
+                min-width: unset;
+                max-width: 180px;
+                margin-left: 8px;
+            }
+        }
+        &__bottom {
+            align-items: center;
+            > div {
+                padding: 0 !important;
+                margin: 0;
+                margin-left: 20px;
+                &.fontAWS {
+                    height: $font_size_base + 14;
+                }
             }
         }
     }

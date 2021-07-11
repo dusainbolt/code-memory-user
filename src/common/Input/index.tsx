@@ -1,7 +1,7 @@
 import { Input } from 'antd';
 import { FieldInputProps, FieldMetaProps, FormikState } from 'formik';
 import { FC } from 'react';
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 interface IInputComponent {
     label?: string;
     prefix?: any;
