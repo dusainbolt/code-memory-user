@@ -43,6 +43,11 @@ div {
     font-weight: $font-bold;
 }
 
+.title-4.ant-typography {
+    font-size: $font_size_base + 8;
+    font-weight: $font-bold;
+}
+
 // typography description normal
 .txt-dec-1.ant-typography {
     font-weight: $font-regular;

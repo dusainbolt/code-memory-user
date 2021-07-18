@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import BoxSuggestLogin from '@Components/Blog/BoxSuggestLogin';
 import ListContentBlog from './ListContentBlog';

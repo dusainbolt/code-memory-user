@@ -6,10 +6,12 @@ export interface _Box {
     onClick?: any;
 }
 
-export const Box: React.FC<_Box> = ({ children, onClick, container, className }) => {
+const Box: React.FC<_Box> = ({ children, onClick, container, className }) => {
     return (
         <div onClick={onClick} className={clsx({ [className]: className, container: container })}>
             {children}
         </div>
     );
 };
+
+export default Box;

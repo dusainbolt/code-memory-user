@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import { trackWindowScroll } from 'react-lazy-load-image-component';
 import CardBlog from '@Components/Blog/CardBlog';

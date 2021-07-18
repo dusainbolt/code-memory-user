@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import TagCommon from '@Common/Tag';
 import { PopoverCardBlog } from '@Common/Popover/popoverCardBlog';
 import { Avatar, Typography } from 'antd';

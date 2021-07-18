@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import TopArticleTab from '@Components/Blog/TopArticleTab';
 

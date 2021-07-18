@@ -21,18 +21,14 @@
 
 @include _responsive(_md) {
     .content-wrapper {
+        grid-template-areas: 'sidebar_1' 'content';
         grid-template-columns: auto;
         .sider-left {
-            display: none;
-        }
-    }
-}
-
-@include _responsive(_sm) {
-    .content-wrapper {
-        grid-template-columns: auto;
-        .sider-left {
-            display: none;
+            height: max-content;
+            flex-direction: unset;
+            &__bottom {
+                display: flex;
+            }
         }
     }
 }
@@ -41,28 +37,5 @@
     .content-wrapper {
         grid-template-columns: auto;
         grid-gap: unset;
-        .sider-left {
-            display: none;
-        }
-        .box-suggest-login,
-        .blog-item {
-            flex-direction: column;
-        }
-        .blog-item.card-blog {
-            padding: 0;
-            .lazy-load-image-background {
-                max-width: unset;
-            }
-        }
-        .blog-item {
-            &__content {
-                margin-left: 0 !important;
-                padding: 12px;
-            }
-            &__image {
-                border-bottom-left-radius: unset;
-                border-bottom-right-radius: unset;
-            }
-        }
     }
 }

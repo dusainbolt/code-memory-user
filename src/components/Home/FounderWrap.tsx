@@ -1,16 +1,16 @@
 import AntImage from '@Common/Image';
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Typography } from 'antd';
 
 // interface _FounderWrap {}
 
-const FounderWrap: React.FC<any> = ({ }) => {
+const FounderWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
 
     return (
-        <Box className="home-founder--container" container>
+        <Box className="home-founder__container" container>
             <Box className="home-founder--wrap p-tb-30 p-lr-20">
                 <Row gutter={32} className="home-founder--row">
                     <Col xs={24} lg={12}>

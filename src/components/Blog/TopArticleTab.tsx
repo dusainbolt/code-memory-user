@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import { Tabs, Typography } from 'antd';
 import { CrownFilled } from '@ant-design/icons';

@@ -1,4 +1,4 @@
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import { FC } from 'react';
 import { Formik, Field } from 'formik';
 import { InputComponent } from '@Common/Input';

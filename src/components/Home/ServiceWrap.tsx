@@ -1,13 +1,13 @@
 import ButtonCommon from '@Common/Button';
 import AntImage from '@Common/Image';
-import { Box } from '@Common/Box';
+import Box from '@Common/Box';
 import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { staticPath } from '@Utils/func';
 import { Col, Divider, Row, Space, Typography } from 'antd';
 
 // interface _ServiceWrap {}
 
-const ServiceWrap: React.FC<any> = ({ }) => {
+const ServiceWrap: React.FC<any> = ({}) => {
     const { t } = useTranslation();
 
     const DATA_SERVICE = [
@@ -46,7 +46,7 @@ const ServiceWrap: React.FC<any> = ({ }) => {
     ];
 
     return (
-        <Box className="home-service--container" container>
+        <Box className="home-service__container" container>
             <Typography.Text className="home--title title txt-center">{t('home.title_service')}</Typography.Text>
             {DATA_SERVICE.map((item, index) => {
                 return (

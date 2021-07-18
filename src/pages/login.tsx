@@ -18,6 +18,7 @@ interface ILoginPage {
 
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import LayoutCommon from '@Common/Layout';
 
 const LoginPage: FC<ILoginPage> = props => {
     const { t } = useTranslation();
@@ -28,18 +29,20 @@ const LoginPage: FC<ILoginPage> = props => {
     const router = useRouter();
 
     useEffect(() => {
+        console.log('TOKEN: ', token);
         if (token) {
             router.push('/blog');
         }
     }, [token]);
 
-
-    return !messageCrash && <Fragment>
-        <Meta title={t('login.title_meta')} seoHome={seoHome} />
-        <Header />
-        <LoginComponent />
-        <Footer seoHome={seoHome} />
-    </Fragment>;
+    return (
+        !messageCrash && (
+            <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
+                <Meta title={t('login.title_meta')} seoHome={seoHome} />
+                <LoginComponent />
+            </LayoutCommon>
+        )
+    );
 };
 
 export default LoginPage;

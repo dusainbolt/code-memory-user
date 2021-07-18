@@ -19,8 +19,8 @@ export const DEFAULT_SEO = {
         'Nền tàng chia sẻ blog, khóa học, diễn đàn. Giúp mở ra cái nhìn tổng quan, Đốt cháy niềm đam mê, khơi gợi sự sáng tạo trong chúng ta',
     keywords:
         'CodeMemory, CodeMemory Blog, CodeMemory diễn đàn, CodeMemory khóa học, CodeMemory Dịch vụ, Kiến thức, Lập trình, làm website, làm ứng dụng',
-    // ogImage:  staticPath('/images/og_code_memory.png'),
-    ogImage: 'https://appdu-storage.s3-ap-southeast-1.amazonaws.com/118005360_928999227584443_8060562362571425079_o.png',
+    ogImage:  staticPath('/images/og_code_memory.png'),
+    // ogImage: 'https://appdu-storage.s3-ap-southeast-1.amazonaws.com/118005360_928999227584443_8060562362571425079_o.png',
     ogType: 'website',
     ogUrl: DOMAIN_APP,
 };
