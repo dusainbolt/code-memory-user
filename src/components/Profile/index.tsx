@@ -1,51 +1,45 @@
 /** @format */
 
-import Box from "@Common/Box";
-import { FC } from "react";
-import { Row, Col, Avatar, Typography, Divider } from "antd";
-import {
-  CalendarOutlined,
-  EnvironmentOutlined,
-  PhoneOutlined,
-  MailOutlined,
-  GlobalOutlined,
-} from "@ant-design/icons";
-import useTranslation from "@Common/LanguageProvider/useTranslation";
-import { Work } from "./Work";
-import { Learn } from "./Learn";
-import { Skills } from "./Skills";
-import { DataBase } from "./Database";
-import { AttendedProjects } from "./AttendedProjects";
-import { Fade } from "react-reveal";
+import Box from '@Common/Box';
+import { FC } from 'react';
+import { Row, Col, Avatar, Typography, Divider } from 'antd';
+import { CalendarOutlined, EnvironmentOutlined, PhoneOutlined, MailOutlined, GlobalOutlined } from '@ant-design/icons';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
+import { Work } from './Work';
+import { Learn } from './Learn';
+import { Skills } from './Skills';
+import { DataBase } from './Database';
+import { AttendedProjects } from './AttendedProjects';
+import { Fade } from 'react-reveal';
 
 const ProfileComponent: FC<any> = () => {
   const { t } = useTranslation();
 
   const INFO_DATA = [
     {
-      text: "profile.birthday",
+      text: 'profile.birthday',
       icon: <CalendarOutlined />,
       col: { xs: 24, md: 8 },
     },
     {
-      text: "profile.village",
+      text: 'profile.village',
       icon: <EnvironmentOutlined />,
       col: { xs: 24, md: 8 },
     },
     {
-      text: "0328111597",
+      text: '0328111597',
       icon: <PhoneOutlined />,
       col: { xs: 24, md: 8 },
     },
     {
-      text: "profile.email",
+      text: 'profile.email',
       icon: <MailOutlined />,
       col: { xs: 24, md: 8 },
     },
     {
-      text: "http://du-sainbolt.web.app/",
+      text: 'http://du-sainbolt.web.app/',
       icon: <GlobalOutlined />,
-      link: "http://du-sainbolt.web.app/",
+      link: 'http://du-sainbolt.web.app/',
       col: { xs: 16 },
     },
   ];
@@ -63,17 +57,13 @@ const ProfileComponent: FC<any> = () => {
           </Col>
           <Col md={16} xs={24}>
             <Box className="mb-20 position-box">
-              <Typography.Title level={1}>
-                {t("profile.my_name")}
-              </Typography.Title>
-              <Typography.Paragraph className="title-3 position">
-                {t("profile.position")}
-              </Typography.Paragraph>
+              <Typography.Title level={1}>{t('profile.my_name')}</Typography.Title>
+              <Typography.Paragraph className="title-3 position">{t('profile.position')}</Typography.Paragraph>
             </Box>
             <Row gutter={[8, 16]}>
               {INFO_DATA.map((item, index) => (
                 <Col key={index} {...item.col}>
-                  {item.icon}{" "}
+                  {item.icon}{' '}
                   {item?.link ? (
                     <Typography.Link target="_blank" href={item.link}>
                       {item?.link}
@@ -84,24 +74,16 @@ const ProfileComponent: FC<any> = () => {
                 </Col>
               ))}
             </Row>
-            <Typography.Paragraph className="mt-12 profile__dec">
-              {t("profile.dec")}
-            </Typography.Paragraph>
+            <Typography.Paragraph className="mt-12 profile__dec">{t('profile.dec')}</Typography.Paragraph>
           </Col>
         </Row>
       </Fade>
       <Divider />
-      <Fade cascade>
-        <Learn />
-      </Fade>
+      <Learn />
       <Divider />
-      <Fade cascade>
-        <Work />
-      </Fade>
+      <Work />
       <Divider />
-      <Fade cascade>
-        <Skills />
-      </Fade>
+      <Skills />
       <Divider />
       <Fade cascade>
         <DataBase />

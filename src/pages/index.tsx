@@ -11,21 +11,23 @@ import 'swiper/swiper.min.css';
 import { SeoHome } from 'src/models/seo-home';
 
 const IndexPage: FC<any> = () => {
-    const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
-    const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
-    return !messageCrash && (
-        <LayoutCommon blogBackground={false} scrollHeader seoHome={seoHome}>
-            <Meta seoHome={seoHome} />
-            <HomePageComponent />
-        </LayoutCommon>
-    );
+  const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
+  const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
+  return (
+    !messageCrash && (
+      <LayoutCommon blogBackground={false} scrollHeader seoHome={seoHome}>
+        <Meta seoHome={seoHome} />
+        <HomePageComponent />
+      </LayoutCommon>
+    )
+  );
 };
 
 export default IndexPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
-    store.dispatch(getSeoHome());
-    store.dispatch(END);
-    await store.sagaTask.toPromise();
-    return { props: {} };
+  store.dispatch(getSeoHome());
+  store.dispatch(END);
+  await store.sagaTask.toPromise();
+  return { props: {} };
 });
