@@ -7,45 +7,45 @@ import clsx from 'clsx';
 import { useAppSelector } from '@Redux/store';
 
 export interface _ButtonCommon extends BaseButtonProps {
-    children?: any;
-    titleTooltip?: string;
-    className?: string;
-    fontAWS?: IconProp;
-    placement?: TooltipPlacement;
-    href?: string;
-    onClick?: any;
-    actionTypeLoading?: string;
+  children?: any;
+  titleTooltip?: string;
+  className?: string;
+  fontAWS?: IconProp;
+  placement?: TooltipPlacement;
+  href?: string;
+  onClick?: any;
+  actionTypeLoading?: string;
 }
 
 const ButtonCommon: React.FC<_ButtonCommon> = ({
-    children,
-    shape,
-    actionTypeLoading,
-    type,
-    className,
-    placement = 'bottom',
-    fontAWS,
-    icon,
-    titleTooltip,
-    ...props
+  children,
+  shape,
+  actionTypeLoading,
+  type,
+  className,
+  placement = 'bottom',
+  fontAWS,
+  icon,
+  titleTooltip,
+  ...props
 }) => {
-    const iconProps = icon || (fontAWS ? <FontAwesomeIcon icon={fontAWS} /> : null);
-    const isLoadingReducer = useAppSelector(store => store.isLoadingReducer);
-    const loadingRequest = actionTypeLoading && isLoadingReducer[actionTypeLoading] ? true : false;
+  const iconProps = icon || (fontAWS ? <FontAwesomeIcon icon={fontAWS} /> : null);
+  const isLoadingReducer = useAppSelector(store => store.isLoadingReducer);
+  const loadingRequest = actionTypeLoading && isLoadingReducer[actionTypeLoading] ? true : false;
 
-    return (
-        <Tooltip overlayClassName={clsx(`${className}-tooltip`)} placement={placement} title={titleTooltip || children}>
-            <Button
-                loading={loadingRequest}
-                type={type}
-                shape={shape}
-                className={clsx({ 'app-btn': true, [className]: className })}
-                icon={iconProps}
-                {...props}>
-                {children}
-            </Button>
-        </Tooltip>
-    );
+  return (
+    <Tooltip overlayClassName={clsx(`${className}-tooltip`)} placement={placement} title={titleTooltip || children}>
+      <Button
+        loading={loadingRequest}
+        type={type}
+        shape={shape}
+        className={clsx({ 'app-btn': true, [className]: className })}
+        icon={iconProps}
+        {...props}>
+        {children}
+      </Button>
+    </Tooltip>
+  );
 };
 
 export default ButtonCommon;

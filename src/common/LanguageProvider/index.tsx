@@ -5,24 +5,24 @@ export const _locales = ['vn', 'en'];
 export const LanguageContext = createContext([]);
 
 export const LanguageProvider: React.FC<any> = ({ children }) => {
-    const [__locale, _setLocale] = useState(_defaultLocale);
+  const [__locale, _setLocale] = useState(_defaultLocale);
 
-    const _changeLocale = value => {
-        _setLocale(value);
-        document.body.setAttribute('app-locale', value);
-        localStorage.setItem('lang', value);
-    };
+  const _changeLocale = value => {
+    _setLocale(value);
+    document.body.setAttribute('app-locale', value);
+    localStorage.setItem('lang', value);
+  };
 
-    useEffect(() => {
-        if (!window) {
-            return;
-        }
-        const language = localStorage.getItem('lang') || __locale;
-        document.body.setAttribute('app-locale', language);
-        if (language !== _defaultLocale) {
-            _setLocale(language);
-        }
-    }, []);
+  useEffect(() => {
+    if (!window) {
+      return;
+    }
+    const language = localStorage.getItem('lang') || __locale;
+    document.body.setAttribute('app-locale', language);
+    if (language !== _defaultLocale) {
+      _setLocale(language);
+    }
+  }, []);
 
-    return <LanguageContext.Provider value={[__locale, _changeLocale]}>{children}</LanguageContext.Provider>;
+  return <LanguageContext.Provider value={[__locale, _changeLocale]}>{children}</LanguageContext.Provider>;
 };

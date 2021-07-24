@@ -1,18 +1,16 @@
-import useTranslation from '@Common/LanguageProvider/useTranslation';
-import Box from '@Common/Box';
-import { actionLogin } from '@Redux/actionCreators/loginActionCreators';
-import { useAppSelector } from '@Redux/store';
-import { Card, Typography } from 'antd';
-import { FC, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-import { LoginInput } from 'src/models/LoginModel';
-import { LoginForm } from './LoginForm';
 import { AlertCommon } from '@Common/Alert';
-import { useEffect } from 'react';
+import Box from '@Common/Box';
+import useTranslation from '@Common/LanguageProvider/useTranslation';
+import { LoginInput } from '@Models/LoginModel';
+import { actionLogin } from '@Redux/actionCreators/loginActionCreators';
+import { useAppDispatch, useAppSelector } from '@Redux/store';
+import { Card, Typography } from 'antd';
+import { FC, useCallback, useEffect } from 'react';
+import { LoginForm } from './LoginForm';
 
 export const LoginComponent: FC<any> = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { messageError } = useAppSelector(store => store.loginReducer);
 
   const handleSubmitLogin = useCallback((values: LoginInput) => {
