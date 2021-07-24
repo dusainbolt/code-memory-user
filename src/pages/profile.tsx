@@ -8,26 +8,26 @@ import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import LayoutCommon from '@Common/Layout';
 
 import 'swiper/swiper.min.css';
-import { SeoHome } from 'src/models/seo-home';
+import { SeoHome } from 'src/models/SeoHomeModel';
 
 const IndexPage: FC<any> = () => {
-    const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
-    const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
-    return (
-        !messageCrash && (
-            <LayoutCommon blogBackground={false} header={false} footer={false} seoHome={seoHome}>
-                <Meta title="Lê Huy Du - Developer Profile" seoHome={seoHome} />
-                <ProfileComponent />
-            </LayoutCommon>
-        )
-    );
+  const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
+  const { messageCrash } = useAppSelector(store => store.isLoadingReducer);
+  return (
+    !messageCrash && (
+      <LayoutCommon blogBackground={false} header={false} footer={false} seoHome={seoHome}>
+        <Meta title="Lê Huy Du - Developer Profile" seoHome={seoHome} />
+        <ProfileComponent />
+      </LayoutCommon>
+    )
+  );
 };
 
 export default IndexPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
-    store.dispatch(getSeoHome());
-    store.dispatch(END);
-    await store.sagaTask.toPromise();
-    return { props: {} };
+  store.dispatch(getSeoHome());
+  store.dispatch(END);
+  await store.sagaTask.toPromise();
+  return { props: {} };
 });

@@ -8,7 +8,7 @@ import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import LayoutCommon from '@Common/Layout';
 
 import 'swiper/swiper.min.css';
-import { SeoHome } from 'src/models/seo-home';
+import { SeoHome } from 'src/models/SeoHomeModel';
 
 const IndexPage: FC<any> = () => {
   const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;

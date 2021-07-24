@@ -1,11 +1,11 @@
 import { GetSeoHomeAction, GetSeoHomeSuccessAction, GET_SEO_HOME, GET_SEO_HOME_SUCCESS } from '@Redux/actionsTypes/seoHomeActionTypes';
-import { SeoHome } from 'src/models/seo-home';
+import { SeoHome } from 'src/models/SeoHomeModel';
 
 export const getSeoHome = (): GetSeoHomeAction => ({
-    type: GET_SEO_HOME,
+  type: GET_SEO_HOME,
 });
 
 export const getSeoHomeSuccess = (seoHomePayload: SeoHome): GetSeoHomeSuccessAction => ({
-    type: GET_SEO_HOME_SUCCESS,
-    seoHomePayload,
+  type: GET_SEO_HOME_SUCCESS,
+  seoHomePayload,
 });
