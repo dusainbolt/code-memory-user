@@ -1,10 +1,10 @@
-const generateSitemap = require("./generate-sitemap");
-const { i18n } = require("./next-i18next.config");
+const generateSitemap = require('./generate-sitemap');
+const { i18n } = require('./next-i18next.config');
 
 module.exports = {
   serverRuntimeConfig: {
     // Will only be available on the server side
-    mySecret: "secret",
+    mySecret: 'secret',
     // Pass through env variables
     APOLLO_SERVER_URL: process.env.APOLLO_SERVER_URL,
   },
@@ -15,16 +15,6 @@ module.exports = {
     CLIENT_APOLLO_SERVER_URL: process.env.APOLLO_SERVER_URL,
     CLIENT_APP_KEY: process.env.APP_KEY,
   },
-  // exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
-  //     console.log('--------buildID => ', buildId);
-  //     console.log('--------dev => ', dev);
-  //     console.log('--------dev => ', defaultPathMap);
-
-  //     return {
-  //         '/': { page: '/' },
-  //         '/about': { page: '/about' },
-  //     };
-  // },
   webpack: (config, { isServer }) => {
     if (isServer) {
       generateSitemap();
@@ -33,11 +23,24 @@ module.exports = {
   },
   //   trailingSlash: true,
   images: {
-    loader: "imgix",
-    path: "",
+    loader: 'imgix',
+    path: '',
   },
   i18n,
-  // images: {
-  //     domains: ['d1.awsstatic.com'],
-  // }
+  async rewrites() {
+    return [
+      {
+        // does not handle locales automatically since locale: false is set
+        source: '/en/login',
+        destination: '/login',
+        locale: false,
+      },
+      {
+        // does not handle locales automatically since locale: false is set
+        source: '/vi/dang-nhap',
+        destination: '/login',
+        locale: false,
+      },
+    ];
+  },
 };

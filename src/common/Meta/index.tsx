@@ -89,6 +89,7 @@ const HeadSEO: FC<HeadSEO> = ({ seoHome = {}, type = "", title = "" }) => {
           <meta property="og:image" content={meta?.imageUrl} />
           <meta property="og:url" content={meta?.domain} />
           <meta property="twitter:card" content="summary" />
+          <meta name="twitter:image" content={seoHome.meta.imageUrl} />
           <meta property="twitter:title" content={titleMeta} />
           <meta property="twitter:description" content={meta?.description} />
           {jsonLDHome}

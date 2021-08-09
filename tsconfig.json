@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,17 +19,39 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@Utils/*": ["./src/utils/*"],
-      "@Public/*": ["./public/*"],
-      "@Models/*": ["src/types/*"],
-      "@Pages/*": ["./src/pages/*"],
-      "@Redux/*": ["./src/redux/*"],
-      "@GraphQL/*": ["src/graphql/*"],
-      "@Services/*": ["./src/services/*"],
-      "@Components/*": ["./src/components/*"],
-      "@Common/*": ["./src/common/*"],
-      "@Locales/*": ["./public/locales/*"],
-      "@Styles/*": ["./public/styles/*"]
+      "@Utils/*": [
+        "./src/utils/*"
+      ],
+      "@Public/*": [
+        "./public/*"
+      ],
+      "@Models/*": [
+        "src/types/*"
+      ],
+      "@Pages/*": [
+        "./src/pages/*"
+      ],
+      "@Redux/*": [
+        "./src/redux/*"
+      ],
+      "@GraphQL/*": [
+        "src/graphql/*"
+      ],
+      "@Services/*": [
+        "./src/services/*"
+      ],
+      "@Components/*": [
+        "./src/components/*"
+      ],
+      "@Common/*": [
+        "./src/common/*"
+      ],
+      "@Locales/*": [
+        "./public/locales/*"
+      ],
+      "@Styles/*": [
+        "./public/styles/*"
+      ]
     }
   },
   "include": [
@@ -35,5 +61,7 @@
     "src/store/saga/saga.js",
     "generate-sitemap.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
