@@ -1,9 +1,15 @@
-import Box from '@Common/Box';
-import { FC, ReactNode } from 'react';
-import { Menu, Typography } from 'antd';
-import { SearchOutlined, ClockCircleOutlined, StarOutlined, TagOutlined, ReadOutlined } from '@ant-design/icons';
-import useTranslation from '@Common/LanguageProvider/useTranslation';
-import clsx from 'clsx';
+import Box from "@Common/Box";
+import { FC, ReactNode } from "react";
+import { Menu, Typography } from "antd";
+import {
+  SearchOutlined,
+  ClockCircleOutlined,
+  StarOutlined,
+  TagOutlined,
+  ReadOutlined,
+} from "@ant-design/icons";
+import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 interface IMenuBlog {
   text: string;
@@ -12,39 +18,43 @@ interface IMenuBlog {
 }
 
 const MenuBlog: FC<any> = ({ className }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common"]);
   const MENU_BLOG: IMenuBlog[] = [
     {
-      text: 'lasted',
-      link: '/blog',
+      text: "lasted",
+      link: "/blog",
       icon: <ClockCircleOutlined />,
     },
     {
-      text: 'txt_search',
-      link: '/search',
+      text: "txt_search",
+      link: "/search",
       icon: <SearchOutlined />,
     },
 
     {
-      text: 'txt_news',
-      link: '/news',
+      text: "txt_news",
+      link: "/news",
       icon: <ReadOutlined />,
     },
     {
-      text: 'txt_tag',
-      link: '/tag',
+      text: "txt_tag",
+      link: "/tag",
       icon: <TagOutlined />,
     },
     {
-      text: 'saved',
-      link: '/dev',
+      text: "saved",
+      link: "/dev",
       icon: <StarOutlined />,
     },
   ];
   return (
-    <Box className={clsx('sider-left__menu mt-30', [className] && className)}>
-      <Menu style={{ width: 256 }} defaultSelectedKeys={[MENU_BLOG[0].link]} mode="vertical">
-        {MENU_BLOG.map(item => (
+    <Box className={clsx("sider-left__menu mt-30", [className] && className)}>
+      <Menu
+        style={{ width: 256 }}
+        defaultSelectedKeys={[MENU_BLOG[0].link]}
+        mode="vertical"
+      >
+        {MENU_BLOG.map((item) => (
           <Menu.Item key={item.link} icon={item.icon}>
             <Typography.Link href={item.link} rel="noopener noreferrer">
               {t(`blog.${item.text}`)}

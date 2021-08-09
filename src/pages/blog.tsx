@@ -1,14 +1,16 @@
-import Meta from '@Common/Meta';
-import BlogComponent from '@Components/Blog';
-import { GetStaticProps } from 'next';
-import { useAppSelector, wrapper } from '@Redux/store';
-import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
-import { END } from 'redux-saga';
-import { SeoHome } from 'src/models/SeoHomeModel';
-import LayoutCommon from '@Common/Layout';
+import Meta from "@Common/Meta";
+import BlogComponent from "@Components/Blog";
+import { GetStaticProps } from "next";
+import { useAppSelector, wrapper } from "@Redux/store";
+import { getSeoHome } from "@Redux/actionCreators/seoHomeActionCreators";
+import { END } from "redux-saga";
+import { SeoHome } from "src/types/SeoHomeModel";
+import LayoutCommon from "@Common/Layout";
+import { SSRContext } from "src/types/App/Context";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const BlogPage: React.FC<any> = () => {
-  const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
+  const seoHome = useAppSelector((store) => store.seoHomeReducer) as SeoHome;
 
   return (
     <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
@@ -20,9 +22,22 @@ const BlogPage: React.FC<any> = () => {
 
 export default BlogPage;
 
-export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
-  store.dispatch(getSeoHome());
-  store.dispatch(END);
-  await store.sagaTask.toPromise();
-  return { props: {} };
-});
+export const getStaticProps = wrapper.getStaticProps(
+  async (content: SSRContext) => {
+    const {
+      store: { dispatch, sagaTask },
+      locale,
+    } = content;
+
+    dispatch(getSeoHome());
+    dispatch(END);
+    await sagaTask.toPromise();
+
+    return {
+      props: {
+        locale,
+        ...(await serverSideTranslations(locale, ["common"])),
+      },
+    };
+  }
+);

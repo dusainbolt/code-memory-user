@@ -1,19 +1,23 @@
-import { LoginHashCookie } from '@Models/LoginModel';
-import { User, UserHashCookie } from '@Models/UserModel';
-import HashService from './hashService';
+import { LoginHashCookie } from "src/types/LoginModel";
+import { User, UserHashCookie } from "src/types/UserModel";
+import HashService from "./hashService";
 export default class CookieService {
   instance = null;
   hashService: HashService = null;
-  readonly KEY_LOGIN_COOKIE = '__login';
-  readonly KEY_USER_COOKIE = '__user';
+  readonly KEY_LOGIN_COOKIE = "__login";
+  readonly KEY_USER_COOKIE = "__user";
   readonly EXPIRES_DEFAULT = 14;
 
   constructor() {
-    this.instance = require('js-cookie');
+    this.instance = require("js-cookie");
     this.hashService = new HashService();
   }
 
-  setByHashAES = (key: string, data: any, expires = this.EXPIRES_DEFAULT): void => {
+  setByHashAES = (
+    key: string,
+    data: any,
+    expires = this.EXPIRES_DEFAULT
+  ): void => {
     // using hash service to hash data
     const dataHash = this.hashService.hashCryptoAES(data);
     // set data hash to cookie

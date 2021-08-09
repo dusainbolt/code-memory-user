@@ -1,7 +1,7 @@
-import { User } from '@Models/UserModel';
-import { LoginInput } from 'src/models/LoginModel';
+import { User } from "src/types/UserModel";
+import { LoginInput } from "src/types/LoginModel";
 
-export const LOGIN_ACTION_TYPES = 'loginActionTypes';
+export const LOGIN_ACTION_TYPES = "loginActionTypes";
 
 export const POST_LOGIN_REQUESTING = `${LOGIN_ACTION_TYPES}/POST_LOGIN_REQUESTING`;
 export interface postLoginAction {

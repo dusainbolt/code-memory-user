@@ -1,6 +1,6 @@
-import { SeoHome } from 'src/models/SeoHomeModel';
+import { SeoHome } from "src/types/SeoHomeModel";
 
-export const SEO_HOME_ACTION_TYPES = 'seoHomeActionTypes';
+export const SEO_HOME_ACTION_TYPES = "seoHomeActionTypes";
 
 export const GET_SEO_HOME = `${SEO_HOME_ACTION_TYPES}/GET_SEO_HOME_REQUEST`;
 
