@@ -1,10 +1,10 @@
-import Box from '@Common/Box';
-import { FC } from 'react';
-import { Row, Col, Typography, Progress } from 'antd';
-import useTranslation from '@Common/LanguageProvider/useTranslation';
-import AntImage from '@Common/Image';
-import { staticPath } from '@Utils/func';
-import { Zoom } from 'react-reveal';
+import Box from "@Common/Box";
+import { FC } from "react";
+import { Row, Col, Typography, Progress } from "antd";
+import AntImage from "@Common/Image";
+import { staticPath } from "@Utils/func";
+import { Zoom } from "react-reveal";
+import { useTranslation } from "react-i18next";
 interface ISkill {
   title: string;
   percent: number;
@@ -12,95 +12,100 @@ interface ISkill {
 }
 
 export const Skills: FC<any> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common"]);
   const SKILLS: ISkill[] = [
     {
-      title: 'HTML',
+      title: "HTML",
       percent: 90,
-      logo: '/images/profile/html.png',
+      logo: "/images/profile/html.png",
     },
     {
-      title: 'SCSS',
+      title: "SCSS",
       percent: 90,
-      logo: '/images/profile/scss.png',
+      logo: "/images/profile/scss.png",
     },
     {
-      title: 'JavaScript',
+      title: "JavaScript",
       percent: 90,
-      logo: '/images/profile/javasrcipt.jpg',
+      logo: "/images/profile/javasrcipt.jpg",
     },
     {
-      title: 'Ant Design',
+      title: "Ant Design",
       percent: 90,
-      logo: '/images/profile/antdesign.jpg',
+      logo: "/images/profile/antdesign.jpg",
     },
     {
-      title: 'JQuery',
+      title: "JQuery",
       percent: 60,
-      logo: '/images/profile/jquery.png',
+      logo: "/images/profile/jquery.png",
     },
     {
-      title: 'Angular',
+      title: "Angular",
       percent: 60,
-      logo: '/images/profile/angularjs.jpg',
+      logo: "/images/profile/angularjs.jpg",
     },
     {
-      title: 'ReactJS',
+      title: "ReactJS",
       percent: 90,
-      logo: '/images/profile/reactjs.jpg',
+      logo: "/images/profile/reactjs.jpg",
     },
     {
-      title: 'NextJS',
+      title: "NextJS",
       percent: 90,
-      logo: '/images/profile/nextjs.jpg',
+      logo: "/images/profile/nextjs.jpg",
     },
     {
-      title: 'VueJS',
+      title: "VueJS",
       percent: 60,
-      logo: '/images/profile/vuejs.jpg',
+      logo: "/images/profile/vuejs.jpg",
     },
     {
-      title: 'NodeJS',
+      title: "NodeJS",
       percent: 80,
-      logo: '/images/profile/nodejs.jpg',
+      logo: "/images/profile/nodejs.jpg",
     },
     {
-      title: 'NestJS',
+      title: "NestJS",
       percent: 90,
-      logo: '/images/profile/nestjs.png',
+      logo: "/images/profile/nestjs.png",
     },
     {
-      title: 'PHP',
+      title: "PHP",
       percent: 80,
-      logo: '/images/profile/php.png',
+      logo: "/images/profile/php.png",
     },
     {
-      title: 'PHP',
+      title: "PHP",
       percent: 80,
-      logo: '/images/profile/laravel.jpg',
+      logo: "/images/profile/laravel.jpg",
     },
     {
-      title: 'Socket.io',
+      title: "Socket.io",
       percent: 80,
-      logo: '/images/profile/socket.io.png',
+      logo: "/images/profile/socket.io.png",
     },
     {
-      title: 'GraphQL',
+      title: "GraphQL",
       percent: 90,
-      logo: '/images/profile/graphql.png',
+      logo: "/images/profile/graphql.png",
     },
   ];
   return (
     <Box className="profile__wrap mt-32">
       <Typography.Title className="title-wrap mb-16" level={3}>
-        {t('profile.professional_skills')}
+        {t("profile.professional_skills")}
       </Typography.Title>
       <Row gutter={[14, 24]}>
         {SKILLS.map((item, index) => (
           <Col key={index} xs={24} md={12} lg={8}>
             <Zoom>
               <Box className="flx-center profile__skill-info align-left">
-                <AntImage className="img-skill mr-12" src={staticPath(item?.logo ? item.logo : '/images/profile/ekoios.png')} />
+                <AntImage
+                  className="img-skill mr-12"
+                  src={staticPath(
+                    item?.logo ? item.logo : "/images/profile/ekoios.png"
+                  )}
+                />
                 <Box className="skill-info">
                   <Typography.Paragraph>{item.title}</Typography.Paragraph>
                   <Progress percent={item.percent} />

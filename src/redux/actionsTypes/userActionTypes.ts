@@ -1,6 +1,6 @@
-import { User } from '@Models/UserModel';
+import { User } from "src/types/UserModel";
 
-export const USER_ACTION_TYPES = 'userActionTypes';
+export const USER_ACTION_TYPES = "userActionTypes";
 
 export const SET_USER = `${USER_ACTION_TYPES}/SET_USER`;
 export interface SetUserAction {

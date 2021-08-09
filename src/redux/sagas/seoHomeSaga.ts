@@ -1,9 +1,9 @@
-import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
-import { SeoHome } from '@Models/SeoHomeModel';
-import { setTryCatchServer } from '@Redux/actionCreators/loadingActionCreators';
-import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
-import { put, takeEvery, all, fork } from 'redux-saga/effects';
-import * as actionTypes from '../actionsTypes/seoHomeActionTypes';
+import { getSeoHomeRequest } from "@GraphQL/seoHomeRequest";
+import { SeoHome } from "src/types/SeoHomeModel";
+import { setTryCatchServer } from "@Redux/actionCreators/loadingActionCreators";
+import { getSeoHomeSuccess } from "@Redux/actionCreators/seoHomeActionCreators";
+import { put, takeEvery, all, fork } from "redux-saga/effects";
+import * as actionTypes from "../actionsTypes/seoHomeActionTypes";
 
 function* onGetSeoHome() {
   try {

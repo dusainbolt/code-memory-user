@@ -1,26 +1,26 @@
-import Box from '@Common/Box';
-import { FC } from 'react';
-import { Tabs, Typography } from 'antd';
-import { CrownFilled } from '@ant-design/icons';
-import useTranslation from '@Common/LanguageProvider/useTranslation';
-import { useState } from 'react';
-import ListTopArticle from '@Components/Blog/ListTopArticle';
-import CardBlog from '@Components/Blog/CardBlog';
+import Box from "@Common/Box";
+import { FC } from "react";
+import { Tabs, Typography } from "antd";
+import { CrownFilled } from "@ant-design/icons";
+import { useState } from "react";
+import ListTopArticle from "@Components/Blog/ListTopArticle";
+import CardBlog from "@Components/Blog/CardBlog";
+import { useTranslation } from "react-i18next";
 
 const { TabPane } = Tabs;
 
 const TIME_TOP = {
-  aMonth: 'aMonth',
-  threeMonth: 'threeMonth',
-  sixMonth: 'sixMonth',
+  aMonth: "aMonth",
+  threeMonth: "threeMonth",
+  sixMonth: "sixMonth",
 };
 
-const listTab = ['1M', '3M', '6M'];
+const listTab = ["1M", "3M", "6M"];
 
 const TopArticleTab: FC<any> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common"]);
   const [activeKey, setActiveKey] = useState(TIME_TOP.aMonth);
-  const onChangeTab = key => {
+  const onChangeTab = (key) => {
     setActiveKey(key);
   };
   return (
@@ -28,7 +28,10 @@ const TopArticleTab: FC<any> = () => {
       <Box className="title-wrap p-20">
         <Typography.Title className="title-2" level={3}>
           <CrownFilled className="mr-4" />
-          {t('blog.top_blog')} - <Typography.Text className="sub-title">{t(`blog.${activeKey}`)}</Typography.Text>
+          {t("blog.top_blog")} -{" "}
+          <Typography.Text className="sub-title">
+            {t(`blog.${activeKey}`)}
+          </Typography.Text>
         </Typography.Title>
       </Box>
       <Tabs onTabClick={onChangeTab} activeKey={activeKey} className="app-tab">

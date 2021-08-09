@@ -1,7 +1,10 @@
-import { User } from '@Models/UserModel';
-import * as userActionTypes from '@Redux/actionsTypes/userActionTypes';
+import { User } from "src/types/UserModel";
+import * as userActionTypes from "@Redux/actionsTypes/userActionTypes";
 
-export const userReducer = (state: User = {}, action: userActionTypes.UserAction): User => {
+export const userReducer = (
+  state: User = {},
+  action: userActionTypes.UserAction
+): User => {
   switch (action.type) {
     case userActionTypes.SET_USER:
       return { ...state, ...action.user };

@@ -1,5 +1,5 @@
-import { User } from '@Models/UserModel';
-import * as userActionTypes from '@Redux/actionsTypes/userActionTypes';
+import { User } from "src/types/UserModel";
+import * as userActionTypes from "@Redux/actionsTypes/userActionTypes";
 
 export const actionUser = {
   setUser: (user: User): userActionTypes.SetUserAction => ({

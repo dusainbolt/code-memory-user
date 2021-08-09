@@ -1,10 +1,10 @@
-import { SeoHome } from '@Models/SeoHomeModel';
-import { Fragment, useEffect } from 'react';
-import { FC } from 'react';
-import Header from '@Common/Header';
-import Footer from '@Common/Footer';
-import { useAppDispatch } from '@Redux/store';
-import { actionUser } from '@Redux/actionCreators/userActionCreators';
+import { SeoHome } from "src/types/SeoHomeModel";
+import { Fragment, useEffect } from "react";
+import { FC } from "react";
+import Header from "@Common/Header";
+import Footer from "@Common/Footer";
+import { useAppDispatch } from "@Redux/store";
+import { actionUser } from "@Redux/actionCreators/userActionCreators";
 interface ILayout {
   children?: any;
   seoHome: SeoHome;
@@ -14,10 +14,17 @@ interface ILayout {
   footer?: boolean;
 }
 
-export const KEY_STYLE_BLOG = 'style';
-export const TYPE_STYLE_BLOG = 'blog';
+export const KEY_STYLE_BLOG = "style";
+export const TYPE_STYLE_BLOG = "blog";
 
-const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, footer = true, blogBackground = true, header = true }) => {
+const LayoutCommon: FC<ILayout> = ({
+  children,
+  seoHome,
+  scrollHeader = false,
+  footer = true,
+  blogBackground = true,
+  header = true,
+}) => {
   useEffect(() => {
     if (blogBackground) {
       document.body.setAttribute(KEY_STYLE_BLOG, TYPE_STYLE_BLOG);
