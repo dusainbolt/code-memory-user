@@ -7,11 +7,11 @@ import rootSaga from './sagas';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 function bindMiddleware(middleware: any) {
-    // Just use redux devtools in dev mode
-    if (process.env.NODE_ENV !== 'production') {
-        return composeWithDevTools(applyMiddleware(...middleware));
-    }
-    return applyMiddleware(...middleware);
+  // Just use redux devtools in dev mode
+  if (process.env.NODE_ENV !== 'production') {
+    return composeWithDevTools(applyMiddleware(...middleware));
+  }
+  return applyMiddleware(...middleware);
 }
 
 const sagaMiddleware = createSagaMiddleware();
@@ -20,37 +20,35 @@ let storeWrapper;
 // return createStore(rootReducer, initialState, bindMiddleware([sagaMiddleware]));
 
 function makeStore<T>(initialState?: T) {
-    // const isServer = typeof window === 'undefined';
+  const isServer = typeof window === 'undefined';
 
-    // common make config store SERVER & CLIENT
-    const makeConfigStore = (reducer) => {
-        return createStore(reducer, initialState, bindMiddleware([sagaMiddleware]));
+  // common make config store SERVER & CLIENT
+  const makeConfigStore = reducer => {
+    return createStore(reducer, initialState, bindMiddleware([sagaMiddleware]));
+  };
+
+  if (isServer) {
+    storeWrapper = makeConfigStore(rootReducer);
+  } else {
+    // we need it only on client side
+    const { persistStore, persistReducer } = require('redux-persist');
+    const storage = require('redux-persist/lib/storage').default;
+
+    // persist config
+    const persistConfig = {
+      key: 'code_memory_root',
+      whitelist: ['loginReducer'], // make sure it does not clash with server keys
+      storage,
     };
 
-    // if (isServer) {
-    //     storeWrapper = makeConfigStore(rootReducer);
-    // } else {
-    //     // we need it only on client side
-    //     const { persistStore, persistReducer } = require('redux-persist');
-    //     const storage = require('redux-persist/lib/storage').default;
-
-    //     // persist config
-    //     const persistConfig = {
-    //         key: 'code_memory_root',
-    //         whitelist: ['loginReducer'], // make sure it does not clash with server keys
-    //         storage
-    //     };
-
-    //     // create persist reducer
-    //     const persistedReducer = persistReducer(persistConfig, rootReducer);
-    //     storeWrapper = makeConfigStore(persistedReducer);
-    //     storeWrapper.__persistor = persistStore(storeWrapper); // Nasty hack
-
-
-    // }
-    storeWrapper = makeConfigStore(rootReducer);
-    storeWrapper.sagaTask = sagaMiddleware.run(rootSaga);
-    return storeWrapper;
+    // create persist reducer
+    const persistedReducer = persistReducer(persistConfig, rootReducer);
+    storeWrapper = makeConfigStore(persistedReducer);
+    storeWrapper.__persistor = persistStore(storeWrapper); // Nasty hack
+  }
+  //   storeWrapper = makeConfigStore(rootReducer);
+  storeWrapper.sagaTask = sagaMiddleware.run(rootSaga);
+  return storeWrapper;
 }
 
 console.clear();
@@ -63,10 +61,9 @@ export const wrapper = createWrapper(makeStore, { debug: false });
 
 export { storeWrapper };
 
-
 export const SET_CLIENT_STATE = 'SET_CLIENT_STATE';
 
-export const setClientState = (clientState) => ({
-    type: SET_CLIENT_STATE,
-    payload: clientState
+export const setClientState = clientState => ({
+  type: SET_CLIENT_STATE,
+  payload: clientState,
 });

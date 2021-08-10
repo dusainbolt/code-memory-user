@@ -9,11 +9,12 @@ import { LoginForm } from './LoginForm';
 import { useTranslation } from 'react-i18next';
 
 export const LoginComponent: FC<any> = () => {
-  const { t } = useTranslation(['common']);
+  const { t, i18n } = useTranslation(['common']);
   const dispatch = useAppDispatch();
   const { messageError } = useAppSelector(store => store.loginReducer);
 
   const handleSubmitLogin = useCallback((values: LoginInput) => {
+    i18n.changeLanguage('en');
     dispatch(actionLogin.postLogin(values));
   }, []);
 
