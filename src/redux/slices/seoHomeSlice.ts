@@ -1,4 +1,5 @@
 import { SeoHome } from '@Models/SeoHomeModel';
+import { IRootState, listSliceName } from '@Redux/reducers';
 import { AppState } from '@Redux/store';
 import { createAction, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
@@ -16,15 +17,19 @@ export const seoHomeSlice = createSlice({
   },
   extraReducers(builder) {
     builder.addCase(hydrate, (state, action) => {
+      let hydrateState = {};
+      listSliceName.forEach(item => {
+        hydrateState = { ...hydrateState, ...action.payload[item] };
+      });
       return {
         ...state,
-        ...action.payload,
+        ...hydrateState,
       };
     });
   },
 });
 
-export const getseoHomeSlice = (state: any) => state.seoHomeSlice;
+export const getseoHomeSlice = (state: IRootState): SeoHome => state.seoHomeSlice;
 
 export const { getSeoHomeStart, getSeoHomeSuccess } = seoHomeSlice.actions;
 

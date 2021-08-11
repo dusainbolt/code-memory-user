@@ -21,7 +21,7 @@ import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/dist/client/router';
-import { getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
+import seoHomeSlice, { getseoHomeSlice, getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
 
 const LoginPage: FC<ILoginPage> = props => {
   const { t, i18n } = useTranslation();
@@ -31,7 +31,9 @@ const LoginPage: FC<ILoginPage> = props => {
 
   // const token = useAppSelector(store => store.loginReducer.token);
 
-  const seoHome = {};
+  const seoHome = useAppSelector(getseoHomeSlice);
+  console.log(seoHome);
+
   const messageCrash = '';
   const token = '';
   const router = useRouter();
@@ -49,9 +51,9 @@ const LoginPage: FC<ILoginPage> = props => {
   //   i18n.changeLanguage('vi');
   //   console.log('12312312');
   // }, []);
-  useEffect(() => {
-    dispatch(getSeoHomeStart());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getSeoHomeStart());
+  // }, []);
 
   return (
     !false && (
@@ -67,9 +69,9 @@ export default LoginPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
   const { store, locale } = context;
-  // store.dispatch(getSeoHomeStart());
-  // store.dispatch(END);
-  // await store.sagaTask.toPromise();
+  store.dispatch(getSeoHomeStart());
+  store.dispatch(END);
+  await store.sagaTask.toPromise();
   return {
     props: {
       locale,
