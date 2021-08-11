@@ -23,7 +23,7 @@ const createApolloClient = (ctx?: GetServerSidePropsContext) => {
   const authLink = setContext((_, { headers }) => {
     let token = '';
     if (typeof window !== 'undefined') {
-      token = storeWrapper.getState().loginReducer.token;
+      token = storeWrapper.getState()?.loginReducer?.token;
     }
 
     return {

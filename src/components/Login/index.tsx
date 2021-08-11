@@ -11,7 +11,8 @@ import { useTranslation } from 'react-i18next';
 export const LoginComponent: FC<any> = () => {
   const { t, i18n } = useTranslation(['common']);
   const dispatch = useAppDispatch();
-  const { messageError } = useAppSelector(store => store.loginReducer);
+  // const { messageError } = useAppSelector(store => store.loginReducer);
+  const messageError: any = '';
 
   const handleSubmitLogin = useCallback((values: LoginInput) => {
     i18n.changeLanguage('en');

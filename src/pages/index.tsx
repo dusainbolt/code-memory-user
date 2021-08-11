@@ -13,8 +13,11 @@ import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const IndexPage: FC<any> = () => {
-  const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
-  const { messageCrash } = useAppSelector(store => store.loadingReducer);
+  // const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
+  // const { messageCrash } = useAppSelector(store => store.loadingReducer);
+
+  const seoHome = {};
+  const messageCrash = '';
   return (
     !messageCrash && (
       <LayoutCommon blogBackground={false} scrollHeader seoHome={seoHome}>

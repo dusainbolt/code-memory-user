@@ -1,18 +1,20 @@
-import { applyMiddleware, createStore } from 'redux';
+// import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import rootReducer, { IRootState } from './reducers';
+import { IRootState, rootReducer } from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createWrapper } from 'next-redux-wrapper';
 import rootSaga from './sagas';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { configureStore, combineReducers, getDefaultMiddleware, EnhancedStore } from '@reduxjs/toolkit';
+import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, persistStore } from 'redux-persist';
 
-function bindMiddleware(middleware: any) {
-  // Just use redux devtools in dev mode
-  if (process.env.NODE_ENV !== 'production') {
-    return composeWithDevTools(applyMiddleware(...middleware));
-  }
-  return applyMiddleware(...middleware);
-}
+// function bindMiddleware(middleware: any) {
+//   // Just use redux devtools in dev mode
+//   if (process.env.NODE_ENV !== 'production') {
+//     return composeWithDevTools(applyMiddleware(...middleware));
+//   }
+//   return applyMiddleware(...middleware);
+// }
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -24,14 +26,27 @@ function makeStore<T>(initialState?: T) {
 
   // common make config store SERVER & CLIENT
   const makeConfigStore = reducer => {
-    return createStore(reducer, initialState, bindMiddleware([sagaMiddleware]));
+    // return createStore(reducer, initialState, bindMiddleware([sagaMiddleware]));
+    return configureStore({
+      reducer,
+      middleware: [
+        ...getDefaultMiddleware({
+          thunk: false,
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            ignoredActionPaths: ['payload.callback'],
+          },
+        }),
+        sagaMiddleware,
+      ],
+    });
   };
 
   if (isServer) {
     storeWrapper = makeConfigStore(rootReducer);
   } else {
     // we need it only on client side
-    const { persistStore, persistReducer } = require('redux-persist');
+    // const { persistStore, persistReducer } = require('redux-persist');
     const storage = require('redux-persist/lib/storage').default;
 
     // persist config
@@ -52,6 +67,10 @@ function makeStore<T>(initialState?: T) {
 }
 
 console.clear();
+
+export type AppStore = ReturnType<typeof makeStore>;
+
+export type AppState = ReturnType<AppStore['getState']>;
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<any>();

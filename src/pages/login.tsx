@@ -6,7 +6,7 @@ import Footer from '@Common/Footer';
 import 'swiper/swiper.min.css';
 import { GetStaticProps } from 'next';
 import { LoginComponent } from '@Components/Login';
-import { useAppSelector, wrapper } from '@Redux/store';
+import { useAppDispatch, useAppSelector, wrapper } from '@Redux/store';
 import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
 import { END } from 'redux-saga';
 import { SeoHome } from 'src/types/SeoHomeModel';
@@ -21,13 +21,19 @@ import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/dist/client/router';
+import { getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
 
 const LoginPage: FC<ILoginPage> = props => {
   const { t, i18n } = useTranslation();
-  const seoHome = useAppSelector(store => store.seoHomeReducer);
-  const messageCrash = useAppSelector(store => store.loadingReducer.messageCrash);
+  const dispatch = useAppDispatch();
+  // const seoHome = useAppSelector(store => store.seoHomeReducer);
+  // const messageCrash = useAppSelector(store => store.loadingReducer.messageCrash);
 
-  const token = useAppSelector(store => store.loginReducer.token);
+  // const token = useAppSelector(store => store.loginReducer.token);
+
+  const seoHome = {};
+  const messageCrash = '';
+  const token = '';
   const router = useRouter();
 
   useEffect(() => {
@@ -43,6 +49,9 @@ const LoginPage: FC<ILoginPage> = props => {
   //   i18n.changeLanguage('vi');
   //   console.log('12312312');
   // }, []);
+  useEffect(() => {
+    dispatch(getSeoHomeStart());
+  }, []);
 
   return (
     !false && (
@@ -58,9 +67,9 @@ export default LoginPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
   const { store, locale } = context;
-  store.dispatch(getSeoHome());
-  store.dispatch(END);
-  await store.sagaTask.toPromise();
+  // store.dispatch(getSeoHomeStart());
+  // store.dispatch(END);
+  // await store.sagaTask.toPromise();
   return {
     props: {
       locale,

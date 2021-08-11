@@ -19,7 +19,8 @@ interface IHeader {
 const Header: React.FC<IHeader> = ({ scrollHeader = false }) => {
   const { t } = useTranslation('common');
   const [visibleDraw, setVisibleDraw] = useState<boolean>(false);
-  const { token } = useAppSelector(store => store.loginReducer);
+  // const { token } = useAppSelector(store => store.loginReducer);
+  const token = '';
   const { scrollTop } = useScrollHeader(scrollHeader);
 
   const onToggleDraw = () => {
