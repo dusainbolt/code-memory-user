@@ -1,35 +1,35 @@
 export enum Gender {
-    FEMALE,
-    MALE,
-    OTHER,
+  FEMALE,
+  MALE,
+  OTHER,
 }
 
 export enum Role {
-    USER,
-    ADMIN,
+  USER,
+  ADMIN,
 }
 
 export enum UserStatus {
-    ACTIVE,
-    INACTIVE,
-    PAUSE,
-    BLOCK,
+  ACTIVE,
+  INACTIVE,
+  PAUSE,
+  BLOCK,
 }
 
 export interface User {
-    avatar?: string,
-    email?: string,
-    facebook?: string,
-    firstName?: string,
-    gender?: Gender,
-    id?: string,
-    lastName?: string,
-    password?: string,
-    phone?: string,
-    role?: Role,
-    status?: UserStatus,
+  avatar?: string;
+  email?: string;
+  facebook?: string;
+  firstName?: string;
+  gender?: Gender;
+  id?: string;
+  lastName?: string;
+  password?: string;
+  phone?: string;
+  role?: Role;
+  status?: UserStatus;
 }
 
 export type UserHashCookie = {
-    user: User
-}
+  user: User;
+};

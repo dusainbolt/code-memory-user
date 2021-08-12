@@ -4,7 +4,6 @@ import { FC } from 'react';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 import { useAppDispatch } from '@Redux/store';
-import { actionUser } from '@Redux/actionCreators/userActionCreators';
 interface ILayout {
   children?: any;
   seoHome: SeoHome;
@@ -27,10 +26,9 @@ const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, fo
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(actionUser.userStartApp());
+    // dispatch(actionUser.userStartApp());
   }, []);
 
-  console.log('123123');
   return (
     <Fragment>
       {header && <Header scrollHeader={scrollHeader} />}

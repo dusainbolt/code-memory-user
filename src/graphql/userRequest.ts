@@ -1,6 +1,6 @@
-import { gql } from "@apollo/client";
-import RequestService from "@Services/requestService";
-import { LoginInput } from "src/types/LoginModel";
+import { gql } from '@apollo/client';
+import RequestService from '@Services/requestService';
+import { LoginInput } from 'src/types/LoginModel';
 
 const requestService = new RequestService();
 
@@ -22,5 +22,5 @@ const postLoginQuery = gql`
 `;
 
 export const postLoginRequest = (variables: LoginInput): any => {
-  return requestService.mutation(postLoginQuery, variables, "login");
+  return requestService.mutation(postLoginQuery, variables, 'login');
 };

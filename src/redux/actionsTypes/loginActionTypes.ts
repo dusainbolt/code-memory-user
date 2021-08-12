@@ -1,7 +1,7 @@
-import { User } from "src/types/UserModel";
-import { LoginInput } from "src/types/LoginModel";
+import { User } from 'src/types/UserModel';
+import { LoginInput, LoginSlice } from 'src/types/LoginModel';
 
-export const LOGIN_ACTION_TYPES = "loginActionTypes";
+export const LOGIN_ACTION_TYPES = 'loginActionTypes';
 
 export const POST_LOGIN_REQUESTING = `${LOGIN_ACTION_TYPES}/POST_LOGIN_REQUESTING`;
 export interface postLoginAction {
@@ -26,3 +26,20 @@ export type loginAction = {
   token: string;
   messageError: string;
 };
+
+// export interface LoginActionInput {
+//   payload: {};
+// }
+
+type PayloadName = 'payload';
+
+export type LoginActionInput = Record<
+  PayloadName,
+  {
+    input: LoginInput;
+  }
+>;
+
+export type LoginOutput = Pick<LoginSlice, 'token' | 'user'>;
+
+export type LoginActionOutput = Record<PayloadName, LoginOutput>;

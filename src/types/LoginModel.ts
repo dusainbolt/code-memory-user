@@ -5,14 +5,11 @@ export interface LoginInput {
   password: string;
 }
 
-export interface LoginOutput {
-  token: string;
-  User: User;
-}
-
-export interface Login {
+export interface LoginSlice {
   token?: string;
   messageError?: string;
+  user: User;
+  loadingLogin: boolean;
 }
 
 export type LoginHashCookie = {

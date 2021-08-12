@@ -1,12 +1,13 @@
 // import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { IRootState, rootReducer } from './reducers';
+// import { IRootState, rootReducer } from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createWrapper } from 'next-redux-wrapper';
 import rootSaga from './sagas';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { configureStore, combineReducers, getDefaultMiddleware, EnhancedStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware, EnhancedStore } from '@reduxjs/toolkit';
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, persistStore } from 'redux-persist';
+import { IRootState, rootReducer } from './reducer';
 
 // function bindMiddleware(middleware: any) {
 //   // Just use redux devtools in dev mode

@@ -1,9 +1,7 @@
 import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
 import { SeoHome } from 'src/types/SeoHomeModel';
-import { setTryCatchServer } from '@Redux/actionCreators/loadingActionCreators';
 // import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
 import { put, takeEvery, all, fork } from 'redux-saga/effects';
-import * as actionTypes from '../actionsTypes/seoHomeActionTypes';
 import seoHomeSlice, { getSeoHomeStart, getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
 
 function* onGetSeoHome() {
@@ -12,7 +10,7 @@ function* onGetSeoHome() {
     yield console.log(seoHomeSlice);
     yield put(getSeoHomeSuccess(seoHome));
   } catch (error: any) {
-    yield put(setTryCatchServer(error.message));
+    // yield put(setTryCatchServer(error.message));
   }
 }
 

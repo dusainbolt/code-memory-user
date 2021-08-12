@@ -1,12 +1,12 @@
 import { AlertCommon } from '@Common/Alert';
 import Box from '@Common/Box';
 import { LoginInput } from 'src/types/LoginModel';
-import { actionLogin } from '@Redux/actionCreators/loginActionCreators';
 import { useAppDispatch, useAppSelector } from '@Redux/store';
 import { Card, Typography } from 'antd';
 import { FC, useCallback, useEffect } from 'react';
 import { LoginForm } from './LoginForm';
 import { useTranslation } from 'react-i18next';
+import { loginSliceStart } from '@Redux/slices/loginSlice';
 
 export const LoginComponent: FC<any> = () => {
   const { t, i18n } = useTranslation(['common']);
@@ -14,9 +14,9 @@ export const LoginComponent: FC<any> = () => {
   // const { messageError } = useAppSelector(store => store.loginReducer);
   const messageError: any = '';
 
-  const handleSubmitLogin = useCallback((values: LoginInput) => {
-    i18n.changeLanguage('en');
-    dispatch(actionLogin.postLogin(values));
+  const handleSubmitLogin = useCallback((input: LoginInput) => {
+    console.log('LOGIN SLICE');
+    dispatch(loginSliceStart({ input }));
   }, []);
 
   useEffect(() => {

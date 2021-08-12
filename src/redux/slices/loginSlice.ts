@@ -1,45 +1,34 @@
-import { AppState } from '@Redux/store';
-import { createAction, createSlice } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
+import { LoginSlice } from '@Models/LoginModel';
+import { LoginActionInput, LoginActionOutput } from '@Redux/actionsTypes/loginActionTypes';
+import { createSlice } from '@reduxjs/toolkit';
 
-interface MyAccountReducer {
-  visibleMyAccount: boolean;
-  isFirstAccount: boolean;
-  isLoadingMyAccount: boolean;
-}
-
-const initialState: MyAccountReducer = {
-  visibleMyAccount: false,
-  isFirstAccount: false,
-  isLoadingMyAccount: false,
+const initialState: LoginSlice = {
+  messageError: '',
+  token: '',
+  user: {},
+  loadingLogin: false,
 };
 
-const hydrate = createAction<AppState>(HYDRATE);
-
-export const myAccountSlice = createSlice({
-  name: 'MyAccount',
+export const loginSlice = createSlice({
+  name: 'login',
   initialState,
   reducers: {
-    setVisibleModalMyAccount: (state: MyAccountReducer, action: any) => {
-      const { isFirstAccount, visibleMyAccount } = action.payload;
-      return { ...state, isFirstAccount, visibleMyAccount };
+    loginSliceStart: (state: LoginSlice, action: LoginActionInput) => {
+      state.loadingLogin = true;
     },
-    setLoadingMyAccount: (state: MyAccountReducer, action: any) => {
-      return { ...state, isLoadingMyAccount: action.payload };
+    loginSliceSuccess: (state: LoginSlice, action: LoginActionOutput) => {
+      state.loadingLogin = false;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(hydrate, (state, action) => {
-      return {
-        ...state,
-        ...action.payload['storeSlice'],
-      };
-    });
+    loginSliceError: (state: LoginSlice, action: any) => {
+      state.loadingLogin = false;
+    },
   },
 });
 
-export const getMyAccountSlice = (state: any) => state.myAccountSlice;
+export const getloginSlice = (state: any) => state.loginSlice;
 
-export const { setVisibleModalMyAccount, setLoadingMyAccount } = myAccountSlice.actions;
+export const { loginSliceStart, loginSliceSuccess, loginSliceError } = loginSlice.actions;
 
-export default myAccountSlice.reducer;
+export default loginSlice.reducer;
