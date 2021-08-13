@@ -8,5 +8,3 @@ export const listSliceName = ['seoHomeSlice', 'loginSlice'];
 export const rootReducer = combineReducers({ seoHomeSlice, loginSlice });
 
 export type IRootState = ReturnType<typeof rootReducer>;
-
-// export const whitelistReducer = ['loginSlice'];

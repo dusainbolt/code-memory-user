@@ -17,7 +17,7 @@ const App: FC<AppProps> = ({ Component, pageProps, ...props }) => {
   const store = useStore();
   const isClient = typeof window !== 'undefined';
 
-  return isClient && false ? (
+  return isClient ? (
     <PersistGate persistor={(store as any).__persistor} loading={null}>
       <Component {...pageProps} />
     </PersistGate>
