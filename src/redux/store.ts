@@ -7,7 +7,7 @@ import rootSaga from './sagas';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { configureStore, getDefaultMiddleware, EnhancedStore } from '@reduxjs/toolkit';
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, persistStore } from 'redux-persist';
-import { IRootState, rootReducer } from './reducer';
+import { IRootState, rootReducer, whitelist } from './reducer';
 import storage from 'redux-persist/lib/storage';
 
 // function bindMiddleware(middleware: any) {
@@ -53,7 +53,7 @@ function makeStore<T>(initialState?: T) {
     const persistConfig = {
       version: 1,
       key: 'code_memory_root',
-      whitelist: ['loginSlice'], // make sure it does not clash with server keys
+      whitelist: whitelist, // make sure it does not clash with server keys
       storage,
     };
 

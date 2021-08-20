@@ -27,18 +27,4 @@ module.exports = {
     path: '',
   },
   i18n,
-  // async rewrites() {
-  //   return [
-  //     {
-  //       // does not handle locales automatically since locale: false is set
-  //       source: '/en/login',
-  //       destination: '/en/login',
-  //     },
-  //     {
-  //       // does not handle locales automatically since locale: false is set
-  //       source: '/vi/dang-nhap',
-  //       destination: '/vi/login',
-  //     },
-  //   ];
-  // },
 };
