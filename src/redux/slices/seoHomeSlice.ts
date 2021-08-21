@@ -1,5 +1,5 @@
 import { SeoHome } from '@Models/SeoHomeModel';
-import { IRootState } from '@Redux/reducer';
+import { RootState } from '@Redux/reducer';
 import { AppState } from '@Redux/store';
 import { createAction, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
@@ -25,7 +25,7 @@ export const seoHomeSlice = createSlice({
   },
 });
 
-export const getSeoHomeSlice = (state: IRootState): SeoHome => state.seoHomeSlice;
+export const getSeoHomeSlice = (state: RootState): SeoHome => state.seoHomeSlice;
 
 export const { getSeoHomeStart, getSeoHomeSuccess } = seoHomeSlice.actions;
 

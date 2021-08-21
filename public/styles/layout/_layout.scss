@@ -1,145 +1,146 @@
 .container {
-    width: 100%;
-    max-width: $container_universe;
-    padding: 0 20px;
-    margin: auto;
+  width: 100%;
+  max-width: $container_universe;
+  padding: 0 20px;
+  margin: auto;
 }
 
 body {
-    &[style='blog'] {
-        .container {
-            position: relative;
-            max-width: $container_universe + 150;
-        }
+  &[style='blog'] {
+    .container {
+      position: relative;
+      max-width: $container_universe + 150;
     }
+  }
 }
 
 @include _responsive(_xxl) {
-    @for $i from 1 through 10 {
-        .order_xl-#{$i} {
-            order: $i;
-        }
+  @for $i from 1 through 10 {
+    .order_xl-#{$i} {
+      order: $i;
     }
+  }
 }
 
 @include _responsive(_xl) {
-    .container {
-        max-width: $container_extraLarge;
+  .container {
+    max-width: $container_extraLarge;
+  }
+  body {
+    &[style='blog'] {
+      .container {
+        max-width: $container_extraLarge + 100;
+      }
     }
-    body {
-        &[style='blog'] {
-            .container {
-                max-width: $container_extraLarge + 100;
-            }
-        }
-    }
+  }
 }
 
 @include _responsive(_lg) {
-    .container {
-        max-width: $container_large;
+  .container {
+    max-width: $container_large;
+  }
+  body {
+    &[style='blog'] {
+      .container {
+        max-width: $container_large + 100;
+      }
     }
-    body {
-        &[style='blog'] {
-            .container {
-                max-width: $container_large + 100;
-            }
-        }
-    }
+  }
 }
 
 @include _responsive(_md) {
-    .container {
-        max-width: $container_medium;
+  .container {
+    max-width: $container_medium;
+  }
+  body {
+    &[style='blog'] {
+      .container {
+        max-width: $container_medium + 100;
+      }
     }
-    body {
-        &[style='blog'] {
-            .container {
-                max-width: $container_medium + 100;
-            }
-        }
-    }
+  }
 }
 
 @include _responsive(_sm) {
-    .container {
-        max-width: 100%;
-    }
+  .container {
+    max-width: 100%;
+  }
 }
 
 @include _responsive(_xs) {
 }
 
 @for $i from 0 through 32 {
-    @if ($i % 2) == 0 {
-        .mt-#{$i} {
-            margin-top: #{$i}px !important;
-        }
-        .mr-#{$i} {
-            margin-right: #{$i}px !important;
-        }
-        .mb-#{$i} {
-            margin-bottom: #{$i}px !important;
-        }
-        .ml-#{$i} {
-            margin-left: #{$i}px !important;
-        }
-        .pt-#{$i} {
-            padding-top: #{$i}px !important;
-        }
-        .pr-#{$i} {
-            padding-right: #{$i}px !important;
-        }
-        .pb-#{$i} {
-            padding-bottom: #{$i}px !important;
-        }
-        .pl-#{$i} {
-            padding-left: #{$i}px !important;
-        }
-        .m-tb-#{$i} {
-            margin-top: #{$i}px !important;
-            margin-bottom: #{$i}px !important;
-        }
-        .m-lr-#{$i} {
-            margin-left: #{$i}px !important;
-            margin-right: #{$i}px !important;
-        }
-        .m-#{$i} {
-            margin: #{$i}px !important;
-        }
-        .p-tb-#{$i} {
-            padding-top: #{$i}px !important;
-            padding-bottom: #{$i}px !important;
-        }
-        .p-lr-#{$i} {
-            padding-left: #{$i}px !important;
-            padding-right: #{$i}px !important;
-        }
-        .p-#{$i} {
-            padding: #{$i}px !important;
-        }
+  @if ($i % 2) == 0 {
+    .mt-#{$i} {
+      margin-top: #{$i}px !important;
     }
+    .mr-#{$i} {
+      margin-right: #{$i}px !important;
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i}px !important;
+    }
+    .ml-#{$i} {
+      margin-left: #{$i}px !important;
+    }
+    .pt-#{$i} {
+      padding-top: #{$i}px !important;
+    }
+    .pr-#{$i} {
+      padding-right: #{$i}px !important;
+    }
+    .pb-#{$i} {
+      padding-bottom: #{$i}px !important;
+    }
+    .pl-#{$i} {
+      padding-left: #{$i}px !important;
+    }
+    .m-tb-#{$i} {
+      margin-top: #{$i}px !important;
+      margin-bottom: #{$i}px !important;
+    }
+    .m-lr-#{$i} {
+      margin-left: #{$i}px !important;
+      margin-right: #{$i}px !important;
+    }
+    .m-#{$i} {
+      margin: #{$i}px !important;
+    }
+    .p-tb-#{$i} {
+      padding-top: #{$i}px !important;
+      padding-bottom: #{$i}px !important;
+    }
+    .p-lr-#{$i} {
+      padding-left: #{$i}px !important;
+      padding-right: #{$i}px !important;
+    }
+    .p-#{$i} {
+      padding: #{$i}px !important;
+    }
+  }
 }
 
 .txt-center {
-    text-align: center;
+  text-align: center;
 }
 
 .center-block {
-    width: max-content;
-    margin: auto;
-    display: block;
+  width: max-content;
+  margin: auto;
+  display: block;
 }
 
 .card-blog {
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: var(--blog-color-box-shadow-primary);
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(229, 231, 235);
+  // box-shadow: var(--blog-color-box-shadow-primary);
 }
 
 .flx-center {
-    @include _flex_box;
-    &.align-left {
-        justify-content: flex-start;
-    }
+  @include _flex_box;
+  &.align-left {
+    justify-content: flex-start;
+  }
 }

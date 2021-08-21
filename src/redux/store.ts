@@ -1,14 +1,11 @@
-// import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-// import { IRootState, rootReducer } from './reducers';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { createWrapper } from 'next-redux-wrapper';
-import rootSaga from './sagas';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { configureStore, getDefaultMiddleware, EnhancedStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, persistStore } from 'redux-persist';
-import { IRootState, rootReducer, whitelist } from './reducer';
+import { RootState, rootReducer, whitelist } from './reducer';
 import storage from 'redux-persist/lib/storage';
+import rootSaga from './saga';
 
 // function bindMiddleware(middleware: any) {
 //   // Just use redux devtools in dev mode
@@ -67,7 +64,7 @@ function makeStore<T>(initialState?: T) {
   return storeWrapper;
 }
 
-console.clear();
+// console.clear();
 
 export type AppStore = ReturnType<typeof makeStore>;
 
@@ -75,7 +72,7 @@ export type AppState = ReturnType<AppStore['getState']>;
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<any>();
-export const useAppSelector: TypedUseSelectorHook<IRootState> = useSelector;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const wrapper = createWrapper(makeStore, { debug: false });
 

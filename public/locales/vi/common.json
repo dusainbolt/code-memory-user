@@ -7,7 +7,7 @@
     "professional_skills": "KỸ NĂNG CÁ NHÂN",
     "birthday": "18/11/1999",
     "dec": "Tài năng không chỉ được sinh ra mà nó được nuôi dưỡng bởi niềm đam mê, động lực và sự kiên nhẫn. Đam mê với tôi là lập trình từ đó tôi luôn cố gắng tích lũy cập nhật công nghệ để tạo ra sản phẩm thiết thực, chạy nhanh, trải nghiệm tốt và bảo mật.",
-    "learn_time": "QUÁ TRÌNH HỌC TÂP",
+    "learn_time": "QUÁ TRÌNH HỌC TẬP",
     "work_time": "QUÁ TRÌNH LÀM VIỆC",
     "freelancer_company": "OVER TIME FREELANCER",
     "freelancer_job": "Full-Stack Web Developer",
@@ -113,8 +113,14 @@
     "url_fanpage": "https://www.facebook.com/sainboltapp",
     "url_profile": "https://www.facebook.com/dusainbolt/"
   },
-  "lang": { "vn": "Tiếng việt", "en": "Tiếng anh" },
-  "theme": { "dark": "Chế độ ban đêm", "light": "Chế độ ban ngày" },
+  "lang": {
+    "vn": "Tiếng việt",
+    "en": "Tiếng anh"
+  },
+  "theme": {
+    "dark": "Chế độ ban đêm",
+    "light": "Chế độ ban ngày"
+  },
   "login": {
     "title_meta": "Đăng nhập tài khoản | CodeMemory",
     "description": "Đăng nhập để cùng tương tác trên CodeMemory",
@@ -127,6 +133,10 @@
   },
   "message": {
     "MSG_1": "{{fieldName}} không được để trống",
-    "MSG_2": "Tài khoản hoặc mật khẩu không chính xác"
+    "MSG_2": "Tài khoản hoặc mật khẩu không chính xác",
+    "title_error": "Đã xảy ra lỗi",
+    "title_warning": "Cảnh báo",
+    "title_info": "Thông báo",
+    "title_success": "Thành công"
   }
 }

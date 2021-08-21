@@ -2,6 +2,7 @@ import { put, takeLatest, all, fork } from 'redux-saga/effects';
 import { postLoginRequest } from '@GraphQL/userRequest';
 import { loginSliceError, loginSliceStart, loginSliceSuccess } from '@Redux/slices/loginSlice';
 import { LoginActionInput } from '@Redux/actionsTypes/loginActionTypes';
+import { handleMessageErrorSaga } from '@Redux/saga';
 
 function* loginSaga(action: LoginActionInput) {
   try {
@@ -9,6 +10,7 @@ function* loginSaga(action: LoginActionInput) {
     yield put(loginSliceSuccess(data));
   } catch (error) {
     yield put(loginSliceError(error.message as string));
+    yield handleMessageErrorSaga(error);
   }
 }
 

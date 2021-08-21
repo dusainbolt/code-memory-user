@@ -4,6 +4,7 @@ import { FC } from 'react';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 import { useAppDispatch } from '@Redux/store';
+import { NotifySystem } from '@Common/Notify/NotifySystem';
 interface ILayout {
   children?: any;
   seoHome: SeoHome;
@@ -34,6 +35,7 @@ const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, fo
       {header && <Header scrollHeader={scrollHeader} />}
       {children}
       {footer && <Footer seoHome={seoHome} />}
+      <NotifySystem />
     </Fragment>
   );
 };

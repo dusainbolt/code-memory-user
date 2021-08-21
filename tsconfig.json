@@ -25,6 +25,9 @@
       "@Public/*": [
         "./public/*"
       ],
+      "@Constants/*": [
+        "src/constant/*"
+      ],
       "@Models/*": [
         "src/types/*"
       ],
