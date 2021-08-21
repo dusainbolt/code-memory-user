@@ -31,7 +31,7 @@ export type loginAction = {
 //   payload: {};
 // }
 
-type PayloadName = 'payload';
+export type PayloadName = 'payload';
 
 export type LoginActionInput = Record<
   PayloadName,

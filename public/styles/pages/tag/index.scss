@@ -1,4 +1,5 @@
 .tag-content {
+  padding: 20px 0;
   &__introduce {
     display: flex;
     justify-content: space-between;
@@ -8,9 +9,36 @@
     }
   }
   &__item {
+    border-radius: 8px;
+    &:hover {
+      background-color: var(--blog-color-hover-gray);
+    }
     .tag-info {
       .txt-dec-light {
         max-width: 350px;
+      }
+    }
+    .tag-thumbnail {
+      border-radius: 4px;
+      border: thin 1px var(--blog-border-card);
+    }
+  }
+  &.new-tag-content {
+    .tag-info {
+      .txt-dec-light {
+        max-width: 800px;
+      }
+    }
+  }
+}
+
+@include _responsive(_xs) {
+  .tag-content {
+    &__item {
+      .tag-info {
+        .txt-dec-light {
+          -webkit-line-clamp: 2;
+        }
       }
     }
   }

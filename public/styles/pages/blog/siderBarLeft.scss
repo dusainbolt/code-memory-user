@@ -89,6 +89,9 @@
     &__menu-pc {
       display: none;
     }
+    .header__menu-icon {
+      display: block;
+    }
     &__top {
       @include _flex_box(center, flex-start);
       .header__logo {

@@ -20,40 +20,43 @@
     "baseUrl": ".",
     "paths": {
       "@Utils/*": [
-        "./src/utils/*"
+        "src/utils/*"
       ],
       "@Public/*": [
-        "./public/*"
+        "public/*"
       ],
       "@Constants/*": [
         "src/constant/*"
+      ],
+      "@Resolver/*": [
+        "src/resolver/*"
       ],
       "@Models/*": [
         "src/types/*"
       ],
       "@Pages/*": [
-        "./src/pages/*"
+        "src/pages/*"
       ],
       "@Redux/*": [
-        "./src/redux/*"
+        "src/redux/*"
       ],
       "@GraphQL/*": [
         "src/graphql/*"
       ],
       "@Services/*": [
-        "./src/services/*"
+        "src/services/*"
       ],
       "@Components/*": [
-        "./src/components/*"
+        "src/components/*"
       ],
       "@Common/*": [
-        "./src/common/*"
+        "src/common/*"
       ],
       "@Locales/*": [
-        "./public/locales/*"
+        "public/locales/*"
       ],
       "@Styles/*": [
-        "./public/styles/*"
+        "public/styles/*"
       ]
     }
   },

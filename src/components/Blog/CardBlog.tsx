@@ -19,18 +19,21 @@ const CardBlog: FC<any> = ({ scrollPosition, blog }) => {
         className="blog-item__image"
       />
       <Box className="blog-item__content ml-12">
-        <Typography.Title className="blog-item__title title-2 mb-10" ellipsis={{ rows: 2 }} level={3}>
+        <Typography.Title className="blog-item__title title-2 mb-10 ellipsis row-2" level={3}>
           <a href="/">
             Intel hợp tác với SiFive làm SoC dùng kiến trúc RISC-V tương tự ARM Intel hợp tác với SiFive làm SoC dùng kiến trúc RISC-V tương tự ARM
             Intel hợp tác với SiFive làm SoC dùng kiến trúc RISC-V tương tự ARM Intel hợp tác với SiFive làm SoC dùng kiến trúc RISC-V tương
           </a>
         </Typography.Title>
-        <Typography.Paragraph className="txt-dec-light blog-item__description" ellipsis={{ rows: 2 }}>
+        <Typography.Paragraph className="txt-dec-light blog-item__description ellipsis row-2">
           Đấy là thông tin của tài khoản Twitter @UniverseIce, qua đó nói rằng ban đầu lẽ ra Samsung sẽ giới thiệu chip xử lý trang bị GPU kiến trúc
           RDNA2 của AMD phát triển trong tháng 0
         </Typography.Paragraph>
-        <Typography.Paragraph className="tag-wrap-expand" ellipsis={{ expandable: true }}>
+        <Typography.Paragraph className="tag-wrap-expand ellipsis">
           <TagCommon className="mr-10 mt-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
           <TagCommon className="mr-10" label="lap trinh" href="/" />
           <TagCommon className="mr-10" label="lap trinh" href="/" />
           <TagCommon className="mr-10" label="lap trinh" href="/" />

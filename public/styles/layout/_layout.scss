@@ -134,8 +134,20 @@ body {
 .card-blog {
   padding: 20px;
   border-radius: 6px;
-  border: 1px solid rgba(229, 231, 235);
+  border: 1px solid var(--blog-border-card);
   // box-shadow: var(--blog-color-box-shadow-primary);
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  &.row-2 {
+    -webkit-line-clamp: 2;
+  }
 }
 
 .flx-center {

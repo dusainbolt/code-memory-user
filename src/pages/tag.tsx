@@ -7,6 +7,9 @@ import { SSRContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
 import TagComponent from '@Components/Tag/TagComponent';
+import { getListTagSliceStart } from '@Redux/slices/tagSlice';
+import { SearchTagInput, TagStatus } from '@Models/TagModel';
+import { GetListTagAction } from '@Redux/actionsTypes/tagActionTypes';
 
 const BlogPage: React.FC<any> = () => {
   const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
@@ -27,7 +30,16 @@ export const getStaticProps = wrapper.getStaticProps(async (content: SSRContext)
     locale,
   } = content;
 
+  const paramsTagNew: SearchTagInput = {
+    key: '',
+    limit: 20,
+    offset: 0,
+    status: [TagStatus.ACTIVE],
+  };
+
   dispatch(getSeoHomeStart());
+  dispatch(getListTagSliceStart({ input: paramsTagNew }));
+
   dispatch(END);
   await sagaTask.toPromise();
 
