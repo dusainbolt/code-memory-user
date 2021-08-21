@@ -7,91 +7,101 @@ h6,
 p,
 span,
 div {
-    &.ant-typography {
-        line-height: 1.65em;
-        margin: 0;
-        padding: 0;
-        color: var(--color-text-main);
-    }
-    &.high-light {
-        font-weight: $font-bold;
-        color: var(--color-high-light);
-    }
-    &.italic {
-        font-style: italic;
-    }
+  &.ant-typography {
+    line-height: 1.65em;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-main);
+  }
+  &.high-light {
+    font-weight: $font-bold;
+    color: var(--color-high-light);
+  }
+  &.italic {
+    font-style: italic;
+  }
 }
 
 // typography title bold
 .title.ant-typography {
-    font-size: $font_size_base + 28;
-    font-weight: $font-bold;
+  font-size: $font_size_base + 28;
+  font-weight: $font-bold;
 }
 
 .title-1.ant-typography {
-    font-size: $font_size_base + 12;
-    font-weight: $font-bold;
+  font-size: $font_size_base + 12;
+  font-weight: $font-bold;
 }
 
 .title-2.ant-typography {
-    font-size: $font_size_base + 2;
-    font-weight: $font-bold;
+  font-size: $font_size_base + 2;
+  font-weight: $font-bold;
+}
+
+.title-small.ant-typography {
+  font-size: $font_size_base - 2;
+  font-weight: $font-bold;
 }
 
 .title-3.ant-typography {
-    font-size: $font_size_base + 4;
-    font-weight: $font-bold;
+  font-size: $font_size_base + 4;
+  font-weight: $font-bold;
 }
 
 .title-4.ant-typography {
-    font-size: $font_size_base + 8;
-    font-weight: $font-bold;
+  font-size: $font_size_base + 8;
+  font-weight: $font-bold;
 }
 
 // typography description normal
 .txt-dec-1.ant-typography {
-    font-weight: $font-regular;
-    font-size: $font_size_base + 4;
+  font-weight: $font-regular;
+  font-size: $font_size_base + 4;
 }
 
 .txt-user-name.ant-typography {
-    font-size: $font_size_base;
-    font-weight: $font-medium;
+  font-size: $font_size_base;
+  font-weight: $font-medium;
+  color: var(--blog-color-title-name);
+  line-height: $font_size_base;
+  &:hover {
+    opacity: 0.7;
     color: var(--blog-color-title-name);
-    line-height: $font_size_base;
-    &:hover {
-        opacity: 0.7;
-        color: var(--blog-color-title-name);
-    }
+  }
 }
 
 .txt-dec-gray.ant-typography {
-    font-size: $font_size_base - 2;
-    line-height: $font_size_base - 2;
+  font-size: $font_size_base - 2;
+  line-height: $font_size_base - 2;
+  color: var(--blog-color-created-at);
+  &:hover {
+    opacity: 0.7;
     color: var(--blog-color-created-at);
-    &:hover {
-        opacity: 0.7;
-        color: var(--blog-color-created-at);
-    }
+  }
 }
 
 // typography description light
 .txt-dec-light.ant-typography {
-    font-size: $font_size_base - 2;
-    color: var(--blog-color-created-at);
+  font-size: $font_size_base - 2;
+  color: var(--blog-color-created-at);
 }
 
 .txt-dec-light-1.ant-typography {
-    @extend .txt-dec-light;
-    font-size: $font_size_base + 2;
+  @extend .txt-dec-light;
+  font-size: $font_size_base + 2;
+}
+
+.txt-dec-nor.ant-typography {
+  @extend .txt-dec-light;
+  font-size: $font_size_base;
 }
 
 .txt-action {
-    cursor: pointer;
-    &:hover {
-        opacity: 0.7;
-    }
-    &.high-light:hover {
-        color: var(--color-high-light);
-    }
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+  &.high-light:hover {
+    color: var(--color-high-light);
+  }
 }

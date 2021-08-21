@@ -1,25 +1,21 @@
-import Box from "@Common/Box";
-import { FC, useState } from "react";
-import LogoHeader from "@Common/Header/LogoHeader";
-import MenuBlog from "@Components/Blog/MenuBlog";
-import { Avatar, Badge, Drawer, Typography } from "antd";
-import { faBars, faBell, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTranslation } from "react-i18next";
+import Box from '@Common/Box';
+import { FC, useState } from 'react';
+import LogoHeader from '@Common/Header/LogoHeader';
+import MenuBlog from '@Components/Blog/MenuBlog';
+import { Avatar, Badge, Drawer, Typography } from 'antd';
+import { faBars, faBell, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 const SiderBarLeft: FC<any> = () => {
   const [visibleDraw, setVisibleDraw] = useState<boolean>(false);
   const onToggleDraw = () => {
     setVisibleDraw(!visibleDraw);
   };
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(['common']);
   return (
     <Box className="sider-left">
       <Box className="sider-left__top">
-        <FontAwesomeIcon
-          onClick={onToggleDraw}
-          className="header__menu-icon"
-          icon={faBars}
-        />
+        <FontAwesomeIcon onClick={onToggleDraw} className="header__menu-icon" icon={faBars} />
         <LogoHeader />
         <MenuBlog className="sider-left__menu-pc" />
         <Drawer
@@ -28,11 +24,8 @@ const SiderBarLeft: FC<any> = () => {
           placement="left"
           closable={true}
           onClose={onToggleDraw}
-          visible={visibleDraw}
-        >
-          <Typography.Paragraph className="title-4 mb-12">
-            {t("menu.list_menu")}
-          </Typography.Paragraph>
+          visible={visibleDraw}>
+          <Typography.Paragraph className="title-4 mb-12">{t('menu.list_menu')}</Typography.Paragraph>
           <MenuBlog />
         </Drawer>
       </Box>
@@ -46,10 +39,7 @@ const SiderBarLeft: FC<any> = () => {
           </Badge>
         </Box>
         <Box className="pb-30">
-          <Avatar
-            size={40}
-            style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}
-          >
+          <Avatar size={40} style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
             U
           </Avatar>
         </Box>

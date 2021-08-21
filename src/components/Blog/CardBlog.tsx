@@ -4,18 +4,10 @@ import { PopoverCardBlog } from '@Common/Popover/popoverCardBlog';
 import { Avatar, Typography } from 'antd';
 import { FC } from 'react';
 import { LikeOutlined, CommentOutlined } from '@ant-design/icons';
-import { useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { useTranslation } from 'react-i18next';
 
 const CardBlog: FC<any> = ({ scrollPosition, blog }) => {
-  const { t } = useTranslation(['common']);
-
-  useEffect(() => {
-    // alert(234234);
-  }, []);
-
   return (
     <Box className="card-blog blog-item mt-16">
       <LazyLoadImage
@@ -38,12 +30,12 @@ const CardBlog: FC<any> = ({ scrollPosition, blog }) => {
           RDNA2 của AMD phát triển trong tháng 0
         </Typography.Paragraph>
         <Typography.Paragraph className="tag-wrap-expand" ellipsis={{ expandable: true }}>
-          <TagCommon label="lap trinh" href="/" />
-          <TagCommon label="lap trinh" href="/" />
-          <TagCommon label="lap trinh" href="/" />
-          <TagCommon label="lap trinh" href="/" />
-          <TagCommon label="lap trinh" href="/" />
-          <TagCommon label="lap trinh" href="/" />
+          <TagCommon className="mr-10 mt-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
+          <TagCommon className="mr-10" label="lap trinh" href="/" />
           <TagCommon label="lap trinh" href="/" />
         </Typography.Paragraph>
         <Box className="blog-item__info-create flx-center align-left mt-14">

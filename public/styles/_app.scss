@@ -12,6 +12,7 @@
 @import './components/tooltip.scss';
 @import './components/drawer.scss';
 @import './components/notify';
+@import './components/box_wellcome_page';
 @import './layout/header';
 @import './layout/footer';
 
@@ -54,4 +55,5 @@ body {
 @import './pages/index/index';
 @import './pages/login/index';
 @import './pages/blog/index';
+@import './pages/tag/index';
 @import './pages/profile/index';

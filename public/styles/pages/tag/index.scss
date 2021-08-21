@@ -1,0 +1,17 @@
+.tag-content {
+  &__introduce {
+    display: flex;
+    justify-content: space-between;
+    span.anticon svg {
+      font-size: $font_size_base + 8;
+      color: var(--color-primary);
+    }
+  }
+  &__item {
+    .tag-info {
+      .txt-dec-light {
+        max-width: 350px;
+      }
+    }
+  }
+}

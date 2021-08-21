@@ -1,35 +1,40 @@
 .app-tag.ant-tag {
-    padding: 2px 15px;
-    display: inline-flex;
-    place-items: center;
-    text-align: center;
-    height: 25px;
-    width: auto;
-    margin-right: 10px;
-    margin-top: 10px;
-    background-color: var(--blog-color-bg-tag);
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.6;
-    }
+  padding: 2px 15px;
+  display: inline-flex;
+  place-items: center;
+  text-align: center;
+  height: 25px;
+  width: auto;
+  margin-right: 0;
+  background-color: var(--blog-color-bg-tag);
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  &.bg-primary {
+    background-color: var(--blog-color-primary-light);
     a {
-        font-weight: 500;
-        color: var(--color-primary);
-        font-size: $font_size_base - 4;
+      color: var(--blog-color-text-main);
     }
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+  a {
+    font-weight: 500;
+    color: var(--color-primary);
+    font-size: $font_size_base - 4;
+  }
 }
 
 .tag-wrap-expand {
-    .ant-typography-expand {
-        display: none;
-    }
-    span[aria-hidden='true'] {
-        background-color: var(--blog-color-bg-tag);
-        height: 25px;
-        border-radius: 15px;
-        padding: 3px 15px;
-        margin-top: 2px;
-    }
+  .ant-typography-expand {
+    display: none;
+  }
+  span[aria-hidden='true'] {
+    background-color: var(--blog-color-bg-tag);
+    height: 25px;
+    border-radius: 15px;
+    padding: 3px 15px;
+    margin-top: 2px;
+  }
 }

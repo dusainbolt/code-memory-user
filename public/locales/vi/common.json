@@ -36,23 +36,35 @@
     "txt_tooltip_access": "Truy cập tới {{access}} của CodeMemory",
     "txt_view_next": "Xem tiếp"
   },
+  "tag": {
+    "top_month": "Quan tâm nhiều trong tháng",
+    "des_top_month": "Các chủ đề được quan tâm nhiều nhất trong tháng này",
+    "top_to_now": "Quan tâm từ trước tới nay",
+    "des_top_to_now": "Các chủ đề được quan tâm nhiều nhất từ trước tới nay",
+    "new": "Mới xuất hiện",
+    "des_new": "Các chủ đề mới được thêm gần đây",
+    "title_welcome": "Chủ đề trên Code Memory",
+    "des_welcome": "Tham gia cộng đồng trên Codememory và theo dõi các chủ đề mà bạn quan tâm"
+  },
   "blog": {
-    "saved": "Đã Lưu",
+    "top_blog": "Top Bài Viết",
     "share": "Chia sẻ bài viết",
     "add_list": "Thêm vào danh sách",
     "copy_url": "Sao chép URL",
     "login_now": "Đăng nhập ngay",
     "txt_suggest_login": "Bạn chưa đăng nhập. Hãy đăng nhập ngay để tương tác cùng CodeMemory nhé",
-    "lasted": "Gần Đây",
     "txt_home": "Trang Chủ",
     "txt_talk_dev": "Tâm Sự Dev",
     "aMonth": "Trong tháng qua",
     "threeMonth": "3 Tháng qua",
-    "sixMonth": "6 Tháng qua",
-    "top_blog": "Top Bài Viết",
-    "txt_tag": "Thẻ",
+    "sixMonth": "6 Tháng qua"
+  },
+  "menu_blog": {
+    "txt_tag": "Chủ đề",
     "txt_search": "Tìm kiếm",
-    "txt_news": "Tin tức"
+    "txt_news": "Tin tức",
+    "lasted": "Gần Đây",
+    "saved": "Đã Lưu"
   },
   "menu": {
     "list_menu": "Danh sách menu",

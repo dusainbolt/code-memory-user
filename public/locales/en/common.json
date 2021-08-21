@@ -36,23 +36,35 @@
     "txt_tooltip_access": "undefined",
     "txt_view_next": "undefined"
   },
+  "tag": {
+    "top_month": "undefined",
+    "des_top_month": "undefined",
+    "top_to_now": "undefined",
+    "des_top_to_now": "undefined",
+    "new": "undefined",
+    "des_new": "undefined",
+    "title_welcome": "undefined",
+    "des_welcome": "undefined"
+  },
   "blog": {
-    "saved": "undefined",
+    "top_blog": "undefined",
     "share": "undefined",
     "add_list": "undefined",
     "copy_url": "undefined",
     "login_now": "undefined",
     "txt_suggest_login": "undefined",
-    "lasted": "undefined",
     "txt_home": "undefined",
     "txt_talk_dev": "undefined",
     "aMonth": "undefined",
     "threeMonth": "undefined",
-    "sixMonth": "undefined",
-    "top_blog": "undefined",
+    "sixMonth": "undefined"
+  },
+  "menu_blog": {
     "txt_tag": "undefined",
     "txt_search": "undefined",
-    "txt_news": "undefined"
+    "txt_news": "undefined",
+    "lasted": "undefined",
+    "saved": "undefined"
   },
   "menu": {
     "list_menu": "undefined",

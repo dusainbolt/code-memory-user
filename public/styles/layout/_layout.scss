@@ -143,4 +143,7 @@ body {
   &.align-left {
     justify-content: flex-start;
   }
+  &.spacing {
+    justify-content: space-between;
+  }
 }

@@ -23,44 +23,45 @@ $container_universe: 1380px;
 $border-radius-large: 30px;
 
 :root {
-    // variable home page
-    --color-primary: #fe6347;
-    --antd-wave-shadow-color: #fe6347;
-    --color-box-primary-light: #ff831833;
-    --color-red-alert: #c20707;
-    --color-primary-light: #f1968633;
-    --color-text-button-white: #fff;
-    --color-background-main: #ffffff;
-    --color-text-main: #233d62;
-    --color-bg-footer: #24285b;
-    --color-text-main-o4: #727b99;
-    --color-text-main-05: #8090aa;
-    --color-text-inactive: #a6b0c1;
-    --color-bg-icon: #e4e6eb;
-    --color-bg-header: #ffffff;
-    --color-hover-dark: #514b4b;
-    --color-bg-input: #ffffff;
-    --color-high-light: #ff9a14;
-    --box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    --box-shadow-card-primary: rgb(235 88 15 / 10%) 1px 2px 20px;
+  // variable home page
+  --color-primary: #fe6347;
+  --antd-wave-shadow-color: #fe6347;
+  --color-box-primary-light: #ff831833;
+  --color-red-alert: #c20707;
+  --color-primary-light: #f1968633;
+  --color-text-button-white: #fff;
+  --color-background-main: #ffffff;
+  --color-text-main: #233d62;
+  --color-bg-footer: #24285b;
+  --color-text-main-o4: #727b99;
+  --color-text-main-05: #8090aa;
+  --color-text-inactive: #a6b0c1;
+  --color-bg-icon: #e4e6eb;
+  --color-bg-header: #ffffff;
+  --color-hover-dark: #514b4b;
+  --color-bg-input: #ffffff;
+  --color-high-light: #ff9a14;
+  --box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  --box-shadow-card-primary: rgb(235 88 15 / 10%) 1px 2px 20px;
 
-    // variable blog page
-    --blog-color-bg-main: #ffffff;
-    --blog-border-card: rgba(229, 231, 235);
-    --blog-color-text-main: #233d62;
-    --blog-color-icon-menu: #a6a9a6;
-    --blog-color-primary: #fe6347;
-    --blog-color-created-at: #757575;
-    --blog-color-bg-tag: rgb(246, 246, 251);
-    --blog-color-title-name: #394556;
-    --blog-color-hover-primary: #ff831833;
-    --blog-color-box-shadow-primary: rgb(235 88 15 / 10%) 1px 2px 20px;
+  // variable blog page
+  --blog-color-bg-main: #ffffff;
+  --blog-border-card: rgba(229, 231, 235);
+  --blog-color-text-main: #233d62;
+  --blog-color-icon-menu: #a6a9a6;
+  --blog-color-primary: #fe6347;
+  --blog-color-primary-light: #feebdd;
+  --blog-color-created-at: #757575;
+  --blog-color-bg-tag: rgb(246, 246, 251);
+  --blog-color-title-name: #394556;
+  --blog-color-hover-primary: #ff831833;
+  --blog-color-box-shadow-primary: rgb(235 88 15 / 10%) 1px 2px 20px;
 }
 
 body[app-theme='dark'] {
-    // --color-background-main: #18191a;
-    // --color-text-main: #e4e6eb;
-    // --color-bg-header: #242526;
-    // --color-bg-footer: #161727;
-    // --color-bg-input: #3a3b3c;
+  // --color-background-main: #18191a;
+  // --color-text-main: #e4e6eb;
+  // --color-bg-header: #242526;
+  // --color-bg-footer: #161727;
+  // --color-bg-input: #3a3b3c;
 }
