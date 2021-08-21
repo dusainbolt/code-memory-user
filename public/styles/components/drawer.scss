@@ -1,0 +1,29 @@
+.ant-drawer.full-w {
+    .ant-drawer-header {
+        border-bottom: none;
+    }
+    .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+    .ant-drawer-title {
+        .header__logo .ant-image {
+            margin: auto;
+            width: 209px;
+            display: block;
+        }
+    }
+    button.ant-drawer-close {
+        right: unset;
+        left: 0;
+        top: 10px;
+        .anticon.anticon-close {
+            color: var(--blog-color-text-main);
+            svg {
+                font-size: $font_size_base + 8;
+            }
+        }
+    }
+    .ant-drawer-body {
+        padding: 20px;
+    }
+}

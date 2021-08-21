@@ -1,0 +1,34 @@
+.sider-right {
+    grid-area: sidebar_2;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    // height: max-content;
+    .sticky-spacer {
+        flex-grow: 1;
+    }
+    .title-wrap {
+        padding-bottom: 6px !important;
+        .anticon-crown {
+            color: var(--blog-color-primary);
+        }
+        .sub-title {
+            color: var(--blog-color-created-at);
+        }
+    }
+    .app-tab .ant-tabs-nav-list {
+        padding-left: 20px;
+    }
+    &__content {
+        position: sticky;
+        bottom: 15px;
+        min-height: calc(100vh - 50px);
+    }
+}
+
+.list-top-article {
+    .blog-item__title.ant-typography a {
+        font-size: $font_size_base - 2;
+    }
+}

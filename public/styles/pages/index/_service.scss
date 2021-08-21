@@ -1,5 +1,5 @@
 .home-service {
-    &--container {
+    &__container {
         margin-bottom: 150px;
         .ant-divider {
             display: none;
@@ -24,7 +24,7 @@
 
 @include _responsive(_md) {
     .home-service {
-        &--container {
+        &__container {
             .ant-divider {
                 display: block;
             }

@@ -1,26 +1,23 @@
-import { SeoHome } from '@Common/Meta';
-import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
-import { getSeoHomeRequest } from '@Services/seoHomeRequest';
-import { put, call, takeEvery, all, fork } from 'redux-saga/effects';
-
-// import * as actionCreators from '../actionCreators/lyricsActionCreators';
-import * as actionTypes from '../actionsTypes/seoHomeActionTypes';
+import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
+import { SeoHome } from 'src/types/SeoHomeModel';
+// import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
+import { put, takeEvery, all, fork } from 'redux-saga/effects';
+import seoHomeSlice, { getSeoHomeStart, getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
 
 function* onGetSeoHome() {
-    try {
-        const seoHome: SeoHome = yield getSeoHomeRequest();
-        yield put(getSeoHomeSuccess(seoHome));
-        // const { data } = yield call(fetchLyrics, artist, song);
-        // yield put(actionCreators.getLyricsSuccess(data.lyrics));
-    } catch (error) {
-        // yield put(actionCreators.getLyricsFailure(error.response.data.error));
-    }
+  try {
+    const seoHome: SeoHome = yield getSeoHomeRequest();
+    yield console.log(seoHomeSlice);
+    yield put(getSeoHomeSuccess(seoHome));
+  } catch (error: any) {
+    // yield put(setTryCatchServer(error.message));
+  }
 }
 
 function* watchHandleSeoHome() {
-    yield takeEvery(actionTypes.GET_SEO_HOME, onGetSeoHome);
+  yield takeEvery(getSeoHomeStart, onGetSeoHome);
 }
 
 export default function* seoHomeSaga(): any {
-    yield all([fork(watchHandleSeoHome)]);
+  yield all([fork(watchHandleSeoHome)]);
 }

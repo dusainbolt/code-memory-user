@@ -1,56 +1,68 @@
-import { FC, Fragment } from 'react';
-import Meta, { SeoHome } from '@Common/Meta';
+import { FC, Fragment, useEffect } from 'react';
+import Meta from '@Common/Meta';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 
 import 'swiper/swiper.min.css';
-// import { getSeoHome } from '@Services/seo-home-request';
 import { GetStaticProps } from 'next';
-import useTranslation from '@Common/LanguageProvider/useTranslation';
 import { LoginComponent } from '@Components/Login';
-import { useAppSelector, wrapper } from '@Redux/store';
-import { getSeoHome } from '@Redux/actionCreators/seoHomeActionCreators';
+import { useAppDispatch, useAppSelector, wrapper } from '@Redux/store';
 import { END } from 'redux-saga';
+import { SeoHome } from 'src/types/SeoHomeModel';
 
-interface IIndexPage {
-    seoHome: SeoHome;
+interface ILoginPage {
+  seoHome: SeoHome;
 }
 
-const IndexPage: FC<IIndexPage> = props => {
-    const { t } = useTranslation();
-    const seoHome = useAppSelector(store => store.seoHomeReducer);
+// import { useRouter } from 'next/router';
+import LayoutCommon from '@Common/Layout';
+import { SSGContext } from 'src/types/App/Context';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/dist/client/router';
+import { getSeoHomeSlice, getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
 
-    // const router = useRouter();
-    // const authContext: UseProvideAuth = useContext(AuthContext);
-    // const dispatch = useAppDispatch();
-    // const { loadingAuth } = useAppSelector(state => state.isLoadingReducer);
-    // // const visibleLoadingAuth;
-    // console.log(authContext.isSignedIn());
-    // console.log(loadingAuth);
-    // useEffect(() => {
-    //     if (authContext.isSignedIn()) {
-    //         // router.push('/');
-    //         console.log('123123');
-    //     } else {
-    //         dispatch(setVisibleLoadingAuth(true));
-    //     }
-    // }, [authContext]);
-    return (
-        <Fragment>
-            {/* {!loadingAuth && <div className="loading__auth">123123123213213</div>} */}
-            <Meta title={t('login.title_meta')} seoHome={seoHome} />
-            <Header />
-            <LoginComponent />
-            <Footer />
-        </Fragment>
-    );
+const LoginPage: FC<ILoginPage> = props => {
+  const { t, i18n } = useTranslation();
+  // const dispatch = useAppDispatch();
+  // const seoHome = useAppSelector(store => store.seoHomeReducer);
+  // const messageCrash = useAppSelector(store => store.loadingReducer.messageCrash);
+
+  // const token = useAppSelector(store => store.loginReducer.token);
+
+  const seoHome = useAppSelector(getSeoHomeSlice);
+  console.log(seoHome);
+
+  // const messageCrash = '';
+  const token = '';
+  const router = useRouter();
+  console.log('TOKEN: ', token);
+
+  useEffect(() => {
+    if (token) {
+      router.push('/blog');
+    }
+  }, [token]);
+
+  return (
+    <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
+      <Meta title={t('login.title_meta')} seoHome={seoHome} />
+      <LoginComponent />
+    </LayoutCommon>
+  );
 };
 
-export default IndexPage;
+export default LoginPage;
 
-export const getStaticProps: GetStaticProps = wrapper.getStaticProps(store => async () => {
-    store.dispatch(getSeoHome());
-    store.dispatch(END);
-    await store.sagaTask.toPromise();
-    return { props: {} };
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
+  const { store, locale } = context;
+  store.dispatch(getSeoHomeStart());
+  store.dispatch(END);
+  await store.sagaTask.toPromise();
+  return {
+    props: {
+      locale,
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 });

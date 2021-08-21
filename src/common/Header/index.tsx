@@ -1,74 +1,65 @@
 import ButtonCommon from '@Common/Button';
-import { Box } from '@Common/Layout';
-import useTranslation from '@Common/LanguageProvider/useTranslation';
+import Box from '@Common/Box';
 import { faBars, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { staticPath } from '@Utils/func';
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Drawer } from 'antd';
-import AntImage from '@Common/Image';
+import LogoHeader from '@Common/Header/LogoHeader';
 import MenuHeader from './MenuHeader';
+import { useAppSelector } from '@Redux/store';
+import useScrollHeader from 'src/hooks/scroll-header';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { AuthContext, UseProvideAuth } from 'src/Provider/auth';
 
-// interface _Header {}
+interface IHeader {
+  scrollHeader?: boolean;
+}
 
-const Header: React.FC<any> = ({}) => {
-    const { t } = useTranslation();
-    const [scrollTop, setScrollTop] = useState<number>(0);
-    const [visibleDraw, setVisibleDraw] = useState<boolean>(false);
-    // const authContext: UseProvideAuth = useContext(AuthContext);
-    // console.log(authContext.isSignedIn());
-    useEffect(() => {
-        window.addEventListener('scroll', onScroll);
-        setTimeout(() => {
-            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-        }, 100);
-    }, []);
+const Header: React.FC<IHeader> = ({ scrollHeader = false }) => {
+  const { t } = useTranslation('common');
+  const [visibleDraw, setVisibleDraw] = useState<boolean>(false);
+  // const { token } = useAppSelector(store => store.loginReducer);
+  const token = '';
+  const { scrollTop } = useScrollHeader(scrollHeader);
 
-    const onScroll = e => {
-        const scrollHeight = e.target.documentElement.scrollTop;
-        setScrollTop(scrollHeight);
-    };
+  const onToggleDraw = () => {
+    setVisibleDraw(!visibleDraw);
+  };
 
-    const onToggleDraw = () => {
-        setVisibleDraw(!visibleDraw);
-    };
+  const menuHeaderCommon = (
+    <Box className="header__menu-wrap">
+      <MenuHeader />
+      {!token && (
+        <Link href="/login">
+          <a>
+            <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header__button-login">
+              {t('home.txt_btn_login')}
+            </ButtonCommon>
+          </a>
+        </Link>
+      )}
+    </Box>
+  );
 
-    const menuHeaderCommon = (
-        <Box className="header--menu-wrap">
-            <MenuHeader />
-            <a href="/login">
-                <ButtonCommon type="primary" shape="round" fontAWS={faSignInAlt} className="header--button-login">
-                    {t('home.txt_btn_login')}
-                </ButtonCommon>
-            </a>
-        </Box>
-    );
-
-    return (
-        <header className={clsx('header--wrapper', scrollTop > 500 && 'scrolling')}>
-            <Box className="container header--container">
-                <Link href="/">
-                    <Box className="header--logo">
-                        <AntImage width="209" height="51" alt="Logo CodeMemory" src={staticPath('/images/logo_header.webp')} />
-                    </Box>
-                </Link>
-                {menuHeaderCommon}
-                <FontAwesomeIcon onClick={onToggleDraw} className="header--menu-icon" icon={faBars} />
-                <Drawer
-                    className="header--drawer"
-                    title={t('menu.list_menu')}
-                    placement="right"
-                    closable={false}
-                    onClose={onToggleDraw}
-                    visible={visibleDraw}>
-                    {menuHeaderCommon}
-                </Drawer>
-            </Box>
-        </header>
-    );
+  return (
+    <header className={clsx('header__wrapper', scrollTop > 500 && 'scrolling')}>
+      <Box className="container header__container">
+        <LogoHeader />
+        {menuHeaderCommon}
+        <FontAwesomeIcon onClick={onToggleDraw} className="header__menu-icon" icon={faBars} />
+        <Drawer
+          className="header__drawer"
+          title={t('menu.list_menu')}
+          placement="right"
+          closable={false}
+          onClose={onToggleDraw}
+          visible={visibleDraw}>
+          {menuHeaderCommon}
+        </Drawer>
+      </Box>
+    </header>
+  );
 };
 
 export default Header;

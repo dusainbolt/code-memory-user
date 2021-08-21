@@ -13,13 +13,16 @@
         margin-right: 8px;
     }
     &.ant-input {
-        color: var(--color-primary) !important;
+        // color: var(--color-primary) !important;
         font-weight: 500;
         font-size: $font_size_base - 2;
         line-height: 21px;
     }
     padding-left: 16px;
     padding-right: 6px;
+    .ant-input {
+        background-color: transparent;
+    }
 }
 
 input::placeholder {
@@ -28,6 +31,34 @@ input::placeholder {
     font-size: $font_size_base - 2;
     line-height: 21px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: inherit;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+// @-webkit-keyframes autofill {
+//     to {
+//         color: inherit;
+//         background: transparent;
+//     }
+// }
+
+// input:-webkit-autofill {
+//     -webkit-animation-delay: 1s !important; /* Safari support - any positive time runs instantly */
+//     -webkit-animation-name: autofill !important;
+//     -webkit-animation-fill-mode: both !important;
+// }
 
 .field-wrap {
     width: 100%;
@@ -38,6 +69,13 @@ input::placeholder {
         font-size: $font_size_base - 2;
         line-height: 21px;
         margin-bottom: 4px;
+    }
+    .required {
+        color: red;
+        font-size: $font_size_base - 4;
+    }
+    .ant-input-prefix {
+        margin-right: 8px;
     }
 }
 

@@ -1,0 +1,7 @@
+.ant-alert.app-alert {
+    border-radius: 12px;
+    // border: none;
+    &.ant-alert-error .ant-alert-message {
+        color: var(--color-red-alert);
+    }
+}

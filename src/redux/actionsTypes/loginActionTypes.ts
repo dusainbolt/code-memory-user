@@ -1,46 +1,45 @@
-import { LoginInput } from '@Components/Login/LoginForm';
+import { User } from 'src/types/UserModel';
+import { LoginInput, LoginSlice } from 'src/types/LoginModel';
 
 export const LOGIN_ACTION_TYPES = 'loginActionTypes';
 
-export const POST_LOGIN = `${LOGIN_ACTION_TYPES}/POST_LOGIN`;
+export const POST_LOGIN_REQUESTING = `${LOGIN_ACTION_TYPES}/POST_LOGIN_REQUESTING`;
 export interface postLoginAction {
-    type: typeof POST_LOGIN;
-    loginInput: LoginInput;
+  type: typeof POST_LOGIN_REQUESTING;
+  loginInput: LoginInput;
+}
+export const POST_LOGIN_SUCCESS = `${LOGIN_ACTION_TYPES}/POST_LOGIN_SUCCESS`;
+export interface postLoginActionSuccess {
+  type: typeof POST_LOGIN_SUCCESS;
+  token: string;
 }
 
-export const SHOW_LOADING_AUTH = `${LOGIN_ACTION_TYPES}/SHOW_LOADING_AUTH`;
-export interface showLoadingAuth {
-    type: typeof SHOW_LOADING_AUTH;
+export const POST_LOGIN_ERROR = `${LOGIN_ACTION_TYPES}/POST_LOGIN_ERROR`;
+export interface postLoginActionError {
+  type: typeof POST_LOGIN_ERROR;
+  messageError: string;
 }
 
-export type loginAction = postLoginAction | showLoadingAuth;
+export type loginAction = {
+  type: string;
+  loginInput: LoginInput;
+  token: string;
+  messageError: string;
+};
 
-// export const SET_LYRICS = 'lyricsActionTypes/SET_LYRICS';
-// export interface SetLyricsAction {
-//     type: typeof SET_LYRICS;
-//     lyrics: string;
+// export interface LoginActionInput {
+//   payload: {};
 // }
 
-// export const GET_LYRICS = 'lyricsActionTypes/GET_LYRICS';
-// export interface GetLyricsAction {
-//     type: typeof GET_LYRICS;
-//     artist: string;
-//     song: string;
-// }
+type PayloadName = 'payload';
 
-// export const GET_LYRICS_REQUEST = 'lyricsActionTypes/GET_LYRICS_REQUEST';
-// export interface GetLyricsRequestAction {
-//     type: typeof GET_LYRICS_REQUEST;
-// }
+export type LoginActionInput = Record<
+  PayloadName,
+  {
+    input: LoginInput;
+  }
+>;
 
-// export const GET_LYRICS_SUCCESS = 'lyricsActionTypes/GET_LYRICS_SUCCESS';
-// export interface GetLyricsSuccessAction {
-//     type: typeof GET_LYRICS_SUCCESS;
-//     lyrics: string;
-// }
+export type LoginOutput = Pick<LoginSlice, 'token' | 'user'>;
 
-// export const GET_LYRICS_FAILURE = 'lyricsActionTypes/GET_LYRICS_FAILURE';
-// export interface GetLyricsFailureAction {
-//     type: typeof GET_LYRICS_FAILURE;
-//     error: Error | string;
-// }
+export type LoginActionOutput = Record<PayloadName, LoginOutput>;

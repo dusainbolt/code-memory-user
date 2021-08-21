@@ -1,0 +1,38 @@
+.app-tab {
+    .ant-tabs-tab {
+        border: none !important;
+        @include _flex_box;
+        // height: 28px;
+        .ant-tabs-tab-btn {
+            font-weight: 500;
+            font-size: $font_size_base - 2;
+            line-height: 16px;
+            @include _flex_box;
+            padding: 4px 6px;
+            border-radius: 6px;
+            color: var(--blog-color-created-at) !important;
+            &:hover {
+                background-color: var(--blog-color-hover-primary);
+            }
+        }
+        &.ant-tabs-tab-active {
+            .ant-tabs-tab-btn {
+                background-color: var(--blog-color-hover-primary);
+                color: var(--blog-color-primary) !important;
+                line-height: 16px;
+            }
+        }
+    }
+    .ant-tabs-tab + .ant-tabs-tab {
+        margin: 0 0 0 3px;
+    }
+    .ant-tabs-ink-bar {
+        display: none;
+    }
+    .ant-tabs-nav {
+        margin-bottom: 0;
+        &::before {
+            border-color: '$color_border_input;';
+        }
+    }
+}
