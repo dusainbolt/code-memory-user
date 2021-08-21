@@ -148,9 +148,9 @@ function listMajors(auth) {
 
                 obj[keyScreen] = groups;
               });
-              
-              const fileData = 'export default ' + JSON.stringify(obj, null, 2).replace(/"([^"]+)":/g, '$1:');
-              return next(null, fileData);
+
+              // const fileData = 'export default ' + JSON.stringify(obj, null, 2).replace(/"([^"]+)":/g, '$1:');
+              return next(null, JSON.stringify(obj, null, 2));
             } else {
               logger.info('No data found.');
             }

@@ -1,17 +1,24 @@
+.btn-primary-extend {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-button-white);
+}
+
 .app-btn {
-    @include _flex_box();
-    font-weight: $font-bold;
-    &.ant-btn-primary {
-        background-color: var(--color-primary);
-        border-color: var(--color-primary);
-        height: 42px;
-        color: var(--color-text-button-white);
-    }
-    svg.svg-inline--fa {
-        width: 15px;
-    }
+  @include _flex_box();
+  font-weight: $font-bold;
+  &.ant-btn-primary {
+    height: 42px;
+    @extend .btn-primary-extend;
+  }
+  &.btn-link a {
+    @extend .btn-primary-extend;
+  }
+  svg.svg-inline--fa {
+    width: 15px;
+  }
 }
 
 a.app-btn.app-btn {
-    padding-top: 4px !important;
+  padding-top: 4px !important;
 }

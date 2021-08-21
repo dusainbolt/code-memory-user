@@ -1,42 +1,43 @@
-import { SeoHome } from '@Models/seo-home';
+import { SeoHome } from 'src/types/SeoHomeModel';
 import { Fragment, useEffect } from 'react';
 import { FC } from 'react';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 import { useAppDispatch } from '@Redux/store';
-import { actionUser } from '@Redux/actionCreators/userActionCreators';
+import { NotifySystem } from '@Common/Notify/NotifySystem';
 interface ILayout {
-    children?: any;
-    seoHome: SeoHome;
-    scrollHeader?: boolean;
-    blogBackground?: boolean;
-    header?: boolean;
-    footer?: boolean;
+  children?: any;
+  seoHome: SeoHome;
+  scrollHeader?: boolean;
+  blogBackground?: boolean;
+  header?: boolean;
+  footer?: boolean;
 }
 
 export const KEY_STYLE_BLOG = 'style';
 export const TYPE_STYLE_BLOG = 'blog';
 
 const LayoutCommon: FC<ILayout> = ({ children, seoHome, scrollHeader = false, footer = true, blogBackground = true, header = true }) => {
-    useEffect(() => {
-        if (blogBackground) {
-            document.body.setAttribute(KEY_STYLE_BLOG, TYPE_STYLE_BLOG);
-        }
-    }, []);
+  useEffect(() => {
+    if (blogBackground) {
+      document.body.setAttribute(KEY_STYLE_BLOG, TYPE_STYLE_BLOG);
+    }
+  }, []);
 
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(actionUser.userStartApp());
-    }, []);
+  useEffect(() => {
+    // dispatch(actionUser.userStartApp());
+  }, []);
 
-    return (
-        <Fragment>
-            {header && <Header scrollHeader={scrollHeader} />}
-            {children}
-            {footer && <Footer seoHome={seoHome} />}
-        </Fragment>
-    );
+  return (
+    <Fragment>
+      {header && <Header scrollHeader={scrollHeader} />}
+      {children}
+      {footer && <Footer seoHome={seoHome} />}
+      <NotifySystem />
+    </Fragment>
+  );
 };
 
 export default LayoutCommon;

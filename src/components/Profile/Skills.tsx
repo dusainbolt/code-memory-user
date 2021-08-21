@@ -1,21 +1,18 @@
-/** @format */
-
 import Box from "@Common/Box";
 import { FC } from "react";
 import { Row, Col, Typography, Progress } from "antd";
-import useTranslation from "@Common/LanguageProvider/useTranslation";
 import AntImage from "@Common/Image";
 import { staticPath } from "@Utils/func";
-
+import { Zoom } from "react-reveal";
+import { useTranslation } from "react-i18next";
 interface ISkill {
   title: string;
   percent: number;
   logo: string;
 }
-// logo: "/images/profile/mysql.jpg",
 
 export const Skills: FC<any> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common"]);
   const SKILLS: ISkill[] = [
     {
       title: "HTML",
@@ -78,6 +75,11 @@ export const Skills: FC<any> = () => {
       logo: "/images/profile/php.png",
     },
     {
+      title: "PHP",
+      percent: 80,
+      logo: "/images/profile/laravel.jpg",
+    },
+    {
       title: "Socket.io",
       percent: 80,
       logo: "/images/profile/socket.io.png",
@@ -96,18 +98,20 @@ export const Skills: FC<any> = () => {
       <Row gutter={[14, 24]}>
         {SKILLS.map((item, index) => (
           <Col key={index} xs={24} md={12} lg={8}>
-            <Box className="flx-center profile__skill-info align-left">
-              <AntImage
-                className="img-skill mr-12"
-                src={staticPath(
-                  item?.logo ? item.logo : "/images/profile/ekoios.png"
-                )}
-              />
-              <Box className="skill-info">
-                <Typography.Paragraph>{item.title}</Typography.Paragraph>
-                <Progress percent={item.percent} />
+            <Zoom>
+              <Box className="flx-center profile__skill-info align-left">
+                <AntImage
+                  className="img-skill mr-12"
+                  src={staticPath(
+                    item?.logo ? item.logo : "/images/profile/ekoios.png"
+                  )}
+                />
+                <Box className="skill-info">
+                  <Typography.Paragraph>{item.title}</Typography.Paragraph>
+                  <Progress percent={item.percent} />
+                </Box>
               </Box>
-            </Box>
+            </Zoom>
           </Col>
         ))}
       </Row>

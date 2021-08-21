@@ -1,13 +1,12 @@
-/** @format */
-
 import Box from "@Common/Box";
 import { FC } from "react";
 import { Typography, Divider, Row, Col } from "antd";
-import useTranslation from "@Common/LanguageProvider/useTranslation";
 import { Fade } from "react-reveal";
+import Zoom from "react-reveal/Zoom";
+import { useTranslation } from "react-i18next";
 
 export const AttendedProjects: FC<any> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common"]);
   const data = [
     {
       timeEnd: "Hiện tại",
@@ -138,23 +137,27 @@ export const AttendedProjects: FC<any> = () => {
         </Typography.Title>
         <Box className="profile__table-attend-project">
           {data.map((item, index) => (
-            <Row key={index}>
-              <Col className="project-time" xs={24} md={4}>
-                <div>{item.timeEnd} - </div>
-                <div>{item.timeStart}</div>
-              </Col>
-              <Col xs={24} md={20}>
-                <div className="info-project-box">
-                  <div className="title-project mb-8">{item.titleProject}</div>
-                  <ul className="list-info-project">
-                    {item?.listDec.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </Col>
-              <Divider />
-            </Row>
+            <Zoom key={index}>
+              <Row>
+                <Col className="project-time" xs={24} md={4}>
+                  <div>{item.timeEnd} - </div>
+                  <div>{item.timeStart}</div>
+                </Col>
+                <Col xs={24} md={20}>
+                  <div className="info-project-box">
+                    <div className="title-project mb-8">
+                      {item.titleProject}
+                    </div>
+                    <ul className="list-info-project">
+                      {item?.listDec.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Col>
+                <Divider />
+              </Row>
+            </Zoom>
           ))}
         </Box>
       </Box>
