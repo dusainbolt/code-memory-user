@@ -70,7 +70,7 @@
   }
 }
 
-@include _responsive(_xs) {
+@include _responsive(_sm) {
   .content-wrapper {
     .box-suggest-login,
     .blog-item {
@@ -78,7 +78,11 @@
     }
     .blog-item.card-blog {
       padding: 0;
+      border-radius: 12px;
       .lazy-load-image-background {
+        width: 100%;
+        position: relative;
+        padding-top: 60%;
         max-width: unset;
       }
     }
@@ -90,6 +94,17 @@
       &__image {
         border-bottom-left-radius: unset;
         border-bottom-right-radius: unset;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        height: 100%;
+        max-width: 100%;
+        z-index: 1;
+        -webkit-object-fit: cover;
+        object-fit: cover;
       }
     }
   }

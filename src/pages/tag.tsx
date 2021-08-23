@@ -9,14 +9,15 @@ import { getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
 import TagComponent from '@Components/Tag/TagComponent';
 import { getListTagSliceStart } from '@Redux/slices/tagSlice';
 import { SearchTagInput, TagStatus } from '@Models/TagModel';
-import { GetListTagAction } from '@Redux/actionsTypes/tagActionTypes';
+import { SeoHomeComponent } from '@Common/Meta/SeoHome';
 
 const BlogPage: React.FC<any> = () => {
   const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
 
   return (
     <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
-      <Meta seoHome={seoHome} />
+      {/* <Meta seoHome={seoHome} /> */}
+      <SeoHomeComponent />
       <TagComponent />
     </LayoutCommon>
   );
