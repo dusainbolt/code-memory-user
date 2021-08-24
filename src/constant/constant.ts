@@ -20,3 +20,5 @@ export const FETCH_POLICY = {
   DEFAULT: 'cache-first',
   NO_CACHE: 'no-cache',
 };
+
+export const ENTIRE_LIMIT = 99999999999999999999999;

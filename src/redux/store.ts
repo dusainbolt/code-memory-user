@@ -28,7 +28,7 @@ function makeStore<T>(initialState?: T) {
     // return createStore(reducer, initialState, bindMiddleware([sagaMiddleware]));
     return configureStore({
       reducer: reducer,
-      devTools: process.env.NODE_ENV !== 'production',
+      // devTools: process.env.NODE_ENV !== 'production',
       middleware: [
         ...getDefaultMiddleware({
           thunk: false,
@@ -74,6 +74,6 @@ export type AppState = ReturnType<AppStore['getState']>;
 export const useAppDispatch = () => useDispatch<any>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export const wrapper = createWrapper(makeStore, { debug: false });
+export const wrapper = createWrapper(makeStore, { debug: true });
 
 export { storeWrapper };

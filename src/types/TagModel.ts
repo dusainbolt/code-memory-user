@@ -19,6 +19,9 @@ export interface SearchTagInput {
   orderBy?: string;
 }
 
+export interface EntireTagInput {
+  status: TagStatus[];
+}
 export interface Tag {
   createBy?: string;
   createdAt?: string;

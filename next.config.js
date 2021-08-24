@@ -15,12 +15,13 @@ module.exports = {
     CLIENT_APOLLO_SERVER_URL: process.env.APOLLO_SERVER_URL,
     CLIENT_APP_KEY: process.env.APP_KEY,
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      generateSitemap();
-    }
-    return config;
-  },
+  distDir: 'build',
+  // webpack: (config, { isServer }) => {
+  //   if (isServer) {
+  //     generateSitemap();
+  //   }
+  //   return config;
+  // },
   //   trailingSlash: true,
   images: {
     loader: 'imgix',

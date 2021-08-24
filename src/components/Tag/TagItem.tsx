@@ -14,9 +14,9 @@ const TagItem: FC<{
   tag: Tag;
 }> = ({ scrollPosition, level, tag }) => {
   return (
-    <Link href="/tag">
-      <a>
-        <Box className="tag-content__item flx-center spacing p-lr-4 p-tb-8 mb-2">
+    <Box className="tag-content__item flx-center spacing p-lr-4 p-tb-8 mb-2">
+      <Link href="/tag">
+        <a>
           <Box className="tag-info-wrap flx-center align-left">
             <LazyLoadImage
               effect="blur"
@@ -34,10 +34,10 @@ const TagItem: FC<{
               <Paragraph className="txt-dec-light ellipsis">{tag.description}</Paragraph>
             </Paragraph>
           </Box>
-          <TagCommon className="bg-primary" label="190 bai viet" href={'/tag'} />
-        </Box>
-      </a>
-    </Link>
+        </a>
+      </Link>
+      <TagCommon className="bg-primary" label="190 bai viet" href={'/tag'} />
+    </Box>
   );
 };
 
