@@ -15,11 +15,11 @@ export const tagSlice = createSlice({
   name: 'tagSlice',
   initialState,
   reducers: {
-    getListTagSliceStart: (state: TagSlice, action: GetListTagAction) => ({ ...state }),
+    getListTagSliceStart: (state: TagSlice, action: GetListTagAction) => state,
     getListTagSliceSuccess: (state: TagSlice, { payload }: GetListTagSuccessAction) => {
-      state.dataNew = payload.dataTags;
+      state.dataNew = payload?.dataTags ?? [];
     },
-    getListTagSliceError: (state: TagSlice, action: any) => ({ ...state }),
+    getListTagSliceError: (state: TagSlice, action: any) => state,
   },
   extraReducers(builder) {
     builder.addCase(hydrate, (state, action) => {

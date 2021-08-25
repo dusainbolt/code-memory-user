@@ -6,6 +6,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "build": "next build",
+    "test": "next build && yarn start",
     "postbuild": "yarn next-sitemap",
     "start": "next start",
     "deploy": "next build && firebase deploy"

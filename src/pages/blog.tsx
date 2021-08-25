@@ -11,7 +11,7 @@ const BlogPage: React.FC<any> = () => {
   const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
 
   return (
-    <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
+    <LayoutCommon header={false} footer={false} scrollHeader>
       <Meta seoHome={seoHome} />
       <BlogComponent />
     </LayoutCommon>
@@ -22,13 +22,13 @@ export default BlogPage;
 
 export const getStaticProps = wrapper.getStaticProps(async (content: SSRContext) => {
   const {
-    store: { dispatch, sagaTask },
+    // store: { dispatch, sagaTask },
     locale,
   } = content;
 
   // dispatch(getSeoHome());
-  dispatch(END);
-  await sagaTask.toPromise();
+  // dispatch(END);
+  // await sagaTask.toPromise();
 
   return {
     props: {

@@ -14,7 +14,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const IndexPage: FC<any> = () => {
   const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
   return (
-    <LayoutCommon blogBackground={false} header={false} footer={false} seoHome={seoHome}>
+    <LayoutCommon blogBackground={false} header={false} footer={false}>
       <Meta title="Lê Huy Du - Developer Profile" seoHome={seoHome} />
       <ProfileComponent />
     </LayoutCommon>
@@ -24,10 +24,10 @@ const IndexPage: FC<any> = () => {
 export default IndexPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
-  const { store, locale } = context;
+  const { locale } = context;
   // store.dispatch(getSeoHome());
-  store.dispatch(END);
-  await store.sagaTask.toPromise();
+  // store.dispatch(END);
+  // await store.sagaTask.toPromise();
   return {
     props: {
       locale,

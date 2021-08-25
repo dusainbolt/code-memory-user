@@ -1,15 +1,14 @@
 import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
 import { SeoHome } from 'src/types/SeoHomeModel';
-// import { getSeoHomeSuccess } from '@Redux/actionCreators/seoHomeActionCreators';
 import { put, takeEvery, all, fork } from 'redux-saga/effects';
-import seoHomeSlice, { getSeoHomeStart, getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
+import { getSeoHomeStart, getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
 
 function* onGetSeoHome() {
   try {
     const seoHome: SeoHome = yield getSeoHomeRequest();
-    yield console.log(seoHomeSlice);
     yield put(getSeoHomeSuccess(seoHome));
   } catch (error: any) {
+    console.log("GET SEO HOME ERROR", error.message);
     // yield put(setTryCatchServer(error.message));
   }
 }

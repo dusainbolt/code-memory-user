@@ -1,11 +1,14 @@
+import { getSeoHomeSlice } from '@Redux/slices/seoHomeSlice';
+import { useAppSelector } from '@Redux/store';
 import { LocalBusinessJsonLd, NextSeo } from 'next-seo';
 import { FC } from 'react';
 
 export const SeoHomeComponent: FC<any> = () => {
+  const seoHome = useAppSelector(getSeoHomeSlice);
   return (
     <>
       <NextSeo
-        title="Using More of Config"
+        title={seoHome?.appName || 'Title next SEO'}
         description="This example uses more of the available config options."
         canonical="https://www.canonical.ie/"
         openGraph={{

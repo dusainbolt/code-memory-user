@@ -19,7 +19,7 @@ const IndexPage: FC<any> = () => {
   const messageCrash = '';
   return (
     !messageCrash && (
-      <LayoutCommon blogBackground={false} scrollHeader seoHome={seoHome}>
+      <LayoutCommon blogBackground={false} scrollHeader>
         <Meta seoHome={seoHome} />
         <HomePageComponent />
       </LayoutCommon>
@@ -30,10 +30,10 @@ const IndexPage: FC<any> = () => {
 export default IndexPage;
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
-  const { store, locale } = context;
-  // store.dispatch(getSeoHome());
-  store.dispatch(END);
-  await store.sagaTask.toPromise();
+  const { locale } = context;
+  // // store.dispatch(getSeoHome());
+  // store.dispatch(END);
+  // await store.sagaTask.toPromise();
   return {
     props: {
       locale,

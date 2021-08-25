@@ -1,7 +1,5 @@
-import Meta from '@Common/Meta';
-import { useAppSelector, wrapper } from '@Redux/store';
+import { wrapper } from '@Redux/store';
 import { END } from 'redux-saga';
-import { SeoHome } from 'src/types/SeoHomeModel';
 import LayoutCommon from '@Common/Layout';
 import { SSRContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -12,10 +10,8 @@ import { SearchTagInput, TagStatus } from '@Models/TagModel';
 import { SeoHomeComponent } from '@Common/Meta/SeoHome';
 
 const BlogPage: React.FC<any> = () => {
-  const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
-
   return (
-    <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
+    <LayoutCommon header={false} footer={false} scrollHeader>
       {/* <Meta seoHome={seoHome} /> */}
       <SeoHomeComponent />
       <TagComponent />

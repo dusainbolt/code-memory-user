@@ -12,7 +12,7 @@ export const seoHomeSlice = createSlice({
   name: 'seoHome',
   initialState,
   reducers: {
-    getSeoHomeStart: (state: SeoHome) => ({ ...state }),
+    getSeoHomeStart: (state: SeoHome) => state,
     getSeoHomeSuccess: (state: SeoHome, action: any) => ({ ...state, ...action.payload }),
   },
   extraReducers(builder) {

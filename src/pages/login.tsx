@@ -45,7 +45,7 @@ const LoginPage: FC<ILoginPage> = props => {
   }, [token]);
 
   return (
-    <LayoutCommon header={false} footer={false} scrollHeader seoHome={seoHome}>
+    <LayoutCommon header={false} footer={false} scrollHeader>
       <Meta title={t('login.title_meta')} seoHome={seoHome} />
       <LoginComponent />
     </LayoutCommon>
