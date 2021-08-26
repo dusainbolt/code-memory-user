@@ -9,9 +9,9 @@ export type SSGContext = GetStaticPropsContext & {
   store: Store<any, AnyAction>;
 };
 
-export type PathSlug = {
+export type findTagBySlugInput = {
   slug: string;
 };
 export interface ParamsPathSlug {
-  params: PathSlug;
+  params: findTagBySlugInput;
 }

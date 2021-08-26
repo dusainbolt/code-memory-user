@@ -27,11 +27,7 @@ const AboutPage: React.FC<IAboutPage> = props => {
 
 export default AboutPage;
 
-export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
-  const { locale } = context;
-  // store.dispatch(getSeoHome());
-  // store.dispatch(END);
-  // await store.sagaTask.toPromise();
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async ({ locale }: SSGContext) => {
   return {
     props: {
       locale,

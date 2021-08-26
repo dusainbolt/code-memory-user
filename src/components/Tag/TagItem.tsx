@@ -15,7 +15,7 @@ const TagItem: FC<{
 }> = ({ scrollPosition, level, tag }) => {
   return (
     <Box className="tag-content__item flx-center spacing p-lr-4 p-tb-8 mb-2">
-      <Link href="/tag">
+      <Link href={`/tag/${tag.slug}`}>
         <a>
           <Box className="tag-info-wrap flx-center align-left">
             <LazyLoadImage

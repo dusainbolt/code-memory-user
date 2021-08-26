@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
-import { ENTIRE_LIMIT } from '@Constants/constant';
-import { EntireTagInput, SearchTagInput, TagStatus } from '@Models/TagModel';
+import { RESPONSE_TAG } from '@Constants/response';
+import { EntireTagInput, FindTagBySlugInput, SearchTagInput, SearchTagOutput, Tag, TagStatus } from '@Models/TagModel';
 import { TagResolver } from '@Resolver/tagResolver';
 import RequestService from '@Services/requestService';
 
@@ -8,7 +8,7 @@ const requestService = new RequestService();
 
 const getListTagQuery = gql`
   query ListTagQuery($input: SearchTagInput!) {
-    listTags(input: $input) {
+    ${RESPONSE_TAG.listTags}(input: $input) {
       dataTags {
         ${TagResolver}
       }
@@ -18,17 +18,24 @@ const getListTagQuery = gql`
 
 const getLEntireTagQuery = gql`
   query Query($entireTagsInput: EntireTagInput!) {
-    entireTags(input: $entireTagsInput) {
+    ${RESPONSE_TAG.entireTags}(input: $entireTagsInput) {
       slug
     }
   }
 `;
 
-export const getListTagRequest = (input: SearchTagInput, fetchPolicy?: any): any => {
-  return requestService.query(getListTagQuery, { input }, 'listTags', fetchPolicy);
+const getTagBySlugQuery = gql`
+  query Query($findTagBySlugInput: FindTagBySlugInput!) {
+    ${RESPONSE_TAG.findTagBySlug}(input: $findTagBySlugInput) {
+      ${TagResolver}
+  }
+}`;
+
+export const getListTagRequest = async (input: SearchTagInput, fetchPolicy?: any): Promise<SearchTagOutput> => {
+  return requestService.query(getListTagQuery, { input }, RESPONSE_TAG.listTags, fetchPolicy);
 };
 
-export const getEntireTags = async (): Promise<any> => {
+export const getEntireTags = async (): Promise<FindTagBySlugInput[]> => {
   return await requestService.query(
     getLEntireTagQuery,
     {
@@ -36,6 +43,11 @@ export const getEntireTags = async (): Promise<any> => {
         status: [TagStatus.ACTIVE],
       } as EntireTagInput,
     },
-    'entireTags'
+    RESPONSE_TAG.entireTags
   );
+};
+
+
+export const getTagBySlugRequest = async (findTagBySlugInput: FindTagBySlugInput): Promise<Tag> => {
+  return await requestService.query(getTagBySlugQuery, { findTagBySlugInput }, RESPONSE_TAG.findTagBySlug);
 };

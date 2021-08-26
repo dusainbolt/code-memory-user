@@ -1,26 +1,21 @@
-import { FC, Fragment, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import Meta from '@Common/Meta';
-import Header from '@Common/Header';
-import Footer from '@Common/Footer';
-
 import 'swiper/swiper.min.css';
 import { GetStaticProps } from 'next';
 import { LoginComponent } from '@Components/Login';
-import { useAppDispatch, useAppSelector, wrapper } from '@Redux/store';
-import { END } from 'redux-saga';
+import { useAppSelector, wrapper } from '@Redux/store';
 import { SeoHome } from 'src/types/SeoHomeModel';
-
-interface ILoginPage {
-  seoHome: SeoHome;
-}
-
-// import { useRouter } from 'next/router';
 import LayoutCommon from '@Common/Layout';
 import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/dist/client/router';
-import { getSeoHomeSlice, getSeoHomeStart } from '@Redux/slices/seoHomeSlice';
+import { getSeoHomeSlice, getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
+import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
+
+interface ILoginPage {
+  seoHome: SeoHome;
+}
 
 const LoginPage: FC<ILoginPage> = props => {
   const { t, i18n } = useTranslation();
@@ -54,11 +49,15 @@ const LoginPage: FC<ILoginPage> = props => {
 
 export default LoginPage;
 
-export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
-  const { store, locale } = context;
-  store.dispatch(getSeoHomeStart());
-  store.dispatch(END);
-  await store.sagaTask.toPromise();
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async ({ store, locale }: SSGContext) => {
+  try {
+    const seoHome = await getSeoHomeRequest();
+
+    store.dispatch(getSeoHomeSuccess(seoHome));
+  } catch (error) {
+    console.log('Fetch data error', error);
+  }
+
   return {
     props: {
       locale,

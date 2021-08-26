@@ -1,4 +1,4 @@
-import { put, takeLatest, all, fork } from 'redux-saga/effects';
+import { put, takeLatest, all, fork, takeEvery } from 'redux-saga/effects';
 import { postLoginRequest } from '@GraphQL/userRequest';
 import { loginSliceError, loginSliceStart, loginSliceSuccess } from '@Redux/slices/loginSlice';
 import { LoginActionInput } from '@Redux/actionsTypes/loginActionTypes';
@@ -14,10 +14,10 @@ function* loginSaga(action: LoginActionInput) {
   }
 }
 
-function* watchHandleLogin() {
-  yield takeLatest(loginSliceStart, loginSaga);
-}
+// function* watchHandleLogin() {
+//   yield takeLatest(loginSliceStart, loginSaga);
+// }
 
 export default function* WatchLoginSaga(): any {
-  yield all([fork(watchHandleLogin)]);
+  yield takeEvery(loginSliceStart, loginSaga);
 }

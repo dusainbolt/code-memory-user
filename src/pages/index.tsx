@@ -1,39 +1,35 @@
 import { FC } from 'react';
 import HomePageComponent from '@Components/Home';
-import Meta from '@Common/Meta';
 import { GetStaticProps } from 'next';
-import { useAppSelector, wrapper } from '@Redux/store';
-import { END } from 'redux-saga';
+import { wrapper } from '@Redux/store';
 import LayoutCommon from '@Common/Layout';
-
 import 'swiper/swiper.min.css';
-import { SeoHome } from 'src/types/SeoHomeModel';
 import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { SeoHomeComponent } from '@Common/Meta/SeoHome';
+import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
+import { getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
 
 const IndexPage: FC<any> = () => {
-  // const seoHome = useAppSelector(store => store.seoHomeReducer) as SeoHome;
-  // const { messageCrash } = useAppSelector(store => store.loadingReducer);
-
-  const seoHome = {};
-  const messageCrash = '';
   return (
-    !messageCrash && (
-      <LayoutCommon blogBackground={false} scrollHeader>
-        <Meta seoHome={seoHome} />
-        <HomePageComponent />
-      </LayoutCommon>
-    )
+    <LayoutCommon blogBackground={false} scrollHeader>
+      <SeoHomeComponent />
+      <HomePageComponent />
+    </LayoutCommon>
   );
 };
 
 export default IndexPage;
 
-export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async (context: SSGContext) => {
-  const { locale } = context;
-  // // store.dispatch(getSeoHome());
-  // store.dispatch(END);
-  // await store.sagaTask.toPromise();
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(async ({ locale, store }: SSGContext) => {
+  try {
+    const seoHome = await getSeoHomeRequest();
+
+    store.dispatch(getSeoHomeSuccess(seoHome));
+  } catch (error) {
+    console.log('Fetch data error', error);
+  }
+
   return {
     props: {
       locale,

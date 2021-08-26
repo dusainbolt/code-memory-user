@@ -38,8 +38,14 @@ export interface Tag {
 
 export type TagSlice = {
   dataNew?: Tag[];
+  tagDetail: Tag
 };
 
-export interface SearchTagOutput {
+export type SearchTagOutput = {
   dataTags: Tag[];
 }
+
+export type FindTagBySlugInput = {
+  slug: string;
+}
+

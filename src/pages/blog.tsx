@@ -20,16 +20,7 @@ const BlogPage: React.FC<any> = () => {
 
 export default BlogPage;
 
-export const getStaticProps = wrapper.getStaticProps(async (content: SSRContext) => {
-  const {
-    // store: { dispatch, sagaTask },
-    locale,
-  } = content;
-
-  // dispatch(getSeoHome());
-  // dispatch(END);
-  // await sagaTask.toPromise();
-
+export const getStaticProps = wrapper.getStaticProps(async ({ locale }: SSRContext) => {
   return {
     props: {
       locale,

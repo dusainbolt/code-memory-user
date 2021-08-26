@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { notification, Typography } from 'antd';
-import { getLayoutSlice } from '../../redux/slices/layoutSlice';
+import { getLayoutSlice, setNotifySlice } from '../../redux/slices/layoutSlice';
 import { useTranslation } from 'react-i18next';
 import Box from '../Box';
-import { useAppSelector } from '@Redux/store';
+import { useAppDispatch, useAppSelector } from '@Redux/store';
 import { TIME_FORMAT } from '@Constants/constant';
 import dayjs from 'dayjs';
 
 export const NotifySystem = () => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
   const notify = useAppSelector(getLayoutSlice).notify;
 
   const openNotificationWithIcon = () => {
@@ -29,6 +30,7 @@ export const NotifySystem = () => {
   useEffect(() => {
     if (notify?.typeNotify && notify?.messageNotify) {
       openNotificationWithIcon();
+      dispatch(setNotifySlice());
     }
   }, [notify]);
 

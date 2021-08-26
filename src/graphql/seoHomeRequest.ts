@@ -1,3 +1,4 @@
+import { SeoHome } from './../types/SeoHomeModel';
 import { gql } from '@apollo/client';
 import RequestService from '@Services/requestService';
 
@@ -38,6 +39,6 @@ export const seoHomeQuery = gql`
   }
 `;
 
-export const getSeoHomeRequest = (): any => {
-  return requestService.query(seoHomeQuery, {}, 'seoHome');
+export const getSeoHomeRequest = async (): Promise<SeoHome> => {
+  return await requestService.query(seoHomeQuery, {}, 'seoHome');
 };
