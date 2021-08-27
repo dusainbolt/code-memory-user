@@ -3,7 +3,9 @@ import { useAppSelector } from '@Redux/store';
 import { LocalBusinessJsonLd, NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo';
 import { FC } from 'react';
 
-export const SeoHomeComponent: FC<any> = () => {
+// SUGGEST https://www.omgubuntu.co.uk/2021/01/how-to-install-edge-on-ubuntu-linux
+
+export const SeoArtical: FC<any> = () => {
   const seoHome = useAppSelector(getSeoHomeSlice);
   return (
     <>
