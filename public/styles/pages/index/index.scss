@@ -5,12 +5,38 @@
 @import './news';
 
 .home {
-    &--title.ant-typography {
-        text-align: center;
-        max-width: 604px;
-        padding-top: 100px;
-        display: block;
-        margin: auto;
-        margin-bottom: 60px;
+  &__title.ant-typography {
+    text-align: center;
+    max-width: 604px;
+    padding-top: 100px;
+    display: block;
+    margin: auto;
+    margin-bottom: 60px;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.home {
+  &__link-to-about {
+    svg {
+      width: 40px;
+      color: var(--color-primary);
+      animation: MoveUpDown 3s linear infinite;
     }
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      font-size: $font_size_base + 10;
+      font-weight: 500;
+    }
+  }
 }

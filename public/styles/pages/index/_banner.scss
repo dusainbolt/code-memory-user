@@ -1,59 +1,59 @@
 .home-banner {
-    width: 100%;
-    margin-bottom: 70px;
-    &--wrap-info {
-        @include _flex_box();
-        flex-direction: column;
+  width: 100%;
+  margin-bottom: 70px;
+  &--wrap-info {
+    @include _flex_box();
+    flex-direction: column;
+  }
+  &__title.ant-typography {
+    font-size: $font_size_base + 44;
+  }
+  &--description.ant-typography {
+    .high-light {
+      font-size: $font_size_base + 2;
     }
-    &--title.ant-typography {
-        font-size: $font_size_base + 44;
+  }
+  &--img-content-banner {
+    margin-left: auto;
+  }
+  &--button-link {
+    margin-right: auto;
+  }
+  &--button-next-view.app-btn {
+    width: 206px;
+    height: 60px;
+    margin-top: 40px;
+    a {
+      color: var(--color-text-button-white);
     }
-    &--description.ant-typography {
-        .high-light {
-            font-size: $font_size_base + 2;
-        }
+    .svg-inline--fa {
+      margin-right: 6px;
+      width: $font_size_base;
     }
-    &--img-content-banner {
-        margin-left: auto;
-    }
-    &--button-link {
-        margin-right: auto;
-    }
-    &--button-next-view.app-btn {
-        width: 206px;
-        height: 60px;
-        margin-top: 40px;
-        a {
-            color: var(--color-text-button-white);
-        }
-        .svg-inline--fa {
-            margin-right: 6px;
-            width: $font_size_base;
-        }
-    }
-    &--button-next-view-tooltip .ant-tooltip-inner a {
-        color: var(--color-text-button-white);
-    }
+  }
+  &--button-next-view-tooltip .ant-tooltip-inner a {
+    color: var(--color-text-button-white);
+  }
 }
 
 @include _responsive(_md) {
-    .home-banner {
-        &--img-content {
-            width: 85%;
-            margin: auto;
-        }
-        &--title,
-        &--description {
-            text-align: center;
-        }
-        &--title.ant-typography {
-            font-size: $font_size_base + 32;
-        }
-        &--button-link {
-            margin: auto;
-        }
-        &--button-next-view.app-btn {
-            margin-top: 25px;
-        }
+  .home-banner {
+    &--img-content {
+      width: 85%;
+      margin: auto;
     }
+    &__title,
+    &--description {
+      text-align: center;
+    }
+    &__title.ant-typography {
+      font-size: $font_size_base + 32;
+    }
+    &--button-link {
+      margin: auto;
+    }
+    &--button-next-view.app-btn {
+      margin-top: 25px;
+    }
+  }
 }

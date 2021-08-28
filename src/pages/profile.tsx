@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import ProfileComponent from '@Components/Profile';
-import Meta from '@Common/Meta';
 import { GetStaticProps } from 'next';
 import { useAppSelector, wrapper } from '@Redux/store';
 import { END } from 'redux-saga';
@@ -12,10 +11,9 @@ import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const IndexPage: FC<any> = () => {
-  const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
+  // const seoHome = useAppSelector(store => store.seoHomeSlice) as SeoHome;
   return (
     <LayoutCommon blogBackground={false} header={false} footer={false}>
-      <Meta title="Lê Huy Du - Developer Profile" seoHome={seoHome} />
       <ProfileComponent />
     </LayoutCommon>
   );

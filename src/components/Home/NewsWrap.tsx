@@ -1,17 +1,15 @@
-import Box from "@Common/Box";
-import SwiperSlideNewsItem from "@Common/Card/CardNewsSwiper";
-import { Typography } from "antd";
-import { useTranslation } from "react-i18next";
+import Box from '@Common/Box';
+import SwiperSlideNewsItem from '@Common/Card/CardNewsSwiper';
+import { Typography } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 // interface _NewsWrap {}
 
 const NewsWrap: React.FC<any> = ({}) => {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(['common']);
   return (
     <Box container className="home-news__container">
-      <Typography.Text className="home--title title txt-center">
-        {t("home.title_new_wrap")}
-      </Typography.Text>
+      <Typography.Text className="home__title title txt-center">{t('home.title_new_wrap')}</Typography.Text>
       <SwiperSlideNewsItem />
     </Box>
   );

@@ -1,17 +1,3 @@
-export interface SeoContact {
-    address: string;
-    email: string;
-    phone: string;
-}
-
-export interface SeoSocial {
-    youtube: string;
-    facebook: string;
-    facebookPage: string;
-    skype: string;
-    twitter: string;
-}
-
 export class SeoMeta {
     title: string;
 
@@ -32,13 +18,32 @@ export class SeoMeta {
     facebookPageId: string;
 }
 
+export type SeoHomeHistory = {
+    newValue: string;
+    oldValue: string;
+    type: string;
+};
+
+export enum SeoHomeStatus {
+    ACTIVE = 'ACTIVE',
+    INACTIVE = 'INACTIVE',
+}
+
 export interface SeoHome {
-    owner?: string;
-    appName?: string;
-    keyWord?: string;
-    author?: string;
-    publisher?: string;
-    contact?: SeoContact;
-    social?: SeoSocial;
-    meta?: SeoMeta;
+    description?: string;
+    domain?: string;
+    facebookAppId?: string;
+    faviconUrlICO?: string;
+    faviconUrlJPG?: string;
+    history?: SeoHomeHistory[];
+    id?: string;
+    languageAlternates?: string;
+    logo400x400?: string;
+    logo800x600?: string;
+    logo1280x1280?: string;
+    logoAlt?: string;
+    searchBoxUrl?: string;
+    siteName?: string;
+    status?: SeoHomeStatus;
+    title?: string;
 }

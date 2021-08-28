@@ -1,5 +1,4 @@
 import { FC, useEffect } from 'react';
-import Meta from '@Common/Meta';
 import 'swiper/swiper.min.css';
 import { GetStaticProps } from 'next';
 import { LoginComponent } from '@Components/Login';
@@ -18,7 +17,7 @@ interface ILoginPage {
 }
 
 const LoginPage: FC<ILoginPage> = props => {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
   // const dispatch = useAppDispatch();
   // const seoHome = useAppSelector(store => store.seoHomeReducer);
   // const messageCrash = useAppSelector(store => store.loadingReducer.messageCrash);
@@ -41,7 +40,6 @@ const LoginPage: FC<ILoginPage> = props => {
 
   return (
     <LayoutCommon header={false} footer={false} scrollHeader>
-      <Meta title={t('login.title_meta')} seoHome={seoHome} />
       <LoginComponent />
     </LayoutCommon>
   );

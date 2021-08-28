@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
+import { useRouter } from 'next/dist/client/router';
+import clsx from 'clsx';
 
 export const LIST_MENU = [
   { name: 'txt_home', href: '/' },
@@ -12,11 +14,15 @@ export const LIST_MENU = [
 const MenuHeader: React.FC<any> = ({}) => {
   const { t } = useTranslation(['common']);
 
+  const router = useRouter();
+
+  console.log(router);
+
   return (
     <nav className="header__menu">
       {LIST_MENU.map((item, index) => (
         <Link key={index} href={item.href}>
-          <a className="m-lr-16"> {t(`menu.${item.name}`)}</a>
+          <a className={clsx('m-lr-16', item.href === router.pathname && 'active')}> {t(`menu.${item.name}`)}</a>
         </Link>
       ))}
     </nav>

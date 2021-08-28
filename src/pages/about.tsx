@@ -1,10 +1,8 @@
 import { Fragment } from 'react';
-import Meta from '@Common/Meta';
 import Header from '@Common/Header';
 import Footer from '@Common/Footer';
 import { GetStaticProps } from 'next';
 import { useAppSelector, wrapper } from '@Redux/store';
-import { END } from 'redux-saga';
 import { SeoHome } from 'src/types/SeoHomeModel';
 import { SSGContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -18,7 +16,6 @@ const AboutPage: React.FC<IAboutPage> = props => {
 
   return (
     <Fragment>
-      <Meta seoHome={seoHome} />
       <Header />
       <Footer seoHome={seoHome} />
     </Fragment>

@@ -1,76 +1,79 @@
 .header {
-    &__wrapper {
-        top: 0px;
-        z-index: 10;
-        transition: all 0.3s;
-        padding: 10px 0;
-        &.scrolling {
-            position: sticky;
-            animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
-            box-shadow: 0 10px 15px #19191908;
-            background-color: var(--color-bg-header);
-        }
+  &__wrapper {
+    top: 0px;
+    z-index: 10;
+    transition: all 0.3s;
+    padding: 10px 0;
+    &.scrolling {
+      position: sticky;
+      animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+      box-shadow: 0 10px 15px #19191908;
+      background-color: var(--color-bg-header);
     }
-    &__container {
-        @include _flex_box(center, space-between);
+  }
+  &__container {
+    @include _flex_box(center, space-between);
+  }
+  &__logo {
+    min-width: 140px;
+    height: 51px;
+    cursor: pointer;
+  }
+  &__button-login {
+    font-weight: $font-bold;
+    width: 150px;
+    @include _flex_box();
+    svg.svg-inline--fa {
+      width: 15px;
+      margin-right: 6px;
     }
-    &__logo {
-        min-width: 140px;
-        height: 51px;
-        cursor: pointer;
+  }
+  &__menu-wrap {
+    @include _flex_box(center, flex-start);
+    width: max-content;
+  }
+  &__menu a {
+    color: var(--color-text-inactive);
+    font-weight: $font-bold;
+    transition: 0.2s all;
+    &.active {
+      color: var(--color-primary);
     }
-    &__button-login {
-        font-weight: $font-bold;
-        width: 150px;
-        @include _flex_box();
-        svg.svg-inline--fa {
-            width: 15px;
-            margin-right: 6px;
-        }
+    &:hover {
+      color: var(--color-primary);
     }
-    &__menu-wrap {
-        @include _flex_box(center, flex-start);
-        width: max-content;
-    }
-    &__menu a {
-        color: var(--color-text-inactive);
-        font-weight: $font-bold;
-        transition: 0.2s all;
-        &:hover {
-            color: var(--color-primary);
-        }
-    }
-    &__menu-icon {
-        display: none;
-        color: var(--color-primary);
-    }
+  }
+  &__menu-icon {
+    display: none;
+    color: var(--color-primary);
+  }
 }
 
 @include _responsive(_lg) {
-    .header {
-        &__menu-wrap {
-            display: none;
-        }
-        &__menu-icon {
-            display: block;
-            width: 24px;
-        }
-        &__drawer {
-            .header__menu-wrap {
-                display: block;
-            }
-            .ant-drawer-title {
-                color: var(--color-text-main);
-                font-weight: $font-bold;
-                font-size: $font_size_base + 2;
-            }
-            .header__menu a {
-                display: block;
-                margin: 12px 0;
-                &:last-child {
-                    margin-bottom: 34px;
-                }
-            }
-        }
+  .header {
+    &__menu-wrap {
+      display: none;
     }
+    &__menu-icon {
+      display: block;
+      width: 24px;
+    }
+    &__drawer {
+      .header__menu-wrap {
+        display: block;
+      }
+      .ant-drawer-title {
+        color: var(--color-text-main);
+        font-weight: $font-bold;
+        font-size: $font_size_base + 2;
+      }
+      .header__menu a {
+        display: block;
+        margin: 12px 0;
+        &:last-child {
+          margin-bottom: 34px;
+        }
+      }
+    }
+  }
 }

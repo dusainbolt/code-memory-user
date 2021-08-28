@@ -26,6 +26,9 @@ div {
 .title.ant-typography {
   font-size: $font_size_base + 28;
   font-weight: $font-bold;
+  @include _responsive(_sm) {
+    font-size: $font_size_base + 16;
+  }
 }
 
 .title-1.ant-typography {

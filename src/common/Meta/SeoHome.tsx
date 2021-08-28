@@ -1,43 +1,43 @@
 import { getSeoHomeSlice } from '@Redux/slices/seoHomeSlice';
 import { useAppSelector } from '@Redux/store';
-import { LocalBusinessJsonLd, NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo';
+import { LogoJsonLd, NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo';
 import { FC } from 'react';
 
 export const SeoHomeComponent: FC<any> = () => {
   const seoHome = useAppSelector(getSeoHomeSlice);
-  return (
+  return seoHome.title ? (
     <>
       <NextSeo
         // Tieu de
-        title={seoHome?.appName || 'Title next SEO'}
+        title={seoHome.title}
         // mo ta
-        description="This example uses more of the available config options."
+        description={seoHome.description}
         // Duong dan hien tai
-        canonical="https://www.canonical.ie/"
+        canonical={seoHome.domain}
         openGraph={{
           // Type mac dinh de la web site
           type: 'website',
           // Van la url hien tai
-          url: 'https://www.url.ie/a',
+          url: seoHome.domain,
           // Van la tieu de
-          title: 'Open Graph Title',
+          title: seoHome.title,
           // Van la mo ta
-          description: 'Open Graph Description',
+          description: seoHome.description,
           // image 1280 * 720px
           images: [
             {
-              url: 'https://www.example.ie/og-image-01.jpg',
+              url: seoHome.logo1280x1280,
               width: 1280,
               height: 720,
-              alt: 'Og Image Alt',
+              alt: seoHome.logoAlt,
             },
           ],
           // Site url
-          site_name: 'SiteName',
+          site_name: seoHome.siteName,
         }}
         // facebook id
         facebook={{
-          appId: '1234567890',
+          appId: seoHome.facebookAppId,
         }}
         // Twitter config
         twitter={{
@@ -58,59 +58,43 @@ export const SeoHomeComponent: FC<any> = () => {
         // Ngon ngu that the
         languageAlternates={[
           {
-            hrefLang: 'en',
-            href: 'https://www.canonical.ie/de',
+            hrefLang: seoHome.languageAlternates,
+            href: `${seoHome.domain}/${seoHome.languageAlternates}`,
           },
         ]}
         // Fave icon 1 loai .ico 76x76, mot loai la jpg
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: 'https://www.test.ie/favicon.ico',
+            href: seoHome.faviconUrlICO,
           },
           {
             rel: 'apple-touch-icon',
-            href: 'https://www.test.ie/touch-icon-ipad.jpg',
+            href: seoHome.faviconUrlJPG,
             sizes: '76x76',
-          },
-          {
-            rel: 'manifest',
-            href: '/manifest.json',
           },
         ]}
       />
       <SiteLinksSearchBoxJsonLd
         // URL site
-        url="https://www.example.com"
+        url={seoHome.domain}
         potentialActions={[
           {
             // Url search
-            target: 'https://query.example.com/search?q',
+            // target: 'https://query.example.com/search?q',
+            target: `${seoHome.searchBoxUrl}?q`,
             queryInput: 'search_term_string',
           },
         ]}
       />
-      <LocalBusinessJsonLd
-        type="Organization"
-        id="http://davesdeptstore.example.com"
-        name="Dave's Department Store"
-        description="Dave's latest department store in San Jose, now open"
-        url="http://www.example.com/store-locator/sl/San-Jose-Westgate-Store/1427"
-        telephone="+14088717984"
-        address={{
-          streetAddress: '1600 Saratoga Ave',
-          addressLocality: 'San Jose',
-          addressRegion: 'CA',
-          postalCode: '95129',
-          addressCountry: 'US',
-        }}
-        geo={{
-          latitude: '37.293058',
-          longitude: '-121.988331',
-        }}
-        images={['https://example.com/photos/1x1/photo.jpg', 'https://example.com/photos/4x3/photo.jpg', 'https://example.com/photos/16x9/photo.jpg']}
-        sameAs={['www.company-website-url1.dev', 'www.company-website-url2.dev', 'www.company-website-url3.dev']}
+      <LogoJsonLd
+        // URL logo min 112x112 => 400x400
+        logo={seoHome.logo400x400}
+        // URL site
+        url={seoHome.domain}
       />
     </>
+  ) : (
+    <></>
   );
 };

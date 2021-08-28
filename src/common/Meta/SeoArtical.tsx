@@ -6,12 +6,12 @@ import { FC } from 'react';
 // SUGGEST https://www.omgubuntu.co.uk/2021/01/how-to-install-edge-on-ubuntu-linux
 
 export const SeoArtical: FC<any> = () => {
-  const seoHome = useAppSelector(getSeoHomeSlice);
+  // const seoHome = useAppSelector(getSeoHomeSlice);
   return (
     <>
       <NextSeo
         // Tieu de
-        title={seoHome?.appName || 'Title next SEO'}
+        title={'Title next SEO'}
         // mo ta
         description="This example uses more of the available config options."
         // Duong dan hien tai
