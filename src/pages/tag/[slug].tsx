@@ -13,9 +13,6 @@ const TagDetail: React.FC<any> = () => {
   const data = useAppSelector(getTagSlice).tagDetail;
   return (
     <LayoutCommon header={false} footer={false} scrollHeader>
-      {/* <Meta seoHome={seoHome} /> */}
-      {/* <SeoHomeComponent />
-      <TagComponent /> */}
       <div>12312321 {data.title}</div>
     </LayoutCommon>
   );
@@ -25,7 +22,11 @@ export default TagDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const listSlugTags: Tag[] = await getEntireTags();
-  const paths: ParamsPathSlug[] = listSlugTags.map(item => ({ params: { slug: item.slug } }));
+  const paths: ParamsPathSlug[] = [];
+  listSlugTags.forEach(item => {
+    paths.push({ params: { slug: item.slug }, locale: 'vi' });
+    paths.push({ params: { slug: item.slug }, locale: 'en' });
+  });
   return {
     paths,
     fallback: false,

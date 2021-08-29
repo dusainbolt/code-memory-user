@@ -28,18 +28,18 @@ type SeoHomeSocial = {
 }
 
 export interface SeoHome {
-    createBy: string,
-    description: string,
-    domain: string,
-    history: SeoHomeHistory[],
-    id: string,
-    image: SeoHomeImage,
-    languageAlternates: string,
-    searchBoxUrl: string,
-    siteName: string,
-    social: SeoHomeSocial,
-    status: SeoHomeStatus,
-    title: string,
-    userCreate: User
+    createBy?: string,
+    description?: string,
+    domain?: string,
+    history?: SeoHomeHistory[],
+    id?: string,
+    image?: SeoHomeImage,
+    languageAlternates?: string,
+    searchBoxUrl?: string,
+    siteName?: string,
+    social?: SeoHomeSocial,
+    status?: SeoHomeStatus,
+    title?: string,
+    userCreate?: User
 }
 
