@@ -28,9 +28,6 @@
       "@Constants/*": [
         "src/constant/*"
       ],
-      "@Resolver/*": [
-        "src/resolver/*"
-      ],
       "@Models/*": [
         "src/types/*"
       ],

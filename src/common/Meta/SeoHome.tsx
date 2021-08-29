@@ -5,6 +5,7 @@ import { FC } from 'react';
 
 export const SeoHomeComponent: FC<any> = () => {
   const seoHome = useAppSelector(getSeoHomeSlice);
+  const { image, social } = seoHome;
   return seoHome.title ? (
     <>
       <NextSeo
@@ -26,10 +27,10 @@ export const SeoHomeComponent: FC<any> = () => {
           // image 1280 * 720px
           images: [
             {
-              url: seoHome.logo1280x1280,
+              url: image.logo1280x1280,
               width: 1280,
               height: 720,
-              alt: seoHome.logoAlt,
+              alt: image.logoAlt,
             },
           ],
           // Site url
@@ -37,7 +38,7 @@ export const SeoHomeComponent: FC<any> = () => {
         }}
         // facebook id
         facebook={{
-          appId: seoHome.facebookAppId,
+          appId: social.facebookAppId,
         }}
         // Twitter config
         twitter={{
@@ -66,11 +67,11 @@ export const SeoHomeComponent: FC<any> = () => {
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: seoHome.faviconUrlICO,
+            href: image.faviconUrlICO,
           },
           {
             rel: 'apple-touch-icon',
-            href: seoHome.faviconUrlJPG,
+            href: image.faviconUrlJPG,
             sizes: '76x76',
           },
         ]}
@@ -89,7 +90,7 @@ export const SeoHomeComponent: FC<any> = () => {
       />
       <LogoJsonLd
         // URL logo min 112x112 => 400x400
-        logo={seoHome.logo400x400}
+        logo={image.logo400x400}
         // URL site
         url={seoHome.domain}
       />

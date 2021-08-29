@@ -1,7 +1,5 @@
 import getConfig from 'next/config';
-import merge from 'deepmerge';
 import type { GetServerSidePropsContext } from 'next';
-import type { NormalizedCacheObject } from '@apollo/client';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { storeWrapper } from '@Redux/store';

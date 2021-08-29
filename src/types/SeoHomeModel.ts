@@ -1,49 +1,45 @@
-export class SeoMeta {
-    title: string;
-
-    description: string;
-
-    imageUrl: string;
-
-    domain: string;
-
-    jsonType: string;
-
-    logoUrl: string;
-
-    logoWidth: number;
-
-    logoHeight: number;
-
-    facebookPageId: string;
-}
-
-export type SeoHomeHistory = {
-    newValue: string;
-    oldValue: string;
-    type: string;
-};
+import { User } from './UserModel';
 
 export enum SeoHomeStatus {
     ACTIVE = 'ACTIVE',
     INACTIVE = 'INACTIVE',
 }
 
-export interface SeoHome {
-    description?: string;
-    domain?: string;
-    facebookAppId?: string;
-    faviconUrlICO?: string;
-    faviconUrlJPG?: string;
-    history?: SeoHomeHistory[];
-    id?: string;
-    languageAlternates?: string;
-    logo400x400?: string;
-    logo800x600?: string;
-    logo1280x1280?: string;
-    logoAlt?: string;
-    searchBoxUrl?: string;
-    siteName?: string;
-    status?: SeoHomeStatus;
-    title?: string;
+type SeoHomeHistory = {
+    newValue: string,
+    oldValue: string,
+    type: string,
 }
+
+type SeoHomeImage = {
+    faviconUrlICO: string,
+    faviconUrlJPG: string,
+    logo400x400: string,
+    logo800x600: string,
+    logo1280x1280: string,
+    logoAlt: string,
+}
+
+type SeoHomeSocial = {
+    facebookAppId: string,
+    facebookPageUrl: string,
+    twitterUrl: string,
+    youtubeUrl: string,
+}
+
+export interface SeoHome {
+    createBy: string,
+    description: string,
+    domain: string,
+    history: SeoHomeHistory[],
+    id: string,
+    image: SeoHomeImage,
+    languageAlternates: string,
+    searchBoxUrl: string,
+    siteName: string,
+    social: SeoHomeSocial,
+    status: SeoHomeStatus,
+    title: string,
+    userCreate: User
+}
+

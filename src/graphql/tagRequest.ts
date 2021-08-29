@@ -1,8 +1,7 @@
 import { gql } from '@apollo/client';
-import { RESPONSE_TAG } from '@Constants/response';
 import { EntireTagInput, FindTagBySlugInput, SearchTagInput, SearchTagOutput, Tag, TagStatus } from '@Models/TagModel';
-import { TagResolver } from '@Resolver/tagResolver';
 import RequestService from '@Services/requestService';
+import { RESPONSE_TAG, TagResolver } from './resolver/tagResolver';
 
 const requestService = new RequestService();
 
@@ -16,7 +15,7 @@ const getListTagQuery = gql`
   }
 `;
 
-const getLEntireTagQuery = gql`
+const getEntireTagQuery = gql`
   query Query($entireTagsInput: EntireTagInput!) {
     ${RESPONSE_TAG.entireTags}(input: $entireTagsInput) {
       slug
@@ -37,7 +36,7 @@ export const getListTagRequest = async (input: SearchTagInput, fetchPolicy?: any
 
 export const getEntireTags = async (): Promise<FindTagBySlugInput[]> => {
   return await requestService.query(
-    getLEntireTagQuery,
+    getEntireTagQuery,
     {
       entireTagsInput: {
         status: [TagStatus.ACTIVE],

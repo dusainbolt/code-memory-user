@@ -1,3 +1,4 @@
+import { RESPONSE_USER } from './resolver/userResolver';
 import { gql } from '@apollo/client';
 import RequestService from '@Services/requestService';
 import { LoginInput } from 'src/types/LoginModel';
@@ -6,7 +7,7 @@ const requestService = new RequestService();
 
 const postLoginQuery = gql`
   mutation LoginMutation($credential: String!, $password: String!) {
-    login(input: { credential: $credential, password: $password }) {
+    ${RESPONSE_USER.userLogin}(input: { credential: $credential, password: $password }) {
       token
       user {
         id
@@ -22,5 +23,5 @@ const postLoginQuery = gql`
 `;
 
 export const postLoginRequest = (variables: LoginInput): any => {
-  return requestService.mutation(postLoginQuery, variables, 'login');
+  return requestService.mutation(postLoginQuery, variables, RESPONSE_USER.userLogin);
 };
