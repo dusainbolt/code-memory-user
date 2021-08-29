@@ -5,7 +5,7 @@ import ListContentBlog from './ListContentBlog';
 
 const BlogContent: FC<any> = () => {
   return (
-    <Box className="blog-content mt-26">
+    <Box className="blog-content mt-8">
       <Box className="sticky-content">
         {/* <BoxSuggestLogin /> */}
         <ListContentBlog />

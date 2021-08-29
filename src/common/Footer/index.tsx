@@ -1,5 +1,5 @@
 import Box from '@Common/Box';
-import { faFacebook, faSkype, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Divider, Row, Typography } from 'antd';
 import AntImage from '@Common/Image';
 import { staticPath } from '@Utils/func';
@@ -7,14 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { LIST_MENU } from '@Common/Header/MenuHeader';
 import { FC } from 'react';
-import { SeoHome } from 'src/types/SeoHomeModel';
 import { useTranslation } from 'react-i18next';
 
-interface IFooter {
-  seoHome: SeoHome;
-}
-
-const Footer: FC<IFooter> = ({ seoHome }) => {
+const Footer: FC<any> = () => {
   const { t } = useTranslation(['common']);
 
   const LIST_CONNECT = [

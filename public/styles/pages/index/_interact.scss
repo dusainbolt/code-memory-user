@@ -1,25 +1,24 @@
 .home-interact {
-    &--box {
-        width: 85%;
-        margin: auto;
-        margin-bottom: 70px;
+  &--box {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 70px;
+  }
+  &--card {
+    .ant-space {
+      padding: 26px;
+      box-shadow: var(--box-shadow-card-primary);
+      border-radius: $border-radius-large;
     }
-    &--card {
-        animation: fadeIn 1.3s ease-in-out forwards running;
-        .ant-space {
-            padding: 26px;
-            box-shadow: var(--box-shadow-card-primary);
-            border-radius: $border-radius-large;
-        }
 
-        @include _imageStyle(195px);
-    }
+    @include _imageStyle(195px);
+  }
 }
 
 @include _responsive(_lg) {
-    .home-interact {
-        &--box {
-            width: 100%;
-        }
+  .home-interact {
+    &--box {
+      width: 100%;
     }
+  }
 }

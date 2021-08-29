@@ -55,7 +55,7 @@ body {
   body {
     &[style='blog'] {
       .container {
-        max-width: $container_medium + 100;
+        max-width: 100%;
       }
     }
   }
@@ -129,13 +129,6 @@ body {
   width: max-content;
   margin: auto;
   display: block;
-}
-
-.card-blog {
-  padding: 20px;
-  border-radius: 6px;
-  border: 1px solid var(--blog-border-card);
-  // box-shadow: var(--blog-color-box-shadow-primary);
 }
 
 .ellipsis {
