@@ -47,6 +47,6 @@ export const getEntireTags = async (): Promise<FindTagBySlugInput[]> => {
 };
 
 
-export const getTagBySlugRequest = async (findTagBySlugInput: FindTagBySlugInput): Promise<Tag> => {
-  return await requestService.query(getTagBySlugQuery, { findTagBySlugInput }, RESPONSE_TAG.findTagBySlug);
+export const getTagBySlugRequest = async (findTagBySlugInput: FindTagBySlugInput, fetchPolicy?: any): Promise<Tag> => {
+  return await requestService.query(getTagBySlugQuery, { findTagBySlugInput }, RESPONSE_TAG.findTagBySlug, fetchPolicy);
 };

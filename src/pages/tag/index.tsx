@@ -9,6 +9,7 @@ import { SearchTagInput, TagStatus } from '@Models/TagModel';
 import { SeoHomeComponent } from '@Common/Meta/SeoHome';
 import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
 import { getListTagRequest } from '@GraphQL/tagRequest';
+import { FETCH_POLICY } from '@Constants/constant';
 
 const BlogPage: React.FC<any> = () => {
   return (
@@ -30,18 +31,18 @@ export const getStaticProps = wrapper.getStaticProps(async ({ store, locale }: S
       status: [TagStatus.ACTIVE],
     };
 
-    const [seoHome, dataTagNew] = await Promise.all([getSeoHomeRequest(), getListTagRequest(paramsTagNew)]);
-
+    const [seoHome, dataTagNew] = await Promise.all([getSeoHomeRequest(), getListTagRequest(paramsTagNew, FETCH_POLICY.NO_CACHE)]);
+    console.log('RESPONSE =============> ', dataTagNew.toString());
     store.dispatch(getSeoHomeSuccess(seoHome));
     store.dispatch(getListTagSliceSuccess(dataTagNew));
   } catch (error) {
-    console.log('Fetch data error', error);
+    console.log('Fetch data error tag index', error);
   }
-
   return {
     props: {
       locale,
       ...(await serverSideTranslations(locale, ['common'])),
     },
+    revalidate: 3,
   };
 });

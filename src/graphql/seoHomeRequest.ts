@@ -1,3 +1,4 @@
+import { FETCH_POLICY } from './../constant/constant';
 import { SeoHome } from './../types/SeoHomeModel';
 import { gql } from '@apollo/client';
 import RequestService from '@Services/requestService';
@@ -14,5 +15,5 @@ export const seoHomeQuery = gql`
 `;
 
 export const getSeoHomeRequest = async (): Promise<SeoHome> => {
-  return await requestService.query(seoHomeQuery, {}, RESPONSE_SEO_HOME.getSeoHome);
+  return await requestService.query(seoHomeQuery, {}, RESPONSE_SEO_HOME.getSeoHome, FETCH_POLICY.NO_CACHE);
 };
