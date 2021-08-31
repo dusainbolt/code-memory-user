@@ -1,5 +1,7 @@
+const siteUrl = process.env.DOMAIN_APP || 'https://du-sainbolt.web.app';
+
 module.exports = {
-  siteUrl: process.env.DOMAIN_APP || 'https://du-sainbolt.web.app',
+  siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 7000,
   sourceDir: 'build',
@@ -14,5 +16,6 @@ module.exports = {
         disallow: ['/secret'],
       },
     ],
+    additionalSitemaps: [`${siteUrl}/sitemap.xml`, `${siteUrl}/tag/sitemap.xml`],
   },
 };

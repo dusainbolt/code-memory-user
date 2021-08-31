@@ -13,7 +13,6 @@ import HomeBanner from '@Components/Home/Banner';
 import InteractWrap from '@Components/Home/InteractWrap';
 import ServiceWrap from '@Components/Home/ServiceWrap';
 import Link from 'next/link';
-import { pluginChat } from '@Utils/func';
 import Box from '@Common/Box';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
@@ -34,14 +33,6 @@ const IndexPage: FC<any> = () => {
             <a className="text mt-20 mb-32">{t('home.txt_link_to_about')}</a>
           </Link>
         </Box>
-        <div id="fb-root"></div>
-        {/* <!-- Your Plugin chat code -->  */}
-        <div id="fb-customer-chat" className="fb-customerchat"></div>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: pluginChat(),
-          }}
-        />
       </main>
     </LayoutCommon>
   );

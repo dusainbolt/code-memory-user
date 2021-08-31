@@ -2,14 +2,13 @@ import { useAppSelector, wrapper } from '@Redux/store';
 import LayoutCommon from '@Common/Layout';
 import { ParamsPathSlug, SSRContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { FindTagBySlugInput, Tag } from '@Models/TagModel';
+import { FindTagBySlugInput } from '@Models/TagModel';
 import { GetStaticPaths } from 'next';
-import { getEntireTags, getTagBySlugRequest } from '@GraphQL/tagRequest';
+import { getTagBySlugRequest } from '@GraphQL/tagRequest';
 import { getTagSlice, getTagDetailSuccess } from '@Redux/slices/tagSlice';
 import { getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
 import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
 import { useRouter } from 'next/dist/client/router';
-import { FETCH_POLICY } from '@Constants/constant';
 
 const TagDetail: React.FC<any> = () => {
   const data = useAppSelector(getTagSlice).tagDetail;
@@ -28,19 +27,19 @@ const TagDetail: React.FC<any> = () => {
 export default TagDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const listSlugTags: Tag[] = await getEntireTags();
+  // const listSlugTags: Tag[] = await getEntireTags({ limit: 5, status: [TagStatus.ACTIVE] });
   const paths: ParamsPathSlug[] = [];
-  listSlugTags.forEach(item => {
-    paths.push({ params: { slug: item.slug }, locale: 'vi' });
-    paths.push({ params: { slug: item.slug }, locale: 'en' });
-  });
+  // listSlugTags.forEach(item => {
+  //   paths.push({ params: { slug: item.slug }, locale: 'vi' });
+  //   paths.push({ params: { slug: item.slug }, locale: 'en' });
+  // });
 
   return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps = wrapper.getStaticProps(async ({ locale, params, store }: SSRContext) => {
   try {
-    const [seoHome, dataTagNew] = await Promise.all([getSeoHomeRequest(), getTagBySlugRequest(params as FindTagBySlugInput, FETCH_POLICY.NO_CACHE)]);
+    const [seoHome, dataTagNew] = await Promise.all([getSeoHomeRequest(), getTagBySlugRequest(params as FindTagBySlugInput)]);
     store.dispatch(getSeoHomeSuccess(seoHome));
     store.dispatch(getTagDetailSuccess(dataTagNew));
   } catch (error) {
@@ -52,6 +51,6 @@ export const getStaticProps = wrapper.getStaticProps(async ({ locale, params, st
       locale,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-    revalidate: 3,
+    revalidate: 10,
   };
 });

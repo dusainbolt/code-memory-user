@@ -19,9 +19,6 @@ export interface SearchTagInput {
   orderBy?: string;
 }
 
-export interface EntireTagInput {
-  status: TagStatus[];
-}
 export interface Tag {
   createBy?: string;
   createdAt?: string;
@@ -48,4 +45,10 @@ export type SearchTagOutput = {
 export type FindTagBySlugInput = {
   slug: string;
 }
+
+export type EntireTagInput = {
+  limit?: number,
+  status: TagStatus[];
+}
+
 

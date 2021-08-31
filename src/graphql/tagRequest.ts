@@ -1,3 +1,4 @@
+import { FETCH_POLICY } from './../constant/constant';
 import { gql } from '@apollo/client';
 import { EntireTagInput, FindTagBySlugInput, SearchTagInput, SearchTagOutput, Tag, TagStatus } from '@Models/TagModel';
 import RequestService from '@Services/requestService';
@@ -34,16 +35,8 @@ export const getListTagRequest = async (input: SearchTagInput, fetchPolicy?: any
   return requestService.query(getListTagQuery, { input }, RESPONSE_TAG.listTags, fetchPolicy);
 };
 
-export const getEntireTags = async (): Promise<FindTagBySlugInput[]> => {
-  return await requestService.query(
-    getEntireTagQuery,
-    {
-      entireTagsInput: {
-        status: [TagStatus.ACTIVE],
-      } as EntireTagInput,
-    },
-    RESPONSE_TAG.entireTags
-  );
+export const getEntireTags = async (entireTagsInput: EntireTagInput): Promise<FindTagBySlugInput[]> => {
+  return await requestService.query(getEntireTagQuery, { entireTagsInput }, RESPONSE_TAG.entireTags, FETCH_POLICY.NO_CACHE);
 };
 
 

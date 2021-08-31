@@ -26,7 +26,7 @@ export const getStaticProps = wrapper.getStaticProps(async ({ store, locale }: S
   try {
     const paramsTagNew: SearchTagInput = {
       key: '',
-      limit: 20,
+      limit: 5,
       offset: 0,
       status: [TagStatus.ACTIVE],
     };
@@ -43,6 +43,6 @@ export const getStaticProps = wrapper.getStaticProps(async ({ store, locale }: S
       locale,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-    revalidate: 3,
+    revalidate: 10,
   };
 });
