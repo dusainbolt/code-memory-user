@@ -1,26 +1,17 @@
+import { HistoryField } from './App/Context';
 import { User } from './UserModel';
 
-export enum SeoHomeStatus {
-    ACTIVE = 'ACTIVE',
-    INACTIVE = 'INACTIVE',
-}
-
-type SeoHomeHistory = {
-    newValue: string,
-    oldValue: string,
-    type: string,
-}
-
-type SeoHomeImage = {
+export type SeoHomeImage = {
     faviconUrlICO: string,
     faviconUrlJPG: string,
     logo400x400: string,
     logo800x600: string,
-    logo1280x1280: string,
+    logo1280x720: string,
     logoAlt: string,
+    logoAltEN: string,
 }
 
-type SeoHomeSocial = {
+export type SeoHomeSocial = {
     facebookAppId: string,
     facebookPageUrl: string,
     twitterUrl: string,
@@ -28,18 +19,20 @@ type SeoHomeSocial = {
 }
 
 export interface SeoHome {
-    createBy?: string,
-    description?: string,
-    domain?: string,
-    history?: SeoHomeHistory[],
     id?: string,
+    title?: string,
+    titleEN?: string,
+    description?: string,
+    descriptionEN?: string,
+    domain?: string,
+    facebookChatPlugin?: string,
     image?: SeoHomeImage,
-    languageAlternates?: string,
     searchBoxUrl?: string,
     siteName?: string,
     social?: SeoHomeSocial,
-    status?: SeoHomeStatus,
-    title?: string,
-    userCreate?: User
+    history?: HistoryField[],
+    createBy?: string;
+    createdAt?: string;
+    reason?: string;
+    userCreate?: User;
 }
-

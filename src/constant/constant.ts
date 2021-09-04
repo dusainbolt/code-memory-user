@@ -22,3 +22,8 @@ export const FETCH_POLICY = {
 };
 
 export const ENTIRE_LIMIT = 99999999999999999999999;
+
+export const LOCALE = {
+  VI: "vi",
+  EN: "en",
+};

@@ -17,12 +17,12 @@ import Box from '@Common/Box';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-const IndexPage: FC<any> = () => {
+const IndexPage: FC<any> = ({ locale }) => {
   const { t } = useTranslation();
 
   return (
     <LayoutCommon blogBackground={false} scrollHeader>
-      <SeoHomeComponent />
+      <SeoHomeComponent locale={locale} />
       <main>
         <HomeBanner />
         <InteractWrap />

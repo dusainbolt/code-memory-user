@@ -1,16 +1,18 @@
+import { LOCALE } from '@Constants/constant';
 import { getSeoHomeSlice } from '@Redux/slices/seoHomeSlice';
 import { useAppSelector } from '@Redux/store';
 import { LogoJsonLd, NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo';
 import { FC } from 'react';
 
-export const SeoHomeComponent: FC<any> = () => {
+export const SeoHomeComponent: FC<any> = ({ locale }) => {
   const seoHome = useAppSelector(getSeoHomeSlice);
   const { image, social } = seoHome;
+  const isLocaleVI = LOCALE.VI === locale;
   return seoHome.title ? (
     <>
       <NextSeo
         // Tieu de
-        title={seoHome.title}
+        title={isLocaleVI ? seoHome.title : seoHome.titleEN}
         // mo ta
         description={seoHome.description}
         // Duong dan hien tai
@@ -21,16 +23,16 @@ export const SeoHomeComponent: FC<any> = () => {
           // Van la url hien tai
           url: seoHome.domain,
           // Van la tieu de
-          title: seoHome.title,
+          title: isLocaleVI ? seoHome.title : seoHome.titleEN,
           // Van la mo ta
-          description: seoHome.description,
+          description: isLocaleVI ? seoHome.description : seoHome.descriptionEN,
           // image 1280 * 720px
           images: [
             {
-              url: image.logo1280x1280,
+              url: image.logo1280x720,
               width: 1280,
               height: 720,
-              alt: image.logoAlt,
+              alt: isLocaleVI ? image.logoAlt : image.logoAltEN,
             },
           ],
           // Site url
@@ -57,12 +59,12 @@ export const SeoHomeComponent: FC<any> = () => {
           maxVideoPreview: -1,
         }}
         // Ngon ngu that the
-        languageAlternates={[
-          {
-            hrefLang: seoHome.languageAlternates,
-            href: `${seoHome.domain}/${seoHome.languageAlternates}`,
-          },
-        ]}
+        // languageAlternates={[
+        //   {
+        //     hrefLang: seoHome.languageAlternates,
+        //     href: `${seoHome.domain}/${seoHome.languageAlternates}`,
+        //   },
+        // ]}
         // Fave icon 1 loai .ico 76x76, mot loai la jpg
         additionalLinkTags={[
           {
@@ -83,7 +85,7 @@ export const SeoHomeComponent: FC<any> = () => {
           {
             // Url search
             // target: 'https://query.example.com/search?q',
-            target: `${seoHome.searchBoxUrl}?q`,
+            target: `${seoHome.domain}${seoHome.searchBoxUrl}?q`,
             queryInput: 'search_term_string',
           },
         ]}

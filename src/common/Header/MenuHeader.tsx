@@ -16,8 +16,6 @@ const MenuHeader: React.FC<any> = ({}) => {
 
   const router = useRouter();
 
-  console.log(router);
-
   return (
     <nav className="header__menu">
       {LIST_MENU.map((item, index) => (

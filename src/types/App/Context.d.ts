@@ -17,3 +17,10 @@ export interface ParamsPathSlug {
   params: findTagBySlugInput;
   locale?: string;
 }
+
+
+export type HistoryField = {
+  newValue: string,
+  oldValue: string,
+  type: string,
+}

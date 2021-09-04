@@ -5,30 +5,34 @@ export const RESPONSE_SEO_HOME = {
 export const SeoHomeResolver = `
   createBy
   description
-  history {
-    newValue
-    oldValue
-    type
-  }
   domain
+  facebookChatPlugin
+  history {
+    key
+    oldValue
+    newValue
+  }
   id
   image {
+    logoAlt
+    logoAltEN
+    logo1280x720
+    logo800x600
+    faviconUrlJPG
     faviconUrlICO
     logo400x400
-    faviconUrlJPG
-    logo800x600
-    logo1280x1280
-    logoAlt
   }
-  languageAlternates
-  siteName
   searchBoxUrl
+  siteName
   social {
+    youtubeUrl
+    twitterUrl
     facebookAppId
     facebookPageUrl
-    twitterUrl
-    youtubeUrl
   }
-  status
   title
+  createdAt
+  reason
+  descriptionEN
+  titleEN
 `;

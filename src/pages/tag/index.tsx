@@ -11,10 +11,10 @@ import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
 import { getListTagRequest } from '@GraphQL/tagRequest';
 import { FETCH_POLICY } from '@Constants/constant';
 
-const BlogPage: React.FC<any> = () => {
+const BlogPage: React.FC<any> = ({ locale }) => {
   return (
     <LayoutCommon header={false} footer={false} scrollHeader>
-      <SeoHomeComponent />
+      <SeoHomeComponent locale={locale} />
       <TagComponent />
     </LayoutCommon>
   );
