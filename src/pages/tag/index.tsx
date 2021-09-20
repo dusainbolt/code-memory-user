@@ -24,17 +24,19 @@ export default BlogPage;
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store, locale }: SSRContext) => {
   try {
-    const paramsTagNew: SearchTagInput = {
+    // Create Params get list tag for 10 items
+    const paramsListTag: SearchTagInput = {
       key: '',
-      limit: 5,
+      limit: 10,
       offset: 0,
       status: [TagStatus.ACTIVE],
     };
 
-    const [seoHome, dataTagNew] = await Promise.all([getSeoHomeRequest(), getListTagRequest(paramsTagNew, FETCH_POLICY.NO_CACHE)]);
-    console.log('RESPONSE =============> ', dataTagNew.toString());
-    store.dispatch(getSeoHomeSuccess(seoHome));
-    store.dispatch(getListTagSliceSuccess(dataTagNew));
+    // Call api fetch data
+    const listTag = await getListTagRequest(paramsListTag, FETCH_POLICY.NO_CACHE);
+
+    // Save data to store Redux
+    store.dispatch(getListTagSliceSuccess(listTag));
   } catch (error) {
     console.log('Fetch data error tag index', error);
   }
@@ -43,6 +45,5 @@ export const getStaticProps = wrapper.getStaticProps(async ({ store, locale }: S
       locale,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-    revalidate: 10,
   };
 });

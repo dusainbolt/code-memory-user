@@ -31,7 +31,7 @@ const getTagBySlugQuery = gql`
   }
 }`;
 
-export const getListTagRequest = async (input: SearchTagInput, fetchPolicy?: any): Promise<SearchTagOutput> => {
+export const getListTagRequest = async (input: SearchTagInput, fetchPolicy?: string): Promise<SearchTagOutput> => {
   return requestService.query(getListTagQuery, { input }, RESPONSE_TAG.listTags, fetchPolicy);
 };
 
@@ -39,7 +39,6 @@ export const getEntireTags = async (entireTagsInput: EntireTagInput): Promise<Fi
   return await requestService.query(getEntireTagQuery, { entireTagsInput }, RESPONSE_TAG.entireTags, FETCH_POLICY.NO_CACHE);
 };
 
-
-export const getTagBySlugRequest = async (findTagBySlugInput: FindTagBySlugInput, fetchPolicy?: any): Promise<Tag> => {
+export const getTagBySlugRequest = async (findTagBySlugInput: FindTagBySlugInput, fetchPolicy?: string): Promise<Tag> => {
   return await requestService.query(getTagBySlugQuery, { findTagBySlugInput }, RESPONSE_TAG.findTagBySlug, fetchPolicy);
 };

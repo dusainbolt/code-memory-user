@@ -2,13 +2,15 @@ import { useAppSelector, wrapper } from '@Redux/store';
 import LayoutCommon from '@Common/Layout';
 import { ParamsPathSlug, SSRContext } from 'src/types/App/Context';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { FindTagBySlugInput } from '@Models/TagModel';
+import { FindTagBySlugInput, Tag, TagStatus } from '@Models/TagModel';
 import { GetStaticPaths } from 'next';
-import { getTagBySlugRequest } from '@GraphQL/tagRequest';
+import { getEntireTags, getTagBySlugRequest } from '@GraphQL/tagRequest';
 import { getTagSlice, getTagDetailSuccess } from '@Redux/slices/tagSlice';
 import { getSeoHomeSuccess } from '@Redux/slices/seoHomeSlice';
 import { getSeoHomeRequest } from '@GraphQL/seoHomeRequest';
 import { useRouter } from 'next/dist/client/router';
+import { Descriptions } from 'antd';
+import AntImage from '@Common/Image';
 
 const TagDetail: React.FC<any> = () => {
   const data = useAppSelector(getTagSlice).tagDetail;
@@ -18,8 +20,13 @@ const TagDetail: React.FC<any> = () => {
   }
   return (
     <LayoutCommon header={false} footer={false} scrollHeader>
-      <div>12312321 {data.title}</div>
-      <div>{data.description}</div>
+      <Descriptions title="Tag Info" layout="vertical">
+        <Descriptions.Item label="Title">{data.title}</Descriptions.Item>
+        <Descriptions.Item label="Description">{data.description}</Descriptions.Item>
+        <Descriptions.Item label="Thumbnail">
+          <AntImage width={100} height={100} src={data.thumbnail} />
+        </Descriptions.Item>
+      </Descriptions>
     </LayoutCommon>
   );
 };
@@ -27,21 +34,22 @@ const TagDetail: React.FC<any> = () => {
 export default TagDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const listSlugTags: Tag[] = await getEntireTags({ limit: 5, status: [TagStatus.ACTIVE] });
-  const paths: ParamsPathSlug[] = [];
-  // listSlugTags.forEach(item => {
-  //   paths.push({ params: { slug: item.slug }, locale: 'vi' });
-  //   paths.push({ params: { slug: item.slug }, locale: 'en' });
-  // });
+  // Get List Slug Tag
+  const listSlugTags: Tag[] = await getEntireTags({ status: [TagStatus.ACTIVE] });
 
-  return { paths, fallback: 'blocking' };
+  // Create list Path
+  const paths: ParamsPathSlug[] = listSlugTags.map(item => ({ params: { slug: item.slug }, locale: 'vi' }));
+
+  return { paths, fallback: false };
 };
 
 export const getStaticProps = wrapper.getStaticProps(async ({ locale, params, store }: SSRContext) => {
   try {
-    const [seoHome, dataTagNew] = await Promise.all([getSeoHomeRequest(), getTagBySlugRequest(params as FindTagBySlugInput)]);
-    store.dispatch(getSeoHomeSuccess(seoHome));
-    store.dispatch(getTagDetailSuccess(dataTagNew));
+    // Call api fetch data
+    const tagDetail = await getTagBySlugRequest(params as FindTagBySlugInput);
+
+    // Save data to store Redux
+    store.dispatch(getTagDetailSuccess(tagDetail));
   } catch (error) {
     console.log('Fetch data error', error);
   }
@@ -51,6 +59,5 @@ export const getStaticProps = wrapper.getStaticProps(async ({ locale, params, st
       locale,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-    revalidate: 10,
   };
 });
